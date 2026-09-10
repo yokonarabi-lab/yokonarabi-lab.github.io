@@ -2,13 +2,38 @@
   'use strict';
   const root = document.documentElement;
   root.classList.add('js');
+  const videoSection = document.querySelector('[data-tabs="video"]');
   let activeVideo = null;
+  let videoNearby = false;
   function stopVideo() {
     if (!activeVideo) return;
     const screen = activeVideo.parentElement;
     activeVideo.remove();
-    screen.querySelector('button').hidden = false;
+    screen.querySelector('.video-loading').hidden = false;
+    screen.removeAttribute('aria-busy');
     activeVideo = null;
+  }
+  function prepareVideo() {
+    if (!videoNearby || document.hidden || document.querySelector('dialog[open]')) return;
+    const screen = videoSection.querySelector('.tab-panel:not([hidden]) [data-video]');
+    if (!screen || activeVideo?.parentElement === screen) return;
+    stopVideo();
+    const iframe = document.createElement('iframe');
+    // Load before the tap. The user's first tap goes straight to YouTube's player,
+    // without relying on unmuted autoplay in a newly-created cross-origin frame.
+    iframe.src = `https://www.youtube-nocookie.com/embed/${screen.dataset.video}?playsinline=1&rel=0`;
+    iframe.title = screen.dataset.videoTitle;
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    screen.setAttribute('aria-busy', 'true');
+    iframe.addEventListener('load', () => {
+      if (activeVideo !== iframe) return;
+      screen.querySelector('.video-loading').hidden = true;
+      screen.removeAttribute('aria-busy');
+    }, {once:true});
+    screen.appendChild(iframe);
+    activeVideo = iframe;
   }
   document.querySelectorAll('[data-tabs]').forEach(group => {
     const buttons = [...group.querySelectorAll('[role="tab"]')];
@@ -20,6 +45,7 @@
         tab.tabIndex = selected ? 0 : -1;
         document.getElementById(tab.getAttribute('aria-controls')).hidden = !selected;
       });
+      if (group.dataset.tabs === 'video') prepareVideo();
       if (focus) button.focus();
     }
     buttons.forEach((button, index) => {
@@ -47,22 +73,17 @@
       document.querySelectorAll('[data-screen]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.screen === frame)));
     });
   });
-  document.querySelectorAll('[data-video] .play-button').forEach(button => {
-    button.addEventListener('click', () => {
-      stopVideo();
-      const screen = button.closest('[data-video]');
-      const iframe = document.createElement('iframe');
-      iframe.src = `https://www.youtube-nocookie.com/embed/${screen.dataset.video}?autoplay=1&playsinline=1&rel=0`;
-      iframe.title = button.getAttribute('aria-label');
-      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-      iframe.allowFullscreen = true;
-      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-      button.hidden = true;
-      screen.appendChild(iframe);
-      activeVideo = iframe;
-    });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      videoNearby = entries[0].isIntersecting;
+      if (videoNearby) prepareVideo();
+      else stopVideo();
+    }, {rootMargin:'800px 0px'}).observe(videoSection);
+  } else { videoNearby = true; prepareVideo(); }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stopVideo();
+    else prepareVideo();
   });
-  document.addEventListener('visibilitychange', () => { if (document.hidden) stopVideo(); });
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   if ('IntersectionObserver' in window && !reduced.matches) {
     // Observe each readable block, including media and panels revealed by tabs.
@@ -190,11 +211,15 @@
   document.addEventListener('visibilitychange', syncAutoplay);
   responsiveCarousel();
 
-  const gameLinks = [...document.querySelectorAll('[data-open-game]')];
-  const games = new Map(gameLinks.map(link => [link.dataset.openGame, {
-    url: link.href,
-    label: link.dataset.openGame === 'claude' ? 'Claude' : 'ChatGPT'
-  }]));
+  const workLinks = [...document.querySelectorAll('[data-open-game], [data-open-slide]')];
+  function workKey(link) {
+    return link.dataset.openSlide ? 'slide-' + link.dataset.openSlide : 'game-' + link.dataset.openGame;
+  }
+  const works = new Map(workLinks.map(link => {
+    const kind = link.dataset.openSlide ? 'スライド' : 'ゲーム';
+    const provider = link.dataset.openSlide || link.dataset.openGame;
+    return [workKey(link), {url:link.href, label:provider === 'claude' ? 'Claude' : 'ChatGPT', kind}];
+  }));
   const gameFrame = document.querySelector('#game-frame');
   const gameTitle = document.querySelector('#game-dialog-title');
   const gameExternal = document.querySelector('#game-external');
@@ -202,22 +227,24 @@
   let returnFocus = null;
   let savedScroll = 0;
   let previousBodyStyles;
-  function openGame(provider, remember = true, trigger = null) {
-    const game = games.get(provider);
-    if (!game || gameOpen || typeof gameDialog.showModal !== 'function') return;
+  function openWork(key, remember = true, trigger = null) {
+    const work = works.get(key);
+    if (!work || gameOpen || typeof gameDialog.showModal !== 'function') return;
     returnFocus = trigger || document.activeElement;
     savedScroll = window.scrollY;
     previousBodyStyles = {position:document.body.style.position, top:document.body.style.top, width:document.body.style.width};
-    if (remember) history.pushState({...history.state, yokonarabiGame:provider}, '', location.href);
-    gameTitle.textContent = game.label + '版';
-    gameExternal.href = game.url;
+    if (remember) history.pushState({...history.state, yokonarabiWork:key}, '', location.href);
+    gameTitle.textContent = work.label + '版 · ' + work.kind;
+    gameExternal.href = work.url;
+    gameExternal.textContent = work.kind + 'を別タブで開く ↗';
     const loading = document.createElement('p');
-    loading.className = 'game-loading'; loading.textContent = 'ゲームを読み込み中…'; loading.setAttribute('role', 'status');
+    loading.className = 'game-loading'; loading.textContent = work.kind + 'を読み込み中…'; loading.setAttribute('role', 'status');
     const iframe = document.createElement('iframe');
-    iframe.title = game.label + '版・英単語クエスト';
-    iframe.src = game.url;
-    iframe.allow = 'autoplay';
-    iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms');
+    iframe.title = work.label + '版・' + (work.kind === 'ゲーム' ? '英単語クエスト' : '完成スライド');
+    iframe.src = work.url;
+    iframe.allow = 'autoplay; fullscreen';
+    iframe.allowFullscreen = true;
+    iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms' + (work.kind === 'スライド' ? ' allow-popups allow-popups-to-escape-sandbox' : ''));
     iframe.referrerPolicy = 'strict-origin-when-cross-origin';
     iframe.addEventListener('load', () => loading.remove(), {once:true});
     gameFrame.replaceChildren(loading, iframe);
@@ -242,28 +269,29 @@
     root.style.scrollBehavior = previousBehavior;
     if (returnFocus && returnFocus.isConnected) returnFocus.focus({preventScroll:true});
     syncAutoplay();
+    prepareVideo();
   }
   function requestGameClose() {
-    const hasGameEntry = Boolean(history.state && history.state.yokonarabiGame);
-    closeGameView();
+    const hasGameEntry = Boolean(history.state && history.state.yokonarabiWork);
     if (hasGameEntry) history.back();
+    else closeGameView();
   }
-  gameLinks.forEach(link => link.addEventListener('click', event => {
+  workLinks.forEach(link => link.addEventListener('click', event => {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0 || typeof gameDialog.showModal !== 'function') return;
     event.preventDefault();
-    openGame(link.dataset.openGame, true, link);
+    openWork(workKey(link), true, link);
   }));
   document.querySelector('#game-close').addEventListener('click', requestGameClose);
   gameDialog.addEventListener('cancel', event => { event.preventDefault(); requestGameClose(); });
   gameDialog.addEventListener('close', closeGameView);
   window.addEventListener('popstate', () => {
-    const provider = history.state && history.state.yokonarabiGame;
-    if (games.has(provider)) openGame(provider, false);
+    const key = history.state && history.state.yokonarabiWork;
+    if (works.has(key)) openWork(key, false);
     else closeGameView();
   });
-  // A reload of the same URL starts on the introduction, never an orphaned game entry.
-  if (history.state && history.state.yokonarabiGame) {
-    const state = {...history.state}; delete state.yokonarabiGame;
+  // Reloads start on the introduction; also clear entries from the earlier game-only viewer.
+  if (history.state && (history.state.yokonarabiWork || history.state.yokonarabiGame)) {
+    const state = {...history.state}; delete state.yokonarabiWork; delete state.yokonarabiGame;
     history.replaceState(state, '', location.href);
   }
 })();
