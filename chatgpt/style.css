@@ -72,3 +72,5 @@
  .method-grid h3{font-size:24px}.method-grid p{font-size:16px}.method-note{font-size:15px}.closing h2{font-size:44px}.closing-emphasis{font-size:clamp(38px,10vw,45px)}.closing p:not(.eyebrow){font-size:19px}.closing .button{font-size:17px}.youtube-link{font-size:16px}.closing .eyebrow{font-size:14px}
 }
 @media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1!important;transform:none!important;transition:none!important}}
+
+.video-loading{display:none}.js .video-loading{display:grid;place-content:center;position:absolute;inset:0;margin:0;z-index:2;background:#11121bea;color:#c5cad7;font-size:15px;pointer-events:none}
