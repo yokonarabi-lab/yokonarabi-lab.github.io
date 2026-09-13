@@ -397,6 +397,17 @@ a.build:hover{
 
   /* ---- スクロールで下から競り上がるフェード ---- */
   var targets = document.querySelectorAll('.reveal');
+
+  /* 画面に入っているものを問答無用で表示する（保険用） */
+  function showIfInView(){
+    for(var n=0;n<targets.length;n++){
+      var t = targets[n];
+      if(!t.classList.contains('is-in') && t.getBoundingClientRect().top < window.innerHeight){
+        t.classList.add('is-in');
+      }
+    }
+  }
+
   if(!('IntersectionObserver' in window)){
     for(var j=0;j<targets.length;j++) targets[j].classList.add('is-in');
     return;
@@ -410,6 +421,15 @@ a.build:hover{
     }
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
   for(var m=0;m<targets.length;m++) io.observe(targets[m]);
+
+  /* 保険：バックグラウンドのタブなど、ページが非表示のあいだは
+     IntersectionObserver が発火しない。本文が消えたままにならないよう、
+     読み込み後と、表示に切り替わったときに画面内のものを出す。 */
+  setTimeout(showIfInView, 1200);
+  window.addEventListener('load', function(){ setTimeout(showIfInView, 300); });
+  document.addEventListener('visibilitychange', function(){
+    if(document.visibilityState === 'visible') setTimeout(showIfInView, 60);
+  });
 })();
 </script>
 
