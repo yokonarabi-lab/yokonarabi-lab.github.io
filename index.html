@@ -1,4 +1,417 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="refresh" content="0; url=/chatgpt/"><link rel="canonical" href="https://yokonarabi-lab.github.io/chatgpt/">
-<title>生成AI横並び検証室</title><style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#08090b;color:#f7f7f8;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}a{color:#a6caff}</style>
-</head><body><p>移動中… <a href="/chatgpt/">生成AI横並び検証室を開く</a></p></body></html>
+<!doctype html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XS0E6PLB0L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // 本番ドメインのときだけ計測する（プレビューや手元での確認で数字を汚さないため）
+  if (location.hostname === 'yokonarabi-lab.github.io') {
+    gtag('config', 'G-XS0E6PLB0L');
+  }
+</script>
+<script>document.documentElement.className += ' js';</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>生成AI横並び検証室</title>
+<meta name="description" content="AIの最上位プラン。月3万円、払う価値はあるか。同じ指示で、作って比べる。ゲームも、動画も、プレゼンも。">
+<link rel="canonical" href="https://yokonarabi-lab.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="生成AI横並び検証室">
+<meta property="og:description" content="AIの最上位プラン。月3万円、払う価値はあるか。同じ指示で、作って比べる。">
+<meta property="og:url" content="https://yokonarabi-lab.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<!-- OGP画像を用意したら、この2行のコメントを外してパスを入れる
+<meta property="og:image" content="https://yokonarabi-lab.github.io/assets/ogp.png">
+<meta name="twitter:image" content="https://yokonarabi-lab.github.io/assets/ogp.png">
+-->
+<style>
+:root{
+  color-scheme:light;
+  --ink:#17181c;
+  --body:#5f6169;
+  --soft:#8a8c96;
+  --line:#dedee3;
+  --line-soft:#eaeaef;
+  --bg:#ffffff;
+  --bg-alt:#f5f5f7;
+  --black:#08090b;
+  --on-black:#f7f7f8;
+  --on-black-dim:#a6a8b2;
+  --link:#0a58ca;
+  --ease:cubic-bezier(.16,1,.3,1);
+  /* ブランドカラー：橙=Claude／緑=ChatGPT */
+  --claude:#d95926;
+  --chatgpt:#199e70;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.7;
+}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1000px;margin:0 auto;padding-inline:20px}
+
+/* ---- reveal ---- */
+.js .reveal{opacity:0;transform:translateY(22px)}
+.js .reveal.is-in{
+  opacity:1;transform:none;
+  transition:opacity .8s var(--ease),transform .8s var(--ease);
+}
+.js .stagger-1{transition-delay:.08s}
+.js .stagger-2{transition-delay:.16s}
+.js .stagger-3{transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){
+  .js .reveal{opacity:1;transform:none}
+  .js .reveal.is-in{transition:none;transition-delay:0s!important}
+}
+
+/* ---- brand bar（橙=Claude／緑=ChatGPT の2色） ---- */
+.brand-bar{
+  height:4px;
+  background:linear-gradient(90deg,var(--claude) 0 50%,var(--chatgpt) 50% 100%);
+}
+
+/* ---- header ---- */
+.site-head{
+  position:sticky;top:0;z-index:20;
+  background:rgba(255,255,255,.86);
+  backdrop-filter:saturate(180%) blur(16px);
+  -webkit-backdrop-filter:saturate(180%) blur(16px);
+  border-bottom:1px solid var(--line-soft);
+}
+.site-head .wrap{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding-block:12px;
+}
+.logo{font-size:15px;font-weight:700;letter-spacing:.01em}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:13px;font-weight:600;color:#fff;
+  background:#22242a;border-radius:24px;
+  padding:8px 18px;white-space:nowrap;
+  transition:background .2s,transform .2s;
+}
+.nav-cta:hover{background:#34363e;transform:translateY(-1px)}
+
+/* ---- hero (black) ---- */
+.hero{
+  background:var(--black);color:var(--on-black);
+  padding-block:clamp(52px,9vw,88px) clamp(48px,8vw,80px);
+}
+.hero h1{
+  margin:0;
+  font-size:clamp(25.5px,6.2vw,52px);
+  line-height:1.34;letter-spacing:-.01em;font-weight:700;
+}
+.hero p{
+  margin:20px 0 0;
+  color:var(--on-black-dim);
+  font-size:clamp(15px,2.4vw,18px);
+  max-width:34em;
+}
+
+/* ---- sections ---- */
+.sec{padding-block:clamp(44px,7vw,72px)}
+.sec-alt{background:var(--bg-alt);border-block:1px solid var(--line)}
+.sec-label{
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:24px;
+  font-size:12px;font-weight:700;letter-spacing:.14em;
+  color:var(--soft);
+}
+.sec-label::after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* ---- article cards ---- */
+.cards{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+.card{
+  display:flex;flex-direction:column;
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:26px 24px 22px;
+  transition:border-color .25s,box-shadow .25s,transform .25s;
+}
+.card:hover{
+  border-color:#c9c9d1;
+  box-shadow:0 10px 30px rgba(23,24,28,.08);
+  transform:translateY(-3px);
+}
+.card-no{
+  font-size:11px;font-weight:700;letter-spacing:.16em;
+  color:var(--soft);margin-bottom:14px;
+}
+.card h2{margin:0;font-size:21px;font-weight:700;line-height:1.42;letter-spacing:-.01em}
+.card .lead{margin:8px 0 0;font-size:14px;font-weight:600;color:#3c3e46}
+.card .desc{margin:12px 0 0;font-size:13.5px;color:var(--body);line-height:1.78;flex:1}
+.card .go{
+  margin-top:22px;padding-top:16px;
+  border-top:1px solid var(--line-soft);
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  font-size:13.5px;font-weight:700;color:var(--link);
+}
+.card .arw{transition:transform .25s var(--ease)}
+.card:hover .arw{transform:translateX(4px)}
+
+/* ---- builds ---- */
+.builds{display:grid;gap:16px;grid-template-columns:repeat(2,1fr)}
+.build{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:20px 22px;
+  transition:border-color .25s,box-shadow .25s,transform .25s;
+}
+a.build:hover{
+  border-color:#c9c9d1;
+  box-shadow:0 8px 24px rgba(23,24,28,.07);
+  transform:translateY(-2px);
+}
+.build.is-soon{background:transparent;border-style:dashed;color:var(--soft)}
+.build-name{display:block;font-size:16px;font-weight:700}
+.build.is-soon .build-name{color:#75777f}
+.build-sub{display:block;margin-top:3px;font-size:12.5px;color:var(--body);line-height:1.5}
+.build.is-soon .build-sub{color:var(--soft)}
+.build-go{font-size:13px;font-weight:700;color:var(--link);white-space:nowrap}
+.build.is-soon .build-go{color:var(--soft)}
+
+/* ---- final cta (black) ---- */
+.final{background:var(--black);color:var(--on-black);text-align:center}
+.final h2{
+  margin:0;font-size:clamp(18.5px,3.6vw,28px);
+  font-weight:700;line-height:1.5;letter-spacing:-.01em;
+  text-wrap:balance;
+}
+.final > .wrap > p{
+  margin:12px auto 0;color:var(--on-black-dim);
+  font-size:14.5px;max-width:30em;text-wrap:balance;
+}
+.button{
+  display:inline-flex;align-items:center;justify-content:center;gap:14px;
+  padding:15px 25px;border-radius:35px;
+  font-size:14px;font-weight:600;margin-top:26px;
+  transition:opacity .2s,transform .2s;
+}
+.button-light{background:#f5f5f7;color:#181a20}
+.button-light:hover{opacity:.88;transform:translateY(-1px)}
+
+/* ---- signature ---- */
+.signature{
+  margin-top:clamp(52px,9vw,88px);
+  padding-top:clamp(34px,5vw,46px);
+  border-top:1px solid #ffffff1c;
+}
+.sig-bar{
+  display:block;width:64px;height:4px;margin:0 auto clamp(22px,3vw,28px);
+  background:linear-gradient(90deg,var(--claude) 0 50%,var(--chatgpt) 50% 100%);
+}
+.signature p{margin:0}
+.sig-en{
+  font-size:12.5px;font-weight:600;
+  letter-spacing:.2em;color:var(--on-black-dim);
+}
+.sig-ja{
+  margin-top:12px!important;
+  font-size:clamp(17px,3.1vw,22px);font-weight:700;
+  letter-spacing:.03em;color:var(--on-black);
+}
+.sig-name{
+  margin-top:clamp(20px,3vw,26px)!important;
+  font-size:11.5px;font-weight:600;
+  letter-spacing:.17em;color:#7c7e88;
+}
+
+/* ---- footer ---- */
+.site-foot{
+  border-top:1px solid var(--line);
+  padding-block:24px 36px;
+  color:var(--soft);font-size:12.5px;
+}
+.site-foot .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+.site-foot a{color:var(--body)}
+.site-foot a:hover{color:var(--ink)}
+
+@media (max-width:860px){
+  .cards{grid-template-columns:1fr}
+  .builds{grid-template-columns:1fr}
+  .card .desc{flex:none}
+  .js .stagger-1,.js .stagger-2,.js .stagger-3{transition-delay:.05s}
+}
+@media (max-width:420px){
+  .wrap{padding-inline:16px}
+  .card{padding:22px 19px 19px;border-radius:16px}
+  .card h2{font-size:19px}
+}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="brand-bar" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="logo">生成AI横並び検証室</span>
+    <a class="nav-cta"
+       href="https://note.com/yokonarabi_lab"
+       target="_blank" rel="noopener"
+       data-ev="note_click_top" data-article="top" data-label="ヘッダー：noteで読む">
+      noteで読む <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="reveal">AIの最上位プラン。<br>月3万円、払う価値はあるか。</h1>
+      <p class="reveal stagger-1">同じ指示で、作って比べる。ゲームも、動画も、プレゼンも。ChatGPTとClaudeの最上位プランに同じお題を渡した結果を、全部公開しています。</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-label reveal">検証記事</div>
+      <div class="cards">
+
+        <a class="card reveal"
+           href="https://note.com/yokonarabi_lab/n/n9c8372abe98f"
+           target="_blank" rel="noopener"
+           data-ev="note_click_01" data-article="kensho01" data-label="検証01 ゲームアプリ">
+          <div class="card-no">検証 01</div>
+          <h2>ゲームアプリ</h2>
+          <p class="lead">お題は同じ。遊び心は、ふたつ。</p>
+          <p class="desc">中学生向けの英単語ゲーム「英単語クエスト」。同じ2本の指示から、ブラウザで遊べるゲームが生まれました。</p>
+          <span class="go">検証の詳細を無料で読む <span class="arw" aria-hidden="true">↗</span></span>
+        </a>
+
+        <a class="card reveal stagger-1"
+           href="https://note.com/yokonarabi_lab/n/n4584974c4831"
+           target="_blank" rel="noopener"
+           data-ev="note_click_02" data-article="kensho02" data-label="検証02 ショート動画">
+          <div class="card-no">検証 02</div>
+          <h2>ショート動画</h2>
+          <p class="lead">45秒に、どう詰め込むか。</p>
+          <p class="desc">同じ記事と、同じ5枚の画像から。1通の指示で、BGM付きの縦型動画に。</p>
+          <span class="go">検証の詳細を無料で読む <span class="arw" aria-hidden="true">↗</span></span>
+        </a>
+
+        <a class="card reveal stagger-2"
+           href="https://note.com/yokonarabi_lab/n/nf55acc8d9544"
+           target="_blank" rel="noopener"
+           data-ev="note_click_03" data-article="kensho03" data-label="検証03 プレゼン資料">
+          <div class="card-no">検証 03</div>
+          <h2>プレゼン資料</h2>
+          <p class="lead">同じ企画を、別々の伝え方で。</p>
+          <p class="desc">英単語クエストを、学校・学習塾に提案する設定。1通目で詳細資料、2通目で横型のHTMLスライドに。</p>
+          <span class="go">検証の詳細を無料で読む <span class="arw" aria-hidden="true">↗</span></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt">
+    <div class="wrap">
+      <div class="sec-label reveal">検証 04 ／ 成果物</div>
+      <div class="builds">
+
+        <a class="build reveal"
+           href="/chatgpt/"
+           data-ev="site_click_chatgpt" data-article="build_chatgpt" data-label="検証04 ChatGPTが作ったHP">
+          <span>
+            <span class="build-name">ChatGPTが作ったHP</span>
+            <span class="build-sub">同じ指示から生まれたホームページ</span>
+          </span>
+          <span class="build-go">見る →</span>
+        </a>
+
+        <span class="build is-soon reveal stagger-1">
+          <span>
+            <span class="build-name">Claudeが作ったHP</span>
+            <span class="build-sub">同じ指示から生まれたホームページ</span>
+          </span>
+          <span class="build-go">公開準備中</span>
+        </span>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sec final">
+    <div class="wrap">
+      <h2 class="reveal">検証の結果は、全部noteに書いています。</h2>
+      <p class="reveal stagger-1">勝ち負けだけでなく、うまくいかなかったところも数字ごと公開しています。</p>
+      <div class="reveal stagger-2">
+        <a class="button button-light"
+           href="https://note.com/yokonarabi_lab"
+           target="_blank" rel="noopener"
+           data-ev="note_click_footer" data-article="footer" data-label="下部CTA：無料で検証記事を読む">
+          無料で検証記事を読む <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="signature reveal">
+        <span class="sig-bar" aria-hidden="true"></span>
+        <p class="sig-en">Where are we headed?</p>
+        <p class="sig-ja">僕たちは、何処へ向かう？</p>
+        <p class="sig-name">生成AI横並び検証室</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>生成AI横並び検証室</span>
+    <a href="https://note.com/yokonarabi_lab" target="_blank" rel="noopener"
+       data-ev="note_click_foot_link" data-article="foot_link" data-label="フッター：note.com/yokonarabi_lab">note.com/yokonarabi_lab ↗</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---- クリック計測 ---- */
+  function send(el){
+    var name = el.getAttribute('data-ev');
+    if(!name || typeof gtag !== 'function') return;
+    var label = el.getAttribute('data-label') || (el.textContent || '').replace(/\s+/g,' ').trim();
+    gtag('event', name, {
+      article_id: el.getAttribute('data-article') || '',
+      link_url: el.getAttribute('href') || '',
+      link_text: label.slice(0, 90)
+    });
+  }
+  var links = document.querySelectorAll('a[data-ev]');
+  for(var i=0;i<links.length;i++){
+    (function(el){
+      el.addEventListener('click', function(){ send(el); });
+      el.addEventListener('auxclick', function(e){ if(e.button===1) send(el); });
+    })(links[i]);
+  }
+
+  /* ---- スクロールで下から競り上がるフェード ---- */
+  var targets = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){
+    for(var j=0;j<targets.length;j++) targets[j].classList.add('is-in');
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    for(var k=0;k<entries.length;k++){
+      if(entries[k].isIntersecting){
+        entries[k].target.classList.add('is-in');
+        io.unobserve(entries[k].target);
+      }
+    }
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
+  for(var m=0;m<targets.length;m++) io.observe(targets[m]);
+})();
+</script>
+
+</body>
+</html>
