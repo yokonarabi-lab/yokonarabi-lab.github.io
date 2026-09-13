@@ -12,15 +12,14 @@
     gtag('config', 'G-XS0E6PLB0L');
   }
 </script>
-<script>document.documentElement.className += ' js';</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>生成AI横並び検証室</title>
-<meta name="description" content="AIの最上位プラン。月3万円、払う価値はあるか。同じ指示で、作って比べる。ゲームも、動画も、プレゼンも。">
+<meta name="description" content="AIの最上位プラン。月3万円、払う価値はあるのか。同じ指示で、作って比べる。">
 <link rel="canonical" href="https://yokonarabi-lab.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="生成AI横並び検証室">
-<meta property="og:description" content="AIの最上位プラン。月3万円、払う価値はあるか。同じ指示で、作って比べる。">
+<meta property="og:description" content="AIの最上位プラン。月3万円、払う価値はあるのか。同じ指示で、作って比べる。">
 <meta property="og:url" content="https://yokonarabi-lab.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 <!-- OGP画像を用意したら、この2行のコメントを外してパスを入れる
@@ -28,363 +27,92 @@
 <meta name="twitter:image" content="https://yokonarabi-lab.github.io/assets/ogp.png">
 -->
 <style>
-:root{
-  color-scheme:light;
-  --ink:#17181c;
-  --body:#5f6169;
-  --soft:#8a8c96;
-  --line:#dedee3;
-  --line-soft:#eaeaef;
-  --bg:#ffffff;
-  --bg-alt:#f5f5f7;
-  --black:#08090b;
-  --on-black:#f7f7f8;
-  --on-black-dim:#a6a8b2;
-  --link:#0a58ca;
-  --ease:cubic-bezier(.16,1,.3,1);
-  /* ブランドカラー：橙=Claude／緑=ChatGPT */
-  --claude:#d95926;
-  --chatgpt:#199e70;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
-  -webkit-font-smoothing:antialiased;
-  line-height:1.7;
-}
-a{color:inherit;text-decoration:none}
-.wrap{width:100%;max-width:1000px;margin:0 auto;padding-inline:20px}
+:root{color-scheme:light;--ink:#202128;--body:#565b64;--paper:#fff;--night:#0a101b;--line:#dfe3e7;--claude:#d95926;--chatgpt:#199e70;--blue:#095fb6}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:0}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--ink);background:var(--paper);line-height:1.8;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid #1670d6;outline-offset:5px;border-radius:5px}.wrap{width:min(100%,1080px);padding-inline:32px;margin-inline:auto}
+.brand-bar{background:linear-gradient(90deg,var(--claude) 50%,var(--chatgpt) 50%)}.brand-bar{height:3px}.site-head{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid #e9ebee;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.site-head .wrap{min-height:73px;display:flex;justify-content:space-between;align-items:center;gap:18px}.logo{font-size:16px;font-weight:750;letter-spacing:.015em}.nav-cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:#202128;color:#fff;border-radius:28px;padding:10px 21px;min-height:46px;font-size:14px;font-weight:650;white-space:nowrap}
+.hero,.final{position:relative;isolation:isolate;overflow:hidden;color:#f7f8fc;background:radial-gradient(ellipse at 18% 72%,#24334380,transparent 55%),radial-gradient(ellipse at 92% 12%,#153b333b,transparent 50%),var(--night)}.stars{fill:#cad9ed;opacity:.65}
+.hero:after,.final:after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 40%,#0a101b6e,transparent 76%);pointer-events:none}.hero .wrap{padding-block:67px 62px;text-align:center}.hero h1{margin:0;font-weight:750;letter-spacing:-.045em;line-height:1.26}.intro{display:block;font-size:24px;color:#c9d0db;font-weight:650;letter-spacing:-.015em;margin-bottom:18px}.price{display:inline-block;font-size:76px}.question{display:block;font-size:58px;margin-top:7px}.hero p{font-size:17px;line-height:1.9;color:#c8d0dc;max-width:630px;margin:27px auto 0}.hero .opening{display:block;font-weight:600;color:#e8ecf3;margin-bottom:7px}
+.contents{padding-block:29px 31px;border-bottom:1px solid var(--line);background:#f5f6f8}.section-label{font-size:15px;letter-spacing:.05em;font-weight:650;margin:0 0 15px;color:#555b66}.toc{list-style:none;margin:0;padding:0;border-top:1px solid #dce1e6}.toc-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:20px;padding:7px 0;border-bottom:1px solid #dce1e6}.toc-heading{display:flex;align-items:center;gap:18px;min-width:0;min-height:44px}.toc-number{font-size:14px;color:#5c6470;white-space:nowrap;font-variant-numeric:tabular-nums}.toc-title{font-size:19px;font-weight:650;letter-spacing:-.025em;white-space:nowrap}.toc-read{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:0 2px;color:var(--blue);font-size:14px;font-weight:650;white-space:nowrap}.new{display:inline-flex;align-items:center;gap:5px;color:#177651;font-size:12px;font-weight:750;letter-spacing:.06em;white-space:nowrap}.new:before{content:"";width:5px;height:5px;border-radius:50%;background:var(--chatgpt)}
+.articles{position:relative;isolation:isolate;overflow:hidden;padding-block:42px 46px}.articles .section-label{margin-bottom:0;color:#414752}.article{position:relative;display:grid;grid-template-columns:.95fr 1.4fr;gap:38px;padding:32px 0;border-bottom:1px solid var(--line);scroll-margin-top:96px}.article:last-child{border-bottom:0;padding-bottom:0}.article-meta{display:flex;align-items:center;gap:13px;font-size:14px;color:#5e6672;letter-spacing:.06em;font-weight:600;margin-bottom:7px}.article h2{margin:0;font-size:30px;line-height:1.4;letter-spacing:-.04em}.lead{font-size:16px;font-weight:650;margin:11px 0 0;line-height:1.75}.desc{font-size:16px;line-height:1.85;margin:0;color:var(--body)}.article-link{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;min-height:46px;margin-top:14px;font-size:16px;font-weight:650;color:var(--blue)}.article-link .arrow{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1px solid #cbd6e3;font-size:18px}.article[data-latest="true"] h2{text-decoration:underline;text-decoration-color:#199e7040;text-decoration-thickness:4px;text-underline-offset:9px}
+.final{padding:59px 0 40px;text-align:center}.final h2{font-size:34px;line-height:1.5;letter-spacing:-.04em;margin:0;font-weight:700}.final-copy{color:#c8d0dc;font-size:16px;line-height:1.95;max-width:600px;margin:18px auto 0}.final-copy span{display:block}.button{display:inline-flex;align-items:center;justify-content:center;gap:25px;min-height:54px;background:#fff;color:#202128;border-radius:30px;padding:12px 27px;font-size:16px;font-weight:650;margin-top:25px}.signature{border-top:1px solid #ffffff26;margin-top:45px;padding-top:32px}.signature p{margin:0}.sig-en{font-size:14px;color:#b9c4d4;letter-spacing:.07em}.sig-ja{font-size:20px;margin-top:8px!important;letter-spacing:.02em}.sig-name{font-size:14px;color:#b2bdcd;margin-top:20px!important}.site-foot{font-size:14px;color:#5f6570;padding:21px 0}.site-foot .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}.site-foot a{display:inline-flex;align-items:center;gap:13px;min-height:44px}
+@media(hover:hover){.nav-cta:hover{background:#414653}.toc-heading:hover .toc-title,.toc-read:hover{text-decoration:underline;text-underline-offset:4px}.article-link:hover{text-decoration:underline;text-underline-offset:5px}.button:hover{background:#e5edf6}.site-foot a:hover{text-decoration:underline}}
+@media(max-width:760px){html{scroll-padding-top:0}.wrap{padding-inline:22px}.site-head .wrap{min-height:66px;gap:10px}.logo{font-size:14px;line-height:1.45;letter-spacing:0;flex-shrink:0}.logo>span{display:block}.nav-cta{font-size:14px;gap:8px;padding:9px 15px;min-height:44px}.hero .wrap{text-align:left;padding-block:40px 35px}.intro{font-size:20px;margin-bottom:18px}.price{font-size:52px}.question{font-size:34px;margin-top:9px;letter-spacing:-.055em}.hero p{font-size:16px;line-height:1.85;margin-top:24px}.hero .opening{font-weight:600;margin-bottom:8px}.hero:after{background:linear-gradient(90deg,#0a101b26,#0a101b06)}.contents{padding-block:24px 26px}.section-label{font-size:15px;margin-bottom:13px}.toc-row{gap:10px;padding:6px 0}.toc-heading{gap:8px}.toc-title{font-size:17px}.toc-read{font-size:14px;gap:4px;padding:0}.toc-heading .new{font-size:11px;gap:4px;letter-spacing:.02em}.new{font-size:12px}.articles{padding-block:30px 35px}.article{display:block;padding:25px 0;scroll-margin-top:86px}.article-meta{font-size:14px;margin-bottom:6px}.article h2{font-size:27px}.lead{font-size:16px;margin-top:10px}.desc{font-size:16px;margin-top:12px;line-height:1.8}.article-link{font-size:16px;margin-top:12px;display:flex;justify-content:space-between;width:100%;min-height:44px}.article-link .arrow{width:32px;height:32px}.article[data-latest="true"] h2{text-decoration-thickness:3px;text-underline-offset:7px}.final{padding:39px 0 32px}.final h2{font-size:28px;line-height:1.5}.final-copy{font-size:16px;margin-top:18px;line-height:1.9;text-align:center}.final-copy span{display:block}.button{font-size:16px;margin-top:24px}.signature{margin-top:33px;padding-top:28px}.sig-ja{font-size:19px}.site-foot{padding-block:15px}.site-foot .wrap{flex-direction:column;gap:3px}.sig-name{font-size:14px}}
+@media(max-width:359px){.wrap{padding-inline:18px}.nav-cta{padding-inline:12px;font-size:13px}.logo{font-size:13px;max-width:115px}.price{font-size:48px}.question{font-size:30px}.toc-title{font-size:15.5px}.toc-heading{gap:6px}.toc-number{font-size:13px}.toc-read{font-size:13px}.toc-row{gap:8px}.final h2{font-size:25px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
-/* ---- reveal ---- */
-.js .reveal{opacity:0;transform:translateY(22px)}
-.js .reveal.is-in{
-  opacity:1;transform:none;
-  transition:opacity .8s var(--ease),transform .8s var(--ease);
-}
-.js .stagger-1{transition-delay:.08s}
-.js .stagger-2{transition-delay:.16s}
-.js .stagger-3{transition-delay:.24s}
-@media (prefers-reduced-motion:reduce){
-  .js .reveal{opacity:1;transform:none}
-  .js .reveal.is-in{transition:none;transition-delay:0s!important}
-}
 
-/* ---- brand bar（橙=Claude／緑=ChatGPT の2色） ---- */
-.brand-bar{
-  height:4px;
-  background:linear-gradient(90deg,var(--claude) 0 50%,var(--chatgpt) 50% 100%);
-}
-
-/* ---- header ---- */
-.site-head{
-  position:sticky;top:0;z-index:20;
-  background:rgba(255,255,255,.86);
-  backdrop-filter:saturate(180%) blur(16px);
-  -webkit-backdrop-filter:saturate(180%) blur(16px);
-  border-bottom:1px solid var(--line-soft);
-}
-.site-head .wrap{
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-  padding-block:12px;
-}
-.logo{font-size:15px;font-weight:700;letter-spacing:.01em}
-.nav-cta{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:13px;font-weight:600;color:#fff;
-  background:#22242a;border-radius:24px;
-  padding:8px 18px;white-space:nowrap;
-  transition:background .2s,transform .2s;
-}
-.nav-cta:hover{background:#34363e;transform:translateY(-1px)}
-
-/* ---- hero (black) ---- */
-.hero{
-  background:var(--black);color:var(--on-black);
-  padding-block:clamp(52px,9vw,88px) clamp(48px,8vw,80px);
-}
-.hero h1{
-  margin:0;
-  font-size:clamp(25.5px,6.2vw,52px);
-  line-height:1.34;letter-spacing:-.01em;font-weight:700;
-}
-.hero p{
-  margin:20px 0 0;
-  color:var(--on-black-dim);
-  font-size:clamp(15px,2.4vw,18px);
-  max-width:34em;
-}
-
-/* ---- sections ---- */
-.sec{padding-block:clamp(44px,7vw,72px)}
-.sec-alt{background:var(--bg-alt);border-block:1px solid var(--line)}
-.sec-label{
-  display:flex;align-items:center;gap:14px;
-  margin-bottom:24px;
-  font-size:12px;font-weight:700;letter-spacing:.14em;
-  color:var(--soft);
-}
-.sec-label::after{content:"";flex:1;height:1px;background:var(--line)}
-
-/* ---- article cards ---- */
-.cards{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
-.card{
-  display:flex;flex-direction:column;
-  background:var(--bg);
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:26px 24px 22px;
-  transition:border-color .25s,box-shadow .25s,transform .25s;
-}
-.card:hover{
-  border-color:#c9c9d1;
-  box-shadow:0 10px 30px rgba(23,24,28,.08);
-  transform:translateY(-3px);
-}
-.card-no{
-  font-size:11px;font-weight:700;letter-spacing:.16em;
-  color:var(--soft);margin-bottom:14px;
-}
-.card h2{margin:0;font-size:21px;font-weight:700;line-height:1.42;letter-spacing:-.01em}
-.card .lead{margin:8px 0 0;font-size:14px;font-weight:600;color:#3c3e46}
-.card .desc{margin:12px 0 0;font-size:13.5px;color:var(--body);line-height:1.78;flex:1}
-.card .go{
-  margin-top:22px;padding-top:16px;
-  border-top:1px solid var(--line-soft);
-  display:flex;align-items:center;justify-content:space-between;gap:14px;
-  font-size:13.5px;font-weight:700;color:var(--link);
-}
-.card .arw{transition:transform .25s var(--ease)}
-.card:hover .arw{transform:translateX(4px)}
-
-/* ---- builds ---- */
-.builds{display:grid;gap:16px;grid-template-columns:repeat(2,1fr)}
-.build{
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-  background:var(--bg);
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:20px 22px;
-  transition:border-color .25s,box-shadow .25s,transform .25s;
-}
-a.build:hover{
-  border-color:#c9c9d1;
-  box-shadow:0 8px 24px rgba(23,24,28,.07);
-  transform:translateY(-2px);
-}
-.build.is-soon{background:transparent;border-style:dashed;color:var(--soft)}
-.build-name{display:block;font-size:16px;font-weight:700}
-.build.is-soon .build-name{color:#75777f}
-.build-sub{display:block;margin-top:3px;font-size:12.5px;color:var(--body);line-height:1.5}
-.build.is-soon .build-sub{color:var(--soft)}
-.build-go{font-size:13px;font-weight:700;color:var(--link);white-space:nowrap}
-.build.is-soon .build-go{color:var(--soft)}
-
-/* ---- final cta (black) ---- */
-.final{background:var(--black);color:var(--on-black);text-align:center}
-.final h2{
-  margin:0;font-size:clamp(18.5px,3.6vw,28px);
-  font-weight:700;line-height:1.5;letter-spacing:-.01em;
-  text-wrap:balance;
-}
-.final > .wrap > p{
-  margin:12px auto 0;color:var(--on-black-dim);
-  font-size:14.5px;max-width:30em;text-wrap:balance;
-}
-.button{
-  display:inline-flex;align-items:center;justify-content:center;gap:14px;
-  padding:15px 25px;border-radius:35px;
-  font-size:14px;font-weight:600;margin-top:26px;
-  transition:opacity .2s,transform .2s;
-}
-.button-light{background:#f5f5f7;color:#181a20}
-.button-light:hover{opacity:.88;transform:translateY(-1px)}
-
-/* ---- signature ---- */
-.signature{
-  margin-top:clamp(52px,9vw,88px);
-  padding-top:clamp(34px,5vw,46px);
-  border-top:1px solid #ffffff1c;
-}
-.sig-bar{
-  display:block;width:64px;height:4px;margin:0 auto clamp(22px,3vw,28px);
-  background:linear-gradient(90deg,var(--claude) 0 50%,var(--chatgpt) 50% 100%);
-}
-.signature p{margin:0}
-.sig-en{
-  font-size:12.5px;font-weight:600;
-  letter-spacing:.2em;color:var(--on-black-dim);
-}
-.sig-ja{
-  margin-top:12px!important;
-  font-size:clamp(17px,3.1vw,22px);font-weight:700;
-  letter-spacing:.03em;color:var(--on-black);
-}
-.sig-name{
-  margin-top:clamp(20px,3vw,26px)!important;
-  font-size:11.5px;font-weight:600;
-  letter-spacing:.17em;color:#7c7e88;
-}
-
-/* ---- footer ---- */
-.site-foot{
-  border-top:1px solid var(--line);
-  padding-block:24px 36px;
-  color:var(--soft);font-size:12.5px;
-}
-.site-foot .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
-.site-foot a{color:var(--body)}
-.site-foot a:hover{color:var(--ink)}
-
-@media (max-width:860px){
-  .cards{grid-template-columns:1fr}
-  .builds{grid-template-columns:1fr}
-  .card .desc{flex:none}
-  .js .stagger-1,.js .stagger-2,.js .stagger-3{transition-delay:.05s}
-}
-@media (max-width:420px){
-  .wrap{padding-inline:16px}
-  .card{padding:22px 19px 19px;border-radius:16px}
-  .card h2{font-size:19px}
-}
-</style>
-</head>
-<body>
-
-<header class="site-head">
-  <div class="brand-bar" aria-hidden="true"></div>
-  <div class="wrap">
-    <span class="logo">生成AI横並び検証室</span>
-    <a class="nav-cta"
-       href="https://note.com/yokonarabi_lab"
-       target="_blank" rel="noopener"
-       data-ev="note_click_top" data-article="top" data-label="ヘッダー：noteで読む">
-      noteで読む <span aria-hidden="true">↗</span>
-    </a>
-  </div>
-</header>
-
-<main>
-  <section class="hero">
-    <div class="wrap">
-      <h1 class="reveal">AIの最上位プラン。<br>月3万円、払う価値はあるか。</h1>
-      <p class="reveal stagger-1">同じ指示で、作って比べる。ゲームも、動画も、プレゼンも。ChatGPTとClaudeの最上位プランに同じお題を渡した結果を、全部公開しています。</p>
-    </div>
-  </section>
-
-  <section class="sec">
-    <div class="wrap">
-      <div class="sec-label reveal">検証記事</div>
-      <div class="cards">
-
-        <a class="card reveal"
-           href="https://note.com/yokonarabi_lab/n/n9c8372abe98f"
-           target="_blank" rel="noopener"
-           data-ev="note_click_01" data-article="kensho01" data-label="検証01 ゲームアプリ">
-          <div class="card-no">検証 01</div>
-          <h2>ゲームアプリ</h2>
-          <p class="lead">お題は同じ。遊び心は、ふたつ。</p>
-          <p class="desc">中学生向けの英単語ゲーム「英単語クエスト」。同じ2本の指示から、ブラウザで遊べるゲームが生まれました。</p>
-          <span class="go">検証の詳細を無料で読む <span class="arw" aria-hidden="true">↗</span></span>
-        </a>
-
-        <a class="card reveal stagger-1"
-           href="https://note.com/yokonarabi_lab/n/n4584974c4831"
-           target="_blank" rel="noopener"
-           data-ev="note_click_02" data-article="kensho02" data-label="検証02 ショート動画">
-          <div class="card-no">検証 02</div>
-          <h2>ショート動画</h2>
-          <p class="lead">45秒に、どう詰め込むか。</p>
-          <p class="desc">同じ記事と、同じ5枚の画像から。1通の指示で、BGM付きの縦型動画に。</p>
-          <span class="go">検証の詳細を無料で読む <span class="arw" aria-hidden="true">↗</span></span>
-        </a>
-
-        <a class="card reveal stagger-2"
-           href="https://note.com/yokonarabi_lab/n/nf55acc8d9544"
-           target="_blank" rel="noopener"
-           data-ev="note_click_03" data-article="kensho03" data-label="検証03 プレゼン資料">
-          <div class="card-no">検証 03</div>
-          <h2>プレゼン資料</h2>
-          <p class="lead">同じ企画を、別々の伝え方で。</p>
-          <p class="desc">英単語クエストを、学校・学習塾に提案する設定。1通目で詳細資料、2通目で横型のHTMLスライドに。</p>
-          <span class="go">検証の詳細を無料で読む <span class="arw" aria-hidden="true">↗</span></span>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="sec sec-alt">
-    <div class="wrap">
-      <div class="sec-label reveal">検証 04 ／ 成果物</div>
-      <div class="builds">
-
-        <a class="build reveal"
-           href="/chatgpt/"
-           data-ev="site_click_chatgpt" data-article="build_chatgpt" data-label="検証04 ChatGPTが作ったHP">
-          <span>
-            <span class="build-name">ChatGPTが作ったHP</span>
-            <span class="build-sub">同じ指示から生まれたホームページ</span>
-          </span>
-          <span class="build-go">見る →</span>
-        </a>
-
-        <span class="build is-soon reveal stagger-1">
-          <span>
-            <span class="build-name">Claudeが作ったHP</span>
-            <span class="build-sub">同じ指示から生まれたホームページ</span>
-          </span>
-          <span class="build-go">公開準備中</span>
-        </span>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="sec final">
-    <div class="wrap">
-      <h2 class="reveal">検証の結果は、全部noteに書いています。</h2>
-      <p class="reveal stagger-1">勝ち負けだけでなく、うまくいかなかったところも数字ごと公開しています。</p>
-      <div class="reveal stagger-2">
-        <a class="button button-light"
-           href="https://note.com/yokonarabi_lab"
-           target="_blank" rel="noopener"
-           data-ev="note_click_footer" data-article="footer" data-label="下部CTA：無料で検証記事を読む">
-          無料で検証記事を読む <span aria-hidden="true">↗</span>
-        </a>
-      </div>
-
-      <div class="signature reveal">
-        <span class="sig-bar" aria-hidden="true"></span>
-        <p class="sig-en">Where are we headed?</p>
-        <p class="sig-ja">僕たちは、何処へ向かう？</p>
-        <p class="sig-name">生成AI横並び検証室</p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="site-foot">
-  <div class="wrap">
-    <span>生成AI横並び検証室</span>
-    <a href="https://note.com/yokonarabi_lab" target="_blank" rel="noopener"
-       data-ev="note_click_foot_link" data-article="foot_link" data-label="フッター：note.com/yokonarabi_lab">note.com/yokonarabi_lab ↗</a>
-  </div>
-</footer>
+/* A single geometric motif in each area. Small stars remain, constellation edges are removed. */
+.starfield{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:.55}.stars{fill:#cad9ed;opacity:.6}
+.geometry{position:absolute;pointer-events:none;z-index:-1;stroke:#b6c9dd;stroke-width:.85}.geometry-orbits{width:680px;height:680px;right:-120px;top:-130px;transform:rotate(-12deg)}.construction{opacity:.28}.geometry-orange{stroke:var(--claude);opacity:.42;stroke-width:1.15}.geometry-green{stroke:var(--chatgpt);opacity:.46;stroke-width:1.15}.geometry-points{fill:#cee0ed;stroke:none;opacity:.42}.articles .geometry-spiral{width:530px;height:530px;left:-285px;bottom:-40px;stroke:#687f96}.articles .construction{opacity:.12}.articles .geometry-green{opacity:.12}.articles .geometry-points{fill:#60768d;opacity:.14}
+.signature{position:relative;isolation:isolate;margin-top:48px;padding:58px 0 24px;border-top:1px solid #ffffff20;min-height:262px}.signature-globe{position:absolute;z-index:-1;pointer-events:none;width:560px;max-width:none;height:auto;left:50%;top:-5px;transform:translateX(-50%);color:#a6bbd0;opacity:.25}.sig-brand{margin:28px auto 0;width:fit-content;max-width:100%}.sig-bar{display:block;width:64px;height:4px;margin:0 auto 14px;background:none;shape-rendering:crispEdges}.signature .sig-name{margin:0!important;font-size:14px;color:#c1cbd8;letter-spacing:.06em}.signature .sig-en{color:#bec9d7}.signature .sig-ja{color:#f0f3f8}
+@media(max-width:760px){.hero .geometry-orbits{width:470px;height:470px;right:-242px;top:-68px}.hero .construction{opacity:.26}.articles .geometry-spiral{width:410px;height:410px;left:-245px;bottom:100px}.signature{margin-top:36px;padding:50px 0 23px;min-height:237px}.signature-globe{width:425px;top:5px;opacity:.24}.sig-brand{margin-top:26px}.sig-bar{margin-bottom:13px}}
+.final h2 .phrase{display:block}
+</style></head><body>
+<header class="site-head"><div class="brand-bar" aria-hidden="true"></div><div class="wrap"><span class="logo"><span>生成AI</span><span>横並び検証室</span></span><a data-ev="note_click_top" data-article="top" data-position="header" data-label="ヘッダー：検証記事を読む" class="nav-cta" href="https://note.com/yokonarabi_lab" target="_blank" rel="noopener">検証記事を読む <span aria-hidden="true">↗</span></a></div></header>
+<main><section class="hero"><svg class="geometry geometry-orbits" viewBox="0 0 600 600" fill="none" aria-hidden="true"><g class="construction"><circle cx="300" cy="300" r="252"/><circle cx="300" cy="300" r="210"/><circle cx="300" cy="300" r="105"/><polygon points="300.0,90.0 481.9,195.0 481.9,405.0 300.0,510.0 118.1,405.0 118.1,195.0"/><path d="M300 90 481.9 405 118.1 405Z"/></g><path class="geometry-orange" d="M90 300a210 210 0 0 1 210-210"/><path class="geometry-green" d="M510 300a210 210 0 0 1-210 210"/><g class="geometry-points"><circle cx="300" cy="90" r="3"/><circle cx="481.9" cy="405" r="3"/><circle cx="118.1" cy="405" r="3"/><circle cx="300" cy="300" r="2"/></g></svg><svg class="starfield" viewBox="0 0 1240 650" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true"><g class="stars"><circle cx="676" cy="401" r="0.9" opacity="0.58"/><circle cx="504" cy="215" r="1.2" opacity="0.37"/><circle cx="1197" cy="560" r="0.6" opacity="0.77"/><circle cx="368" cy="364" r="0.6" opacity="0.36"/><circle cx="770" cy="31" r="0.6" opacity="0.65"/><circle cx="898" cy="223" r="0.6" opacity="0.69"/><circle cx="752" cy="198" r="0.9" opacity="0.60"/><circle cx="448" cy="493" r="0.6" opacity="0.39"/><circle cx="600" cy="342" r="1.2" opacity="0.47"/><circle cx="647" cy="218" r="1.2" opacity="0.80"/><circle cx="627" cy="180" r="1.2" opacity="0.59"/><circle cx="1117" cy="302" r="0.6" opacity="0.35"/><circle cx="58" cy="615" r="0.9" opacity="0.63"/><circle cx="195" cy="408" r="0.9" opacity="0.75"/><circle cx="403" cy="116" r="0.9" opacity="0.36"/><circle cx="683" cy="455" r="0.9" opacity="0.68"/><circle cx="1150" cy="120" r="0.9" opacity="0.30"/><circle cx="244" cy="198" r="0.6" opacity="0.43"/><circle cx="311" cy="487" r="0.6" opacity="0.52"/><circle cx="1048" cy="284" r="0.9" opacity="0.79"/><circle cx="1004" cy="604" r="0.6" opacity="0.72"/><circle cx="994" cy="141" r="1.2" opacity="0.58"/><circle cx="1019" cy="25" r="0.9" opacity="0.52"/><circle cx="962" cy="357" r="0.6" opacity="0.26"/><circle cx="768" cy="596" r="0.9" opacity="0.50"/><circle cx="92" cy="135" r="0.6" opacity="0.56"/><circle cx="102" cy="628" r="0.6" opacity="0.68"/><circle cx="611" cy="188" r="1.2" opacity="0.50"/><circle cx="1051" cy="536" r="1.2" opacity="0.72"/><circle cx="822" cy="232" r="1.2" opacity="0.36"/><circle cx="945" cy="315" r="1.2" opacity="0.70"/><circle cx="667" cy="136" r="0.9" opacity="0.32"/><circle cx="710" cy="196" r="0.9" opacity="0.63"/><circle cx="1187" cy="170" r="0.6" opacity="0.72"/><circle cx="243" cy="435" r="0.6" opacity="0.33"/><circle cx="779" cy="314" r="0.6" opacity="0.48"/><circle cx="628" cy="554" r="1.2" opacity="0.38"/><circle cx="551" cy="38" r="0.6" opacity="0.51"/><circle cx="561" cy="265" r="1.2" opacity="0.36"/><circle cx="745" cy="215" r="0.9" opacity="0.27"/><circle cx="908" cy="393" r="1.2" opacity="0.36"/><circle cx="439" cy="329" r="0.9" opacity="0.41"/><circle cx="754" cy="115" r="0.6" opacity="0.29"/><circle cx="510" cy="639" r="1.2" opacity="0.51"/><circle cx="1023" cy="462" r="1.2" opacity="0.40"/><circle cx="371" cy="427" r="0.6" opacity="0.29"/><circle cx="315" cy="304" r="0.9" opacity="0.71"/><circle cx="0" cy="283" r="0.9" opacity="0.40"/><circle cx="582" cy="307" r="0.6" opacity="0.57"/><circle cx="826" cy="238" r="0.6" opacity="0.58"/><circle cx="1107" cy="327" r="0.6" opacity="0.62"/><circle cx="384" cy="21" r="0.9" opacity="0.75"/><circle cx="1008" cy="313" r="1.2" opacity="0.51"/><circle cx="531" cy="316" r="0.9" opacity="0.47"/><circle cx="437" cy="567" r="0.6" opacity="0.67"/><circle cx="98" cy="584" r="0.6" opacity="0.78"/><circle cx="490" cy="49" r="0.9" opacity="0.63"/><circle cx="662" cy="279" r="0.6" opacity="0.69"/><circle cx="126" cy="335" r="0.6" opacity="0.65"/><circle cx="875" cy="144" r="0.6" opacity="0.42"/><circle cx="91" cy="418" r="0.6" opacity="0.55"/><circle cx="902" cy="559" r="0.6" opacity="0.29"/><circle cx="1010" cy="484" r="0.9" opacity="0.40"/><circle cx="979" cy="3" r="1.2" opacity="0.70"/><circle cx="694" cy="240" r="0.6" opacity="0.80"/><circle cx="952" cy="367" r="0.6" opacity="0.77"/><circle cx="802" cy="329" r="1.2" opacity="0.46"/><circle cx="856" cy="224" r="0.6" opacity="0.63"/><circle cx="913" cy="39" r="1.2" opacity="0.48"/><circle cx="822" cy="139" r="1.2" opacity="0.68"/><circle cx="1057" cy="326" r="0.9" opacity="0.38"/><circle cx="527" cy="93" r="0.9" opacity="0.28"/><circle cx="1199" cy="314" r="1.2" opacity="0.73"/><circle cx="256" cy="390" r="0.9" opacity="0.38"/><circle cx="698" cy="348" r="0.9" opacity="0.68"/><circle cx="558" cy="612" r="0.9" opacity="0.70"/><circle cx="860" cy="350" r="0.6" opacity="0.35"/><circle cx="463" cy="266" r="0.6" opacity="0.31"/><circle cx="221" cy="317" r="0.9" opacity="0.62"/><circle cx="922" cy="442" r="0.6" opacity="0.29"/></g></svg><div class="wrap"><h1><span class="intro" data-reveal>AIの最上位プラン。</span><span class="price" data-reveal data-reveal-delay="240">月3万円、</span><span class="question" data-reveal data-reveal-delay="240">払う価値はあるのか。</span></h1><p data-reveal data-reveal-delay="520"><span class="opening">同じ指示で、作って比べる。</span>ClaudeとChatGPTの最上位プランに同じお題を渡した結果を、全部無料で公開しています。</p></div></section>
+<nav class="contents" aria-labelledby="contents-title"><div class="wrap"><h2 data-reveal data-reveal-delay="900" class="section-label" id="contents-title">検証記事一覧</h2><ol class="toc"><li data-reveal data-reveal-delay="900" class="toc-row latest"><a data-ev="toc_jump" data-article="kensho04" data-position="toc" data-label="一覧：検証04 ホームページ（説明へ）" class="toc-heading" href="#article-04" aria-label="ホームページの説明を見る"><span class="toc-number">検証 04</span><span class="toc-title">ホームページ</span><span class="new" aria-label="最新の検証">NEW</span></a><a data-ev="note_click_04" data-article="kensho04" data-position="toc" data-label="一覧：検証04 ホームページ" class="toc-read" href="https://note.com/yokonarabi_lab/n/n7419507662b0" target="_blank" rel="noopener" aria-label="ホームページの記事を読む">記事を読む <span aria-hidden="true">↗</span></a></li><li data-reveal data-reveal-delay="900" class="toc-row"><a data-ev="toc_jump" data-article="kensho03" data-position="toc" data-label="一覧：検証03 プレゼン資料（説明へ）" class="toc-heading" href="#article-03" aria-label="プレゼン資料の説明を見る"><span class="toc-number">検証 03</span><span class="toc-title">プレゼン資料</span></a><a data-ev="note_click_03" data-article="kensho03" data-position="toc" data-label="一覧：検証03 プレゼン資料" class="toc-read" href="https://note.com/yokonarabi_lab/n/nf55acc8d9544" target="_blank" rel="noopener" aria-label="プレゼン資料の記事を読む">記事を読む <span aria-hidden="true">↗</span></a></li><li data-reveal data-reveal-delay="900" class="toc-row"><a data-ev="toc_jump" data-article="kensho02" data-position="toc" data-label="一覧：検証02 ショート動画（説明へ）" class="toc-heading" href="#article-02" aria-label="ショート動画の説明を見る"><span class="toc-number">検証 02</span><span class="toc-title">ショート動画</span></a><a data-ev="note_click_02" data-article="kensho02" data-position="toc" data-label="一覧：検証02 ショート動画" class="toc-read" href="https://note.com/yokonarabi_lab/n/n4584974c4831" target="_blank" rel="noopener" aria-label="ショート動画の記事を読む">記事を読む <span aria-hidden="true">↗</span></a></li><li data-reveal data-reveal-delay="900" class="toc-row"><a data-ev="toc_jump" data-article="kensho01" data-position="toc" data-label="一覧：検証01 ゲームアプリ（説明へ）" class="toc-heading" href="#article-01" aria-label="ゲームアプリの説明を見る"><span class="toc-number">検証 01</span><span class="toc-title">ゲームアプリ</span></a><a data-ev="note_click_01" data-article="kensho01" data-position="toc" data-label="一覧：検証01 ゲームアプリ" class="toc-read" href="https://note.com/yokonarabi_lab/n/n9c8372abe98f" target="_blank" rel="noopener" aria-label="ゲームアプリの記事を読む">記事を読む <span aria-hidden="true">↗</span></a></li></ol></div></nav>
+<section class="articles" aria-labelledby="articles-title"><svg class="geometry geometry-spiral" viewBox="0 0 540 540" fill="none" aria-hidden="true"><g class="construction"><circle cx="270" cy="270" r="220"/><circle cx="270" cy="270" r="155"/><path d="M25 270h490M270 25v490M114.4 114.4 425.6 425.6M114.4 425.6 425.6 114.4"/><path d="M270.00 270.00 L270.44 270.02 L270.88 270.08 L271.31 270.17 L271.73 270.31 L272.15 270.48 L272.55 270.69 L272.93 270.93 L273.30 271.21 L273.65 271.53 L273.98 271.87 L274.28 272.25 L274.56 272.66 L274.81 273.09 L275.03 273.56 L275.21 274.04 L275.37 274.55 L275.48 275.08 L275.56 275.63 L275.60 276.20 L275.61 276.78 L275.57 277.37 L275.49 277.97 L275.37 278.58 L275.20 279.19 L274.99 279.80 L274.74 280.41 L274.44 281.01 L274.10 281.61 L273.71 282.20 L273.28 282.78 L272.81 283.34 L272.29 283.89 L271.73 284.41 L271.13 284.91 L270.48 285.39 L269.80 285.83 L269.08 286.25 L268.32 286.63 L267.53 286.97 L266.70 287.28 L265.85 287.55 L264.96 287.77 L264.04 287.95 L263.10 288.08 L262.14 288.16 L261.16 288.20 L260.16 288.18 L259.14 288.10 L258.11 287.98 L257.07 287.79 L256.03 287.55 L254.98 287.25 L253.94 286.89 L252.89 286.47 L251.85 286.00 L250.83 285.46 L249.81 284.86 L248.81 284.21 L247.83 283.49 L246.87 282.71 L245.94 281.88 L245.04 280.99 L244.17 280.04 L243.34 279.03 L242.55 277.98 L241.80 276.87 L241.09 275.70 L240.43 274.49 L239.83 273.24 L239.27 271.93 L238.78 270.59 L238.34 269.20 L237.97 267.78 L237.66 266.33 L237.42 264.84 L237.25 263.32 L237.15 261.78 L237.12 260.22 L237.16 258.64 L237.29 257.05 L237.48 255.44 L237.76 253.83 L238.12 252.21 L238.56 250.60 L239.08 248.99 L239.68 247.38 L240.36 245.79 L241.13 244.22 L241.98 242.67 L242.90 241.14 L243.91 239.65 L245.00 238.18 L246.17 236.76 L247.41 235.37 L248.73 234.04 L250.13 232.75 L251.59 231.51 L253.13 230.34 L254.74 229.22 L256.41 228.17 L258.14 227.19 L259.94 226.28 L261.79 225.45 L263.70 224.69 L265.65 224.02 L267.66 223.44 L269.70 222.94 L271.79 222.53 L273.91 222.22 L276.06 222.00 L278.24 221.88 L280.44 221.86 L282.66 221.94 L284.89 222.12 L287.13 222.41 L289.38 222.80 L291.62 223.30 L293.85 223.91 L296.07 224.62 L298.28 225.44 L300.46 226.36 L302.62 227.40 L304.74 228.53 L306.83 229.78 L308.88 231.12 L310.87 232.57 L312.81 234.13 L314.70 235.78 L316.52 237.52 L318.28 239.36 L319.96 241.30 L321.56 243.32 L323.08 245.43 L324.52 247.62 L325.87 249.89 L327.12 252.23 L328.27 254.65 L329.32 257.13 L330.26 259.68 L331.09 262.28 L331.81 264.94 L332.41 267.65 L332.89 270.40 L333.25 273.18 L333.49 276.00 L333.60 278.85 L333.58 281.72 L333.44 284.60 L333.16 287.49 L332.74 290.39 L332.20 293.28 L331.52 296.16 L330.71 299.03 L329.76 301.88 L328.68 304.70 L327.46 307.49 L326.12 310.24 L324.64 312.94 L323.03 315.58 L321.30 318.17 L319.44 320.70 L317.45 323.15 L315.35 325.53 L313.13 327.82 L310.79 330.02 L308.34 332.13 L305.79 334.14 L303.13 336.05 L300.37 337.84 L297.52 339.52 L294.59 341.08 L291.56 342.51 L288.46 343.82 L285.28 344.99 L282.04 346.02 L278.74 346.91 L275.38 347.66 L271.97 348.26 L268.52 348.71 L265.03 349.01 L261.51 349.15 L257.97 349.14 L254.42 348.97 L250.86 348.63 L247.30 348.14 L243.74 347.48 L240.20 346.66 L236.68 345.68 L233.20 344.53 L229.74 343.23 L226.33 341.76 L222.97 340.14 L219.67 338.36 L216.44 336.42 L213.28 334.33 L210.20 332.09 L207.21 329.71 L204.32 327.18 L201.52 324.51 L198.84 321.70 L196.26 318.77 L193.81 315.70 L191.49 312.52 L189.30 309.22 L187.25 305.81 L185.35 302.29 L183.59 298.68 L181.99 294.97 L180.55 291.18 L179.27 287.31 L178.16 283.36 L177.23 279.36 L176.47 275.29 L175.89 271.18 L175.48 267.03 L175.27 262.84 L175.24 258.63 L175.40 254.41 L175.74 250.17 L176.28 245.94 L177.01 241.71 L177.93 237.50 L179.04 233.32 L180.34 229.18 L181.83 225.07 L183.50 221.02 L185.37 217.03 L187.42 213.11 L189.65 209.27 L192.06 205.52 L194.64 201.86 L197.40 198.30 L200.32 194.86 L203.41 191.53 L206.65 188.33 L210.05 185.27 L213.59 182.34 L217.28 179.57 L221.10 176.95 L225.06 174.49 L229.13 172.20 L233.32 170.08 L237.61 168.15 L242.01 166.40 L246.49 164.84 L251.06 163.47 L255.71 162.31 L260.42 161.35 L265.18 160.59 L270.00 160.04 L274.85 159.71 L279.74 159.59 L284.64 159.69 L289.55 160.01 L294.47 160.55 L299.37 161.30 L304.25 162.28 L309.11 163.48 L313.92 164.89 L318.69 166.53 L323.40 168.38 L328.03 170.45 L332.59 172.73 L337.06 175.21 L341.44 177.90 L345.70 180.80 L349.85 183.89 L353.87 187.18 L357.76 190.65 L361.50 194.30 L365.09 198.14 L368.52 202.14 L371.78 206.30 L374.87 210.62 L377.77 215.09 L380.48 219.70 L382.99 224.44 L385.30 229.31 L387.40 234.29 L389.28 239.37 L390.94 244.56 L392.38 249.83 L393.58 255.18 L394.55 260.59 L395.29 266.06 L395.78 271.58 L396.03 277.13 L396.03 282.71 L395.78 288.31 L395.29 293.90 L394.55 299.49 L393.55 305.05 L392.31 310.59 L390.82 316.09 L389.08 321.53 L387.09 326.91 L384.86 332.21 L382.39 337.43 L379.69 342.55 L376.75 347.56 L373.58 352.45 L370.18 357.21 L366.57 361.84 L362.75 366.31 L358.71 370.62 L354.48 374.77 L350.05 378.74 L345.44 382.52 L340.65 386.10 L335.68 389.48 L330.56 392.65 L325.29 395.59 L319.87 398.31 L314.32 400.80 L308.65 403.04 L302.87 405.04 L296.99 406.79 L291.01 408.28 L284.96 409.50 L278.84 410.47 L272.66 411.16 L266.44 411.58 L260.19 411.72 L253.92 411.59 L247.64 411.18 L241.37 410.49 L235.11 409.53 L228.88 408.28 L222.70 406.75 L216.57 404.95 L210.51 402.87 L204.53 400.52 L198.64 397.90 L192.85 395.01 L187.18 391.86 L181.64 388.46 L176.24 384.80 L170.99 380.89 L165.90 376.75 L160.99 372.37 L156.26 367.76 L151.73 362.94 L147.40 357.90 L143.28 352.67 L139.39 347.24 L135.73 341.63 L132.32 335.85 L129.15 329.90 L126.24 323.81 L123.60 317.57 L121.22 311.20 L119.13 304.72 L117.31 298.13 L115.79 291.45 L114.56 284.69 L113.62 277.87 L112.99 270.99 L112.66 264.07 L112.63 257.12 L112.91 250.16 L113.50 243.19 L114.40 236.25 L115.61 229.32 L117.13 222.44 L118.96 215.62 L121.09 208.86 L123.52 202.19 L126.25 195.61 L129.28 189.15 L132.60 182.80 L136.20 176.59 L140.09 170.53 L144.25 164.64 L148.68 158.91 L153.37 153.37 L158.32 148.03 L163.51 142.91 L168.93 138.00 L174.58 133.32 L180.45 128.89 L186.52 124.70 L192.78 120.78 L199.24 117.13 L205.86 113.76 L212.64 110.68 L219.57 107.89 L226.64 105.41 L233.82 103.23 L241.11 101.36 L248.50 99.82 L255.97 98.60 L263.50 97.71 L271.09 97.15 L278.71 96.93 L286.35 97.04 L294.00 97.49 L301.64 98.28 L309.26 99.41 L316.84 100.88 L324.37 102.68 L331.82 104.82 L339.20 107.29 L346.48 110.10 L353.64 113.23 L360.67 116.68 L367.57 120.44 L374.31 124.52 L380.87 128.90 L387.26 133.58 L393.44 138.55 L399.42 143.79 L405.17 149.31 L410.69 155.10 L415.95 161.13 L420.96 167.40 L425.70 173.91 L430.16 180.64 L434.33 187.57 L438.20 194.69 L441.75 202.00 L444.99 209.47 L447.91 217.10 L450.49 224.87 L452.73 232.76 L454.62 240.76 L456.17 248.85 L457.36 257.03 L458.18 265.27 L458.65 273.56 L458.75 281.88 L458.48 290.21 L457.85 298.54 L456.84 306.86 L455.47 315.14 L453.73 323.38 L451.62 331.55 L449.15 339.63 L446.31 347.62 L443.13 355.49 L439.58 363.23 L435.70 370.82 L431.47 378.26 L426.91 385.51 L422.02 392.58 L416.81 399.43 L411.30 406.07 L405.48 412.47 L399.37 418.62 L392.99 424.51 L386.33 430.12 L379.42 435.45 L372.27 440.48 L364.89 445.19 L357.28 449.59 L349.48 453.66 L341.48 457.39 L333.31 460.77 L324.98 463.79 L316.51 466.45 L307.91 468.73 L299.20 470.64 L290.39 472.17 L281.51 473.31 L272.56 474.06 L263.58 474.42 L254.56 474.38 L245.54 473.94 L236.52 473.10 L227.54 471.86 L218.59 470.22 L209.71 468.19 L200.91 465.76 L192.20 462.94 L183.61 459.74 L175.15 456.15 L166.84 452.18 L158.70 447.84 L150.74 443.14 L142.98 438.08 L135.43 432.67 L128.11 426.92 L121.04 420.84 L114.23 414.45 L107.70 407.74 L101.45 400.74 L95.50 393.46 L89.87 385.90 L84.57 378.09 L79.61 370.04 L75.00 361.76 L70.75 353.27 L66.86 344.58 L63.36 335.71 L60.25 326.67 L57.53 317.49 L55.22 308.18 L53.31 298.76 L51.82 289.24 L50.74 279.65 L50.09 270.00"/></g><circle class="geometry-points" cx="270" cy="270" r="3"/><path class="geometry-green" d="M50 270a220 220 0 0 1 64.4-155.6"/></svg><div class="wrap"><h2 data-reveal class="section-label" id="articles-title">検証記事</h2><article data-reveal class="article" id="article-04" aria-labelledby="title-04" data-latest="true"><div><div class="article-meta">検証 04<span class="new" aria-label="最新の検証">NEW</span></div><h2 id="title-04">ホームページ</h2><p class="lead">本格的なホームページは作成できるのか。</p></div><div><p class="desc">同じ指示で、ホームページを作成。制作の過程と、どこまで形にできたかを比べました。</p><a data-ev="note_click_04" data-article="kensho04" data-position="article" data-label="紹介：検証04 ホームページ" class="article-link" href="https://note.com/yokonarabi_lab/n/n7419507662b0" target="_blank" rel="noopener">検証記事を読む <span class="arrow" aria-hidden="true">↗</span></a></div></article><article data-reveal class="article" id="article-03" aria-labelledby="title-03" data-latest="false"><div><div class="article-meta">検証 03</div><h2 id="title-03">プレゼン資料</h2><p class="lead">同じ企画を、別々の伝え方で。</p></div><div><p class="desc">英単語クエストを、学校・学習塾に提案する設定。1通目で詳細資料、2通目で横型のHTMLスライドに。</p><a data-ev="note_click_03" data-article="kensho03" data-position="article" data-label="紹介：検証03 プレゼン資料" class="article-link" href="https://note.com/yokonarabi_lab/n/nf55acc8d9544" target="_blank" rel="noopener">検証記事を読む <span class="arrow" aria-hidden="true">↗</span></a></div></article><article data-reveal class="article" id="article-02" aria-labelledby="title-02" data-latest="false"><div><div class="article-meta">検証 02</div><h2 id="title-02">ショート動画</h2><p class="lead">45秒に、どう詰め込むか。</p></div><div><p class="desc">同じ記事と、同じ5枚の画像から。1通の指示で、BGM付きの縦型動画に。</p><a data-ev="note_click_02" data-article="kensho02" data-position="article" data-label="紹介：検証02 ショート動画" class="article-link" href="https://note.com/yokonarabi_lab/n/n4584974c4831" target="_blank" rel="noopener">検証記事を読む <span class="arrow" aria-hidden="true">↗</span></a></div></article><article data-reveal class="article" id="article-01" aria-labelledby="title-01" data-latest="false"><div><div class="article-meta">検証 01</div><h2 id="title-01">ゲームアプリ</h2><p class="lead">お題は同じ。遊び心は、ふたつ。</p></div><div><p class="desc">中学生向けの英単語ゲーム「英単語クエスト」。同じ2本の指示から、ブラウザで遊べるゲームが生まれました。</p><a data-ev="note_click_01" data-article="kensho01" data-position="article" data-label="紹介：検証01 ゲームアプリ" class="article-link" href="https://note.com/yokonarabi_lab/n/n9c8372abe98f" target="_blank" rel="noopener">検証記事を読む <span class="arrow" aria-hidden="true">↗</span></a></div></article></div></section>
+<section class="final"><svg class="starfield" viewBox="0 0 1240 650" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true"><g class="stars"><circle cx="676" cy="401" r="0.9" opacity="0.58"/><circle cx="504" cy="215" r="1.2" opacity="0.37"/><circle cx="1197" cy="560" r="0.6" opacity="0.77"/><circle cx="368" cy="364" r="0.6" opacity="0.36"/><circle cx="770" cy="31" r="0.6" opacity="0.65"/><circle cx="898" cy="223" r="0.6" opacity="0.69"/><circle cx="752" cy="198" r="0.9" opacity="0.60"/><circle cx="448" cy="493" r="0.6" opacity="0.39"/><circle cx="600" cy="342" r="1.2" opacity="0.47"/><circle cx="647" cy="218" r="1.2" opacity="0.80"/><circle cx="627" cy="180" r="1.2" opacity="0.59"/><circle cx="1117" cy="302" r="0.6" opacity="0.35"/><circle cx="58" cy="615" r="0.9" opacity="0.63"/><circle cx="195" cy="408" r="0.9" opacity="0.75"/><circle cx="403" cy="116" r="0.9" opacity="0.36"/><circle cx="683" cy="455" r="0.9" opacity="0.68"/><circle cx="1150" cy="120" r="0.9" opacity="0.30"/><circle cx="244" cy="198" r="0.6" opacity="0.43"/><circle cx="311" cy="487" r="0.6" opacity="0.52"/><circle cx="1048" cy="284" r="0.9" opacity="0.79"/><circle cx="1004" cy="604" r="0.6" opacity="0.72"/><circle cx="994" cy="141" r="1.2" opacity="0.58"/><circle cx="1019" cy="25" r="0.9" opacity="0.52"/><circle cx="962" cy="357" r="0.6" opacity="0.26"/><circle cx="768" cy="596" r="0.9" opacity="0.50"/><circle cx="92" cy="135" r="0.6" opacity="0.56"/><circle cx="102" cy="628" r="0.6" opacity="0.68"/><circle cx="611" cy="188" r="1.2" opacity="0.50"/><circle cx="1051" cy="536" r="1.2" opacity="0.72"/><circle cx="822" cy="232" r="1.2" opacity="0.36"/><circle cx="945" cy="315" r="1.2" opacity="0.70"/><circle cx="667" cy="136" r="0.9" opacity="0.32"/><circle cx="710" cy="196" r="0.9" opacity="0.63"/><circle cx="1187" cy="170" r="0.6" opacity="0.72"/><circle cx="243" cy="435" r="0.6" opacity="0.33"/><circle cx="779" cy="314" r="0.6" opacity="0.48"/><circle cx="628" cy="554" r="1.2" opacity="0.38"/><circle cx="551" cy="38" r="0.6" opacity="0.51"/><circle cx="561" cy="265" r="1.2" opacity="0.36"/><circle cx="745" cy="215" r="0.9" opacity="0.27"/><circle cx="908" cy="393" r="1.2" opacity="0.36"/><circle cx="439" cy="329" r="0.9" opacity="0.41"/><circle cx="754" cy="115" r="0.6" opacity="0.29"/><circle cx="510" cy="639" r="1.2" opacity="0.51"/><circle cx="1023" cy="462" r="1.2" opacity="0.40"/><circle cx="371" cy="427" r="0.6" opacity="0.29"/><circle cx="315" cy="304" r="0.9" opacity="0.71"/><circle cx="0" cy="283" r="0.9" opacity="0.40"/><circle cx="582" cy="307" r="0.6" opacity="0.57"/><circle cx="826" cy="238" r="0.6" opacity="0.58"/><circle cx="1107" cy="327" r="0.6" opacity="0.62"/><circle cx="384" cy="21" r="0.9" opacity="0.75"/><circle cx="1008" cy="313" r="1.2" opacity="0.51"/><circle cx="531" cy="316" r="0.9" opacity="0.47"/><circle cx="437" cy="567" r="0.6" opacity="0.67"/><circle cx="98" cy="584" r="0.6" opacity="0.78"/><circle cx="490" cy="49" r="0.9" opacity="0.63"/><circle cx="662" cy="279" r="0.6" opacity="0.69"/><circle cx="126" cy="335" r="0.6" opacity="0.65"/><circle cx="875" cy="144" r="0.6" opacity="0.42"/><circle cx="91" cy="418" r="0.6" opacity="0.55"/><circle cx="902" cy="559" r="0.6" opacity="0.29"/><circle cx="1010" cy="484" r="0.9" opacity="0.40"/><circle cx="979" cy="3" r="1.2" opacity="0.70"/><circle cx="694" cy="240" r="0.6" opacity="0.80"/><circle cx="952" cy="367" r="0.6" opacity="0.77"/><circle cx="802" cy="329" r="1.2" opacity="0.46"/><circle cx="856" cy="224" r="0.6" opacity="0.63"/><circle cx="913" cy="39" r="1.2" opacity="0.48"/><circle cx="822" cy="139" r="1.2" opacity="0.68"/><circle cx="1057" cy="326" r="0.9" opacity="0.38"/><circle cx="527" cy="93" r="0.9" opacity="0.28"/><circle cx="1199" cy="314" r="1.2" opacity="0.73"/><circle cx="256" cy="390" r="0.9" opacity="0.38"/><circle cx="698" cy="348" r="0.9" opacity="0.68"/><circle cx="558" cy="612" r="0.9" opacity="0.70"/><circle cx="860" cy="350" r="0.6" opacity="0.35"/><circle cx="463" cy="266" r="0.6" opacity="0.31"/><circle cx="221" cy="317" r="0.9" opacity="0.62"/><circle cx="922" cy="442" r="0.6" opacity="0.29"/></g></svg><div class="wrap"><h2 data-reveal><span class="phrase">プロンプトも、</span><span class="phrase">制作過程も、</span><span class="phrase">比較結果も。</span></h2><p data-reveal class="final-copy"><span>どちらに、何を任せたいか。</span><span>判断の材料を、ここから。</span></p><a data-ev="note_click_footer" data-article="footer" data-position="final" data-label="下部CTA：検証記事を読む" data-reveal class="button" href="https://note.com/yokonarabi_lab" target="_blank" rel="noopener">検証記事を読む <span aria-hidden="true">↗</span></a><div class="signature"><svg class="signature-globe" viewBox="0 0 640 340" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width=".85"><ellipse cx="320" cy="170" rx="248" ry="132"/><ellipse cx="320" cy="170" rx="174" ry="132"/><ellipse cx="320" cy="170" rx="84" ry="132"/><ellipse cx="320" cy="170" rx="248" ry="90"/><ellipse cx="320" cy="170" rx="248" ry="44"/><path d="M72 170h496M320 38v264"/></g></svg><p class="sig-en">Where are we headed?</p><p class="sig-ja">僕たちは、何処へ向かう？</p><div class="sig-brand"><svg class="sig-bar" viewBox="0 0 64 4" width="64" height="4" aria-hidden="true"><rect width="32" height="4" fill="#d95926"/><rect x="32" width="32" height="4" fill="#199e70"/></svg><p class="sig-name">生成AI横並び検証室</p></div></div></div></section></main>
+<footer class="site-foot"><div class="wrap"><span>生成AI横並び検証室</span><a data-ev="note_click_foot_link" data-article="foot_link" data-position="footer" data-label="フッター：検証記事を読む" href="https://note.com/yokonarabi_lab" target="_blank" rel="noopener">検証記事を読む <span aria-hidden="true">↗</span></a></div></footer>
 
 <script>
+(() => {
+  // Progressive enhancement: all copy stays visible without JavaScript or animation support.
+  const startedAt = performance.now();
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (motion.matches || !('IntersectionObserver' in window) || !Element.prototype.animate) return;
+  const running = new Map();
+  let observer;
+  const stopMotion = () => {
+    observer?.disconnect();
+    for (const animation of running.values()) animation.cancel();
+    running.clear();
+  };
+  try {
+    observer = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        observer.unobserve(entry.target);
+        if (motion.matches) continue;
+        try {
+          // 時間差をつけるのはページを開いた直後の演出だけ。
+          // スクロールして入ってきた要素まで待たせると、動きが鈍く感じるため。
+          const staged = Number(entry.target.getAttribute('data-reveal-delay')) || 0;
+          const delay = (performance.now() - startedAt < 1500) ? staged : 0;
+          const animation = entry.target.animate(
+            [{ opacity: 0, transform: 'translateY(32px)' }, { opacity: 1, transform: 'translateY(0)' }],
+            { duration: 1400, delay, fill: 'backwards', easing: 'cubic-bezier(.4,0,.2,1)', iterations: 1 }
+          );
+          running.set(entry.target, animation);
+          const done = () => running.delete(entry.target);
+          animation.addEventListener('finish', done, { once: true });
+          animation.addEventListener('cancel', done, { once: true });
+        } catch { /* Underlying content remains visible if animation is unsupported. */ }
+      }
+    }, { threshold: 0, rootMargin: '0px 0px -22% 0px' });
+    document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+    // Keyboard navigation never waits for an animation.
+    document.addEventListener('focusin', event => {
+      const target = event.target.closest('[data-reveal]');
+      if (target) { observer.unobserve(target); running.get(target)?.cancel(); }
+    });
+    motion.addEventListener('change', () => { if (motion.matches) stopMotion(); });
+    window.addEventListener('pagehide', stopMotion, { once: true });
+  } catch { stopMotion(); }
+})();
+</script>
+
+<script>
+/* リンククリックの計測。デザインとフェードには干渉しない。 */
 (function(){
-  /* ---- クリック計測 ---- */
   function send(el){
     var name = el.getAttribute('data-ev');
     if(!name || typeof gtag !== 'function') return;
-    var label = el.getAttribute('data-label') || (el.textContent || '').replace(/\s+/g,' ').trim();
     gtag('event', name, {
       article_id: el.getAttribute('data-article') || '',
+      link_position: el.getAttribute('data-position') || '',
       link_url: el.getAttribute('href') || '',
-      link_text: label.slice(0, 90)
+      link_text: (el.getAttribute('data-label') || '').slice(0, 90)
     });
   }
   var links = document.querySelectorAll('a[data-ev]');
@@ -394,44 +122,6 @@ a.build:hover{
       el.addEventListener('auxclick', function(e){ if(e.button===1) send(el); });
     })(links[i]);
   }
-
-  /* ---- スクロールで下から競り上がるフェード ---- */
-  var targets = document.querySelectorAll('.reveal');
-
-  /* 画面に入っているものを問答無用で表示する（保険用） */
-  function showIfInView(){
-    for(var n=0;n<targets.length;n++){
-      var t = targets[n];
-      if(!t.classList.contains('is-in') && t.getBoundingClientRect().top < window.innerHeight){
-        t.classList.add('is-in');
-      }
-    }
-  }
-
-  if(!('IntersectionObserver' in window)){
-    for(var j=0;j<targets.length;j++) targets[j].classList.add('is-in');
-    return;
-  }
-  var io = new IntersectionObserver(function(entries){
-    for(var k=0;k<entries.length;k++){
-      if(entries[k].isIntersecting){
-        entries[k].target.classList.add('is-in');
-        io.unobserve(entries[k].target);
-      }
-    }
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
-  for(var m=0;m<targets.length;m++) io.observe(targets[m]);
-
-  /* 保険：バックグラウンドのタブなど、ページが非表示のあいだは
-     IntersectionObserver が発火しない。本文が消えたままにならないよう、
-     読み込み後と、表示に切り替わったときに画面内のものを出す。 */
-  setTimeout(showIfInView, 1200);
-  window.addEventListener('load', function(){ setTimeout(showIfInView, 300); });
-  document.addEventListener('visibilitychange', function(){
-    if(document.visibilityState === 'visible') setTimeout(showIfInView, 60);
-  });
 })();
 </script>
-
-</body>
-</html>
+</body></html>
