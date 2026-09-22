@@ -7,8 +7,16 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  // 管理者モード：?admin=1 で開くと、このブラウザでは以後ずっと計測しない（?admin=0 で解除）
+  var HUB_ADMIN = false;
+  try {
+    var q = new URLSearchParams(location.search).get('admin');
+    if (q === '1') localStorage.setItem('hub_admin', '1');
+    else if (q === '0') localStorage.removeItem('hub_admin');
+    HUB_ADMIN = localStorage.getItem('hub_admin') === '1';
+  } catch (e) {}
   // 本番ドメインのときだけ計測する（プレビューや手元での確認で数字を汚さないため）
-  if (location.hostname === 'yokonarabi-lab.github.io') {
+  if (location.hostname === 'yokonarabi-lab.github.io' && !HUB_ADMIN) {
     gtag('config', 'G-XS0E6PLB0L');
   }
 </script>
@@ -151,13 +159,19 @@
 (function(){
   function send(el){
     var name = el.getAttribute('data-ev');
-    if(!name || typeof gtag !== 'function') return;
+    if(!name || typeof gtag !== 'function' || window.HUB_ADMIN) return;
     gtag('event', name, {
       article_id: el.getAttribute('data-article') || '',
       link_position: el.getAttribute('data-position') || '',
       link_url: el.getAttribute('href') || '',
       link_text: (el.getAttribute('data-label') || '').slice(0, 90)
     });
+  }
+  if(window.HUB_ADMIN){
+    var b = document.createElement('div');
+    b.textContent = '計測オフ（管理者）';
+    b.setAttribute('style','position:fixed;left:12px;bottom:12px;z-index:9999;padding:6px 10px;border-radius:999px;background:#d95926;color:#fff;font:600 12px/1 system-ui,sans-serif;letter-spacing:.04em;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.25)');
+    document.body.appendChild(b);
   }
   var links = document.querySelectorAll('a[data-ev]');
   for(var i=0;i<links.length;i++){
