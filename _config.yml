@@ -1,0 +1,6 @@
+# GitHub Pages（Jekyll）の設定
+# サイトとして配信しないものをここで外す。GitHub上では見えるが、yokonarabi-lab.github.io のURLでは開けなくなる。
+# tools/ はエージェント（ルーティン）の手順書とスクリプトの置き場。サイトの一部ではない。
+exclude:
+  - tools/
+  - README.md
