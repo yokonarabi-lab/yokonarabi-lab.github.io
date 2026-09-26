@@ -18,13 +18,13 @@
 
 - **Macが起きていて、Claudeアプリが開いていること。** 5媒体・GA4はClaudeアプリ内のブラウザペイン（Skyのログインが残っている）で読む。ブラウザに届かなければ何も書かずに「Macに届かなかった」と報告して終了
 - ダッシュボードのURL、図版アーティファクトのURL、noteスクショのフォルダの場所は**起動時の指示文にある**（このリポジトリには書かない）
-- 起動時のテキストに指示が付くことがある：`基準：YYYYMMDD-HHMM`（前回差の基準の行を指定）／`noteスクショなし`（フォルダを見に行かない）／`図版なし`（DBの記録だけ）
+- 起動時のテキストに指示が付くことがある：`記事：<noteのURL>`（前回に公開した記事。この記事の公開時刻の直前の集計を前回差の基準にし、`meta/baseline` を更新する）／`基準：YYYYMMDD-HHMM`（基準の行を直接指定。`記事：` より優先）／`noteスクショなし`（フォルダを見に行かない）／`図版なし`（DBの記録だけ）
 - 00Min と note のログインは切れやすい。切れていたらその部分を null にして報告する（手動起動なら、Skyは起動の直前にログインしておく）
 
 ## 1回の流れ
 
 0. **読む**：`tools/common/conventions.md` → この README → `sources.md` → `schema.md`。ブラウザペインを 1280×900 にする
-1. **前回を読む（DB）**：`records`・`clicks`・`kotaro`・`accounts`・`snaps` の最新の行（`rec` が最大のもの）、`posts`（投稿台帳、全部）、`articles`（記事台帳）、`meta/baseline`（前回差の基準の図。無ければ起動テキストの `基準：`、それも無ければ直前の `figures` の行）。基準の行 `figures/<基準ID>` を `base.json` に保存する
+1. **前回を読む（DB）**：`records`・`clicks`・`kotaro`・`accounts`・`snaps` の最新の行（`rec` が最大のもの）、`posts`（投稿台帳、全部）、`articles`（記事台帳）。**前回差の基準**は次の順で決める：①起動テキストの `基準：`／②起動テキストの `記事：<URL>` → その記事の公開時刻（`https://note.com/api/v3/notes/<key>` の `publish_at`、または `https://note.com/api/v2/creators/kotarozero/contents?kind=note&page=1` の `publishAt`）を読み、`figures` のうち **公開時刻より前で最新の行**を基準にして `meta/baseline` を `{ figures, label, article, set_at }` で更新する（このときだけ meta を書く）／③`meta/baseline`／④直前の `figures` の行（③④のときは報告に「基準は◯◯（理由）」と書く）。基準の行 `figures/<基準ID>` を `base.json` に保存する
 2. **5媒体を読む**（`sources.md` の順：YouTube → TikTok → X → Instagram → Threads）。投稿ごとの数字、フォロワー、新しい投稿。新しい投稿は `posts` に足す（IDは公開時刻から）。消えていた投稿は `posts_removed` に移す。**X・Threadsのスレッドは1通目だけを1本と数える**（返信は数えない）
 3. **GA4**（`sources.md`）：ハブ着地は**ランディングページ `/`＋`/index.html` の行だけ**（test・Sky自身を引く）、参照元別、`note_click_NN`（参照元別も）、`/kotaro/` と `kotaro_click`、そして**基準期間（9/14〜基準の集計日）の読み直し**
 4. **00Min**：一覧（`sources.md`）。ログイン画面なら `links: null`。**読めなければクリックの図と見出し画像は作らない**（合計が出ないため。SNSの図とnoteの図だけ作る）
@@ -45,7 +45,7 @@
 - 読めなかった数字を 0 にしない、前回の値で埋めない、推定しない。null と memo
 - パスワードを入れない。ログイン画面が出たら、その媒体は null にして報告する
 - ブラウザで数字を読む以外の操作をしない（投稿・削除・設定・GA4の「保存」を押さない。GA4の鉛筆→保存はレポート設定を共有で壊す）
-- 「N日目」「前回差の基準」「REC」の定義を変えない。`meta/baseline` を動かさない（Skyが記事を出したときだけ、Skyの側で更新する）
+- 「N日目」「前回差の基準」「REC」の定義を変えない。`meta/baseline` を書くのは、起動テキストに `記事：` があったときだけ（それ以外は読むだけ）
 - 図版アーティファクト・ダッシュボードの HTML やデザインを変えない。図版は同じ URL に差し替えるだけ
 - 質問で止まらない。迷ったら null で残して、そう読んだと報告に書く
 
