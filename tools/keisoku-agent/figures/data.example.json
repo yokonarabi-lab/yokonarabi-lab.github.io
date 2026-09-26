@@ -1,0 +1,51 @@
+{
+  "rec": "2026-09-24T16:30",
+  "start": "2026-09-06",
+  "sns": {
+    "media": [
+      { "name": "YouTube",   "posts": 12, "views": 5048,  "likes": 2,   "followers": 6 },
+      { "name": "TikTok",    "posts": 14, "views": 14334, "likes": 141, "followers": 66 },
+      { "name": "X",         "posts": 23, "views": 1425,  "likes": 0,   "followers": 0 },
+      { "name": "Instagram", "posts": 11, "views": 1283,  "likes": 1,   "followers": 0 },
+      { "name": "Threads",   "posts": 25, "views": 2151,  "likes": 0,   "followers": 1 }
+    ]
+  },
+  "clicks": {
+    "routes": [
+      { "name": "SNSの短縮リンク",       "clicks": 78, "note": "9/14まで" },
+      { "name": "ハブページ経由",         "clicks": 10, "note": "9/14から", "pre": "着地59のうち" },
+      { "name": "コタロウのnote記事から", "clicks": 9,  "note": "note内" }
+    ],
+    "media": [
+      { "name": "YouTube",         "clicks": 11 },
+      { "name": "TikTok",          "clicks": 13 },
+      { "name": "X",               "clicks": 17 },
+      { "name": "Instagram",       "clicks": 21 },
+      { "name": "Threads",         "clicks": 26 },
+      { "name": "note（コタロウ）", "clicks": 9 },
+      { "name": "参照元なし",       "clicks": 0 }
+    ]
+  },
+  "note": {
+    "total": { "imp": 6256, "pv": 446, "likes": 27, "followers": 12, "posts": 9 },
+    "win": "8/28〜9/24",
+    "fn_extra": "記事は9本で、9/24 15:27公開の「検証室レポート #01」はまだ記事別に出ていない。",
+    "articles": [
+      { "name": "自己紹介",         "imp": 702,  "pv": 49 },
+      { "name": "#01 ゲームアプリ", "imp": 1261, "pv": 178 },
+      { "name": "#02 ショート動画", "imp": 966,  "pv": 60 },
+      { "name": "#03 プレゼン資料", "imp": 980,  "pv": 30 },
+      { "name": "#04 ホームページ", "imp": 898,  "pv": 40 },
+      { "name": "#05 パンフレット", "imp": 773,  "pv": 34 },
+      { "name": "#06 SNS攻略法",    "imp": 437,  "pv": 25 },
+      { "name": "#07 生成AI勢力図", "imp": 239,  "pv": 30 }
+    ]
+  },
+  "page": {
+    "use": {
+      "sns": "Instagramの投稿は、#07のリールを足してカルーセル1件を削除したので差は0。",
+      "clicks": "前回「参照元なし」だった2回は、GA4が後からYouTubeとXに振り直したので、参照元なしは0（−2）になった。着地59はハブのトップページ（/）だけで数えた値。",
+      "note": "記事は9本だが、9/24 15:27公開の「検証室レポート #01」はnoteの記事別（13:56集計）にまだ出ていないので行は8本。スキはクリエイターページの27（ダッシュボードは24）。"
+    }
+  }
+}
