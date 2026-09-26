@@ -1,0 +1,42 @@
+{
+  "rec": "2026-09-21T17:40",
+  "start": "2026-09-06",
+  "sns": {
+    "media": [
+      { "name": "YouTube",   "posts": 11, "views": 3987,  "likes": 2,  "followers": 5 },
+      { "name": "TikTok",    "posts": 12, "views": 11455, "likes": 76, "followers": 30 },
+      { "name": "X",         "posts": 18, "views": 1186,  "likes": 0,  "followers": 0 },
+      { "name": "Instagram", "posts": 11, "views": 1126,  "likes": 1,  "followers": 0 },
+      { "name": "Threads",   "posts": 18, "views": 1108,  "likes": 0,  "followers": 0 }
+    ]
+  },
+  "clicks": {
+    "routes": [
+      { "name": "SNSの短縮リンク",       "clicks": 77, "note": "9/14まで" },
+      { "name": "ハブページ経由",         "clicks": 7,  "note": "9/14から", "pre": "着地52のうち" },
+      { "name": "コタロウのnote記事から", "clicks": 6,  "note": "note内" }
+    ],
+    "media": [
+      { "name": "YouTube",         "clicks": 8 },
+      { "name": "TikTok",          "clicks": 13 },
+      { "name": "X",               "clicks": 16 },
+      { "name": "Instagram",       "clicks": 21 },
+      { "name": "Threads",         "clicks": 24 },
+      { "name": "note（コタロウ）", "clicks": 6 },
+      { "name": "参照元なし",       "clicks": 2 }
+    ]
+  },
+  "note": {
+    "total": { "imp": 4626, "pv": 372, "likes": 12, "followers": 3, "posts": 7 },
+    "win": "8/28〜9/21",
+    "articles": [
+      { "name": "自己紹介",         "imp": 451,  "pv": 31 },
+      { "name": "#01 ゲームアプリ", "imp": 1125, "pv": 170 },
+      { "name": "#02 ショート動画", "imp": 830,  "pv": 57 },
+      { "name": "#03 プレゼン資料", "imp": 797,  "pv": 27 },
+      { "name": "#04 ホームページ", "imp": 705,  "pv": 38 },
+      { "name": "#05 パンフレット", "imp": 553,  "pv": 30 },
+      { "name": "#06 SNS攻略法",    "imp": 165,  "pv": 19 }
+    ]
+  }
+}
