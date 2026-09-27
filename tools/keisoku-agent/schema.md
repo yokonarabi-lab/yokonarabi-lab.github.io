@@ -89,6 +89,7 @@
 ## snaps — 投稿別の数字（1回N行、ID＝`<post>_<REC>`）
 
 共通6列：`views`／`likes`／`comments`／`reposts`／`saves`／`clicks`。無い項目は null。
+2026-09-27から（`readers/` で読む形）：YouTube は likes・comments あり／TikTok は likes・comments／X は likes・reposts／Instagram は likes・comments（saves・シェアは一覧に無いので null）／Threads は likes・reposts。
 
 ```json
 { "id": "ig-20260909-2150_20260924-1630", "post": "ig-20260909-2150", "plat": "ig",
@@ -147,5 +148,8 @@
 `{ "rec", "created", "day", "md": "<引き継ぎのMarkdown全文>", "figures": true/false, "missing": ["00Min", "noteスクショ"] }`。プロジェクトdoc `横並び検証室/引き継ぎ_YYYY-MM-DD.md` に書ける場合も、ここに同じ内容を残す（Cowork の Claude が後で読む）。
 
 ## 書き込み（1回の batch で）
+
+2026-09-27から：`assemble.py` が `writes_01.json`…（1ファイル50件まで、行ごとの JSON は `docs/`）を作るので、それをそのまま `batch` に渡す。以下はその中身の説明。
+
 
 ArtifactData の `batch` に `writes: [{op:"set", collection:"records", doc_id:"<REC>", data:{…}}, …]` を最大50件ずつ。`snaps` が50を超えるので2〜3回に分ける。書いたあと `get` で1行読み返して確認する。
