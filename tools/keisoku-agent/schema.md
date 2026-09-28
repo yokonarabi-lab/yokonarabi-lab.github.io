@@ -122,7 +122,7 @@
   "rec": "2026-09-24T16:30",                       // 集計時点（JST）。図の「時点」と N日目 に使う
   "sns":    { "media": [ { "name": "YouTube", "posts": 12, "views": 5048, "likes": 2, "followers": 6 }, … ] },   // 順番は YouTube・TikTok・X・Instagram・Threads。合計は自動（書けばそれが優先）
   "clicks": { "routes": [ { "name": "SNSの短縮リンク", "clicks": 78, "note": "9/14まで" },
-                          { "name": "ハブページ経由", "clicks": 10, "note": "9/14から", "pre": "着地59のうち" },
+                          { "name": "ハブページ経由", "clicks": 10, "note": "9/14から", "land": 59, "pre": "着地59のうち" },
                           { "name": "コタロウのnote記事から", "clicks": 9, "note": "note内" } ],
               "media":  [ { "name": "YouTube", "clicks": 11 }, …, { "name": "note（コタロウ）", "clicks": 9 }, { "name": "参照元なし", "clicks": 0 } ] },   // 00Minが読めなければ "clicks": null
   "note":   { "total": { "imp": 6256, "pv": 446, "likes": 27, "followers": 12, "posts": 9 }, "win": "8/28〜9/24", "fn_extra": "（任意の一言）",
@@ -130,6 +130,8 @@
   "page":   { "use": { "sns": "…", "clicks": "…", "note": "…", "eyecatch": "…" } }   // 図版ページの各図の下に足す一言（任意）
 }
 ```
+
+`land`（2026-09-28〜）はハブ着地の数。図のクリックでは「ハブページ経由」の下に灰色の行「└ ハブに来た数（着地）」として出て、前回差は**前回の図の着地**（`land`、無ければ `pre` の「着地NNのうち」）との差になる（Skyの決定。GA4を読み直した基準期間の値ではない。読み直しとの違いは clicks の memo に書く）。`pre` は古い図・DBとの互換のために残している
 
 - 前回差は `--baseline` に渡した前回の data.json（`figures/<基準ID>` を保存したもの）から、行の `name` で突き合わせて自動計算。前回に無い行は NEW。`d` を書けばそちらが優先
 - 色・文字サイズ・列幅は build.js が決める。data.json に色を書かない

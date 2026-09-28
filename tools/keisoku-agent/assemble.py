@@ -570,7 +570,7 @@ D = {'rec': REC_DT.strftime('%Y-%m-%dT%H:%M'), 'start': START.isoformat(),
               'win': (S_K or {}).get('win', ''), 'articles': []}}
 if CLICKS and CLICKS['hub'] is not None:
     D['clicks'] = {'routes': [{'name': 'SNSの短縮リンク', 'clicks': CLICKS['short'], 'note': '9/14まで'},
-                              {'name': 'ハブページ経由', 'clicks': CLICKS['hub'], 'note': '9/14から', 'pre': f"着地{CLICKS['land']}のうち"},
+                              {'name': 'ハブページ経由', 'clicks': CLICKS['hub'], 'note': '9/14から', 'land': CLICKS['land'], 'pre': f"着地{CLICKS['land']}のうち"},
                               {'name': 'コタロウのnote記事から', 'clicks': CLICKS['kt'], 'note': 'note内'}],
                    'media': [{'name': PLAT_NAME[p], 'clicks': CLICKS['media'][p]} for p in PLATS]
                             + [{'name': 'note（コタロウ）', 'clicks': CLICKS['kt']}, {'name': '参照元なし', 'clicks': CLICKS['none']}]}
@@ -622,13 +622,23 @@ tot_fw = sum((plat_tot[p] or {}).get('followers') or 0 for p in PLATS if plat_to
 tot_lk = sum((plat_tot[p] or {}).get('likes') or 0 for p in PLATS if plat_tot.get(p))
 bsum = lambda k: sum(m[k] for m in BASE['sns']['media']) if BASE else None
 bc = sum(r['clicks'] for r in BASE['clicks']['routes']) if BASE and BASE.get('clicks') else None
+def base_land():
+    # 前回の図の着地（land、無ければ pre の「着地NNのうち」）。図の「└ ハブに来た数（着地）」の前回差と同じ基準
+    r = next((x for x in (BASE or {}).get('clicks', {}).get('routes', []) if x.get('name') == 'ハブページ経由'), None) if BASE and BASE.get('clicks') else None
+    if not r:
+        return None
+    if isinstance(r.get('land'), (int, float)):
+        return r['land']
+    m = re.search(r'着地([\d,]+)', r.get('pre') or '')
+    return int(m.group(1).replace(',', '')) if m else None
+bl = base_land()
 movers = sorted([s for s in snaps.values() if s['views'] is not None and PREV_SNAP.get(s['post']) and PREV_SNAP[s['post']].get('views') is not None],
                 key=lambda s: s['views'] - PREV_SNAP[s['post']]['views'], reverse=True)[:3]
 unread = [c for c in checks if '読めなかった' in c or 'null' in c]
 report = ['---', f"集計 {REC_DT.strftime('%Y/%m/%d %H:%M')}（{DAY}日目）",
           f"SNS 表示・再生 {tot_views:,}（{dd(tot_views - bsum('views')) if BASE else '—'}）／投稿 {tot_posts}（{dd(tot_posts - bsum('posts')) if BASE else '—'}）／フォロワー {tot_fw}（{dd(tot_fw - bsum('followers')) if BASE else '—'}）／いいね {tot_lk}（{dd(tot_lk - bsum('likes')) if BASE else '—'}）"]
 if CLICKS:
-    report.append(f"noteへのクリック {CLICKS['total']}（{dd(CLICKS['total'] - bc) if bc is not None else '—'}）＝短縮リンク{CLICKS['short']}＋ハブ経由{fmt(CLICKS['hub'])}（着地{fmt(CLICKS['land'])}のうち）＋コタロウ→検証室{CLICKS['kt']}")
+    report.append(f"noteへのクリック {CLICKS['total']}（{dd(CLICKS['total'] - bc) if bc is not None else '—'}）＝短縮リンク{CLICKS['short']}＋ハブ経由{fmt(CLICKS['hub'])}（着地{fmt(CLICKS['land'])}{'（' + dd(CLICKS['land'] - bl) + '）' if bl is not None and CLICKS.get('land') is not None else ''}のうち）＋コタロウ→検証室{CLICKS['kt']}")
 else:
     report.append('noteへのクリック：00Minが読めず作っていない')
 report.append(f"検証室note imp {fmt(rec_row.get('imp'))}（{dd(rec_row['imp'] - bnote['imp']) if rec_row.get('imp') is not None and bnote else '—'}）／pv {fmt(rec_row.get('pv'))}（{dd(rec_row['pv'] - bnote['pv']) if rec_row.get('pv') is not None and bnote else '—'}）／スキ {fmt(rec_row.get('lk'))}（{dd(rec_row['lk'] - bnote['likes']) if rec_row.get('lk') is not None and bnote else '—'}）／フォロワー {fmt(rec_row.get('fw'))}（{dd(rec_row['fw'] - bnote['followers']) if rec_row.get('fw') is not None and bnote else '—'}）／記事 {fmt(posts_n)}")

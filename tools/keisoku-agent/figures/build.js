@@ -103,6 +103,7 @@ const SNS = {
 };
 
 // 2. クリック（00Minが読めなかった日は data.clicks = null → 図を作らない）
+const landOf = (r) => { if (!r) return null; if (num(r.land) != null) return r.land; const m = String(r.pre || '').match(/着地([\d,]+)/); return m ? +m[1].replace(/,/g, '') : null; };
 let CLICKS = null;
 if (D.clicks) {
   const routes = (D.clicks.routes || []).map((r, i) => Object.assign({ color: ROUTE_COLORS[i] || '#8b8b87' }, r));
@@ -112,7 +113,15 @@ if (D.clicks) {
   CLICKS = {
     total,
     d: D.clicks.d != null ? D.clicks.d : (B ? diff(total, bT) : null),
-    routes: deltaRows(routes, B && B.clicks && B.clicks.routes, ['clicks']).map(r => r.d && typeof r.d === 'object' ? Object.assign({}, r, { d: r.d.clicks }) : r),
+    routes: deltaRows(routes, B && B.clicks && B.clicks.routes, ['clicks']).map(r => r.d && typeof r.d === 'object' ? Object.assign({}, r, { d: r.d.clicks }) : r)
+      .map(r => {
+        // ハブの着地：land（無ければ pre の「着地NNのうち」から読む）。前回差は前回の図の着地との差（2026-09-28 Sky決定）
+        const land = landOf(r);
+        if (land == null) return r;
+        const b = B && B.clicks ? byName(B.clicks.routes)[r.name] : null;
+        const land_d = r.land_d != null ? r.land_d : (B ? (b ? diff(land, landOf(b)) : 'new') : null);
+        return Object.assign({}, r, { land, land_d });
+      }),
     media: deltaRows(media, B && B.clicks && B.clicks.media, ['clicks']).map(m => m.d && typeof m.d === 'object' ? Object.assign({}, m, { d: m.d.clicks }) : m),
     fn: D.clicks.fn || ('同じ人が複数回押した分も含む。' + (BASE_SHORT ? `前回差は${BASE_SHORT}の図との差。` : '')),
   };
@@ -288,9 +297,10 @@ function figClicks() {
   const routes = CLICKS.routes.map((r, i) => `
     <div class="rt${i ? ' bt' : ''}">
       <div class="nm"><i style="background:${r.color}"></i>${r.name}${r.note ? `<em>${r.note}</em>` : ''}</div>
-      <div class="val">${r.pre ? `<small>${r.pre}</small>` : ''}${n(r.clicks)}</div>
+      <div class="val">${r.pre && r.land == null ? `<small>${r.pre}</small>` : ''}${n(r.clicks)}</div>
       ${dl(r.d)}
-    </div>`).join('');
+    </div>${r.land != null ? `
+    <div class="rt sub"><div class="nm2">└ ハブに来た数（着地）</div><div class="val">${n(r.land)}</div>${dl(r.land_d)}</div>` : ''}`).join('');
 
   const max = Math.max.apply(null, CLICKS.media.map(m => m.clicks || 0)) || 1;
   const msum = CLICKS.media.reduce((a, m) => a + (m.clicks || 0), 0);
@@ -320,6 +330,9 @@ function figClicks() {
   font-variant-numeric:tabular-nums;white-space:nowrap}
 .rt .val{font-size:60px}
 .rt .val small{font-size:32px;color:${T.muted};margin-right:26px;font-weight:400}
+.rt.sub{padding:0 0 22px;margin-top:-8px}
+.rt.sub .nm2{flex:1;font-size:32px;color:${T.muted};padding-left:32px;white-space:nowrap}
+.rt.sub .val{font-size:44px;color:${T.muted}}
 .dlt{font-size:34px;color:${T.delta};text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;width:80px;flex:none}
 .dlt.z{color:${T.zero}}
 .row.hd2 .dlt{display:flex;flex-direction:column;align-items:flex-end;line-height:1;font-size:40px}
@@ -507,7 +520,7 @@ function buildIndex(sizes) {
   });
   if (CLICKS) secs.push({
     file: 'clicks.png', name: `SNSからnoteへのクリック数_${ymd}.png`, h2: 'SNSからnoteへのクリック数', spec: `1080 × ${sizes.clicks}`, w: 2160, h: sizes.clicks * 2,
-    alt: `SNSからnoteへのクリック数。合計${n(CLICKS.total)}${pd(CLICKS.d)}。内訳は` + CLICKS.routes.map(r => `${r.name}${n(r.clicks)}${pdShort(r.d)}${r.pre ? '、' + r.pre : ''}`).join('、') +
+    alt: `SNSからnoteへのクリック数。合計${n(CLICKS.total)}${pd(CLICKS.d)}。内訳は` + CLICKS.routes.map(r => `${r.name}${n(r.clicks)}${pdShort(r.d)}${r.land != null ? `（ハブに来た数・着地${n(r.land)}${pdShort(r.land_d)}のうち）` : (r.pre ? '、' + r.pre : '')}`).join('、') +
       '。SNS別：' + CLICKS.media.map(m => `${m.name} ${n(m.clicks)}${pdShort(m.d)}`).join('、') + '。',
     use: '「どのSNSから来たか」の節に。人数ではなくクリック数。' + (use.clicks ? ' ' + use.clicks : ''),
   });
