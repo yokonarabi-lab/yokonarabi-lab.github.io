@@ -13,7 +13,7 @@
   "clicks": {
     "routes": [
       { "name": "SNSの短縮リンク",       "clicks": 78, "note": "9/14まで" },
-      { "name": "ハブページ経由",         "clicks": 10, "note": "9/14から", "pre": "着地59のうち" },
+      { "name": "ハブページ経由",         "clicks": 10, "note": "9/14から", "land": 59, "pre": "着地59のうち" },
       { "name": "コタロウのnote記事から", "clicks": 9,  "note": "note内" }
     ],
     "media": [
