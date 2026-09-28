@@ -115,7 +115,8 @@ if (D.clicks) {
     d: D.clicks.d != null ? D.clicks.d : (B ? diff(total, bT) : null),
     routes: deltaRows(routes, B && B.clicks && B.clicks.routes, ['clicks']).map(r => r.d && typeof r.d === 'object' ? Object.assign({}, r, { d: r.d.clicks }) : r)
       .map(r => {
-        // ハブの着地：land（無ければ pre の「着地NNのうち」から読む）。前回差は前回の図の着地との差（2026-09-28 Sky決定）
+        // ハブの着地：land（無ければ pre の「着地NNのうち」から読む）。「ハブページ経由」の数字の左に薄い字で「着地64 +5」と出す。
+        // 前回差は前回の図の着地との差。右端の前回差の列には入れない（縦に足すと合計の前回差になるように。2026-09-28 Sky決定）
         const land = landOf(r);
         if (land == null) return r;
         const b = B && B.clicks ? byName(B.clicks.routes)[r.name] : null;
@@ -297,10 +298,9 @@ function figClicks() {
   const routes = CLICKS.routes.map((r, i) => `
     <div class="rt${i ? ' bt' : ''}">
       <div class="nm"><i style="background:${r.color}"></i>${r.name}${r.note ? `<em>${r.note}</em>` : ''}</div>
-      <div class="val">${r.pre && r.land == null ? `<small>${r.pre}</small>` : ''}${n(r.clicks)}</div>
+      <div class="val">${r.land != null ? `<small>着地${n(r.land)}${r.land_d != null && r.land_d !== 'new' ? ' ' + dd(r.land_d) : ''}</small>` : (r.pre ? `<small>${r.pre}</small>` : '')}${n(r.clicks)}</div>
       ${dl(r.d)}
-    </div>${r.land != null ? `
-    <div class="rt sub"><div class="nm2">└ ハブに来た数（着地）</div><div class="val">${n(r.land)}</div>${dl(r.land_d)}</div>` : ''}`).join('');
+    </div>`).join('');
 
   const max = Math.max.apply(null, CLICKS.media.map(m => m.clicks || 0)) || 1;
   const msum = CLICKS.media.reduce((a, m) => a + (m.clicks || 0), 0);
@@ -330,9 +330,6 @@ function figClicks() {
   font-variant-numeric:tabular-nums;white-space:nowrap}
 .rt .val{font-size:60px}
 .rt .val small{font-size:32px;color:${T.muted};margin-right:26px;font-weight:400}
-.rt.sub{padding:0 0 22px;margin-top:-8px}
-.rt.sub .nm2{flex:1;font-size:32px;color:${T.muted};padding-left:32px;white-space:nowrap}
-.rt.sub .val{font-size:44px;color:${T.muted}}
 .dlt{font-size:34px;color:${T.delta};text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;width:80px;flex:none}
 .dlt.z{color:${T.zero}}
 .row.hd2 .dlt{display:flex;flex-direction:column;align-items:flex-end;line-height:1;font-size:40px}
