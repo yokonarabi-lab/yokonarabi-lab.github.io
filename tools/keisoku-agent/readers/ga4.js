@@ -16,7 +16,8 @@ const go = async (r, dims, from, to) => {
   await sleep(7000);
   const shown = (document.body.innerText.match(/\d+月\d+日～[^\n]+/) || [''])[0];
   const rows = [...document.querySelectorAll('[role="row"], table tr')].map(x => x.innerText.replace(/\s+/g, ' ').trim())
-    .map(t => t.match(/^(\d+)\s+(\(not set\)|\S+)\s+(.+? \/ .+?)\s+([\d,]+)\s+\(/)).filter(Boolean)
+    // 参照元が「(not set)」の行は ' / ' を含まないので、別に拾う（2026-09-28：これが無くて note_click_08×(not set) を読み落とした）
+    .map(t => t.match(/^(\d+)\s+(\(not set\)|\S+)\s+(.+? \/ .+?|\(not set\))\s+([\d,]+)\s+\(/)).filter(Boolean)
     .map(m => ({ a: m[2], src: m[3], n: +m[4].replace(/,/g, '') }));
   return { shown, rows };
 };
