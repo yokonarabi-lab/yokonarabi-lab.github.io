@@ -1,0 +1,16 @@
+name: privacy-check
+# 個人情報の混入チェック。push と PR のたびに走る。失敗したらマージしない。
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: 個人情報の混入チェック
+        run: bash tools/common/privacy_check.sh
