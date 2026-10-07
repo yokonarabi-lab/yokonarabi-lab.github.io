@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ハブ（index.html）に検証記事を1本追加する。
 
-  python3 add_article.py --number 09 --title "..." --lead "..." --desc "..." \
+  python3 add_article.py --number 09|auto --title "..." --lead "..." --desc "..." \
       --url https://note.com/yokonarabi_lab/n/xxxx [--in index.html] [--out index.html] [--tall auto|yes|no]
 
 やること（2026-09-20 以降の手順そのまま）:
@@ -16,7 +16,7 @@
 import argparse, hashlib, json, re, sys, unicodedata
 
 ap = argparse.ArgumentParser()
-ap.add_argument('--number', required=True, help='検証番号 2桁（例 09）')
+ap.add_argument('--number', required=True, help='検証番号 2桁（例 09）。auto ならハブにある最大の検証番号＋1')
 ap.add_argument('--title', required=True)
 ap.add_argument('--lead', required=True)
 ap.add_argument('--desc', required=True)
@@ -26,8 +26,6 @@ ap.add_argument('--out', dest='out', default='index.html')
 ap.add_argument('--tall', default='auto', choices=['auto', 'yes', 'no'])
 a = ap.parse_args()
 
-NN = a.number.zfill(2)
-assert re.fullmatch(r'\d{2}', NN), 'number は2桁'
 assert re.fullmatch(r'https://note\.com/yokonarabi_lab/n/n[0-9a-f]{12}', a.url), 'url の形が違う: ' + a.url
 TITLE, LEAD, DESC, URL = a.title.strip(), a.lead.strip(), a.desc.strip(), a.url
 for k, v in (('title', TITLE), ('lead', LEAD), ('desc', DESC)):
@@ -35,6 +33,15 @@ for k, v in (('title', TITLE), ('lead', LEAD), ('desc', DESC)):
 
 src = open(a.inp, encoding='utf-8').read()
 h = src
+
+# 番号。note の題に #NN が付かなくなった（検証08〜）ので、auto ならハブの最大番号＋1 にする
+if a.number == 'auto':
+    nums = [int(x) for x in re.findall(r'<span class="toc-number">検証 (\d{2})</span>', h)]
+    assert nums, '一覧に検証番号が見つからない'
+    NN = f'{max(nums) + 1:02d}'
+else:
+    NN = a.number.zfill(2)
+assert re.fullmatch(r'\d{2}', NN), 'number は2桁'
 assert URL not in h, '同じURLがもうハブにある'
 assert f'note_click_{NN}' not in h, f'note_click_{NN} がもうある'
 
@@ -51,11 +58,18 @@ tall = {'yes': True, 'no': False, 'auto': width(TITLE) > 9}[a.tall]
 if tall:
     assert '.toc-tall .toc-link' in h, '.toc-tall のCSSが無い（2026-09-26 の版より古い）'
 
-# 半角スペース区切りの題は、後半を折り返さない（例: 生成AI おすすめベスト10）
-title_html = TITLE
-if ' ' in TITLE:
+# 末尾が全角かっこの題は、かっこ部分を折り返さない（例: AI副業ランキング（受注編））。
+# カード・一覧・紹介の見出しの3か所とも（検証09〜11 と同じ書き方）
+# それ以外で半角スペース区切りの題は、カードだけ後半を折り返さない（例: 生成AI おすすめベスト10）
+m = re.fullmatch(r'(.+?)(（[^（）]+）)', TITLE)
+if m:
+    title_html = title_vis = f'{m.group(1)}<span class="nowrap">{m.group(2)}</span>'
+elif ' ' in TITLE:
     head, tail = TITLE.rsplit(' ', 1)
     title_html = f'{head} <span class="nowrap">{tail}</span>'
+    title_vis = TITLE
+else:
+    title_html = title_vis = TITLE
 
 # 1. カード差し替え
 i = h.find('<div class="spot">')
@@ -89,7 +103,7 @@ li_cls = 'toc-row toc-tall' if tall else 'toc-row'
 row = (
     f'<li class="{li_cls}"><a data-ev="note_click_{NN}" data-article="kensho{NN}" data-position="toc" data-label="一覧：検証{NN} {TITLE}" '
     f'class="toc-link" href="{URL}" target="_blank" rel="noopener" aria-label="検証{NN} {TITLE}の記事を読む">'
-    f'<span class="toc-heading"><span class="toc-number">検証 {NN}</span><span class="toc-title">{TITLE}</span>{NEW}</span>'
+    f'<span class="toc-heading"><span class="toc-number">検証 {NN}</span><span class="toc-title">{title_vis}</span>{NEW}</span>'
     '<span class="toc-read">記事を読む <span aria-hidden="true">↗</span></span></a></li>'
 )
 anchor = 'id="contents-title">検証記事一覧</h2><ol class="toc">'
@@ -100,7 +114,7 @@ art = (
     '<article data-reveal data-reveal-lines=".article-meta,h2,.lead,.desc,.article-link" class="article" '
     f'id="article-{NN}" aria-labelledby="title-{NN}" data-latest="true"><div>'
     f'<div class="article-meta">検証 {NN}{NEW}</div>'
-    f'<h2 id="title-{NN}">{TITLE}</h2><p class="lead">{LEAD}</p></div><div>'
+    f'<h2 id="title-{NN}">{title_vis}</h2><p class="lead">{LEAD}</p></div><div>'
     f'<p class="desc">{DESC}</p>'
     f'<a data-ev="note_click_{NN}" data-article="kensho{NN}" data-position="article" data-label="紹介：検証{NN} {TITLE}" '
     f'class="article-link" href="{URL}" target="_blank" rel="noopener">検証記事を読む <span class="arrow" aria-hidden="true">↗</span></a>'
