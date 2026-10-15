@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>スレッズ攻略法〈閲覧数編〉Claude Fable 5.1 版｜Sky｜Yellow Lens</title>
+<meta name="description" content="Threads の1投稿あたりの閲覧数を伸ばす方法を、Meta の公式情報を軸に調べた Claude Fable 5.1 の成果物。同じ依頼文で GPT-6 Astra にも依頼し、ふたつの答えを並べた検証室の記録。">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:title" content="スレッズ攻略法〈閲覧数編〉Claude Fable 5.1 版｜Sky｜Yellow Lens">
+<meta property="og:description" content="Threads の1投稿あたりの閲覧数を伸ばす方法を、Meta の公式情報を軸に調べた Claude Fable 5.1 の成果物。同じ依頼文で GPT-6 Astra にも依頼し、ふたつの答えを並べた検証室の記録。">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://yokonarabi-lab.github.io/threads/claude/">
+<meta property="og:image" content="https://yokonarabi-lab.github.io/threads/assets/cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+:root{--ink:#1E1E1E;--sub:#5C5C5C;--yellow:#F4C21B;--orange:#D9704A;--green:#1FA383;--rule:#D9D9D9;--soft:#F6F6F6;--bg:#FFFFFF}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter","Noto Sans JP",system-ui,-apple-system,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;font-size:16px;line-height:1.95;letter-spacing:.03em;font-feature-settings:"kern";-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:#B5B5B5;text-underline-offset:.2em}
+a:hover{text-decoration-color:var(--ink)}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.site-header{padding:26px 0 18px;border-bottom:1px solid var(--rule)}
+.brand{display:inline-flex;align-items:center;gap:.42em;font-family:"Inter",sans-serif;font-weight:500;font-size:17px;letter-spacing:.04em;text-decoration:none;color:var(--ink)}
+.brand .bar{display:inline-block;width:1px;height:1.05em;background:var(--yellow);transform:translateY(-.02em)}
+.site-header .nav{float:right;font-size:13px;color:var(--sub);margin-top:4px}
+.site-header .nav a{color:var(--sub);margin-left:14px}
+.doc-head{padding:44px 0 10px}
+.shelf{font-size:13px;color:var(--sub);letter-spacing:.06em;margin:0 0 14px}
+.model{font-family:"Inter",sans-serif;font-weight:700;font-size:30px;line-height:1.3;margin:0 0 6px;letter-spacing:.01em}
+.model .vs{font-weight:500;font-size:.6em;color:var(--sub);margin:0 .35em}
+.model .u{display:inline-block;border-bottom:.11em solid;padding-bottom:.08em;line-height:1.1}
+.model .u.claude{border-color:var(--orange)}
+.model .u.gpt{border-color:var(--green)}
+.theme{font-size:15px;color:var(--sub);margin:0 0 26px}
+.frame{background:var(--soft);border-left:3px solid var(--yellow);padding:16px 20px;font-size:14.5px;line-height:1.9;color:var(--ink);margin:0 0 40px}
+.frame p{margin:0 0 8px} .frame p:last-child{margin:0}
+.frame .k{color:var(--sub);margin-right:.5em}
+article h1{font-size:24px;line-height:1.55;margin:0 0 28px;letter-spacing:.02em;font-weight:700}
+article h2{font-size:21px;line-height:1.5;margin:56px 0 18px;padding-bottom:10px;border-bottom:2px solid var(--ink);letter-spacing:.03em;font-weight:700}
+article h3{font-size:17.5px;line-height:1.6;margin:36px 0 10px;font-weight:700;letter-spacing:.03em}
+article h3 .rank{font-family:"Inter",sans-serif;font-weight:700;margin-right:.45em}
+article h3 .tid{font-family:"Inter",sans-serif;font-weight:600;color:var(--sub);margin-right:.6em;font-size:.95em}
+article p{margin:0 0 16px}
+article ul,article ol{padding-left:1.4em;margin:0 0 16px}
+article li{margin:0 0 8px}
+article li p{margin:0}
+article hr{border:0;border-top:1px solid var(--rule);margin:44px 0}
+article strong{font-weight:700}
+article blockquote{margin:0 0 16px;padding:0 0 0 16px;border-left:3px solid var(--rule);color:var(--sub)}
+.tbl{overflow-x:auto;margin:0 0 24px}
+table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.75;letter-spacing:.02em}
+th{text-align:left;font-weight:700;font-size:13px;padding:8px 10px;border-bottom:2px solid var(--ink);vertical-align:bottom;white-space:nowrap}
+td{padding:12px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+table.cols4 th:nth-child(1){width:20%} table.cols4 th:nth-child(2){width:36%} table.cols4 th:nth-child(3){width:21%} table.cols4 th:nth-child(4){width:23%}
+table.cols3 th:nth-child(1){width:3.2em} table.cols3 th:nth-child(2){width:52%}
+table.cols4 td:first-child{font-weight:500}
+.src ol{padding-left:1.8em}
+.src li{margin:0 0 14px;font-size:14.5px;line-height:1.8;word-break:break-all}
+.src li a{word-break:break-all}
+.src table{font-size:13.5px}
+.foot{margin:72px 0 0;padding:28px 0 56px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--sub);line-height:1.9}
+.foot a{color:var(--sub)}
+.foot .brand{font-size:15px;margin-bottom:10px;color:var(--ink)}
+.xlink{margin:48px 0 0;padding:18px 20px;background:var(--soft);font-size:14.5px}
+.xlink a{font-weight:700}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .site-header .nav{float:none;display:block;margin-top:8px}
+  .site-header .nav a{margin:0 14px 0 0}
+  .model{font-size:26px}
+  article h1{font-size:21px}
+  article h2{font-size:19px}
+  article h3{font-size:16.5px}
+  table.cards,table.cards tbody,table.cards tr,table.cards td{display:block;width:100%}
+  table.cards thead{display:none}
+  table.cards tr{border-bottom:2px solid var(--ink);padding:10px 0 6px;margin:0 0 10px}
+  table.cards td{border:0;padding:4px 0 8px;min-width:0}
+  table.cards td::before{content:attr(data-label);display:block;font-size:12px;color:var(--sub);letter-spacing:.05em;margin-bottom:2px}
+  table.cards td:first-child{font-weight:700;padding-top:0}
+  table.cards td:first-child::before{display:none}
+}
+@media print{.site-header .nav,.xlink{display:none} body{font-size:11pt}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="https://yokonarabi-lab.github.io/threads/"><span>Sky</span><span class="bar" aria-hidden="true"></span><span>Yellow Lens</span></a>
+<nav class="nav" aria-label="ページ内の移動"><a href="https://yokonarabi-lab.github.io/threads/">スレッズ攻略法〈閲覧数編〉</a><a href="https://note.com/sky_yellowlens" rel="noopener">note</a></nav>
+</div></header>
+<main class="wrap">
+
+<div class="doc-head">
+<p class="shelf">検証室｜スレッズ攻略法〈閲覧数編〉</p>
+<p class="model"><span class="u claude">Claude Fable 5.1</span><span class="vs">版</span></p>
+<p class="theme">Claude Fable 5.1 vs GPT-6 Astra — 同じ依頼文で、Threads の1投稿あたりの閲覧数を伸ばす方法を調べてもらった成果物</p>
+</div>
+<div class="frame">
+<p><span class="k">依頼日</span>2026年10月14日。「Meta の公式情報を軸に、日本語と英語の攻略法を調べて、実践チェックリスト（10項目）と、調べた説の判定を書く」という同じ依頼文を、Claude Fable 5.1 と GPT-6 Astra に出した。</p>
+<p><span class="k">このページ</span>Claude Fable 5.1 の成果物。本文・順位・判定は Claude Fable 5.1 が書いたまま。両方の成果物で、チェックリストと説の「項目名」だけを同じ言葉に揃えた（内容は変えていない）。</p>
+<p><span class="k">もう一方</span><a href="https://yokonarabi-lab.github.io/threads/chatgpt/">GPT-6 Astra（ChatGPT）版</a>　<span class="k">解説と感想</span><a href="https://note.com/sky_yellowlens" rel="noopener">note の記事</a></p>
+</div>
+<article>
+<h1>Threadsで1投稿の閲覧数を伸ばすには — 公式情報を軸に、ネットの攻略法を検証した結論（2026年10月14日時点）</h1>
+<h2>結論：まず「会話」と「続けること」。小手先は後回し</h2>
+<p>調査から導いた結論は、次の3つに集約できます。</p>
+<ol>
+<li><strong>会話のきっかけを作る投稿をして、来た返信に応答する。</strong> 公式の情報（閲覧の約半分は返信、会話を生む投稿はおすすめされやすい、会話を重視するランキングの調整）がいちばん多く重なっている方向で、最優先に勧めます。</li>
+<li><strong>Threads用に書いたオリジナルの投稿を、週に何本も出し続ける。</strong> 公式は「投稿頻度が高いほど1投稿あたりの表示回数も多い傾向」と説明し、責任者は「Threadsに直接投稿すれば、より届く」と述べています。</li>
+<li><strong>投稿時間、タグ、リンクの置き方といった小技は、内容の改善より後。</strong> 効果の大きさを示す公式の材料がなく、第三者の検証でも差は小さめに出ています。やって損はありませんが、1と2の後です。</li>
+</ol>
+<p>もう1つ、よく言われる「フォロワー数は関係ない」は言いすぎです。Threadsは2024年11月と2026年10月に、フォローしている人の投稿を増やす方向の調整を公式に発表しています（<a href="#s8">出典8</a>・13）。フォロワー以外にも届く設計は変わりませんが、フォロワーは無関係ではありません。</p>
+<hr/>
+<h3>結論の補足：この記事の「閲覧数」と、根拠の基準</h3>
+<p><strong>閲覧数とは何か。</strong> Metaのヘルプセンターは、Threadsのインサイトにある「閲覧数」を「Threadsコンテンツの閲覧合計数（フォロワーもフォロワー以外も含む）」、「閲覧者」を「投稿を1回以上見たユニークなプロフィールの数」と定義しています（<a href="#s5">出典5</a>）。つまり閲覧数は「見られた回数」で、同じ人が繰り返し見た分も含まれうる数字です。「何人に届いたか」は閲覧者のほうです（厳密にはユニークなプロフィールの数で、1人が複数のプロフィールを持つ場合は別々に数えられます）。開発者向けの説明でも、投稿の閲覧数は「投稿が再生または表示された回数」とされています（<a href="#s7">出典7</a>）。英語版のヘルプでは、Instagramなど他のアプリにおすすめとして表示された分も閲覧数に含まれると説明されています（<a href="#s6">出典6</a>）。この記事で伸ばしたいのは、1投稿あたりの閲覧数（回数）です。投稿を増やせば合計の閲覧数は増えやすい（ただし1投稿あたりが下がれば合計が増えないこともある）ので、「1投稿あたり」の話と「合計」の話は分けて書きます。</p>
+<p><strong>根拠の基準。</strong> チェックリストには、次のどちらかを満たす施策だけを載せました。</p>
+<ul>
+<li>Metaの公式情報（公式ページ、ヘルプ、責任者本人の公開投稿）が、その施策と閲覧数または配信の関係に直接触れている</li>
+<li>公式が説明している仕組みと整合していて、かつ調査方法が確認できる第三者のデータが同じ方向を示している</li>
+</ul>
+<p>個人の経験談だけの説は、どれだけ広まっていても採用していません。公式が言っているというだけで採用してもいません（公式の推奨と、効果の実証は別物です）。</p>
+<p><strong>この記事の制約。</strong> 出典として載せるのはMetaの公式情報だけです。第三者のデータ分析や個人の経験則も参考にしていますが、その出どころや数字はこの記事には載せません。そのため、第三者の根拠にもとづく部分は、読者が直接たしかめられない制約があります。その分、断定を弱めて書いています。また、実際の運用検証は行っていません。調査で分かったことと、そこからの推論は分けて書きます。</p>
+<hr/>
+<h2>実践チェックリスト（優先順位つき・10項目）</h2>
+<p>順位は「1投稿あたりの閲覧数が増える効果が大きいと判断した順」です。施策どうしの効果を直接比べたデータはないため、調査にもとづく編集上の推奨順位として読んでください。実行の手間は順位に入れず、「条件や限界」に書きました。</p>
+<h3 id="c1"><span class="rank">1位</span><span class="tid">C1</span>会話のきっかけを作る投稿をして、来た返信に応答する</h3>
+<ul>
+<li><strong>やること</strong>：意見や体験に問いかけを添えて投稿し、返信がついたら返して会話を続ける。</li>
+<li><strong>理由</strong>：Metaは「会話を生む投稿は、おすすめに載りやすい」と公式に説明しています（<a href="#s1">出典1</a>・2）。Threadsのランキングは「利用者がその投稿に返信する可能性」「投稿を開いて読む時間」などを予測して並べており、投稿が直近1時間・6時間に得た返信やいいねの数も予測の材料に含まれます（<a href="#s4">出典4</a>）。2025年10月には責任者が「会話を積極的に起こす人の投稿が増える方向にランキングを調整した」と述べました（<a href="#s12">出典12</a>）。</li>
+<li><strong>閲覧数へのつながり</strong>：会話が生まれる投稿がおすすめされやすいことは公式が説明しています（直接）。投稿者が返信を返すことは、交流を通じた間接効果を期待する提案です。公式が確認しているのは「会話を生む投稿がおすすめされやすい」ことと、返信の可能性が予測項目であることまでです。「返信を返すとその投稿の閲覧数が何割増える」という数字は公式にはありません。第三者のデータ分析では、投稿者が返信を返した投稿のほうが反応（いいね・返信など）が多い傾向が確認されていますが、閲覧数そのものを測ったものではありません。</li>
+<li><strong>根拠の種類</strong>：公式／データ分析／個人の経験則。</li>
+<li><strong>判断の位置づけ</strong>：「会話が生まれる投稿が配信で有利」は根拠から直接いえます。「返信を返すこと自体が閲覧数を押し上げる」は、公式の仕組みから筋の通る推論です。</li>
+<li><strong>条件や限界</strong>：責任者は「すべての返信が良いわけではない」と述べ（<a href="#s10">出典10</a>）、2025年10月には、返信を返すのは「良い習慣だが、それだけで配信が増える保証はない」とも述べています（<a href="#s12">出典12</a>）。「いいねしたら教えます」のような反応の催促は、おすすめ対象外になりえます（6位）。返信を返す手間がかかるので、投稿後しばらく返信できる時間に出すと無理がありません。「投稿後1時間で決まる」という説は裏づけがなく、締め切りのように考える必要はありません（説の一覧T9）。</li>
+</ul>
+<h3 id="c2"><span class="rank">2位</span><span class="tid">C2</span>投稿頻度を上げて、続ける（目安は週2〜5回以上）</h3>
+<ul>
+<li><strong>やること</strong>：週2〜5回以上を目安に投稿し、何週間も続ける。</li>
+<li><strong>理由</strong>：Metaのクリエイター向けページは「投稿頻度が高いほど、1投稿あたりの表示回数も多い傾向がある」という社内分析を示し、週2〜5回以上を勧めています（<a href="#s1">出典1</a>・2）。投稿頻度については、公式が「1投稿あたりの表示回数」との関連を明示しています（投稿数を増やして合計が増えるのとは別の話です）。ランキングは投稿者に対する閲覧者の過去の反応も材料にするため（<a href="#s4">出典4</a>）、投稿が続くほど「この人の投稿に反応する人」が学習されやすい、と考えられます。</li>
+<li><strong>閲覧数へのつながり</strong>：直接（1投稿あたり）。ただし公式の説明は相関で、「よく投稿する人は元々うまい」可能性は残ります。投稿数が増えれば合計の閲覧数が増えるのは当然なので、それとは別の話です。</li>
+<li><strong>根拠の種類</strong>：公式／データ分析。第三者の分析でも、継続して投稿しているアカウントほど1投稿あたりの反応が多い傾向が確認されています（複数の媒体をまとめた分析で、閲覧数ではなく反応の数です）。</li>
+<li><strong>判断の位置づけ</strong>：方向（頻度が高い＝1投稿あたりも多い傾向）は根拠から直接いえます。最適な回数は根拠がなく、「週2〜5回以上」は公式の目安です。</li>
+<li><strong>条件や限界</strong>：「1日○投稿」のような具体的な回数は、今回の調査範囲では裏づけが見つかりませんでした。「投稿しすぎると分散する」という説も裏づけがありません（公式は上限を示していません）。Meta日本法人の担当者がより高い頻度を勧めたという報道もありますが、発言の原文を確認できていないため、ここでは公式ページの数字を採用します。中身が薄い投稿を増やすと6位の対象になりうるので、量は中身を保てる範囲にとどめてください。</li>
+</ul>
+<h3 id="c3"><span class="rank">3位</span><span class="tid">C3</span>Threads向けのオリジナルの投稿を作る</h3>
+<ul>
+<li><strong>やること</strong>：他のSNSの投稿のコピーや、Instagramからの連携投稿をメインにせず、Threadsの会話向けに書いた投稿を出す。</li>
+<li><strong>理由</strong>：Metaは「オリジナルのコンテンツが最もリーチと配信を得られる」「オリジナルでないコンテンツ（他の投稿をほぼそのまま流用したもの）は配信が制限されることがある」「上位のクリエイターはThreads専用のオリジナル投稿をしている」と説明しています（<a href="#s1">出典1</a>・2）。責任者は2025年10月に「Threadsに直接投稿すれば、より多くのリーチとフォロワーが得られるはず」「Instagram経由でフォローしたアカウントの投稿は減る」と述べ、「直接投稿」とはInstagramからの連携投稿ではない投稿のことだと補足しています（<a href="#s12">出典12</a>）。</li>
+<li><strong>閲覧数へのつながり</strong>：直接（公式が「リーチと配信」で確認）。閲覧数そのものの数字は公式にありません。</li>
+<li><strong>根拠の種類</strong>：公式／個人の経験則。</li>
+<li><strong>判断の位置づけ</strong>：根拠から直接いえます。</li>
+<li><strong>条件や限界</strong>：公式は「始めたばかりならInstagramからの連携投稿でも構わない」としています（<a href="#s2">出典2</a>）。連携そのものが罰せられる、という公式の記述はありません。同じ内容を別の言葉でThreads向けに書き直すのは問題ありません。再投稿ボタンで他の人の投稿を共有することは、ここでいう「オリジナルでないコンテンツ」とは別です。</li>
+</ul>
+<h3 id="c4"><span class="rank">4位</span><span class="tid">C4</span>関心が合う他の人の投稿に返信する</h3>
+<ul>
+<li><strong>やること</strong>：自分の投稿だけでなく、興味のある話題や大きめのアカウントの投稿に、中身のある返信をする。</li>
+<li><strong>理由</strong>：Metaの公式データでは「Threadsの閲覧の約半分は返信が占める」とされ、「返信は投稿と同じくらい価値がある」「返信から自分のプロフィールを見つけてもらえる」と説明されています（<a href="#s1">出典1</a>・2）。返信は返信だけで閲覧数を持つ投稿です。</li>
+<li><strong>閲覧数へのつながり</strong>：自分の元の投稿に対しては間接。公式が確認しているのは「返信というコンテンツが閲覧の半分を占める」こと（これは合計の閲覧数の話）と、プロフィールの発見（フォロワー増）までです。「返信を増やすと元の投稿の閲覧数が増える」ことは公式には示されていません。フォロワーが増えれば、フォロワーを優先する調整（<a href="#s8">出典8</a>・13）を通じて元の投稿にも届きやすくなる、というのは推論です。</li>
+<li><strong>根拠の種類</strong>：公式／個人の経験則。</li>
+<li><strong>判断の位置づけ</strong>：「返信自体が閲覧を得る」は根拠から直接いえます。「元の投稿の閲覧数が増える」は推論を含む提案です。4位にしたのは、公式の裏づけは強い一方で、効果が出るのは主に返信そのものの閲覧と発見で、元の投稿の閲覧数へは一段遠いためです。</li>
+<li><strong>条件や限界</strong>：1日○件のような目安は裏づけがありません。短時間に大量の返信やいいねをするとスパムと判定されたという経験談が日本語圏に複数あり、Instagramのおすすめガイドラインも「配信を人為的に促す組織的なコメント」をおすすめ対象外としています（<a href="#s17">出典17</a>）。量より中身です。</li>
+</ul>
+<h3 id="c5"><span class="rank">5位</span><span class="tid">C5</span>写真や動画には文章を添える</h3>
+<ul>
+<li><strong>やること</strong>：画像・動画・カルーセルを出すときは、文章を添える（画像や動画だけの投稿にしない）。</li>
+<li><strong>理由</strong>：Metaの公式データでは、文字を含む動画・写真・カルーセルの投稿は、文字のない投稿より閲覧数が多く、文字と動画を組み合わせると閲覧数が増えうる、とされています（<a href="#s1">出典1</a>・2）。公式ブログも「常に文字を入れる」ことを勧めています（<a href="#s14">出典14</a>）。</li>
+<li><strong>閲覧数へのつながり</strong>：直接（公式が閲覧数で確認）。</li>
+<li><strong>根拠の種類</strong>：公式／データ分析。</li>
+<li><strong>判断の位置づけ</strong>：根拠から直接いえます。</li>
+<li><strong>条件や限界</strong>：「文字だけの投稿がいちばん伸びる」とまでは言えません（説の一覧T5）。第三者のデータでは、文字だけの投稿は閲覧数では遜色なく、反応率は画像・動画のほうが高い傾向で、目的によって答えが変わります。</li>
+</ul>
+<h3 id="c6"><span class="rank">6位</span><span class="tid">C6</span>おすすめ対象外になる行為を避ける</h3>
+<ul>
+<li><strong>やること</strong>：「いいねしたら続きを教えます」のような反応の催促、釣り見出し、プレゼント企画、転載、いいねやフォロワーの購入、コメントの交換グループをしない。</li>
+<li><strong>理由</strong>：Metaはクリエイター向けページで「クリックベイト、エンゲージメントベイト、懸賞・プレゼント企画」を「おすすめ対象外のコンテンツ」の例として挙げ、避けるよう求めています（<a href="#s2">出典2</a>）。責任者は2024年10月に「エンゲージメントベイトが増えており、抑える作業をしている」と述べ（<a href="#s10">出典10</a>）、2025年10月にも、会話を重視する調整は釣りを増やすものではなく釣りは引き続き減らす、と述べています（<a href="#s12">出典12</a>）。Instagramのおすすめガイドラインは、ほぼ無編集の転載、組織的なコメント、いいねの購入などをおすすめしない対象としています（<a href="#s17">出典17</a>）。</li>
+<li><strong>閲覧数へのつながり</strong>：直接（守る側）。おすすめ対象外になると、フォロワー以外へのおすすめ表示が制限されます（検索やプロフィール、他の人の共有から見られる経路は残ります）。フォロワーが少ないうちは、閲覧の多くがそこから来ていると考えられます（自分の内訳は、インサイトの「フォロワー以外」で確認できます〔<a href="#s5">出典5</a>〕）。これは「増やす」施策ではなく「失わない」施策です。</li>
+<li><strong>根拠の種類</strong>：公式。</li>
+<li><strong>判断の位置づけ</strong>：根拠から直接いえます。</li>
+<li><strong>条件や限界</strong>：<a href="#s17">出典17</a>はInstagram・Facebook向けの文書で、Threadsへの適用はクリエイター向けページ（<a href="#s2">出典2</a>）の記述を通じた間接的なものです。「炎上系の書き出しは伸びる」という説は、第三者のデータでは一部が大きく当たる一方で大半は伸びず、おすすめ対象外のリスクもあるため、避けるほうを勧めます。</li>
+</ul>
+<h3 id="c7"><span class="rank">7位</span><span class="tid">C7</span>内容に合うトピックタグを1つ付ける</h3>
+<ul>
+<li><strong>やること</strong>：投稿の内容にいちばん合うトピックタグを1つ付ける（付けられるのは1投稿に1つ）。</li>
+<li><strong>理由</strong>：Metaは「社内データでは、トピックをタグ付けした投稿は、していない投稿より一般に閲覧数が多い」と発表しています（<a href="#s3">出典3</a>）。タグの一覧は検索画面と同じで、興味のある人が投稿を見つける入口になります（<a href="#s11">出典11</a>）。付けられるタグは1投稿に1つです（<a href="#s15">出典15</a>）。</li>
+<li><strong>閲覧数へのつながり</strong>：直接（公式が閲覧数で確認）。ただし相関で、タグ自体が配信を押し上げるとは公式も言っていません。</li>
+<li><strong>根拠の種類</strong>：公式／データ分析。</li>
+<li><strong>判断の位置づけ</strong>：方向は根拠から直接いえます。効果の大きさは公式には示されていません。第三者の小規模な検証では差はわずかで、大きな効果を前提にしないほうが安全です。7位にしたのは、この効果量の不明さのためです。</li>
+<li><strong>条件や限界</strong>：手間はほぼゼロなので付けて損はありません。ハッシュタグを複数付けるという助言は、Threadsの仕様（1投稿1タグ）と合いません。責任者はタグの設計意図を「コミュニティに焦点を当て、エンゲージメント稼ぎをしにくくする」と説明しています（<a href="#s11">出典11</a>）。</li>
+</ul>
+<h3 id="c8"><span class="rank">8位</span><span class="tid">C8</span>自分の発信に関係する旬の話題を、自分の視点で取り上げる</h3>
+<ul>
+<li><strong>やること</strong>：その日・その週に話題になっていることに、自分の意見や体験を添えて投稿する。</li>
+<li><strong>理由</strong>：責任者は2025年10月に「時事的な話題の投稿が増える方向にランキングを調整した」と述べています（<a href="#s12">出典12</a>）。公式のクリエイター向けページも「トレンドに乗る」ことを勧めています（<a href="#s2">出典2</a>）。日本では検索で「話題のトピック」を見ることができ（<a href="#s14">出典14</a>）、機械学習が最大5つ（将来は10）の話題を選びます（<a href="#s16">出典16</a>）。</li>
+<li><strong>閲覧数へのつながり</strong>：直接の可能性（公式は配信の方向性として説明）。閲覧数の数字は公式にありません。第三者のデータ分析では、トレンドの話題を付けた投稿は上位層では反応率が上がる一方、中央値では下がるという結果があり、当たり外れが大きい施策と読めます。</li>
+<li><strong>根拠の種類</strong>：公式／データ分析／個人の経験則。</li>
+<li><strong>判断の位置づけ</strong>：推論を含む提案です。</li>
+<li><strong>条件や限界</strong>：話題に便乗するだけの投稿は3位（オリジナル）と6位（おすすめ対象外）に反します。自分の視点を添えること、自分のジャンルに関係する話題に限ることが条件です。</li>
+</ul>
+<h3 id="c9"><span class="rank">9位</span><span class="tid">C9</span>投稿時間は、他人の「○時」ではなく自分のインサイトで決める</h3>
+<ul>
+<li><strong>やること</strong>：インサイトの「最もアクティブな時間」と、自分の投稿ごとの閲覧数を見て、投稿時間を決める。</li>
+<li><strong>理由</strong>：公式のインサイトには、自分の閲覧者やフォロワーが最もアクティブだった時間（過去30日）と、投稿ごとの閲覧数の内訳が表示されます（<a href="#s5">出典5</a>）。公式は、どの曜日に閲覧や反応が多いかをインサイトで確認することを勧めていて、具体的な時刻は示していません（<a href="#s1">出典1</a>・2）。</li>
+<li><strong>閲覧数へのつながり</strong>：直接の可能性。ただし公式に時刻と閲覧数の関係を示したデータはありません。第三者の大規模なデータでも、時間帯による差は小さめで、投稿の内容による差のほうが大きいと読める結果でした（反応を基準にした分析で、閲覧数ではありません）。</li>
+<li><strong>根拠の種類</strong>：公式（仕組みと機能）／データ分析。</li>
+<li><strong>判断の位置づけ</strong>：推論を含む提案です。</li>
+<li><strong>条件や限界</strong>：日本語圏で広まっている「朝・昼・夜の決まった時刻」（出勤前・昼休み・帰宅後に合わせる説）は、今回の調査範囲では生活リズムの推測が繰り返されているだけでした。反応を対象にした分析では昼が低い結果もありましたが、昼の投稿で閲覧数が下がるとまでは言えません（説の一覧T10）。「週末に投稿が多いと反応が増えやすい」という公式の記述がありますが、閲覧数ではなく反応の話で、第三者のデータとは一致していません。1位の「返信できる時間に出す」を優先してください。</li>
+</ul>
+<h3 id="c10"><span class="rank">10位</span><span class="tid">C10</span>閲覧数を狙う投稿では、本文に外部リンクを入れない形を試す</h3>
+<ul>
+<li><strong>やること</strong>：閲覧数を伸ばしたい投稿は本文だけで要点が伝わる形にし、リンクありの投稿と閲覧数を比べる。リンクが必要なら別の投稿やプロフィールに置く。</li>
+<li><strong>理由</strong>：責任者は「リンクを下げてはいないが、クリックには大きな価値を置いておらず、リンク付きの投稿はいいねやコメントがされにくい」と述べています（<a href="#s8">出典8</a>）。ランキングはいいね・返信・滞在時間の予測で並ぶので（<a href="#s4">出典4</a>）、反応されにくい投稿は結果として広がりにくくなると考えられます。2025年6月には「リンクが正しく評価されるよう調整し、1か月以上前から改善している」とも述べています（<a href="#s9">出典9</a>）。</li>
+<li><strong>閲覧数へのつながり</strong>：間接（反応の減少を通じて）。公式が確認しているのは「下げていない」「反応されにくい」までです。第三者のデータでも、リンク付き投稿は反応が少ない傾向が一致していますが、閲覧数そのものを比べたデータは確認できませんでした。</li>
+<li><strong>根拠の種類</strong>：公式／データ分析／個人の経験則。</li>
+<li><strong>判断の位置づけ</strong>：「リンクは減点される」は根拠から否定できます。「反応が減る分、広がりにくい」は推論を含む提案です。</li>
+<li><strong>条件や限界</strong>：記事への誘導が目的の投稿にはリンクが必要で、それは閲覧数とは別の成果です。「リンクを返信欄に入れる」方法は、本文の反応が落ちないだろうという仮説にもとづくもので、効果を示すデータはありません。長文テキストの添付機能にはリンクを含められます（<a href="#s3">出典3</a>）。</li>
+</ul>
+<hr/>
+<h2>調べた説の一覧</h2>
+<p>判定は4種類です。<strong>裏づけが強い</strong>（どの範囲まで裏づけられているかを明記します）／<strong>条件つきで参考になる</strong>／<strong>判断材料が足りない</strong>（傾きを示せる場合は添えます）／<strong>誤り、または言いすぎ</strong>。実践上の扱いは「推奨／条件つきで試す／後回し／避ける」です。「流布と独立性」は今回確認した記事の範囲での観察で、言語圏全体の普及率ではありません。同じ公式発表を紹介している記事が何本あっても、独立した裏づけが増えたとは数えていません。</p>
+<h3 id="t1"><span class="tid">T1</span>「会話が生まれる投稿は伸びやすい」「返信はいいねより重い」</h3>
+<ul>
+<li><strong>判定：裏づけが強い</strong>（範囲：Threadsの閲覧の約半分を返信が占める〔公式データ〕、会話を生む投稿はおすすめされやすい〔公式〕、返信する可能性がランキングの予測項目に含まれる〔公式〕、会話を起こす人を増やす調整〔責任者〕）。「返信はいいねの○倍」「○件の返信は○件のいいねに勝つ」という重みづけは、公式が重みを公開していないため裏づけがありません。</li>
+<li><strong>実践：推奨</strong>（1位）</li>
+<li><strong>流布と独立性</strong>：今回確認した範囲では、日本語・英語とも最も多くの記事に登場しました。大半はMeta公式と責任者の発言の紹介で、独立した裏づけは第三者の交流分析（比較試験ではない）と、別々の個人の経験談です。出典のない倍率が付け足されて広まっています。</li>
+</ul>
+<h3 id="t2"><span class="tid">T2</span>「他の人の投稿に返信すると、自分の投稿も伸びる」</h3>
+<ul>
+<li><strong>判定：条件つきで参考になる</strong>。返信が閲覧を得ること、プロフィールの発見につながることは公式が述べています。自分の元の投稿の閲覧数が増えるかは推論です。</li>
+<li><strong>実践：推奨</strong>（4位。量より中身）</li>
+<li><strong>流布と独立性</strong>：日本語・英語とも多くの記事に登場しました。元は公式の説明で、独立した根拠は個人の経験談のみです。「1日○件」「自分の○倍のアカウントに」といった数字は媒体ごとにばらばらで、共通の根拠は見当たりません。</li>
+</ul>
+<h3 id="t3"><span class="tid">T3</span>「投稿頻度を高めると1投稿あたりも伸びる」「1日○投稿が必須」／「連投するとリーチが分散する」</h3>
+<ul>
+<li><strong>判定</strong>：「頻度が高いほど1投稿あたりの表示回数も多い傾向」は<strong>裏づけが強い</strong>です（範囲：公式の社内分析による相関。週2〜5回以上が公式の目安）。「1日○投稿」の具体数は<strong>判断材料が足りない</strong>（方向も判断できない）です。「連投で分散する」は<strong>判断材料が足りない</strong>です（公式の「頻度が高いほど1投稿あたりも多い」という相関は分散説と逆向きですが、同じ人が短い間隔で投稿したときの食い合いを調べたものではありません。固定の上限は設けず、自分の投稿ごとの閲覧数で調整します）。</li>
+<li><strong>実践：推奨</strong>（2位。回数は中身を保てる範囲で）</li>
+<li><strong>流布と独立性</strong>：日本語・英語とも多くの記事に登場しました。公式の相関と、継続投稿についての第三者の分析（複数の媒体をまとめたもの、比較試験ではない）があります。推奨回数は週数回から1日に何本もまで幅があり、同じ根拠から出ていないことがうかがえます。</li>
+</ul>
+<h3 id="t4"><span class="tid">T4</span>「Threads向けのオリジナルの投稿が有利」「連携投稿・コピペは伸びない」</h3>
+<ul>
+<li><strong>判定：裏づけが強い</strong>（範囲：オリジナルが最もリーチと配信を得る〔公式〕、オリジナルでないコンテンツは配信が制限されうる〔公式〕、直接投稿でリーチとフォロワーが増えるはず〔責任者〕）。閲覧数の数字は公式にありません。</li>
+<li><strong>実践：推奨</strong>（3位）</li>
+<li><strong>流布と独立性</strong>：英語の記事に多く登場しました。公式の説明と責任者の発言が元で、独立した根拠は少数の事例（1社・1人の観察）です。日本語の記事では逆に「頻度を稼ぐためInstagramの投稿を流用してよい」という助言も見られ、方向が割れています。</li>
+</ul>
+<h3 id="t5"><span class="tid">T5</span>「画像・動画には文章を添えるとよい」「文字だけが最強」「画像や動画なら必ず伸びる」</h3>
+<ul>
+<li><strong>判定</strong>：「文字を必ず入れる」は<strong>裏づけが強い</strong>です（範囲：文字付きのメディア投稿は文字なしより閲覧数が多い〔公式データ〕）。「テキストのみが最も伸びる」「画像が伸びる」は<strong>判断材料が足りない</strong>です（傾き：第三者のデータでは、閲覧数ではテキストのみが遜色なく、反応率では画像・動画が高い傾向です。両方とも正しい可能性があります）。</li>
+<li><strong>実践</strong>：文字を入れるは<strong>推奨</strong>（5位）。形式の選び方は<strong>条件つきで試す</strong>（自分のインサイトで比べる）。</li>
+<li><strong>流布と独立性</strong>：日本語・英語とも多く、正反対の主張が併存しています。「閲覧数」を語る側と「反応」を語る側が違う指標を見ていることが多いようです。独立した根拠は、第三者の大規模な集計（閲覧数と反応率の両方を示すもの）と個人の経験談です。</li>
+</ul>
+<h3 id="t6"><span class="tid">T6</span>「内容に合うトピックタグが有効」「ハッシュタグを大量に並べるほど有利」</h3>
+<ul>
+<li><strong>判定</strong>：「タグ付きは閲覧数が多い」は<strong>裏づけが強い</strong>です（範囲：公式の社内データによる相関。効果の大きさは公式に示されておらず、第三者の小規模な検証では差はわずかでした）。「ハッシュタグを複数」は<strong>誤り</strong>です（Threadsは1投稿1タグ）。</li>
+<li><strong>実践：推奨</strong>（7位。付けるだけなので）</li>
+<li><strong>流布と独立性</strong>：日本語・英語とも多く登場しました。元は公式の発表で、独立した根拠は第三者の小規模な検証（効果はわずか）です。複数ハッシュタグの助言は、他のSNS向けの記事の転用と見られます。</li>
+</ul>
+<h3 id="t7"><span class="tid">T7</span>「反応の要求・釣り（エンゲージメントベイト）は減点される」／「炎上で伸びる」</h3>
+<ul>
+<li><strong>判定</strong>：「おすすめ対象外になりうる」は<strong>裏づけが強い</strong>です（範囲：公式がクリックベイト・エンゲージメントベイト・懸賞を非推奨の例として明示し、責任者が抑制を明言）。「減点」「ペナルティ」という言い方自体は責任者の言葉ではなく、メディアや運用者の表現です。「炎上で伸びる」は<strong>条件つきで参考になる</strong>です（第三者のデータでは、炎上系の書き出しは大きく当たる割合が高い一方、大半は伸びていません）。</li>
+<li><strong>実践：避ける</strong>（6位）。「炎上で伸びる」の判定が「条件つきで参考になる」なのに扱いが「避ける」なのは、一部で当たっても大半は伸びず、おすすめ対象外になる損失のほうが大きいと判断したためです。</li>
+<li><strong>流布と独立性</strong>：日本語・英語とも多く登場しました。元は公式のルールと責任者の発言で、独立した根拠は第三者の書き出しの集計（反応ベース）です。</li>
+</ul>
+<h3 id="t8"><span class="tid">T8</span>「外部リンクがあるだけで必ず配信を減らされる」「リンクを返信欄に置けば閲覧数が増える」</h3>
+<ul>
+<li><strong>判定</strong>：「減点される」は<strong>誤り、または言いすぎ</strong>です（責任者が「下げていない」と明言し、2025年6月に改善も報告）。「リンク付きは伸びにくい」は<strong>条件つきで参考になる</strong>です（責任者自身が「いいねやコメントがされにくい」と述べ、第三者のデータも反応が少ない方向で一致しています。閲覧数の直接比較はありません）。「返信欄に」は<strong>判断材料が足りない</strong>です（本文の反応が落ちないだろうという仮説で、検証データはありません）。</li>
+<li><strong>実践：条件つきで試す</strong>（10位。閲覧数狙いの投稿はリンクなしの形を試す。誘導が目的なら別）</li>
+<li><strong>流布と独立性</strong>：日本語・英語とも非常に多く登場しました。「伸びにくい」側の独立した根拠は、第三者の反応データ2系統と多数の経験談です。責任者の「下げていない」発言は英語の記事では広く紹介されていますが、今回確認した日本語の記事でこの発言を紹介していたのは1本だけで、「抑制される」という認識のまま広まっています。</li>
+</ul>
+<h3 id="t9"><span class="tid">T9</span>「投稿直後の短い時間（初動）で、その後の配信が決まる」</h3>
+<ul>
+<li><strong>判定：判断材料が足りない</strong>（傾き：投稿が直近1時間・6時間に得た返信・いいね・閲覧はランキングの入力に含まれる〔公式〕ので、初動が無関係ではありません。ただしそれは集計の窓であって締め切りではなく、「1時間で決まる」「その後は見直されない」という記述は公式になく、数日かけて伸びたという経験談もあります）。</li>
+<li><strong>実践：条件つきで試す</strong>（締め切りではなく、「返信を返せる時間に投稿する」程度に）</li>
+<li><strong>流布と独立性</strong>：日本語・英語とも非常に多く登場しました。時間の幅（数分から数時間）が媒体ごとに違い、出典はどれにもありません。独立した検証はなく、他のSNSの助言の転用と見られます。</li>
+</ul>
+<h3 id="t10"><span class="tid">T10</span>「決まった時刻に出せば一番伸びる」「週末に投稿すると閲覧数が伸びる」</h3>
+<ul>
+<li><strong>判定</strong>：「朝・昼・夜の決まった時刻」は<strong>判断材料が足りない</strong>です（傾き：反応を対象にした日本語の大規模な分析では昼が低く早朝が高い結果でしたが、昼の投稿で閲覧数が下がるとまでは言えません。時間帯の差は投稿の内容の差より小さいと読める結果でした）。「週末」は<strong>判断材料が足りない</strong>です（公式は「週末に多く投稿すると反応が増えやすい」と言いますが閲覧数ではなく反応の話で、第三者データは曜日について一致していません）。</li>
+<li><strong>実践：条件つきで試す</strong>（9位。自分のインサイトで）</li>
+<li><strong>流布と独立性</strong>：今回確認した日本語の記事の多くに「出勤前・昼休み・帰宅後」の時刻が登場しましたが、生活リズムの推測が引用し合ったもので、独立した根拠は見当たりませんでした。第三者の時間帯分析は日本語・英語に各1系統あり、互いに一致していません。</li>
+</ul>
+<h3 id="t11"><span class="tid">T11</span>「フォロワーが少ないと伸びない」「フォロワー数は関係ない」</h3>
+<ul>
+<li><strong>判定：条件つきで参考になる</strong>。「フォロワー以外にも届く」は公式の設計です（おすすめフィード、閲覧の約半分が返信、インサイトにフォロワー以外の閲覧数がある）。第三者のデータでも、フォロワー規模による閲覧数の中央値の差は小さいとされています。一方で「関係ない」は<strong>言いすぎ</strong>です（2024年11月と2026年10月にフォロー先の投稿を増やす調整が公式に発表され〔<a href="#s8">出典8</a>・13〕、フォロワーへのリーチは上がる方向です）。</li>
+<li><strong>実践：条件つきで試す</strong>（フォロワーが少なくても始める価値はあります。フォロワー増は別の成果ですが、閲覧数の土台にもなります）</li>
+<li><strong>流布と独立性</strong>：今回確認した日本語の記事ではほぼ一致していました。別々の個人の経験談ですが、比較試験ではありません。フォロー先優先の変更に触れた記事は少数でした。</li>
+</ul>
+<h3 id="t12"><span class="tid">T12</span>「旬の話題に乗れば伸びる」</h3>
+<ul>
+<li><strong>判定：条件つきで参考になる</strong>（責任者が時事的な投稿を増やす調整を明言し、公式ページも推奨しています。第三者データでは当たり外れが大きい施策です）。</li>
+<li><strong>実践：条件つきで試す</strong>（8位。自分の視点つきで）</li>
+<li><strong>流布と独立性</strong>：英語の記事に多く登場しました。元は公式の推奨で、独立した根拠は第三者の集計（反応率ベース）と少数の経験談です。日本語の記事では「話題のトピック」機能の紹介が中心でした。</li>
+</ul>
+<h3 id="t13"><span class="tid">T13</span>「ユーモアのある投稿は閲覧数が伸びる」</h3>
+<ul>
+<li><strong>判定：条件つきで参考になる</strong>（公式データで「面白いコンテンツは閲覧数が多い」とされています。ジャンルや書き手によって再現しにくい施策です）。</li>
+<li><strong>実践：条件つきで試す</strong>（自分のジャンルに合えば）</li>
+<li><strong>流布と独立性</strong>：英語の記事で見られ、ほぼ同じ公式データの紹介です。日本語の記事では「共感」「本音」の文脈で語られることが多く、独立した根拠はありません。</li>
+</ul>
+<h3 id="t14"><span class="tid">T14</span>「決まった文字数や冒頭の型が最適」（短文／長文／1行目のフック／問いかけで締める／箇条書き）</h3>
+<ul>
+<li><strong>判定：判断材料が足りない（方向も判断できない）</strong>。短文派と長文派が正反対です。長さや形式を比べた観察データはありますが（第三者の、平均値ベースのもの。連続した投稿のほうが平均の閲覧数が高いという観察も含みます）、投稿者や内容の違いを分けておらず、日本語の個人に最適な長さを示すには不十分です。第三者の分析で「問いかけ」や「リスト」に効果が見られなかったものもあります。公式は「意見に問いかけや個人の話を添える」ことを勧めていますが、長さや書き出しの型には触れていません。</li>
+<li><strong>実践：後回し</strong>（1位の「会話のきっかけを作る」の一部として考える程度）</li>
+<li><strong>流布と独立性</strong>：今回確認した記事の大半に登場します。根拠は主に経験則で、同じ助言の反復が多いです。第三者のデータは言語も指標も異なり、一致していません。</li>
+</ul>
+<h3 id="t15"><span class="tid">T15</span>「滞在時間（読まれる長さ）が最重要」</h3>
+<ul>
+<li><strong>判定：条件つきで参考になる</strong>（「投稿の閲覧に費やす時間」「投稿を開いたページでの滞在時間」はランキングの予測項目です〔公式〕。「最重要」かは重みが非公開で分かりません。具体策の効果を示すデータはありません）。</li>
+<li><strong>実践：条件つきで試す</strong>（開いて読みたくなる投稿、という意識として）</li>
+<li><strong>流布と独立性</strong>：日本語の記事の一部で見られ、根拠は公式の仕組みの説明と1人の経験談です。</li>
+</ul>
+<h3 id="t16"><span class="tid">T16</span>「自分の投稿をリポスト・再投稿する」「過去投稿が再浮上する」</h3>
+<ul>
+<li><strong>判定：判断材料が足りない（方向も判断できない）</strong>。公式の記述は「オリジナルでないコンテンツは配信が制限されうる」のみで（再投稿ボタンで他の人の投稿を共有することとは別の話です）、自分の投稿の再投稿や再浮上についての公式の説明はありません。</li>
+<li><strong>実践：後回し</strong></li>
+<li><strong>流布と独立性</strong>：日本語・英語とも少なく、根拠のない経験談のみです。</li>
+</ul>
+<h3 id="t17"><span class="tid">T17</span>「投稿を消すとアカウントの評価が下がる」「低閲覧はシャドウバン」</h3>
+<ul>
+<li><strong>判定：判断材料が足りない</strong>（傾き：自主的な削除が評価を下げるという公式の記述も、第三者の検証もありません。公式の用語は「シャドウバン」ではなく「おすすめ対象外」です）。</li>
+<li><strong>実践：後回し</strong>（消しても消さなくても構いません。おすすめ対象外になる行為をしていないかのほうが大事です）</li>
+<li><strong>流布と独立性</strong>：日本語・英語とも少なく、他のSNSの経験談が混ざっています。</li>
+</ul>
+<h3 id="t18"><span class="tid">T18</span>「フォロバ・いいね回り・コメント交換・相互フォロー企画は有効」</h3>
+<ul>
+<li><strong>判定</strong>：いいねやフォロワーの購入、配信を人為的に促す組織的なコメント交換は<strong>誤り、または言いすぎ</strong>です（おすすめ対象外〔公式、Instagram向け〕。短時間の大量のいいね・コメントでスパム判定を受けたという経験談も複数あります）。自然なフォロー返しや相互フォローは<strong>判断材料が足りない</strong>です（閲覧数が増える根拠はなく、規制の対象でもありません）。</li>
+<li><strong>実践</strong>：購入や組織的な操作は<strong>避ける</strong>。自然な相互フォローは、閲覧数対策としては<strong>後回し</strong>。</li>
+<li><strong>流布と独立性</strong>：今回確認した日本語の記事では、相互フォロー企画は2023年の初期に見られ、2025年以降の記事ではほぼ推奨されていませんでした。独立した根拠は、スパム判定を受けたという別々の経験談です。</li>
+</ul>
+<h3 id="t19"><span class="tid">T19</span>「新機能（コミュニティなど）を使うだけで優遇される」</h3>
+<ul>
+<li><strong>判定：判断材料が足りない（方向も判断できない）</strong>。コミュニティは日本でも2026年6月から正式提供され、定期的に投稿・返信するとバッジが付く仕組みはありますが（<a href="#s18">出典18</a>）、閲覧数への効果を示す公式の記述はありません。</li>
+<li><strong>実践：後回し</strong>（自分の話題に合うコミュニティがあれば参加する程度）</li>
+<li><strong>流布と独立性</strong>：少なく、機能の紹介が中心です。</li>
+</ul>
+<h3 id="t20"><span class="tid">T20</span>「プロフィールや固定投稿を整える」「ジャンルを絞る」</h3>
+<ul>
+<li><strong>判定：判断材料が足りない</strong>（傾き：プラス寄りです。「投稿者のプロフィールをクリックする可能性」は予測項目〔公式〕で、公式ページも「自分のニッチを持つ」ことを勧めています。ただし閲覧数との関係を示すデータはありません）。</li>
+<li><strong>実践：条件つきで試す</strong></li>
+<li><strong>流布と独立性</strong>：日本語・英語とも多く、主にフォロー率の文脈で語られています。根拠は公式の推奨と経験談です。</li>
+</ul>
+<h3 id="t21"><span class="tid">T21</span>「アプリ内でよく見たり、いいねしたりすると、自分の投稿も伸びる」</h3>
+<ul>
+<li><strong>判定：判断材料が足りない</strong>（傾き：否定寄りです。公式の仕組みにある「閲覧者の最近の活動」は、その人の見るフィードを決める材料で、その人の投稿の配信を決める材料とは書かれていません）。</li>
+<li><strong>実践：後回し</strong></li>
+<li><strong>流布と独立性</strong>：日本語・英語とも一部で見られ、根拠は推測のみです。</li>
+</ul>
+<hr/>
+<section class="src"><h2>公式出典</h2>
+<p>出典はMetaの公式情報だけです。日付はページに表示されたもので、表示がないものは「日付表示なし」としました。Threads上の投稿の日付は日本時間の表示です。すべて2026年10月14日に確認しました。</p>
+<ol>
+<li id="s1">Meta Newsroom「Find Your Community With New Threads Educational Insights」2024年10月21日（更新 2025年6月26日）<br/>
+   <a href="https://about.fb.com/news/2024/10/find-your-community-with-new-threads-educational-insights/" rel="noopener">https://about.fb.com/news/2024/10/find-your-community-with-new-threads-educational-insights/</a><br/>
+   — 返信が閲覧の約半分、会話を生む投稿はおすすめされやすい、投稿頻度と1投稿あたりの表示回数、週2〜5回、文字付きのメディア投稿、面白い投稿、週末、Threads専用のオリジナル投稿（2024年上半期の30日間の社内分析）</li>
+<li id="s2">Meta「クリエイター向けThreads」日付表示なし（データは2024年上半期の30日間の社内分析）<br/>
+   <a href="https://creators.instagram.com/threads?locale=ja_JP" rel="noopener">https://creators.instagram.com/threads?locale=ja_JP</a> （英語版 <a href="https://creators.instagram.com/threads" rel="noopener">https://creators.instagram.com/threads</a>）<br/>
+   — 出典1と同じ内容に加え、おすすめ対象外のコンテンツ（クリックベイト、エンゲージメントベイト、懸賞）、オリジナルが最もリーチを得る、連携投稿は始めたばかりなら可、関連するトピックタグ</li>
+<li id="s3">Meta Newsroom「New Threads Features for a More Personalized Experience That You Control」ページの日付は2025年3月20日（本文には2025年4月24日初出と表示。2025年5月15日・7月22日・10月30日に更新）<br/>
+   <a href="https://about.fb.com/news/2025/03/new-threads-features-more-personalized-experience-you-control/" rel="noopener">https://about.fb.com/news/2025/03/new-threads-features-more-personalized-experience-you-control/</a><br/>
+   — トピックをタグ付けした投稿は一般に閲覧数が多い（社内データ）、インサイトの拡充、長文テキストの添付</li>
+<li id="s4">Meta透明性センター「Instagram ThreadsフィードのAIシステム」更新 2025年3月7日<br/>
+   <a href="https://transparency.meta.com/features/explaining-ranking/ig-threads-feed/" rel="noopener">https://transparency.meta.com/features/explaining-ranking/ig-threads-feed/</a><br/>
+   — ランキングの予測項目（いいね、返信の作成、投稿を開く、プロフィールをクリック、滞在時間、スクロールして飛ばす）と、入力シグナルの例（直近1時間・6時間・1週間の返信やいいね、いいねと表示回数の比率、投稿者に対する閲覧者の反応率など）。重みは非公開</li>
+<li id="s5">Instagramヘルプセンター「Threadsのインサイトを確認する」日付表示なし<br/>
+   <a href="https://help.instagram.com/3675908612671136" rel="noopener">https://help.instagram.com/3675908612671136</a><br/>
+   — 閲覧数（合計の回数）と閲覧者（ユニーク数）の定義、フォロワー以外の閲覧数、閲覧数のソース（ホーム・プロフィール・アクティビティ・検索）、最もアクティブな時間</li>
+<li id="s6">Instagramヘルプセンター「Threadsで投稿の情報を確認する」日付表示なし<br/>
+   <a href="https://help.instagram.com/1328624721203027" rel="noopener">https://help.instagram.com/1328624721203027</a><br/>
+   — 投稿の閲覧数の確認方法。英語版・アプリ向けの説明に、閲覧数にThreadsとInstagram（おすすめとしての表示を含む）での閲覧が含まれるとの記述</li>
+<li id="s7">Meta for Developers「Threads Insights API」日付表示なし<br/>
+   <a href="https://developers.facebook.com/docs/threads/insights" rel="noopener">https://developers.facebook.com/docs/threads/insights</a><br/>
+   — 投稿の閲覧数は「投稿が再生または表示された回数」</li>
+<li id="s8">Adam Mosseri（Instagram責任者）Threads投稿 2024年11月22日<br/>
+   親投稿 <a href="https://www.threads.com/@mosseri/post/DCo4WiOvCB0" rel="noopener">https://www.threads.com/@mosseri/post/DCo4WiOvCB0</a><br/>
+   返信 <a href="https://www.threads.com/@mosseri/post/DCpQG0hz0m8" rel="noopener">https://www.threads.com/@mosseri/post/DCpQG0hz0m8</a><br/>
+   — フォローしている人の投稿を優先するランキングの再調整（親投稿）、「リンクを下げてはいないが、クリックに大きな価値を置いておらず、リンク付き投稿はいいねやコメントがされにくい」（返信）</li>
+<li id="s9">Adam Mosseri Threads投稿 2025年6月4日<br/>
+   <a href="https://www.threads.com/@mosseri/post/DKdzO8fumTq" rel="noopener">https://www.threads.com/@mosseri/post/DKdzO8fumTq</a><br/>
+   — リンクが正しく評価されるよう調整し、1か月以上前から改善</li>
+<li id="s10">Adam Mosseri Threads投稿 2024年10月7日<br/>
+    <a href="https://www.threads.com/@mosseri/post/DA01Sd8vtm6" rel="noopener">https://www.threads.com/@mosseri/post/DA01Sd8vtm6</a><br/>
+    — エンゲージメントベイトの増加を抑える作業、「すべてのコメントや返信が良いわけではない」</li>
+<li id="s11">Adam Mosseri Threads投稿 2023年12月8日<br/>
+    <a href="https://www.threads.com/@mosseri/post/C0j585AvsJq" rel="noopener">https://www.threads.com/@mosseri/post/C0j585AvsJq</a><br/>
+    — トピックタグの開始。1投稿1タグ、タグの一覧は検索画面と同じ、コミュニティに焦点を当てエンゲージメント稼ぎをしにくくする設計</li>
+<li id="s12">Threads公式アカウント投稿 2025年10月18日と、Connor Hayes（Threads責任者）の返信<br/>
+    公式投稿 <a href="https://www.threads.com/@threads/post/DP7I4PAEueK" rel="noopener">https://www.threads.com/@threads/post/DP7I4PAEueK</a><br/>
+    責任者の返信 <a href="https://www.threads.com/@conno_r/post/DP7J21-D0gq" rel="noopener">https://www.threads.com/@conno_r/post/DP7J21-D0gq</a><br/>
+    — 会話を積極的に起こす人と時事的な話題の投稿を増やすランキング調整、Instagram経由でフォローしたアカウントの投稿は減る、Threadsに直接投稿すればより多くのリーチとフォロワー。同じスレッド内の責任者の追加の返信：「直接投稿」はInstagramからの連携投稿ではない投稿のこと、会話を起こす人とは頻繁に投稿する人と返信に応じる人の両方、返信を返すのは良い習慣だがそれだけで配信が増える保証はない、釣りは引き続き減らす</li>
+<li id="s13">Connor Hayes（Threads責任者）Threads投稿 2026年10月13日ごろ（確認時点で「17時間前」の表示）<br/>
+    <a href="https://www.threads.com/@conno_r/post/DeceP6wmc5E" rel="noopener">https://www.threads.com/@conno_r/post/DeceP6wmc5E</a><br/>
+    — フォローしている人の投稿を増やす変更。クリエイターはフォロワーへのリーチが平均で増える見込み</li>
+<li id="s14">Instagram公式ブログ「誰にでも伝えたい思いがある – Threadsで発信しよう」2025年1月30日<br/>
+    <a href="https://about.instagram.com/ja-jp/blog/tips-and-tricks/instagram-threads-tips/" rel="noopener">https://about.instagram.com/ja-jp/blog/tips-and-tricks/instagram-threads-tips/</a><br/>
+    — 常に文字を入れる、タグは1投稿1つ、おすすめフィードは閲覧者のアクションでパーソナライズ</li>
+<li id="s15">Meta Newsroom（日本）「Threadsの投稿にトピックをタグ付けする機能を導入、キーワード検索は日本語でも利用可能に」2023年12月7日（米国時間）<br/>
+    <a href="https://about.fb.com/ja/news/2023/12/threadskeywordsearch_tags/" rel="noopener">https://about.fb.com/ja/news/2023/12/threadskeywordsearch_tags/</a><br/>
+    — タグは1投稿1つ、ハッシュタグとの違い</li>
+<li id="s16">Meta Newsroom（日本）「Threads、「話題のトピック」にAIによる要約を導入」2026年3月2日（米国時間）<br/>
+    <a href="https://about.fb.com/ja/news/2026/03/threads-trends/" rel="noopener">https://about.fb.com/ja/news/2026/03/threads-trends/</a><br/>
+    — 日本の「話題のトピック」は機械学習が最大5つ（将来10）を選び、パーソナライズされない</li>
+<li id="s17">Instagramヘルプセンター「Instagramのおすすめ」（おすすめガイドライン）日付表示なし<br/>
+    <a href="https://help.instagram.com/313829416281232" rel="noopener">https://help.instagram.com/313829416281232</a><br/>
+    — おすすめ対象外のコンテンツとアカウント（ほぼ無編集の転載、配信を人為的に促す組織的なコメント、いいねの購入など）。Facebook・Instagram向けの文書で、Threadsへの適用は出典2の記述を通じた間接的なもの</li>
+<li id="s18">Meta Newsroom（日本）「Threadsの月間アクティブアカウント数が5億を突破、日本でもコミュニティ機能を導入」2026年6月16日（米国時間）<br/>
+    <a href="https://about.fb.com/ja/news/2026/06/meta-launching-new-features-500-million-monthly-threads-users/" rel="noopener">https://about.fb.com/ja/news/2026/06/meta-launching-new-features-500-million-monthly-threads-users/</a><br/>
+    — 日本でのコミュニティ機能、定期的に投稿・返信する人へのバッジ</li>
+</ol></section>
+</article>
+<div class="xlink">もう一方の成果物：<a href="https://yokonarabi-lab.github.io/threads/chatgpt/">GPT-6 Astra 版</a>　／　解説と感想：<a href="https://note.com/sky_yellowlens" rel="noopener">note の記事</a></div>
+<footer class="foot">
+<div class="brand"><span>Sky</span><span class="bar" aria-hidden="true"></span><span>Yellow Lens</span></div>
+<p>検証室：Claude Fable 5.1 vs GPT-6 Astra。同じお題、同じ依頼文で、ふたつの答えを並べて読み解く。記事は <a href="https://note.com/sky_yellowlens" rel="noopener">note</a> に。</p>
+<p>この文書は、AI の成果物をそのまま載せたもの。内容は 2026年10月14日時点の調査で、実際の運用検証はしていない。使うかどうかの判断は、読む人の目で。</p>
+</footer>
+</main>
+</body>
+</html>
