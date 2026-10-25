@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>X攻略法 Claude Fable 5.1 版｜Sky｜Yellow Lens</title>
+<meta name="description" content="X の1投稿あたりの閲覧数を伸ばす方法を、X の公式情報を軸に調べた Claude Fable 5.1 の成果物。同じ依頼文で GPT-6 Astra にも依頼し、ふたつの答えを並べた検証室の記録。">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:title" content="X攻略法 Claude Fable 5.1 版｜Sky｜Yellow Lens">
+<meta property="og:description" content="X の1投稿あたりの閲覧数を伸ばす方法を、X の公式情報を軸に調べた Claude Fable 5.1 の成果物。同じ依頼文で GPT-6 Astra にも依頼し、ふたつの答えを並べた検証室の記録。">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://yokonarabi-lab.github.io/x/claude/">
+<meta property="og:image" content="https://yokonarabi-lab.github.io/x/assets/cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+
+:root{--ink:#1E1E1E;--sub:#5C5C5C;--yellow:#F4C21B;--orange:#D9704A;--green:#1FA383;--rule:#D9D9D9;--soft:#F6F6F6;--bg:#FFFFFF}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter","Noto Sans JP",system-ui,-apple-system,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;font-size:16px;line-height:1.95;letter-spacing:.03em;font-feature-settings:"kern";-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:#B5B5B5;text-underline-offset:.2em}
+a:hover{text-decoration-color:var(--ink)}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.site-header{padding:26px 0 18px;border-bottom:1px solid var(--rule)}
+.brand{display:inline-flex;align-items:center;gap:.42em;font-family:"Inter",sans-serif;font-weight:500;font-size:17px;letter-spacing:.04em;text-decoration:none;color:var(--ink)}
+.brand .bar{display:inline-block;width:1px;height:1.05em;background:var(--yellow);transform:translateY(-.02em)}
+.site-header .nav{float:right;font-size:13px;color:var(--sub);margin-top:4px}
+.site-header .nav a{color:var(--sub);margin-left:14px}
+.doc-head{padding:44px 0 10px}
+.shelf{font-size:13px;color:var(--sub);letter-spacing:.06em;margin:0 0 14px}
+.model{font-family:"Inter",sans-serif;font-weight:700;font-size:30px;line-height:1.3;margin:0 0 6px;letter-spacing:.01em}
+.model .vs{font-weight:500;font-size:.6em;color:var(--sub);margin:0 .35em}
+.model .u{display:inline-block;border-bottom:.11em solid;padding-bottom:.08em;line-height:1.1}
+.model .u.claude{border-color:var(--orange)}
+.model .u.gpt{border-color:var(--green)}
+.theme{font-size:15px;color:var(--sub);margin:0 0 26px}
+.frame{background:var(--soft);border-left:3px solid var(--yellow);padding:16px 20px;font-size:14.5px;line-height:1.9;color:var(--ink);margin:0 0 40px}
+.frame p{margin:0 0 8px} .frame p:last-child{margin:0}
+.frame .k{color:var(--sub);margin-right:.5em}
+article h1{font-size:24px;line-height:1.55;margin:0 0 28px;letter-spacing:.02em;font-weight:700}
+article h2{font-size:21px;line-height:1.5;margin:56px 0 18px;padding-bottom:10px;border-bottom:2px solid var(--ink);letter-spacing:.03em;font-weight:700}
+article h3{font-size:17.5px;line-height:1.6;margin:36px 0 10px;font-weight:700;letter-spacing:.03em}
+article h3 .rank{font-family:"Inter",sans-serif;font-weight:700;margin-right:.45em}
+article h3 .tid{font-family:"Inter",sans-serif;font-weight:600;color:var(--sub);margin-right:.6em;font-size:.95em}
+article p{margin:0 0 16px}
+article ul,article ol{padding-left:1.4em;margin:0 0 16px}
+article li{margin:0 0 8px}
+article li p{margin:0}
+article hr{border:0;border-top:1px solid var(--rule);margin:44px 0}
+article strong{font-weight:700}
+article blockquote{margin:0 0 16px;padding:0 0 0 16px;border-left:3px solid var(--rule);color:var(--sub)}
+.tbl{overflow-x:auto;margin:0 0 24px}
+table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.75;letter-spacing:.02em}
+th{text-align:left;font-weight:700;font-size:13px;padding:8px 10px;border-bottom:2px solid var(--ink);vertical-align:bottom;white-space:nowrap}
+td{padding:12px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+table.cols4 th:nth-child(1){width:20%} table.cols4 th:nth-child(2){width:36%} table.cols4 th:nth-child(3){width:21%} table.cols4 th:nth-child(4){width:23%}
+table.cols3 th:nth-child(1){width:3.2em} table.cols3 th:nth-child(2){width:52%}
+table.cols4 td:first-child{font-weight:500}
+.src ol{padding-left:1.8em}
+.src li{margin:0 0 14px;font-size:14.5px;line-height:1.8;word-break:break-all}
+.src li a{word-break:break-all}
+.src table{font-size:13.5px}
+.foot{margin:72px 0 0;padding:28px 0 56px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--sub);line-height:1.9}
+.foot a{color:var(--sub)}
+.foot .brand{font-size:15px;margin-bottom:10px;color:var(--ink)}
+.xlink{margin:48px 0 0;padding:18px 20px;background:var(--soft);font-size:14.5px}
+.xlink a{font-weight:700}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .site-header .nav{float:none;display:block;margin-top:8px}
+  .site-header .nav a{margin:0 14px 0 0}
+  .model{font-size:26px}
+  article h1{font-size:21px}
+  article h2{font-size:19px}
+  article h3{font-size:16.5px}
+  table.cards,table.cards tbody,table.cards tr,table.cards td{display:block;width:100%}
+  table.cards thead{display:none}
+  table.cards tr{border-bottom:2px solid var(--ink);padding:10px 0 6px;margin:0 0 10px}
+  table.cards td{border:0;padding:4px 0 8px;min-width:0}
+  table.cards td::before{content:attr(data-label);display:block;font-size:12px;color:var(--sub);letter-spacing:.05em;margin-bottom:2px}
+  table.cards td:first-child{font-weight:700;padding-top:0}
+  table.cards td:first-child::before{display:none}
+}
+@media print{.site-header .nav,.xlink{display:none} body{font-size:11pt}}
+table.tc th:nth-child(4){width:24%}
+table.tc th,table.tc td:nth-child(-n+3){white-space:nowrap}
+table td{overflow-wrap:anywhere}
+table.tj,table.tj tbody{display:block;width:100%}
+table.tj thead{display:none}
+table.tj tr{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:18px;padding:16px 0 14px;border-bottom:1px solid var(--rule)}
+table.tj tr:first-child{border-top:2px solid var(--ink)}
+table.tj td{display:block;border:0;padding:0}
+table.tj td:nth-child(1){font-family:"Inter",sans-serif;font-weight:700;color:var(--sub);flex:0 0 auto}
+table.tj td:nth-child(2){font-weight:700;flex:1 1 calc(100% - 4em)}
+table.tj td:nth-child(3),table.tj td:nth-child(4),table.tj td:nth-child(5){font-size:14px;margin-top:6px}
+table.tj td:nth-child(3){font-weight:700}
+table.tj td:nth-child(3)::before,table.tj td:nth-child(4)::before,table.tj td:nth-child(5)::before{content:attr(data-label);font-weight:400;color:var(--sub);font-size:12.5px;margin-right:.5em}
+table.tj td:nth-child(6){flex:0 0 100%;margin-top:8px}
+.src ul{list-style:none;padding-left:0}
+.src li{margin:0 0 14px;font-size:14.5px;line-height:1.8;word-break:break-all}
+.src li .sid{font-family:"Inter",sans-serif;font-weight:700;margin-right:.5em}
+.lead p{margin:0 0 10px}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="https://yokonarabi-lab.github.io/x/"><span>Sky</span><span class="bar" aria-hidden="true"></span><span>Yellow Lens</span></a>
+<nav class="nav" aria-label="ページ内の移動"><a href="https://yokonarabi-lab.github.io/x/">X攻略法</a><a href="https://note.com/sky_yellowlens" rel="noopener">note</a></nav>
+</div></header>
+<main class="wrap">
+
+<div class="doc-head">
+<p class="shelf">検証室｜X攻略法</p>
+<p class="model"><span class="u claude">Claude Fable 5.1</span><span class="vs">版</span></p>
+<p class="theme">Claude Fable 5.1 vs GPT-6 Astra — 同じ依頼文で、X の1投稿あたりの閲覧数を伸ばす方法を調べてもらった成果物</p>
+</div>
+<div class="frame">
+<p><span class="k">依頼日</span>2026年10月23日。「X の公式情報を軸に、日本語と英語の攻略法を調べて、実践チェックリスト（原則10項目）と、26の通説の判定を書く」という同じ依頼文を、Claude Fable 5.1 と GPT-6 Astra に出した。</p>
+<p><span class="k">このページ</span>Claude Fable 5.1 の成果物（相手の検品を受けて直した版）。本文・順位・判定は Claude Fable 5.1 が書いたまま。</p>
+<p><span class="k">もう一方</span><a href="https://yokonarabi-lab.github.io/x/chatgpt/">GPT-6 Astra（ChatGPT）版</a>　<span class="k">解説と感想</span><a href="https://note.com/sky_yellowlens" rel="noopener">note の記事</a></p>
+</div>
+<article>
+<h1>X攻略法｜公開用の成果物</h1>
+<div class="lead">
+<p>調査基準日：2026年10月23日（日本時間）</p>
+<p>対象：日本語で発信する個人の公開アカウント。目的は「1投稿あたりのインプレッション（投稿アナリティクスの表示回数）」を伸ばすこと。</p>
+<p>インプレッションの定義：公式ヘルプでは「タイムラインや検索結果で投稿が利用者に表示された回数」です（S1）。公開の「表示回数」は「ログイン中の利用者が投稿を見た合計回数」で、公式に両者の違いを説明した記述は確認できませんでした（S2）。アカウント全体のアナリティクスは2024年6月以降、有料プラン向けに案内されていますが、投稿ごとのアナリティクスの利用条件を説明する現行のヘルプページは基準日時点で取得できませんでした。</p>
+<p>第三者の分析や経験則も参照していますが、編集方針により出典詳細は非公開です。そのため、読者が直接検証できる範囲には制約があります。</p>
+</div>
+<h2>結論</h2>
+<p>公開コードでは、おすすめ欄は「予測した反応の確率に重みを掛けて足す」仕組みで、返信・引用・共有の重みがいいねより大きく、滞在時間も予測の対象です。まず効くのは、投稿単体で反応が生まれ、最後まで読まれる内容です。外部リンクは公式が「減点していない」と繰り返しており、本文に説明を付ければ使えます。短時間の連投は1投稿あたりでは不利になりうるので控えめにし、交流のある相互フォローを増やし、有料プランは返信の優先表示を期待して検討する、という順番をおすすめします。</p>
+<hr>
+<h2>実践チェックリスト</h2>
+<p>採用の基準：公式情報（ヘルプ、公開コード、経営陣の本人発言）か、方法が確認できる第三者の独立したデータで裏づけがあり、日本語で発信する個人にも当てはまると判断した施策だけを採用しました。公式に書いてあるというだけでは採用していません。順位は、実測の効果順位ではなく、調査に基づく編集上の推奨順位です。手間や費用は順位に含めず、「条件や限界」に書きました。</p>
+<div class="tbl"><table class="cards tc">
+<thead>
+<tr>
+<th>順位</th>
+<th>ID</th>
+<th>比較分類</th>
+<th>項目名</th>
+<th>やること</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="順位">1</td><td data-label="ID">C1</td><td data-label="比較分類">内容</td><td data-label="項目名">反応が生まれる内容</td><td data-label="やること">読んだ人が返信・引用・人に送りたくなる内容（問い、意外な事実、使える情報）を、投稿単体で完結する形で書きます。</td></tr>
+<tr><td data-label="順位">2</td><td data-label="ID">C2</td><td data-label="比較分類">投稿方法</td><td data-label="項目名">リンクは説明つき</td><td data-label="やること">外部リンクを貼るときは、本文にリンク先の要点や自分の考えを十分に書き、リンクだけの投稿にしません。</td></tr>
+<tr><td data-label="順位">3</td><td data-label="ID">C3</td><td data-label="比較分類">有料機能</td><td data-label="項目名">有料プランの検討</td><td data-label="やること">返信の優先表示などを目的に、有料プランへの加入を検討します。</td></tr>
+<tr><td data-label="順位">4</td><td data-label="ID">C4</td><td data-label="比較分類">投稿方法</td><td data-label="項目名">連投を避ける</td><td data-label="やること">短時間に何本も出さず、1本ずつ間隔を空けて投稿します。</td></tr>
+<tr><td data-label="順位">5</td><td data-label="ID">C5</td><td data-label="比較分類">交流</td><td data-label="項目名">投稿後の返信対応</td><td data-label="やること">投稿後1〜2時間は、ついた返信に自分の言葉で返し、会話を広げます。</td></tr>
+<tr><td data-label="順位">6</td><td data-label="ID">C6</td><td data-label="比較分類">交流</td><td data-label="項目名">相互の関係づくり</td><td data-label="やること">同じ関心を持つ相手と実際にやりとりし、自然に相互フォローになる関係を増やします。</td></tr>
+<tr><td data-label="順位">7</td><td data-label="ID">C7</td><td data-label="比較分類">投稿方法</td><td data-label="項目名">時間帯の確認</td><td data-label="やること">自分の投稿アナリティクスで反応が多い曜日・時間帯を確認し、その時間に投稿します。</td></tr>
+<tr><td data-label="順位">8</td><td data-label="ID">C8</td><td data-label="比較分類">コミュニティ</td><td data-label="項目名">コミュニティ投稿</td><td data-label="やること">発信テーマに合うコミュニティに参加し、そこにも投稿します。</td></tr>
+<tr><td data-label="順位">9</td><td data-label="ID">C9</td><td data-label="比較分類">形式</td><td data-label="項目名">自作メディア</td><td data-label="やること">画像・動画を付けるなら、内容に必要なものだけを自作で付け、文字だらけの画像や他媒体からの転載動画は使いません。</td></tr>
+<tr><td data-label="順位">10</td><td data-label="ID">C10</td><td data-label="比較分類">アカウント</td><td data-label="項目名">フォローされる状態</td><td data-label="やること">プロフィールと発信テーマを整え、投稿を見た人がその場でフォローしたくなる状態にします。</td></tr>
+</tbody>
+</table></div>
+<h3 id="c1"><span class="rank">1位</span><span class="tid">C1</span>反応が生まれる内容</h3>
+<ul>
+<li>理由：公開コードでは、返信・引用・DMでの共有・リンクコピーでの共有・投稿者のフォローの予測確率に、いいねより大きな重みが掛かっています（2026年10月22日同期の設定値で、返信5.0、引用5.0、リンクコピー共有20.0、フォロー4.0、いいね0.66）。この重みは予測確率に掛かるもので「返信1件はいいね何件分」とは読めませんが、順位づけが「人に反応させる投稿」を優先する方向にあることは確認できます。2026年10月20日には、オーナーが滞在時間の予測を強めた順位モデルと「最後まで読まれる投稿」を取る検索モデルへの変更も説明しています。</li>
+<li>閲覧数へのつながり：直接。おすすめ欄での順位づけの仕組みは公式コードと経営陣の説明で確認できますが、実際のインプレッション増加を測ったデータは確認していません。</li>
+<li>根拠の種類：公式。</li>
+<li>判断の位置づけ：推論を含む提案（順位づけの仕組みから、反応が生まれ最後まで読まれる内容が有利と推論）。</li>
+<li>条件や限界：「返信して」「フォローします」と反応を乞う形は、順位を下げる方針が経営陣から示されており、逆効果になりえます。設定値は約4週間ごとに更新されるため、数値は変わります。</li>
+<li>対応する公式出典：<a href="#s7">S7</a>、<a href="#s31">S31</a>、<a href="#s94">S94</a>。</li>
+</ul>
+<h3 id="c2"><span class="rank">2位</span><span class="tid">C2</span>リンクは説明つき</h3>
+<ul>
+<li>理由：2025年10月から2026年7月にかけて、オーナーとプロダクト責任者が「リンクは減点していない」「本文にリンクを置き、クリック前に何が見えるか十分な文脈を書く」「説明がほとんどないリンク投稿は配信が弱い」と繰り返し説明しています。公開コードにはリンクによる除外や固定の減点係数は確認できず、リンクの有無は特徴量としてモデルの学習に使われるため、学習された影響の向きは公開情報からは分かりません。</li>
+<li>閲覧数へのつながり：両方。公式はリンク自体の減点を否定していますが、第三者のデータでは「リンク入りの投稿は反応・表示が低い」という相関が複数の独立した集計で一致しています。説明のないリンク投稿は、公式も配信が弱いと認めています。</li>
+<li>根拠の種類：公式、データ分析。</li>
+<li>判断の位置づけ：推論を含む提案（「リンクだけの投稿を避け、説明を書く」は公式の推奨。リンク入り投稿が平均的に伸びにくい傾向は第三者データの相関で、因果は未確認）。</li>
+<li>条件や限界：リンク入り投稿がリンクなし投稿と同じだけ伸びるとは言えません。閲覧数が最優先ならリンクのない投稿のほうが無難で、リンクが必要なときに本文の説明を厚くする、という使い分けです。リンクを返信に置くほうがよいかは、直接比較したデータがありません。</li>
+<li>対応する公式出典：<a href="#s7">S7</a>、<a href="#s9">S9</a>、<a href="#s24">S24</a>、<a href="#s25">S25</a>、<a href="#s26">S26</a>、<a href="#s27">S27</a>、<a href="#s28">S28</a>。</li>
+</ul>
+<h3 id="c3"><span class="rank">3位</span><span class="tid">C3</span>有料プランの検討</h3>
+<ul>
+<li>理由：公式ヘルプが説明する有料プランの効果は「返信の上位表示（ベーシック）」「さらに上位（プレミアム）」「返信のブースト・3プラン中最大（プレミアムプラス）」で、対象は返信欄の順位です。第三者の大規模集計では、有料プラン加入アカウントの1投稿あたりの表示回数の中央値が未加入より大きく高い傾向が見られますが、旧プラン時代の横断比較で、同じアカウントの加入前後を比べたものではありません。</li>
+<li>閲覧数へのつながり：両方。返信欄での上位表示は公式が説明しています。おすすめ欄や通常投稿のインプレッション増加は、第三者の相関データのみで、2026年版の公開コードには有料・認証による加点の係数は見当たりません。</li>
+<li>根拠の種類：公式、データ分析。</li>
+<li>判断の位置づけ：推論を含む提案。</li>
+<li>条件や限界：有料：新規に加入する場合は「The X Subscription」（Plus／Premium／Super／Ultra。2026年10月12日発表、世界へ順次展開）、すでに加入している場合は旧「X Premium」（ベーシック／プレミアム／プレミアムプラス）を維持できます。新しい Premium 以上には旧プレミアムプラス相当の X の特典が含まれ、同じ「Premium」でも新旧で別のプランです。日本語ヘルプは基準日時点で旧プランのみを記載しているため、日本で新規に選べるプラン名と円建て価格は購入画面で確認してください。第三者の表示回数データは旧プラン時代のもので、新プランの効果として読まないでください。返信の優先表示は「返信投稿」の順位の話で、通常投稿のおすすめ掲載を約束するものではありません。</li>
+<li>対応する公式出典：<a href="#s3">S3</a>、<a href="#s4">S4</a>、<a href="#s5">S5</a>、<a href="#s7">S7</a>。</li>
+</ul>
+<h3 id="c4"><span class="rank">4位</span><span class="tid">C4</span>連投を避ける</h3>
+<ul>
+<li>理由：公開コードでは、おすすめ欄を組み立てるとき、同じ画面の候補に同じ投稿者の投稿が複数あると2本目以降のスコアが減衰します（2本目0.625倍、3本目約0.44倍、下限0.25倍）。候補は投稿後48時間まで残るため、同じ日に出した複数の投稿は同じ閲覧者の画面で競合しえます。第三者のデータでも、投稿数を増やすと合計の反応は増えても1投稿あたりの反応は下がる傾向が複数の集計で見られます。</li>
+<li>閲覧数へのつながり：直接。減衰の仕組みは公式コードで確認できます。1投稿あたりの反応の低下は第三者の相関データで、1投稿あたりのインプレッションを直接比べたデータは確認していません。</li>
+<li>根拠の種類：公式、データ分析。</li>
+<li>判断の位置づけ：推論を含む提案（仕組みから「同じ画面で自分の投稿同士が競合する」ことは言えますが、「間隔を空ければ伸びる」「1日何本までなら安全」という効果量は確認できていません）。</li>
+<li>条件や限界：1日の合計インプレッションを増やしたい場合は投稿数を増やす効果があります。ここでの目的は1投稿あたりなので、分けて考えてください。減衰は「同じ画面に並ぶ候補」の中での話です。</li>
+<li>対応する公式出典：<a href="#s7">S7</a>。</li>
+</ul>
+<h3 id="c5"><span class="rank">5位</span><span class="tid">C5</span>投稿後の返信対応</h3>
+<ul>
+<li>理由：公開コードでは、投稿から48時間を過ぎた投稿は候補から外れ、フォロワー5万人以下の投稿者の投稿は「投稿後2時間以内かつ表示200回未満」のあいだ順位を引き上げる枠があります。第三者のデータでは、投稿へのインプレッションは投稿直後に集中し、自分の投稿についた返信に返すと反応がわずかに増える傾向があります。</li>
+<li>閲覧数へのつながり：間接。初動で会話が生まれると返信数が増え、返信の予測確率に掛かる重みを通じて順位に効くという経路は推論です。</li>
+<li>根拠の種類：公式、データ分析。</li>
+<li>判断の位置づけ：推論を含む提案。</li>
+<li>条件や限界：会話に返すのと、件数を増やすために中身のない返信を重ねるのは別です。大量・重複の返信は公式ルールでスパムの例に挙げられています。</li>
+<li>対応する公式出典：<a href="#s7">S7</a>、<a href="#s8">S8</a>。</li>
+</ul>
+<h3 id="c6"><span class="rank">6位</span><span class="tid">C6</span>相互の関係づくり</h3>
+<ul>
+<li>理由：2026年7月にプロダクト責任者が「相互フォローの相手への投稿の表示を上げる小さな調整」を実施したと説明し、公開コードにも相互フォローの投稿者の通常投稿について返信の重みを大きく加算する設定（+15.0）があります。実際に交流のある相手が増えれば、その相手のおすすめ欄で自分の投稿が上位になりやすくなります。</li>
+<li>閲覧数へのつながり：直接。相互フォローの相手の画面での順位の上昇は公式コードと経営陣の説明で確認できますが、全体のインプレッションがどれだけ増えるかのデータはありません。</li>
+<li>根拠の種類：公式。</li>
+<li>判断の位置づけ：根拠から直接いえる（相互フォロー相手の画面での優遇）。全体への効果は推論を含む提案です。</li>
+<li>条件や限界：効果は相互フォローの相手の画面に限られ、全体での大きさは未確認です。数値目的の相互フォロー募集・フォロー返し企画は、公式ルールで「相互交換」として制限の対象になり、逆効果です。</li>
+<li>対応する公式出典：<a href="#s7">S7</a>、<a href="#s33">S33</a>、<a href="#s8">S8</a>、<a href="#s9">S9</a>。</li>
+</ul>
+<h3 id="c7"><span class="rank">7位</span><span class="tid">C7</span>時間帯の確認</h3>
+<ul>
+<li>理由：第三者の大規模な集計では、平日の日中（投稿者の現地時間）に反応が多く、土曜が最も低いという傾向が複数のデータで一致しています。ただし指標は反応数で、日本語圏の読者に向けた日本時間の独立したデータは確認できませんでした。</li>
+<li>閲覧数へのつながり：間接。読者が見ている時間に出せば初動の反応が増えやすい、という経路です。</li>
+<li>根拠の種類：データ分析。</li>
+<li>判断の位置づけ：推論を含む提案。</li>
+<li>条件や限界：公式ヘルプにも公開コードにも、時間帯による加点はありません。自分の投稿アナリティクスで確認して合わせるのが前提です。海外のデータの時間帯をそのまま日本時間に当てはめないでください。</li>
+<li>対応する公式出典：直接の公式出典なし。</li>
+</ul>
+<h3 id="c8"><span class="rank">8位</span><span class="tid">C8</span>コミュニティ投稿</h3>
+<ul>
+<li>理由：公式ヘルプでは、コミュニティ内の投稿はコミュニティのページだけでなく、メンバーのホームタイムライン、投稿者のフォロワー、プロフィール、検索にも通常の投稿と同じように表示されると説明されています。つまり同じ関心を持つ人の画面に、フォローされていなくても届く経路が増えます。</li>
+<li>閲覧数へのつながり：間接。表示先が増えることは公式が説明していますが、インプレッションがどれだけ増えるかのデータはありません。</li>
+<li>根拠の種類：公式。</li>
+<li>判断の位置づけ：推論を含む提案。</li>
+<li>条件や限界：参加には公開アカウントが必要です。コミュニティの投稿には表示回数が表示されないと公式ヘルプにあり、効果を自分で測りにくい点に注意してください。</li>
+<li>対応する公式出典：<a href="#s18">S18</a>、<a href="#s2">S2</a>。</li>
+</ul>
+<h3 id="c9"><span class="rank">9位</span><span class="tid">C9</span>自作メディア</h3>
+<ul>
+<li>理由：公開コードの設定値では、画像の拡大や動画の再生の予測に掛かる重みは小さく（画像拡大0.05、動画を開く0.02）、画像や動画を付けるだけで有利になる固定の仕組みは確認できません。一方で、他媒体の透かし入り動画の転載はインプレッションが大きく減ると経営陣が説明しており、公式のベストプラクティスも文字の多い画像を避けるよう勧めています。</li>
+<li>閲覧数へのつながり：両方。転載動画の減少は経営陣の説明、文字だらけの画像の回避は公式の推奨です。自作メディアが伸びるというデータは確認していません。</li>
+<li>根拠の種類：公式。</li>
+<li>判断の位置づけ：推論を含む提案。</li>
+<li>条件や限界：第三者のデータでは、文字だけの投稿のほうが画像・動画付きより反応率が高い集計もあり、形式そのものより内容が結果を左右します。</li>
+<li>対応する公式出典：<a href="#s7">S7</a>、<a href="#s34">S34</a>、<a href="#s17">S17</a>。</li>
+</ul>
+<h3 id="c10"><span class="rank">10位</span><span class="tid">C10</span>フォローされる状態</h3>
+<ul>
+<li>理由：公開コードでは「投稿者をフォローする」予測確率に大きめの重み（4.0）があり、フォローされやすい投稿が順位で有利です。またフォロワーの画面に出るフォロー中の候補は、おすすめ欄の候補の主要な供給源の一つです。</li>
+<li>閲覧数へのつながり：両方。順位への効きは公式コードで確認できます。フォロワーが増えると1投稿あたりのインプレッションがどれだけ増えるかのデータはありません。</li>
+<li>根拠の種類：公式。</li>
+<li>判断の位置づけ：推論を含む提案。</li>
+<li>条件や限界：プロフィールのクリックの重みは0.0で、プロフィールを見られること自体は加点になりません。フォローしたくなるのは投稿の内容とテーマの一貫性なので、C1 と組み合わせて考えてください。</li>
+<li>対応する公式出典：<a href="#s7">S7</a>。</li>
+</ul>
+<hr>
+<h2>やらないこと</h2>
+<p>公式に根拠を確認できた、閲覧数の低下やおすすめへの掲載制限につながる行動です。ルール違反による制限と、仕組み上の不利益は区別して書きました。公式が「可能性」として説明するものは、必ず起こる結果ではありません。</p>
+<ul>
+<li>N1<ul>
+<li>やらないこと：いいね・リポスト・フォローを互いに付け合う企画（いいね回し、相互フォロー募集、フォロー返し）に参加しません。</li>
+<li>理由：公式ルール（信頼性、プラットフォームの操作およびスパム）が「反応の交換」「フォロートレイン」を明確に禁止し、検索・トレンド・おすすめからの除外やタイムラインからの削除などの制限を「取りうる措置」として説明しています。オーナーも2024年4月にエンゲージメント・ファーミングのアカウントは凍結すると警告しています。</li>
+<li>根拠の種類：公式。</li>
+<li>対応する公式出典：<a href="#s8">S8</a>、<a href="#s9">S9</a>、<a href="#s30">S30</a>。</li>
+</ul>
+</li>
+<li>N2<ul>
+<li>やらないこと：同じ内容の投稿を繰り返したり、投稿と削除を繰り返したりしません。</li>
+<li>理由：公式ルールが「同一・酷似した内容の繰り返し投稿」「投稿と削除の繰り返し」をスパム行為の例に挙げ、表示の制限や機能制限の対象としています。</li>
+<li>根拠の種類：公式。</li>
+<li>対応する公式出典：<a href="#s8">S8</a>、<a href="#s9">S9</a>。</li>
+</ul>
+</li>
+<li>N3<ul>
+<li>やらないこと：説明のない「リンクだけ」の投稿を繰り返しません。</li>
+<li>理由：公式ルールは「説明のないリンクだけの投稿」をスパムの例に挙げ、経営陣も説明がほとんどないリンク投稿は配信が弱いと説明しています（コメントなしで時々リンクを投稿すること自体は違反ではありません）。</li>
+<li>根拠の種類：公式。</li>
+<li>対応する公式出典：<a href="#s9">S9</a>、<a href="#s8">S8</a>、<a href="#s24">S24</a>。</li>
+</ul>
+</li>
+<li>N4<ul>
+<li>やらないこと：他の媒体から転載した動画（透かし入りなど）を投稿しません。</li>
+<li>理由：プロダクト責任者が2026年4月に、他SNSからの転載動画はインプレッションを大幅に減らすと説明しています。</li>
+<li>根拠の種類：公式。</li>
+<li>対応する公式出典：<a href="#s34">S34</a>。</li>
+</ul>
+</li>
+<li>N5<ul>
+<li>やらないこと：内容と無関係なハッシュタグやトレンドのハッシュタグを大量に付けません。</li>
+<li>理由：公式ルールが無関係・過剰なハッシュタグやトレンドの乱用をスパムの例に挙げています。公式ヘルプの推奨は1投稿2個までです。</li>
+<li>根拠の種類：公式。</li>
+<li>対応する公式出典：<a href="#s9">S9</a>、<a href="#s16">S16</a>。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>通説の判定</h2>
+<h3>凡例</h3>
+<p>判定（5つのうち1つ）</p>
+<ul>
+<li>本当：公式情報または第三者の独立した検証・データが、説の中心的な主張をそのまま裏づけている。</li>
+<li>半分本当：根拠で確認できる条件を足した場合に限って成り立つ。条件と、一般化できない範囲を理由に書く。</li>
+<li>言いすぎ：方向性を支持する根拠はあるが、必須性・強さ・範囲・決定性を過大に述べている。どこまで弱めれば支持できるかを書く。</li>
+<li>嘘：中心的な主張に反する十分な根拠がある。公式が触れていない、コードにないという理由だけでは選ばない。</li>
+<li>根拠なし：支持・反証のどちらにも判定に足る根拠を確認できない、情報にアクセスできない、または根拠が対立して決められない。</li>
+</ul>
+<p>補足：「本当」は全員への成果保証ではありません。「半分本当」は確率50％という意味ではなく、「嘘」は発信者の意図的な虚偽を意味しません。「根拠なし」は判定に足る根拠を確認できないという意味で、根拠そのものが存在しないと断定する言葉ではありません。この5分類は、強い・弱いの一本の数値尺度ではありません。</p>
+<p>根拠（4つのうち1つ）</p>
+<ul>
+<li>公式：公式情報が主張を直接裏づけ（または反証）している。</li>
+<li>第三者：公式は関連する仕組みの説明のみか触れておらず、直接の裏づけ（または反証）は第三者の独立した検証・データ。</li>
+<li>公式＋第三者：両方がある。</li>
+<li>なし：判定に足る根拠がない、または根拠が対立して決められない（判定が「根拠なし」のとき）。</li>
+</ul>
+<p>扱いは行動に付けます：やる／条件つきで試す／後回し／やらない。<br>
+「伸びる」は特記がなければ「1投稿あたりのインプレッションが増える」ことです。T12〜T14 はおすすめ欄の順位づけについて、T20〜T22 は「操作した本人以外への表示も減る」かについて判定しています。<br>
+重みの数値は、2026年10月22日に同期された公開コードの設定値で、予測確率に掛かる係数です。「反応1件につき何点」ではありません。公開コードに「ない」ことは、固定の係数が確認できないという意味で、学習された影響がないという意味ではありません。</p>
+<h3>固定の26項目</h3>
+<div class="tbl"><table class="tj">
+<thead>
+<tr>
+<th>ID</th>
+<th>説</th>
+<th>判定</th>
+<th>根拠</th>
+<th>扱い</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="ID">T1</td><td data-label="説">外部リンクを本文に貼ると、表示が落ちる</td><td data-label="判定">半分本当</td><td data-label="根拠">公式＋第三者</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">リンクを本文に貼る行動は条件つきで試す。公式は2025〜2026年に「リンクは減点していない」と繰り返す一方でオーナーは「説明のほぼないリンク投稿は配信が弱い」と認め、第三者の複数の独立した集計でもリンク入り投稿の反応・表示が低い相関が一致しているため（<a href="#s24">S24</a>〜<a href="#s28">S28</a>）、「説明の乏しいリンク投稿」という条件でのみ成り立ち、固定の減点としては一般化できません。</td></tr>
+<tr><td data-label="ID">T2</td><td data-label="説">リンクは本文ではなく返信に付けたほうがいい</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">返信にリンクを付ける行動は条件つきで試す。オーナーは2024年11月に「本文に説明を書き、リンクは返信に」と述べましたが、2026年4〜7月に公式は「本文に置けばよい」「返信に置く必要はもうない」に転じ、本文と返信を直接比べたデータもないため、根拠が対立して決められません（<a href="#s23">S23</a>、<a href="#s26">S26</a>、<a href="#s28">S28</a>）。</td></tr>
+<tr><td data-label="ID">T3</td><td data-label="説">Premium に入らないと伸びない</td><td data-label="判定">言いすぎ</td><td data-label="根拠">公式＋第三者</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">有料プランに入る行動は条件つきで試す。公式が説明する効果は返信欄での上位表示で、第三者の集計で加入アカウントの表示回数の中央値が高い傾向はあるものの旧プラン時代の相関にとどまるため（<a href="#s3">S3</a>、<a href="#s5">S5</a>）、「入らないと伸びない」という必須性は支持されず、「返信欄で有利、表示回数も高い傾向」まで弱めれば支持できます。</td></tr>
+<tr><td data-label="ID">T4</td><td data-label="説">投稿して最初の30分〜1時間の反応で決まる</td><td data-label="判定">言いすぎ</td><td data-label="根拠">公式＋第三者</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">投稿直後に会話を作る行動は条件つきで試す。公開コードにはフォロワー5万人以下の投稿者の投稿を投稿後2時間以内に限って順位で引き上げる処理があり、第三者のデータでもインプレッションは投稿直後に集中するため「初動が重要」までは支持できますが、候補は48時間残るため「決まる」という決定性は支持されません（<a href="#s7">S7</a>）。</td></tr>
+<tr><td data-label="ID">T5</td><td data-label="説">画像を付けると伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">画像を付ける行動は条件つきで試す。公開コードに画像付きを優遇する固定の係数は確認できず（<a href="#s7">S7</a>）、第三者のデータは「文字だけのほうが表示・反応率が高い」集計と「画像が反応率で最も高い」集計に割れ、根拠が対立して決められません。</td></tr>
+<tr><td data-label="ID">T6</td><td data-label="説">動画を付けると伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">動画を付ける行動は条件つきで試す。公開コードに動画付きを優遇する固定の係数は確認できず、第三者のデータも動画が文字だけを下回る集計と一部の業種で最も高い集計に割れて決められませんが、他媒体からの転載動画は表示が大きく減るとプロダクト責任者が説明しています（<a href="#s7">S7</a>、<a href="#s34">S34</a>）。</td></tr>
+<tr><td data-label="ID">T7</td><td data-label="説">動画が一番伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">動画を中心にする行動は後回し。動画が最も伸びるというインプレッション基準の独立したデータは確認できず、反応率基準では動画が文字だけ・画像を下回る集計が複数ありますが、指標が違うため反証にも足りません。</td></tr>
+<tr><td data-label="ID">T8</td><td data-label="説">長文の投稿のほうが伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">長文にする行動は条件つきで試す。公開コードでは本文の長さは特徴量で固定の加点は確認できず（<a href="#s7">S7</a>）、オーナーの2023年の「X上で長文として投稿するのがよい」はリンクの文脈（<a href="#s22">S22</a>）、2026年10月の「最後まで読まれる投稿」の説明も長さの効果ではないため（<a href="#s94">S94</a>）、長文と短文の表示回数を比べた信頼できるデータがなく判定できません。</td></tr>
+<tr><td data-label="ID">T9</td><td data-label="説">スレッド（連投）にすると伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">スレッドにする行動は条件つきで試す。公開コードではフォロー外の返信は候補に入らず、同じ会話からは最高スコアの1件だけが残るため後続投稿が先頭と同じように伸びる仕組みはなく（<a href="#s7">S7</a>）、先頭投稿が伸びるというデータも古い小規模なものしかないため、判定に足る根拠がありません。</td></tr>
+<tr><td data-label="ID">T10</td><td data-label="説">ハッシュタグは効かない</td><td data-label="判定">半分本当</td><td data-label="根拠">公式</td><td data-label="扱い">後回し</td><td data-label="理由">ハッシュタグを付ける行動は後回し。おすすめ欄についてはオーナーが2024年12月に「システムはもう必要としない」と説明し（<a href="#s29">S29</a>）、検索では公式ヘルプが見つかりやすくなると説明して2個までを推奨しているため（<a href="#s16">S16</a>）、「おすすめ欄では」という条件で成り立ち、検索には当てはまりません。</td></tr>
+<tr><td data-label="ID">T11</td><td data-label="説">ハッシュタグは逆効果</td><td data-label="判定">半分本当</td><td data-label="根拠">公式</td><td data-label="扱い">後回し</td><td data-label="理由">ハッシュタグを付ける行動は後回し。公式ルールが無関係・過剰なハッシュタグやトレンドの乱用をスパムの例に挙げ制限の対象としているため（<a href="#s9">S9</a>）その条件では成り立ちますが、内容に合う1〜2個が逆効果になる根拠はなく、公式ヘルプは2個までを推奨しています（<a href="#s16">S16</a>）。</td></tr>
+<tr><td data-label="ID">T12</td><td data-label="説">いいねより、返信のほうが重く評価される</td><td data-label="判定">本当</td><td data-label="根拠">公式</td><td data-label="扱い">やる</td><td data-label="理由">返信が自然に生まれる投稿にする行動はやる。公開コードの設定値で返信の予測確率に掛かる重み（5.0）はいいね（0.66）より大きく（<a href="#s7">S7</a>）、重みは予測確率に掛かるため「返信1件はいいね何件分」とは読めず、返信を乞う投稿は順位を下げる方針が示されています（<a href="#s31">S31</a>）。</td></tr>
+<tr><td data-label="ID">T13</td><td data-label="説">いいねより、引用のほうが重く評価される</td><td data-label="判定">本当</td><td data-label="根拠">公式</td><td data-label="扱い">やる</td><td data-label="理由">引用したくなる投稿にする行動はやる。公開コードの設定値で引用の重み（5.0）はいいね（0.66）より大きく（<a href="#s7">S7</a>）、重みは予測確率に掛かるもので、引用を増やす施策の効果を実測したデータは確認していません。</td></tr>
+<tr><td data-label="ID">T14</td><td data-label="説">いいねより、ブックマークのほうが重く評価される</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">ブックマークを狙う行動は後回し。2026年版の公開コードにはブックマークを予測する項目も重みもなく、件数は特徴量として渡されるだけで学習された影響は読めないため（<a href="#s7">S7</a>）、支持も反証もできません。</td></tr>
+<tr><td data-label="ID">T15</td><td data-label="説">他の人の投稿に返信して回ると、自分の投稿も表示されやすくなる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">他の人の投稿に返信して回る行動は条件つきで試す。公開コードに返信活動が自分の通常投稿の順位を上げる仕組みは確認できず第三者にも直接検証したデータがありませんが（<a href="#s7">S7</a>）、交流が相互フォローにつながる間接経路は推論として妥当で、大量・定型の返信はスパムとして制限されます（<a href="#s8">S8</a>）。</td></tr>
+<tr><td data-label="ID">T16</td><td data-label="説">自分の投稿に自分で返信すると伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">自分の投稿に返信を足す行動は条件つきで試す。元の投稿の順位を上げる仕組みは公開コードに確認できず、第三者のデータもないため判定できませんが（<a href="#s7">S7</a>）、補足やリンクの置き場としては使えます。</td></tr>
+<tr><td data-label="ID">T17</td><td data-label="説">固定ポストは優遇される</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">固定ポストを配信目的で使う行動は後回し。公式ヘルプは固定をプロフィール上部の表示としてのみ説明し公開コードのおすすめ欄にも扱いがなく（<a href="#s15">S15</a>、<a href="#s7">S7</a>）、オーナーが2024年2月に「フォロワー全員に固定ポストが見えるようにする」と予告した投稿（<a href="#s36">S36</a>）は変更予定の発言で、実装は確認できませんでした。</td></tr>
+<tr><td data-label="ID">T18</td><td data-label="説">朝・昼・夜の決まった時刻に出すと伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">投稿時刻をそろえる行動は条件つきで試す。公式ヘルプにも公開コードにも時間帯の加点はなく、第三者の集計は海外中心で指標も反応数のため、日本時間について判定に足る根拠がありません（推論として、読者が見ている時間に合わせる価値はあります）。</td></tr>
+<tr><td data-label="ID">T19</td><td data-label="説">1日に何回も投稿したほうが伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">1日に何回も投稿する行動は後回し。公開コードでは同じ画面の候補に同じ投稿者の投稿が複数あると2本目以降のスコアが減衰し（<a href="#s7">S7</a>）、第三者の集計でも投稿数を増やすと1投稿あたりの反応は下がる傾向がありますが、1投稿あたりのインプレッションを直接比べたデータはなく判定に足りません（推論としては不利な方向です）。</td></tr>
+<tr><td data-label="ID">T20</td><td data-label="説">ミュートをされると、表示が落ちる</td><td data-label="判定">言いすぎ</td><td data-label="根拠">公式</td><td data-label="扱い">やる</td><td data-label="理由">ミュートを招く投稿（連投、無関係な話題）を減らす行動はやる。公式ヘルプは「あなたをミュート・ブロックしたアカウントがあるか」を順位づけの行動シグナルの一つとし「単一のシグナルが決定的ではない」とも説明しているため（<a href="#s10">S10</a>）、本人以外への表示にも方向はありますが、全員への表示が落ちるという強さは支持されません。</td></tr>
+<tr><td data-label="ID">T21</td><td data-label="説">ブロックをされると、表示が落ちる</td><td data-label="判定">言いすぎ</td><td data-label="根拠">公式</td><td data-label="扱い">やる</td><td data-label="理由">ブロックを招く行為（絡み、宣伝返信）を避ける行動はやる。公式ヘルプはブロックを順位づけのシグナルの一つとし（<a href="#s10">S10</a>）、公開コードには投稿者単位でいいねに対するブロック率を集計する処理もありますが（<a href="#s7">S7</a>）、本人以外への表示が必ず落ちるという強さは支持されません（ブロックした本人には2024年11月以降も公開投稿は見えますが反応はできません、<a href="#s14">S14</a>）。</td></tr>
+<tr><td data-label="ID">T22</td><td data-label="説">「興味がない」をされると、表示が落ちる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">「興味がない」を押されにくくするための投稿内容の調整は後回し。公式ヘルプは「興味がない」をその人におすすめしないためのシグナルと説明し（<a href="#s6">S6</a>）、公開コードの負の重みも閲覧者ごとの予測に掛かるもので（<a href="#s7">S7</a>）、本人以外への表示が減るかは支持も反証もできません。</td></tr>
+<tr><td data-label="ID">T23</td><td data-label="説">フォロワー数は関係ない</td><td data-label="判定">言いすぎ</td><td data-label="根拠">公式＋第三者</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">自然にフォロワーを増やす行動は条件つきで試す。公開コードではフォロー中のアカウントの投稿がおすすめ欄の候補の主要な供給源で、フォロワー5万人以下の投稿者には順位の引き上げ枠もあるため（<a href="#s7">S7</a>）「関係ない」は支持されず、第三者の集計でもフォロワーが多くても反応が低い例がある一方で規模の大きい層ほど1投稿あたりの表示が多い集計もあることから、「決定的ではない」まで弱めれば支持できます。</td></tr>
+<tr><td data-label="ID">T24</td><td data-label="説">物議を醸す投稿（炎上）は伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">炎上を狙う行動はやらない。反応で順位づけるタイムラインが怒りや党派性の強い投稿を増幅する傾向は2023年の第三者研究で確認されていますが閲覧者側の計測で投稿者のインプレッションではなく、公式はネガティブな投稿の表示を下げる方針と制限ルールを示しているため（<a href="#s32">S32</a>、<a href="#s10">S10</a>）、根拠が対立して決められません。</td></tr>
+<tr><td data-label="ID">T25</td><td data-label="説">相互フォローをすると伸びる</td><td data-label="判定">半分本当</td><td data-label="根拠">公式</td><td data-label="扱い">やらない</td><td data-label="理由">数値目的で相互フォローをする行動はやらない。プロダクト責任者が2026年7月に「相互フォローの相手への投稿の表示を上げる調整」を実施したと説明し公開コードにも相互フォロー相手への返信の重みの加算（+15.0）があるため（<a href="#s33">S33</a>、<a href="#s7">S7</a>）、交流のある相互フォローの相手への表示に限って成り立ちますが、増加の大きさは未確認で、数値目的の相互フォローは公式ルールで制限の対象です（<a href="#s8">S8</a>、<a href="#s9">S9</a>）。</td></tr>
+<tr><td data-label="ID">T26</td><td data-label="説">いいね回しをすると伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">いいね回しをする行動はやらない。いいね回しで1投稿あたりの表示が増えるか減るかを測ったデータは確認できませんが、公式ルールは反応の交換を禁止しタイムラインからの削除などの制限を説明しているため（<a href="#s9">S9</a>、<a href="#s8">S8</a>、<a href="#s30">S30</a>）、効果の正否とは別に勧めません。</td></tr>
+</tbody>
+</table></div>
+<h3>追加した説（調査範囲内で流布を確認したもの）</h3>
+<div class="tbl"><table class="tj">
+<thead>
+<tr>
+<th>ID</th>
+<th>説</th>
+<th>判定</th>
+<th>根拠</th>
+<th>扱い</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="ID">T27</td><td data-label="説">発信テーマを一貫させると伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やる</td><td data-label="理由">テーマを一貫させる行動はやる。公式ヘルプはおすすめが「フォロー中の話題」「反応した投稿」などの興味のシグナルで選ばれると説明し公開コードには似た関心の集団ごとに候補を取る仕組みがありますが（<a href="#s6">S6</a>、<a href="#s7">S7</a>）、テーマの一貫性そのものの効果を裏づける根拠はなく、仕組みに沿っていて不利益がないため推論として勧めます。</td></tr>
+<tr><td data-label="ID">T28</td><td data-label="説">長く読まれる投稿（滞在時間）が重視される</td><td data-label="判定">本当</td><td data-label="根拠">公式</td><td data-label="扱い">やる</td><td data-label="理由">読み切れる構成にする行動はやる。公開コードには滞在の予測に正の重み・読まずに流した予測に負の重みがあり、2026年10月20日にオーナーが「滞在時間をよりよく予測する順位モデル」と「最後まで読まれる投稿を取る検索モデル」への変更を説明しているため（<a href="#s7">S7</a>、<a href="#s94">S94</a>）、滞在時間が順位づけの目標の一つであることは確認できます（展開範囲は未確認で、長文化の効果とは別です）。</td></tr>
+<tr><td data-label="ID">T29</td><td data-label="説">自分の投稿への返信に自分が返すと、重く評価される</td><td data-label="判定">言いすぎ</td><td data-label="根拠">公式＋第三者</td><td data-label="扱い">やる</td><td data-label="理由">返信に返す行動はやる。2023年版の公開コードにあった「投稿者が返信に反応した返信」の大きな重み（75.0）は2026年版の重み一覧にはなく（<a href="#s20">S20</a>、<a href="#s7">S7</a>）、第三者のデータでは自分の投稿へのコメントに返すと反応がわずかに増える傾向があるため、方向は支持されますが2023年の重みを根拠にした強さは支持されません。</td></tr>
+</tbody>
+</table></div>
+<hr>
+<section class="src"><h2>公式出典</h2>
+<p>掲載は公式情報のみです。ヘルプページの多くは本文に更新日の記載がなく、その場合は「不明」としています。経営陣の投稿は、投稿本文を直接取得できなかったため、複数の報道で引用された原文を確認し、投稿IDから算出した日時と突き合わせたものです。確認日はいずれも2026年10月23日（<a href="#s94">S94</a> と <a href="#s28">S28</a>・<a href="#s36">S36</a> のURLは2026年10月24日）です。</p>
+<ul>
+<li id="s1"><span class="sid">S1</span>ポストアクティビティダッシュボードについて（About your activity dashboard）｜X ヘルプセンター（旧ドメイン）｜<a href="https://help.twitter.com/en/managing-your-account/using-the-tweet-activity-dashboard/" rel="noopener">https://help.twitter.com/en/managing-your-account/using-the-tweet-activity-dashboard/</a> ｜更新日：不明</li>
+<li id="s2"><span class="sid">S2</span>表示回数について（About view counts）｜X ヘルプセンター｜<a href="https://help.x.com/ja/using-x/view-counts" rel="noopener">https://help.x.com/ja/using-x/view-counts</a> ｜更新日：不明</li>
+<li id="s3"><span class="sid">S3</span>Xプレミアムについて（About X Premium）｜X ヘルプセンター｜<a href="https://help.x.com/ja/using-x/x-premium" rel="noopener">https://help.x.com/ja/using-x/x-premium</a> （英語版 <a href="https://help.x.com/en/using-x/x-premium" rel="noopener">https://help.x.com/en/using-x/x-premium</a> ）｜更新日：不明</li>
+<li id="s4"><span class="sid">S4</span>Introducing The X Subscription｜xAI ニュース｜<a href="https://x.ai/news/x-subscription" rel="noopener">https://x.ai/news/x-subscription</a> ｜2026年10月12日（料金ページ <a href="https://docs.x.ai/x-subscription/pricing" rel="noopener">https://docs.x.ai/x-subscription/pricing</a> は2026年10月11日更新）</li>
+<li id="s5"><span class="sid">S5</span>Xの［おすすめ］タイムラインについて｜X ヘルプセンター｜<a href="https://help.x.com/ja/using-x/x-timeline" rel="noopener">https://help.x.com/ja/using-x/x-timeline</a> ｜更新日：不明</li>
+<li id="s6"><span class="sid">S6</span>「おすすめ」への取り組み（Our approach to recommendations）｜X ヘルプセンター｜<a href="https://help.x.com/ja/rules-and-policies/recommendations" rel="noopener">https://help.x.com/ja/rules-and-policies/recommendations</a> ｜更新日：不明</li>
+<li id="s7"><span class="sid">S7</span>xai-org/x-algorithm（おすすめ欄のアルゴリズムの公開コード）｜xAI／X（GitHub）｜<a href="https://github.com/xai-org/x-algorithm" rel="noopener">https://github.com/xai-org/x-algorithm</a> ｜初回公開 2026年1月20日、最新コミット 2026年10月23日（07d159b）、設定値 home-mixer/params/param.rs の同期日 2026年10月22日</li>
+<li id="s8"><span class="sid">S8</span>プラットフォームの操作およびスパムに関するポリシー｜X ヘルプセンター｜<a href="https://help.x.com/en/rules-and-policies/platform-manipulation" rel="noopener">https://help.x.com/en/rules-and-policies/platform-manipulation</a> ｜2023年3月</li>
+<li id="s9"><span class="sid">S9</span>信頼性（Authenticity）｜X ヘルプセンター｜<a href="https://help.x.com/ja/rules-and-policies/authenticity" rel="noopener">https://help.x.com/ja/rules-and-policies/authenticity</a> ｜2025年4月</li>
+<li id="s10"><span class="sid">S10</span>ポストの公開範囲が制限される状況の例｜X ヘルプセンター｜<a href="https://help.x.com/ja/rules-and-policies/x-reach-limited" rel="noopener">https://help.x.com/ja/rules-and-policies/x-reach-limited</a> ｜更新日：不明</li>
+<li id="s14"><span class="sid">S14</span>Xのブロック機能｜X ヘルプセンター｜<a href="https://help.x.com/ja/using-x/blocking-and-unblocking-accounts" rel="noopener">https://help.x.com/ja/using-x/blocking-and-unblocking-accounts</a> ｜更新日：不明</li>
+<li id="s15"><span class="sid">S15</span>Xプロフィールのカスタマイズ方法（固定ポスト）｜X ヘルプセンター｜<a href="https://help.x.com/ja/managing-your-account/how-to-customize-your-profile" rel="noopener">https://help.x.com/ja/managing-your-account/how-to-customize-your-profile</a> ｜更新日：不明</li>
+<li id="s16"><span class="sid">S16</span>ハッシュタグの使用方法｜X ヘルプセンター｜<a href="https://help.x.com/ja/using-x/how-to-use-hashtags" rel="noopener">https://help.x.com/ja/using-x/how-to-use-hashtags</a> ｜更新日：不明</li>
+<li id="s17"><span class="sid">S17</span>無料で行うことができるX広告のベストプラクティス（Organic best practices）｜X Business｜<a href="https://business.x.com/ja/basics/organic-best-practices" rel="noopener">https://business.x.com/ja/basics/organic-best-practices</a> ｜更新日：不明</li>
+<li id="s18"><span class="sid">S18</span>Xのコミュニティ｜X ヘルプセンター｜<a href="https://help.x.com/ja/using-x/communities" rel="noopener">https://help.x.com/ja/using-x/communities</a> ｜更新日：不明</li>
+<li id="s20"><span class="sid">S20</span>twitter/the-algorithm（2023年版の公開コード）と the-algorithm-ml の README｜X（旧Twitter、GitHub）｜<a href="https://github.com/twitter/the-algorithm" rel="noopener">https://github.com/twitter/the-algorithm</a> ｜2023年3月31日公開、重みの記載 2023年4月5日時点</li>
+<li id="s22"><span class="sid">S22</span>Elon Musk の投稿（アルゴリズムは滞在時間を最適化するのでリンクは注目されにくい。X上で長文として投稿するのがよい）｜<a href="https://x.com/elonmusk/status/1709244708533264592" rel="noopener">https://x.com/elonmusk/status/1709244708533264592</a> ｜2023年10月3日</li>
+<li id="s23"><span class="sid">S23</span>Elon Musk の投稿（本文に説明を書きリンクは返信に）｜<a href="https://x.com/elonmusk/status/1860812342210240995" rel="noopener">https://x.com/elonmusk/status/1860812342210240995</a> ｜2024年11月24日</li>
+<li id="s24"><span class="sid">S24</span>Elon Musk の投稿（説明のほぼないリンク投稿は配信が弱い）｜<a href="https://x.com/elonmusk/status/1979182892904308917" rel="noopener">https://x.com/elonmusk/status/1979182892904308917</a> ｜2025年10月17日</li>
+<li id="s25"><span class="sid">S25</span>Nikita Bier（X プロダクト責任者、当時）の投稿（新しいリンク体験のテスト／リンクは減点していない）｜<a href="https://x.com/nikitabier/status/1979994223224209709" rel="noopener">https://x.com/nikitabier/status/1979994223224209709</a> 、<a href="https://x.com/nikitabier/status/1980042761819828393" rel="noopener">https://x.com/nikitabier/status/1980042761819828393</a> ｜2025年10月19〜20日</li>
+<li id="s26"><span class="sid">S26</span>Nikita Bier の投稿（リンクは本文に置き十分な文脈を書く）｜<a href="https://x.com/nikitabier/status/2043428612108644848" rel="noopener">https://x.com/nikitabier/status/2043428612108644848</a> ｜2026年4月12〜13日</li>
+<li id="s27"><span class="sid">S27</span>Nikita Bier の投稿（リンクは投稿を減点しない）｜<a href="https://x.com/nikitabier/status/2060937537456324868" rel="noopener">https://x.com/nikitabier/status/2060937537456324868</a> ｜2026年5月31日</li>
+<li id="s28"><span class="sid">S28</span>Nikita Bier と Elon Musk の投稿（リンクを返信に置く必要はもうない／1年以上前からペナルティはない）｜<a href="https://x.com/nikitabier/status/2082217171506344297" rel="noopener">https://x.com/nikitabier/status/2082217171506344297</a> 、<a href="https://x.com/elonmusk/status/2082273378749268440" rel="noopener">https://x.com/elonmusk/status/2082273378749268440</a> ｜2026年7月28〜29日</li>
+<li id="s29"><span class="sid">S29</span>Elon Musk の投稿（ハッシュタグは使わないで。システムはもう必要としない）｜<a href="https://x.com/elonmusk/status/1869070358210572306" rel="noopener">https://x.com/elonmusk/status/1869070358210572306</a> ｜2024年12月17日</li>
+<li id="s30"><span class="sid">S30</span>Elon Musk の投稿（エンゲージメント・ファーミングのアカウントは凍結）｜<a href="https://x.com/elonmusk/status/1781183251731677264" rel="noopener">https://x.com/elonmusk/status/1781183251731677264</a> ｜2024年4月19日</li>
+<li id="s31"><span class="sid">S31</span>Nikita Bier の投稿（反応を乞う投稿の順位を下げる方針）｜<a href="https://x.com/nikitabier/status/2034668641304895664" rel="noopener">https://x.com/nikitabier/status/2034668641304895664</a> ｜2026年3月19日</li>
+<li id="s32"><span class="sid">S32</span>Elon Musk の投稿（ネガティブな投稿の表示を下げる 2022年11月18日／「後悔しない利用時間」を最大化 2025年1月4日）｜<a href="https://x.com/elonmusk/status/1593673339826212864" rel="noopener">https://x.com/elonmusk/status/1593673339826212864</a> 、<a href="https://x.com/elonmusk/status/1875355425601999255" rel="noopener">https://x.com/elonmusk/status/1875355425601999255</a></li>
+<li id="s33"><span class="sid">S33</span>Nikita Bier の投稿（相互フォローへの表示を上げる調整）｜<a href="https://x.com/nikitabier/status/2076747704248758617" rel="noopener">https://x.com/nikitabier/status/2076747704248758617</a> ｜2026年7月13日</li>
+<li id="s34"><span class="sid">S34</span>Nikita Bier の投稿（他媒体からの転載動画はインプレッションが大幅に減る）｜<a href="https://x.com/nikitabier/status/2043084518278717551" rel="noopener">https://x.com/nikitabier/status/2043084518278717551</a> ｜2026年4月11日</li>
+<li id="s36"><span class="sid">S36</span>Elon Musk の投稿（フォロワー全員に固定ポストが見えるようにする変更の予告。約48時間に1件）｜<a href="https://x.com/elonmusk/status/1762987619409879149" rel="noopener">https://x.com/elonmusk/status/1762987619409879149</a> ｜2024年2月28日</li>
+<li id="s94"><span class="sid">S94</span>Elon Musk の投稿（タイムラインのおすすめの変更：滞在時間をよりよく予測する順位モデル、最後まで読まれる投稿を取る検索モデル）｜<a href="https://x.com/elonmusk/status/2112373713937084809" rel="noopener">https://x.com/elonmusk/status/2112373713937084809</a> ｜2026年10月20日</li>
+</ul>
+<p>（S11〜S13、S19、S21、S35、S37〜S39 は非公開の根拠メモで参照している公式情報で、公開用の判定の直接の出典には使っていません。）</p></section>
+</article>
+<div class="xlink">もう一方の成果物：<a href="https://yokonarabi-lab.github.io/x/chatgpt/">GPT-6 Astra 版</a>　／　解説と感想：<a href="https://note.com/sky_yellowlens" rel="noopener">note の記事</a></div>
+<footer class="foot">
+<div class="brand"><span>Sky</span><span class="bar" aria-hidden="true"></span><span>Yellow Lens</span></div>
+<p>検証室：Claude Fable 5.1 vs GPT-6 Astra。同じお題、同じ依頼文で、ふたつの答えを並べて読み解く。記事は <a href="https://note.com/sky_yellowlens" rel="noopener">note</a> に。</p>
+<p>この文書は、AI の成果物をそのまま載せたもの。内容は 2026年10月23日時点の調査で、実際に投稿して確かめたものではない。</p>
+</footer>
+</main>
+</body>
+</html>
