@@ -1,0 +1,2701 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>生成AI勢力図〈2026年10月26日版〉 Claude Fable 5.1 版｜Sky｜Yellow Lens</title>
+<meta name="description" content="生成AIサービス20の世界と日本の勢力図（利用者数の順位・課金状況・主力モデルと料金・機能・この1か月の出来事）を、同じ依頼文で Claude Fable 5.1 と GPT-6 Astra に作らせた検証室の記録。Claude Fable 5.1 の成果物。">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:title" content="生成AI勢力図〈2026年10月26日版〉 Claude Fable 5.1 版｜Sky｜Yellow Lens">
+<meta property="og:description" content="生成AIサービス20の世界と日本の勢力図（利用者数の順位・課金状況・主力モデルと料金・機能・この1か月の出来事）を、同じ依頼文で Claude Fable 5.1 と GPT-6 Astra に作らせた検証室の記録。Claude Fable 5.1 の成果物。">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://yokonarabi-lab.github.io/power-map/2026-10/claude/">
+<meta property="og:image" content="https://yokonarabi-lab.github.io/power-map/2026-10/assets/cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+:root{--ink:#1E1E1E;--sub:#5C5C5C;--yellow:#F4C21B;--orange:#D9704A;--green:#1FA383;--rule:#D9D9D9;--soft:#F6F6F6;--bg:#FFFFFF}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter","Noto Sans JP",system-ui,-apple-system,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;font-size:16px;line-height:1.95;letter-spacing:.03em;font-feature-settings:"kern";-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:#B5B5B5;text-underline-offset:.2em}
+a:hover{text-decoration-color:var(--ink)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+.site-header{padding:26px 0 18px;border-bottom:1px solid var(--rule)}
+.brand{display:inline-flex;align-items:center;gap:.42em;font-family:"Inter",sans-serif;font-weight:500;font-size:17px;letter-spacing:.04em;text-decoration:none;color:var(--ink)}
+.brand .bar{display:inline-block;width:1px;height:1.05em;background:var(--yellow);transform:translateY(-.02em)}
+.site-header .nav{float:right;font-size:13px;color:var(--sub);margin-top:4px}
+.site-header .nav a{color:var(--sub);margin-left:14px}
+.doc-head{padding:44px 0 10px}
+.shelf{font-size:13px;color:var(--sub);letter-spacing:.06em;margin:0 0 14px}
+.model{font-family:"Inter",sans-serif;font-weight:700;font-size:30px;line-height:1.3;margin:0 0 6px;letter-spacing:.01em}
+.model .vs{font-weight:500;font-size:.6em;color:var(--sub);margin:0 .35em}
+.model .u{display:inline-block;border-bottom:.11em solid;padding-bottom:.08em;line-height:1.1}
+.model .u.claude{border-color:var(--orange)}
+.model .u.gpt{border-color:var(--green)}
+.theme{font-size:15px;color:var(--sub);margin:0 0 26px}
+.frame{background:var(--soft);border-left:3px solid var(--yellow);padding:16px 20px;font-size:14.5px;line-height:1.9;color:var(--ink);margin:0 0 40px}
+.frame p{margin:0 0 8px} .frame p:last-child{margin:0}
+.frame .k{color:var(--sub);margin-right:.5em}
+article h1{font-size:24px;line-height:1.55;margin:0 0 28px;letter-spacing:.02em;font-weight:700}
+article h2{font-size:21px;line-height:1.5;margin:56px 0 18px;padding-bottom:10px;border-bottom:2px solid var(--ink);letter-spacing:.03em;font-weight:700}
+article h3{font-size:17.5px;line-height:1.6;margin:36px 0 10px;font-weight:700;letter-spacing:.03em}
+article h4{font-size:16px;line-height:1.6;margin:28px 0 8px;font-weight:700;letter-spacing:.03em}
+article p{margin:0 0 16px}
+article ul,article ol{padding-left:1.4em;margin:0 0 16px}
+article li{margin:0 0 8px}
+article li p{margin:0}
+article hr{border:0;border-top:1px solid var(--rule);margin:44px 0}
+article strong{font-weight:700}
+article blockquote{margin:0 0 16px;padding:0 0 0 16px;border-left:3px solid var(--rule);color:var(--sub)}
+article blockquote p{margin:0 0 8px}
+.tbl{overflow-x:auto;margin:0 0 24px}
+table{border-collapse:collapse;width:100%;font-size:13.5px;line-height:1.7;letter-spacing:.02em}
+th{text-align:left;font-weight:700;font-size:12.5px;padding:8px 10px;border-bottom:2px solid var(--ink);vertical-align:bottom;white-space:nowrap;background:var(--bg)}
+td{padding:10px 10px;border-bottom:1px solid var(--rule);vertical-align:top;min-width:6em}
+td a{word-break:break-all}
+article code{font-family:"SFMono-Regular",Menlo,Consolas,monospace;font-size:.92em;background:var(--soft);padding:.1em .35em;border-radius:3px}
+.foot{margin:72px 0 0;padding:28px 0 56px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--sub);line-height:1.9}
+.foot a{color:var(--sub)}
+.foot .brand{font-size:15px;margin-bottom:10px;color:var(--ink)}
+.xlink{margin:48px 0 0;padding:18px 20px;background:var(--soft);font-size:14.5px}
+.xlink a{font-weight:700}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .site-header .nav{float:none;display:block;margin-top:8px}
+  .site-header .nav a{margin:0 14px 0 0}
+  .model{font-size:26px}
+  article h1{font-size:21px}
+  article h2{font-size:19px}
+  article h3{font-size:16.5px}
+}
+@media print{.site-header .nav,.xlink{display:none} body{font-size:12.5px}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="https://yokonarabi-lab.github.io/power-map/2026-10/"><span>Sky</span><span class="bar" aria-hidden="true"></span><span>Yellow Lens</span></a>
+<nav class="nav" aria-label="ページ内の移動"><a href="https://yokonarabi-lab.github.io/power-map/2026-10/">生成AI勢力図</a><a href="https://note.com/sky_yellowlens" rel="noopener">note</a></nav>
+</div></header>
+<main class="wrap">
+
+<div class="doc-head">
+<p class="shelf">検証室｜生成AI勢力図〈2026年10月26日版〉</p>
+<p class="model"><span class="u claude">Claude Fable 5.1</span><span class="vs">版</span></p>
+<p class="theme">Claude Fable 5.1 vs GPT-6 Astra — 同じ依頼文で、生成AIサービスの世界と日本の勢力図を作ってもらった成果物</p>
+</div>
+<div class="frame">
+<p><span class="k">基準日</span>2026年10月26日。「30の候補から主要20を選び、利用者数で順位をつける。課金状況、主力モデルと料金、機能、この1か月の出来事も整理する」という同じ依頼文を、同じ日に Claude Fable 5.1 と GPT-6 Astra に出した。上限は、調査から提出まで60分。</p>
+<p><span class="k">このページ</span>Claude Fable 5.1 の成果物。相手のAIの検品を2回受けて直した版で、本文・順位・判断は Claude Fable 5.1 が書いたまま。</p>
+<p><span class="k">もう一方</span><a href="https://yokonarabi-lab.github.io/power-map/2026-10/chatgpt/">GPT-6 Astra（ChatGPT）版</a>　<span class="k">解説と感想</span><a href="https://note.com/sky_yellowlens/n/n7d99577cd12a" rel="noopener">note の記事</a></p>
+</div>
+<article>
+<h1>生成AI勢力図 2026年10月版〈Claude版〉v3</h1>
+<p>調査基準日：2026年10月26日（JST）。前回の基準日：2026年9月21日。対象期間：2026年9月22日〜10月26日。<br>
+v3：10月27日に、GPTによる2回の検品とこちらの再確認を反映して直した版。基準日は10月26日のまま。直した箇所の一覧は M の末尾。</p>
+<hr>
+<h2>A．分析の前提</h2>
+<ul>
+<li>今回の基準日：2026年10月26日。前回の基準日：2026年9月21日。対象期間：9月22日〜10月26日。基準日より後に公表された情報は使っていない</li>
+<li>対象範囲：固定候補30＋継続候補〈今回なし〉＋追加候補〈今回なし〉。この中から、利用規模を最も重視して主要20を選んだ</li>
+<li>主要20の意味：候補から選んだ20サービスであり、世界のすべてのサービスを網羅した上位20ではない</li>
+<li>順位づけの条件：無料と有料を含むMAUを主軸にした「おおよその利用規模の順〈目安〉」。各順位に根拠区分〈A：直接比較／B：異なる指標からの推定／C：間接情報からの推定〉を付けた。同率は根拠から同程度と判断したもの。「前後は判断できない」は手がかりはあるが隣接するサービスとの前後を決められないもの</li>
+<li>前回版：2026年9月21日基準のClaude版〈公開済みの全文〉を土台にした。今回は前回版の形式から第12章の形式への移行を含む〈初回〉。前回版にない表〈I．主力モデルと個人向け料金〉は、今回新規に作成した</li>
+<li>調査方法：Web検索と公開ページの閲覧のみ。ログイン・登録・課金・設定変更・投稿はしていない。ペイウォールの回避もしていない</li>
+</ul>
+<h2>A2．今回の要約</h2>
+<ul>
+<li>最も大きな変化は、上位の公式数値の更新。ChatGPTはDevDay〈9月29日〉で週あたり12億の利用者〈WAU〉を公表し、前回版の9億超〈2月〉から同じ公式指標の下限値が上がった〈どちらも「超」の下限表現で、増加率は確定できない〉。Geminiアプリは公式に10億MAU超〈8月11日〉。中国の3サービスはQuestMobileの9月値〈10月20日公表〉に更新。いずれも順位は前回と同じ</li>
+<li>主要20に新しく入ったサービス・外れたサービス：なし。追加候補〈新規・急伸〉も該当なし</li>
+<li>上位10の順位の変動：比較できるものはなし〈Gemini・Meta AI〈2位・3位〉、Claude・DeepSeek〈6位・7位〉、Microsoft Copilot・Perplexity〈9位・10位〉は「前後は判断できない」ため比較不可。前回の同率2位は、同程度と示す根拠がないためやめた。11位以下では Character.AI・Kimi〈12位・13位〉も比較不可、Midjourney・Sunoは同率17位をやめて17位・18位〈前後は判断できない〉〉</li>
+<li>対象期間で最も影響の大きかった出来事：OpenAI DevDay〈9月29日。GPT-6系の投入、月500ドルのPro 500〉と、その後の無料プランを含む全プランへのGPT-6展開〈10月7〜8日〉。次点はX・Grok・Cursorを1つにまとめた「X Subscription」〈10月12〜13日〉</li>
+</ul>
+<h2>B．候補の基本情報</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>番号</th>
+<th>サービス</th>
+<th>主な用途</th>
+<th>開発・運営会社〈親会社〉</th>
+<th>発祥の国・地域</th>
+<th>本社所在の国・地域</th>
+<th>代表者・役職〈確認時点〉</th>
+<th>更新</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>ChatGPT</td>
+<td>対話・汎用</td>
+<td>OpenAI（OpenAI Group PBC）〈非営利OpenAI Foundationが支配〉</td>
+<td>米国</td>
+<td>米国（サンフランシスコ）</td>
+<td>Sam Altman・CEO〈前回のまま〉</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Gemini</td>
+<td>対話・汎用</td>
+<td>Google LLC〈Alphabet Inc.〉</td>
+<td>米国</td>
+<td>米国（マウンテンビュー）</td>
+<td>Sundar Pichai・Alphabet／Google CEO〈親・前回のまま〉</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Claude</td>
+<td>対話・汎用</td>
+<td>Anthropic PBC</td>
+<td>米国</td>
+<td>米国（サンフランシスコ）</td>
+<td>Dario Amodei・共同創業者兼CEO〈前回のまま〉</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Microsoft Copilot</td>
+<td>対話・業務支援</td>
+<td>Microsoft Corporation</td>
+<td>米国</td>
+<td>米国（レドモンド）</td>
+<td>Satya Nadella・会長兼CEO〈前回のまま〉</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Grok</td>
+<td>対話・汎用</td>
+<td>SpaceXAI LLC〈SpaceX〉（旧xAI。2026年2月にSpaceXが買収）</td>
+<td>米国</td>
+<td>米国</td>
+<td>Elon Musk・SpaceX CEO〈親〉。SpaceXAIの代表は前回のまま〈未再確認〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Perplexity</td>
+<td>検索・調査</td>
+<td>Perplexity AI, Inc.</td>
+<td>米国</td>
+<td>米国（サンフランシスコ）</td>
+<td>Aravind Srinivas・共同創業者兼CEO〈前回のまま〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Meta AI</td>
+<td>対話（SNS組み込み）</td>
+<td>Meta Platforms, Inc.</td>
+<td>米国</td>
+<td>米国（メンローパーク）</td>
+<td>Mark Zuckerberg・会長兼CEO〈前回のまま〉</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>DeepSeek</td>
+<td>対話・汎用</td>
+<td>杭州深度求索人工智能基础技术研究有限公司〈幻方量化系〉</td>
+<td>中国（杭州）</td>
+<td>中国</td>
+<td>梁文鋒・創業者兼CEO〈前回のまま〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Doubao〈豆包〉</td>
+<td>対話・汎用</td>
+<td>字節跳動（ByteDance）</td>
+<td>中国（北京）</td>
+<td>中国（北京。持株会社はケイマン諸島登記）</td>
+<td>梁汝波・ByteDance CEO〈親・前回のまま〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Qwen〈千問〉アプリ</td>
+<td>対話・汎用</td>
+<td>阿里巴巴集団（Alibaba Group）</td>
+<td>中国（杭州）</td>
+<td>中国（杭州。ケイマン諸島登記）</td>
+<td>呉泳銘・Alibaba Group CEO〈親・前回のまま〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Kimi</td>
+<td>対話・汎用</td>
+<td>月之暗面（Moonshot AI）</td>
+<td>中国（北京）</td>
+<td>中国</td>
+<td>楊植麟・創業者兼CEO〈前回のまま〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Vibe〈旧Le Chat〉</td>
+<td>対話・汎用</td>
+<td>Mistral AI SAS。Le Chat は2026年8月12日に「Vibe」へ改称〈公式ヘルプで確認。アカウント・会話は継続[S62]〉。固定候補12を引き継ぐ</td>
+<td>フランス（パリ）</td>
+<td>フランス</td>
+<td>Arthur Mensch・共同創業者兼CEO〈前回のまま〉</td>
+<td>★</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Character.AI</td>
+<td>キャラクター対話</td>
+<td>Character Technologies, Inc.</td>
+<td>米国</td>
+<td>米国（メンローパーク）</td>
+<td>前回版で「CEO Karandeep Anandが2026-09-18にDisneyへ転出と発表、後任未確認」。今回も後任は未再確認</td>
+<td>未</td>
+</tr>
+<tr>
+<td>14</td>
+<td>NotebookLM</td>
+<td>資料要約・調査</td>
+<td>Google LLC〈Alphabet Inc.〉。2026年7月に「Gemini Notebook」へ改称〈Googleの公式プラン比較ページでも「Gemini Notebook」表記を確認[S5]〉</td>
+<td>米国</td>
+<td>米国</td>
+<td>Sundar Pichai・CEO〈親〉</td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Midjourney</td>
+<td>画像生成</td>
+<td>Midjourney, Inc.</td>
+<td>米国</td>
+<td>米国（サンフランシスコ）</td>
+<td>David Holz・創業者兼CEO〈前回のまま〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Adobe Firefly</td>
+<td>画像・動画生成</td>
+<td>Adobe Inc.</td>
+<td>米国</td>
+<td>米国（サンノゼ）</td>
+<td>Shantanu Narayen・会長兼CEO（前回版：2026-12-01付でAnil ChakravarthyがCEO就任予定）〈未再確認〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Leonardo.Ai</td>
+<td>画像生成</td>
+<td>Leonardo.Ai〈Canva〉</td>
+<td>オーストラリア（シドニー）</td>
+<td>オーストラリア</td>
+<td>JJ Fiasson・共同創業者兼CEO〈前回のまま〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Ideogram</td>
+<td>画像生成</td>
+<td>Ideogram AI Inc.</td>
+<td>カナダ（トロント）</td>
+<td>カナダ</td>
+<td>Mohammad Norouzi・共同創業者兼CEO〈前回のまま〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Runway</td>
+<td>動画生成</td>
+<td>Runway AI, Inc.</td>
+<td>米国（ニューヨーク）</td>
+<td>米国</td>
+<td>Cristóbal Valenzuela・共同創業者兼CEO〈前回のまま〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Kling AI</td>
+<td>動画生成</td>
+<td>快手科技（Kuaishou Technology）</td>
+<td>中国（北京）</td>
+<td>中国（北京。ケイマン諸島登記、香港上場）</td>
+<td>程一笑・会長兼CEO〈親・前回のまま〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Hailuo AI</td>
+<td>動画生成</td>
+<td>MiniMax（2026年1月に香港上場）</td>
+<td>中国（上海）</td>
+<td>中国</td>
+<td>閆俊傑・創業者兼CEO〈前回のまま〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Pika</td>
+<td>動画生成</td>
+<td>Pika（Pika Labs）</td>
+<td>米国（パロアルト）</td>
+<td>米国</td>
+<td>Demi Guo・共同創業者兼CEO〈前回のまま〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Suno</td>
+<td>音楽生成</td>
+<td>Suno, Inc.</td>
+<td>米国（ケンブリッジ、MA）</td>
+<td>米国</td>
+<td>Mikey Shulman・共同創業者兼CEO〈前回のまま〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>24</td>
+<td>ElevenLabs</td>
+<td>音声生成</td>
+<td>ElevenLabs Inc.</td>
+<td>創業者はポーランド出身、英米で創業</td>
+<td>米国（ニューヨーク。ロンドン拠点あり）</td>
+<td>Mati Staniszewski・共同創業者兼CEO〈前回のまま〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Canvaの生成AI機能</td>
+<td>デザイン制作</td>
+<td>Canva Pty Ltd</td>
+<td>オーストラリア（シドニー）</td>
+<td>オーストラリア</td>
+<td>Melanie Perkins・共同創業者兼CEO〈前回のまま〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Notion AI</td>
+<td>文書・業務管理</td>
+<td>Notion Labs, Inc.</td>
+<td>米国（サンフランシスコ）</td>
+<td>米国</td>
+<td>Ivan Zhao・共同創業者兼CEO〈前回のまま〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Gamma</td>
+<td>資料・スライド生成</td>
+<td>Gamma Tech, Inc.</td>
+<td>米国（サンフランシスコ）</td>
+<td>米国</td>
+<td>Grant Lee・共同創業者兼CEO〈前回のまま〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Cursor</td>
+<td>コード生成（IDE）</td>
+<td>Anysphere Inc.〈SpaceX〉。SpaceXによる買収が2026年8月中旬に完了〈報道[S39]〉。前回版は独立企業として記載していたため今回訂正</td>
+<td>米国（サンフランシスコ）</td>
+<td>米国</td>
+<td>Michael Truell・共同創業者兼CEO〈買収後の役職は未確認〉。親会社CEOはElon Musk</td>
+<td>★</td>
+</tr>
+<tr>
+<td>29</td>
+<td>GitHub Copilot</td>
+<td>コード生成</td>
+<td>GitHub, Inc.〈Microsoft〉</td>
+<td>米国（サンフランシスコ）</td>
+<td>米国</td>
+<td>CEO不在〈Microsoft CoreAI配下〉。公式ページ最上位はKyle Daigle・COO〈前回のまま〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Replitの生成AI・エージェント機能</td>
+<td>コード・アプリ生成</td>
+<td>Replit, Inc.</td>
+<td>米国（フォスターシティ）</td>
+<td>米国</td>
+<td>Amjad Masad・共同創業者兼CEO〈前回のまま〉</td>
+<td>未</td>
+</tr>
+</tbody>
+</table></div>
+<p>継続候補：なし。追加候補：なし〈C参照〉。</p>
+<p>「未」は、時間内に代表者・所在地の再確認ができず前回版の記載を置いている行。空欄は、対象期間の出来事を確認した範囲で変化が見つからなかった行。会社・国の出典は第5章の優先順位が6位のため、前回版の出典を引き継いでいる〈L参照〉。</p>
+<h2>C．主要20の選定結果</h2>
+<p><strong>選定した20</strong>〈括弧内は候補番号〉：ChatGPT(1)、Gemini(2)、Claude(3)、Microsoft Copilot(4)、Grok(5)、Perplexity(6)、Meta AI(7)、DeepSeek(8)、Doubao(9)、Qwenアプリ(10)、Kimi(11)、Character.AI(13)、Gemini Notebook〈NotebookLM〉(14)、Midjourney(15)、Kling AI(20)、Hailuo AI(21)、Suno(23)、Gamma(27)、Cursor(28)、GitHub Copilot(29)。</p>
+<p>選定理由：上位11サービスは、公式または外部推計のMAU〈またはそれに準ずる指標〉で数千万以上の利用規模を確認できる。12位以下は、推計MAU・Web訪問数・有料契約数・累計ユーザー数のいずれかで利用規模の手がかりがあり、非選定の候補より手がかりが多い。</p>
+<p><strong>選定しなかった10</strong>：</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>番号</th>
+<th>サービス</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12</td>
+<td>Vibe〈旧Le Chat〉</td>
+<td>今回も利用者数の公表・推計を確認できず。a16zの上位50〈2026年1月データ〉にも入っていない[S12]。改称は確認したが、改称後の利用規模の資料もない</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Adobe Firefly</td>
+<td>Firefly単独の利用者数は未確認。Adobe全体の数値で代用しない</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Leonardo.Ai</td>
+<td>2024年の累計値以外に手がかりなし〈前回のまま〉</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Ideogram</td>
+<td>利用者数の公表・推計を確認できず</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Runway</td>
+<td>利用者数の公表・推計を確認できず〈資金調達・売上推計のみ〉</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Pika</td>
+<td>2024年の古い数値のみ〈前回のまま〉</td>
+</tr>
+<tr>
+<td>24</td>
+<td>ElevenLabs</td>
+<td>a16zの上位50に入るが絶対数は未確認。規模は大きい可能性があり、調査の穴として残る</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Canvaの生成AI機能</td>
+<td>AI機能の利用者数は未確認。日本のICT総研調査で2.2%〈過去1年利用者ベース〉[S30]はあるが世界の規模は不明</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Notion AI</td>
+<td>AI機能の利用者数は未確認〈a16zは「AI機能がARRの約半分」と記述[S12]〉</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Replit</td>
+<td>エージェント機能の利用者数は未確認</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>前回との入れ替え</strong>：なし。新規・脱落ともになし。</p>
+<p><strong>追加候補〈新規・急伸〉</strong>：なし。対象期間中に一般向けに新しく公開された、または利用者数の大きな伸びが確認できた独立のサービスは見つからなかった。日本に関しては、LINEヤフーの「Agent i」〈2026年4月提供開始、日本のMAU 623万人・2026年5月時点の外部推計[S31]〉が目立つが、対象期間中の新規公開・急伸には当たらないため今回は追加候補にしていない〈M章で固定候補への追加を提案〉。</p>
+<h2>D．世界の利用規模・勢力図</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>順位〈根拠区分〉</th>
+<th>前回順位</th>
+<th>変動</th>
+<th>サービス〈運営会社・国〉</th>
+<th>利用規模の数値</th>
+<th>指標・範囲</th>
+<th>時点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1位〈B〉</td>
+<td>1位</td>
+<td>→</td>
+<td>ChatGPT〈OpenAI・米国〉</td>
+<td>12億［公］[S3]／10億超［公→報］[S2]／11億超［調→報］[S9]</td>
+<td>WAU（「週あたり12億の利用者」。OpenAIサービス全体としての表現で、ChatGPT単体かは原文に明示なし。10月7日の公式記事では「毎週ChatGPTを使う12億人超」）／WAU（全世界）／MAU（Sensor Tower推計、シェア46.4%）</td>
+<td>2026-09-29発表／2026-08-06発表／2026年5月</td>
+</tr>
+<tr>
+<td>2位〈推定・C〉</td>
+<td>同率2位</td>
+<td>比較不可</td>
+<td>Gemini〈Google・米国〉</td>
+<td>10億超［公→報］[S4]／6億6,200万［調→報］[S9]</td>
+<td>MAU（Geminiアプリ＋Web。検索・Workspace内の利用は含まず。Google公式ブログとPichai氏の投稿を報道経由で確認）／MAU（Sensor Tower推計）</td>
+<td>2026-08-11到達／2026年5月</td>
+</tr>
+<tr>
+<td>3位〈推定・C〉</td>
+<td>同率2位</td>
+<td>比較不可</td>
+<td>Meta AI〈Meta・米国〉</td>
+<td>10億超［公］[S6]〈前回のまま〉／12億［報］[S7]</td>
+<td>MAU（WhatsApp・Instagram・Facebook・Messengerへの組み込み＋単体アプリの合算）／「月間利用者」（Similarwebの業界資料の年表に記載。原典は未確認）</td>
+<td>2025年5月（2026年Q2決算でも更新なし）／2026年3月</td>
+</tr>
+<tr>
+<td>4位〈B〉</td>
+<td>4位</td>
+<td>→</td>
+<td>Doubao〈ByteDance・中国〉</td>
+<td>4億1,900万［調］[S10-2]／DAU 1億8,100万［調］[S10-2]</td>
+<td>月間の活動利用者（中国国内・AIネイティブアプリ、QuestMobile推計。原文は「活跃用户规模」でMAUとは明記なし。プリインストールのアシスタントは含まず）／DAU</td>
+<td>2026年9月（2026-10-20公表）／2026-09-30</td>
+</tr>
+<tr>
+<td>5位〈B〉</td>
+<td>5位</td>
+<td>→</td>
+<td>Qwenアプリ〈Alibaba・中国〉</td>
+<td>3億超［公］[S59]／1億5,800万［調］[S10-2]</td>
+<td>MAU（一般向けQwenアプリ、全プラットフォーム。Alibaba公式）／月間の活動利用者（中国国内・AIネイティブアプリ、QuestMobile推計）。範囲が違うため合算も割り算もしない</td>
+<td>2026年2月（2026-03-19発表）／2026年9月</td>
+</tr>
+<tr>
+<td>6位〈推定・C〉</td>
+<td>同率6位</td>
+<td>比較不可</td>
+<td>Claude〈Anthropic・米国〉</td>
+<td>2億4,500万［調→報］[S9]／Web訪問9億5,020万・ユニーク訪問者1億1,100万/月［調］[S8-2]／Web訪問シェア8.9%〈3位〉［調→報］[S8]</td>
+<td>公式MAUは未公表。MAU（Sensor Tower推計、シェア10.3%。アプリとWebの範囲は記事に明示なし）／claude.aiの訪問数・ユニーク訪問者（Similarweb）／Similarweb世界の生成AIサイト訪問シェア</td>
+<td>2026年5月／2026年8月／2026-05-26</td>
+</tr>
+<tr>
+<td>7位〈推定・C〉</td>
+<td>同率6位</td>
+<td>比較不可</td>
+<td>DeepSeek〈DeepSeek・中国〉</td>
+<td>1億2,300万［調］[S10-2]／Web訪問シェア4.0%〈4位〉［調→報］[S8]／iOSアプリMAU 3,860万・Web訪問2億9,800万/月［調］[S11]</td>
+<td>月間の活動利用者（中国国内・AIネイティブアプリ、QuestMobile推計）／Similarweb／Sensor Tower・Similarweb（世界）</td>
+<td>2026年9月／2026-05-26／2026年2月</td>
+</tr>
+<tr>
+<td>8位〈B〉</td>
+<td>8位</td>
+<td>→</td>
+<td>Grok〈SpaceXAI・米国〉</td>
+<td>1億1,700万［公→報］[S13]〈前回のまま〉／Web訪問シェア2.8%［調→報］[S8]</td>
+<td>MAU（XおよびGrokアプリ。SpaceXのS-1記載を報道経由で確認）／Similarweb</td>
+<td>2026年3月／2026-05-26</td>
+</tr>
+<tr>
+<td>9位〈推定・C〉</td>
+<td>9位</td>
+<td>比較不可</td>
+<td>Microsoft Copilot〈Microsoft・米国〉</td>
+<td>1億超［公］[S15]〈前回のまま〉／Web訪問シェア2.0%［調→報］[S8]</td>
+<td>MAU（「Copilotアプリ群」。個人向けCopilotのほか、Microsoft 365内・GitHub・セキュリティなど複数製品のCopilotを含む集計とみられ、個人向け単体の数値は未公表。FY26年次報告でも「1億超」と再掲された旨を報道で確認[S14]）／Similarweb</td>
+<td>2025年10月／2026-05-26</td>
+</tr>
+<tr>
+<td>10位〈推定・C〉</td>
+<td>10位</td>
+<td>比較不可</td>
+<td>Perplexity〈Perplexity・米国〉</td>
+<td>1億超［報］[S17-2]／4,500万［調］[S18]／Web訪問シェア1.3%［調→報］[S8]／iOSアプリMAU 1,260万・Web訪問1億7,000万/月［調］[S11]</td>
+<td>MAU（検索とエージェントの各ツールの合算。FTの取材をInvesting.com経由で確認、原典未閲覧）／MAU（Similarweb推計、Web）／Similarweb〈2025年10月をピークに低下と記述〉／Sensor Tower・Similarweb</td>
+<td>2026年4月（2026-04-08報道）／2025年／2026-05-26／2026年2月</td>
+</tr>
+<tr>
+<td>11位〈C〉</td>
+<td>11位</td>
+<td>→</td>
+<td>Gemini Notebook〈NotebookLM〉〈Google・米国〉</td>
+<td>3,000万超［公→報］[S19]〈前回のまま〉</td>
+<td>「利用者数」（MAUか累計かは未確認）</td>
+<td>2026-07-16</td>
+</tr>
+<tr>
+<td>12位〈推定・C〉</td>
+<td>13位</td>
+<td>比較不可</td>
+<td>Character.AI〈Character Technologies・米国〉</td>
+<td>iOSアプリMAU 530万・Web訪問1億9,500万/月［調］[S11]／2,000万［調］[S13-2]</td>
+<td>Sensor Tower・Similarweb（世界）／MAU（Sacra推計、2024年初。更新値なし）</td>
+<td>2026年2月／2024年初</td>
+</tr>
+<tr>
+<td>13位〈推定・C〉</td>
+<td>12位</td>
+<td>比較不可</td>
+<td>Kimi〈Moonshot AI・中国〉</td>
+<td>729万［調→報］[S10]／iOSアプリMAU 440万・Web訪問3,400万/月［調］[S11]／世界アプリMAU 2,269万［調］[S81]</td>
+<td>MAU（中国国内・単体アプリ、QuestMobile推計。前回参照したaicpbの2,269万とは乖離大）／Sensor Tower・Similarweb</td>
+<td>2026年6月／2026年2月</td>
+</tr>
+<tr>
+<td>14位〈C〉</td>
+<td>14位</td>
+<td>→</td>
+<td>Kling AI〈Kuaishou・中国〉</td>
+<td>1,200万［報］[S20]〈前回のまま〉／iOSアプリMAU 230万［調］[S11]</td>
+<td>MAU（報道。時点の詳細は不明）／Sensor Tower（iOSのみ）</td>
+<td>2026年（Q2決算前後）／2026年2月</td>
+</tr>
+<tr>
+<td>15位〈C〉</td>
+<td>15位</td>
+<td>→</td>
+<td>GitHub Copilot〈GitHub／Microsoft・米国〉</td>
+<td>有料契約470万［公→報］[S14]／累計5,000万［公→報］[S16]〈前回のまま〉</td>
+<td>有料サブスクライバー数（企業・個人合算。MAUではない）／累計ユーザー数（MAUではない。別の報道では「2,000万」とする記述もあり、定義の違いの可能性）</td>
+<td>2025年12月末／2026-07-29</td>
+</tr>
+<tr>
+<td>16位〈C〉</td>
+<td>16位</td>
+<td>→</td>
+<td>Hailuo AI〈MiniMax・中国〉</td>
+<td>約560万［公→報］[S21]〈前回のまま〉</td>
+<td>MAU（上場目論見書を報道経由で確認）</td>
+<td>2025年1〜9月</td>
+</tr>
+<tr>
+<td>17位〈推定・C〉</td>
+<td>同率17位</td>
+<td>比較不可</td>
+<td>Suno〈Suno・米国〉</td>
+<td>有料契約200万超［公］[S23]／累計1億超［公］[S23]／Web月間ユニーク訪問者で世界15位［調］[S12]</td>
+<td>有料契約数（MAUではない。公式採用ページで確認）／楽曲を作った人の累計（MAUではない）／a16z（Similarwebのユニーク訪問者順位）</td>
+<td>2026年初／2026-10-26閲覧／2026年1月</td>
+</tr>
+<tr>
+<td>18位〈推定・C〉</td>
+<td>同率17位</td>
+<td>比較不可</td>
+<td>Midjourney〈Midjourney・米国〉</td>
+<td>Discord登録約1,983万［調］[S22]〈前回のまま〉／Web訪問1,500万/月［調］[S11]</td>
+<td>累計登録（MAUではない）／midjourney.comの訪問数（Discord経由の利用は含まず）</td>
+<td>2026年1月／2026年2月</td>
+</tr>
+<tr>
+<td>19位〈C〉</td>
+<td>19位</td>
+<td>→</td>
+<td>Gamma〈Gamma Tech・米国〉</td>
+<td>累計1億超［公］[S24]／Web訪問2,500万/月［調］[S11]</td>
+<td>累計ユーザー数（公式が「lifetime data」と明記。MAUではない）／gamma.appの訪問数</td>
+<td>2026年5月まで（2026-08-11公表）／2026年2月</td>
+</tr>
+<tr>
+<td>20位〈C〉</td>
+<td>20位</td>
+<td>→</td>
+<td>Cursor〈Anysphere／SpaceX・米国〉</td>
+<td>100万超［調］[S25]〈未再確認〉</td>
+<td>DAU（調査サイト集約。IDE内の利用はWeb訪問に表れない）</td>
+<td>2025年12月</td>
+</tr>
+</tbody>
+</table></div>
+<p>順位保留：なし。</p>
+<p><strong>Dの注記</strong></p>
+<ul>
+<li>順位は MAU を主軸にした、おおよその利用規模の目安。指標・時点・範囲が異なる数値を並べているため、数値の大小をそのまま順位と読まないこと</li>
+<li>1位・4位・5位・8位〈B〉：公式MAU・WAU、または同一調査主体〈QuestMobile〉の推計があり、隣接するサービスとの前後をその数値で判断できる。Grok〈8位〉は、公式の1.17億〈2026年3月〉に加え、同一調査の補助指標〈SimilarwebのWeb訪問シェアでGrok 2.8%＞Copilot 2.0%＞Perplexity 1.3%[S8]、Sensor TowerのiOSアプリMAUでGrok 2,320万＞Perplexity 1,260万[S11]〉がいずれもGrokを上に置くことを根拠にした。公式値の「1億超」〈Copilot・Perplexity〉と1.17億の大小だけでは前後を決められない</li>
+<li>2位・3位〈C〉：Gemini〈10億超、2026年8月〉と Meta AI〈10億超、2025年5月〉は、どちらも公式に「10億超」だが、時点が15か月違い、現在の規模が同程度と示す補助指標もないため、「前後は判断できない」。前回は同率2位としていたが、同程度と判断する根拠がなかったので同率をやめた。Geminiを上に置いたのは公式値が新しいことによる仮の並びで、大小の判断ではない。Meta AIの数値は10月21日の7〜9月期決算でも更新されなかった[S60]。Similarwebの資料にある「Meta AI 12億〈2026年3月〉」は原典を確認できず、判断の根拠にしていない</li>
+<li>9位・10位〈C〉：Microsoft Copilot〈公式1億超、2025年10月、複数製品の合算〉と Perplexity〈報道1億超、2026年4月、検索＋エージェント〉は、どちらも「1億超」で範囲も時点も違い、「前後は判断できない」。Perplexityの1億超は前回の基準日より前の報道だが、前回版は4,500万〈Similarweb推計〉を使っていたため、今回は両方を載せた</li>
+<li>17位・18位〈C〉：Suno〈有料契約200万超、累計1億超〉と Midjourney〈Discord登録1,983万〉は、どちらもMAUがなく指標の種類も違うため「前後は判断できない」。前回は同率17位としたが、同程度と判断する根拠がなかったので同率をやめた。Sunoを上に置いたのはWeb訪問〈a16zで世界15位、Midjourneyは46位〉による仮の並びで、Discord経由のMidjourneyの利用は捕捉できていない</li>
+<li>6位・7位〈C〉：Claude と DeepSeek は「前後は判断できない」。Sensor Tower の推計〈Claude 2.45億、DeepSeek は5%未満＝1.2億未満〉と Similarweb の訪問シェア〈8.9%対4.0%〉はいずれも Claude が上だが、どちらも中国のAndroidアプリ市場をほぼ捕捉しない。一方 DeepSeek には中国国内アプリで1.3億のMAU〈QuestMobile〉があり、海外分は別。両者を同じ尺度で比べる数値がないため、前回の同率ではなく並べ方を変えたうえで「前後は判断できない」とした</li>
+<li>12位・13位〈C〉：Character.AI と Kimi は「前後は判断できない」。Synapticの2026年2月データ〈iOSアプリMAU 530万対440万、Web訪問1.95億対3,400万〉[S11]では Character.AI が上だが、aicpbの2026年6月の世界アプリMAU〈Kimi 2,269万対Character.AI 2,179万〉[S81]では Kimi が上で、同一調査どうしで順序が食い違う。Kimiの中国国内アプリ〈729万〉と世界アプリの範囲差も解消できていない</li>
+<li>14位〜20位〈C〉：MAU以外の指標〈有料契約・累計・訪問数・DAU〉を含み、前後の判断は弱い。Gammaの累計1億超〈5月まで〉は累計で、月間の利用者数ではないため、17位・18位より上には置いていない</li>
+</ul>
+<h2>D2．前回からの変化</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>サービス</th>
+<th>前回順位 → 今回順位</th>
+<th>前回の数値〈時点〉</th>
+<th>今回の数値〈時点〉</th>
+<th>主因〈発表・指標・訂正・推定・相対〉</th>
+<th>補足〈副因など〉</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ChatGPT</td>
+<td>1位 → 1位</td>
+<td>WAU 9億超〈2026-02-27〉／モバイルアプリMAU 10億超〈2026年5月〉</td>
+<td>WAU 12億〈2026-09-29〉／WAU 10億超〈2026-08-06〉／MAU 11億超〈Sensor Tower、2026年5月〉</td>
+<td>発表</td>
+<td>9億超〈2月〉→10億超〈8月〉→12億〈9月29日〉は同じ公式指標〈WAU〉の下限値の更新で、実際の増加を示唆するが、いずれも「超」の表現のため増加率は確定できない。12億はOpenAIの「サービス全体」としての表現だが、10月7日の公式記事では「毎週ChatGPTを使う12億人超」と記述。8月の発表は前回の基準日より前だが前回版が拾えていなかった</td>
+</tr>
+<tr>
+<td>Gemini</td>
+<td>比較不可〈前回同率2位 → 今回2位〉</td>
+<td>MAU 9.5億〈2026年Q2〉</td>
+<td>MAU 10億超〈2026-08-11〉</td>
+<td>発表</td>
+<td>同じ公式指標〈Geminiアプリ＋Web〉の下限値の更新で、伸長を示唆する。8月11日の発表は前回の基準日より前だが前回版が拾えていなかった。順位は同率をやめただけで、変化を裏づけない</td>
+</tr>
+<tr>
+<td>Meta AI</td>
+<td>比較不可〈前回同率2位 → 今回3位〉</td>
+<td>MAU 10億超〈2025年5月〉</td>
+<td>同左〈前回のまま〉。参考：12億〈2026年3月、原典未確認〉</td>
+<td>—</td>
+<td>公式の新しい数値なし〈10月21日の決算にも記載なし〉。同率をやめた並べ方の変更で、利用規模の変化を裏づけない</td>
+</tr>
+<tr>
+<td>Claude</td>
+<td>比較不可〈前回同率6位 → 今回6位〉</td>
+<td>アプリMAU約5,600万〈Sensor Tower、2026年Q2〉／Web訪問9.5億/月〈2026年8月〉</td>
+<td>MAU 2.45億〈Sensor Tower State of AI 2026、2026年5月〉／Web訪問9.5億・ユニーク1.11億/月〈2026年8月〉</td>
+<td>指標</td>
+<td>同じSensor Towerでも、前回のアプリ単独の推計〈5,600万〉と今回のState of AIの推計〈2.45億、範囲の明示なし〉は定義が違うとみられ、増加とは言えない。Web訪問は前回と同じ</td>
+</tr>
+<tr>
+<td>Doubao</td>
+<td>4位 → 4位</td>
+<td>MAU 3億8,230万〈QuestMobile、2026年6月〉</td>
+<td>4億1,900万〈QuestMobile、2026年9月〉</td>
+<td>発表</td>
+<td>同一調査の6月→9月で約9.6%増［計］。同じ調査主体・同じ区分の公表値どうしの参考比較で、集計定義の同一性は未確認。対象期間〈9月22日〜10月26日〉だけの増減ではない</td>
+</tr>
+<tr>
+<td>Qwenアプリ</td>
+<td>5位 → 5位</td>
+<td>MAU 1億6,718万〈QuestMobile、2026年6月〉</td>
+<td>1億5,800万〈QuestMobile、2026年9月〉／3億超〈Alibaba公式・全プラットフォーム、2026年2月〉</td>
+<td>発表</td>
+<td>中国国内アプリは6月→9月で約5.5%減［計］〈同じ条件の参考比較〉。全プラットフォーム3億超は別範囲の公式値で、前回の基準日より前の発表だが前回版が拾えていなかった。1.58億との差を減少と読まない</td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td>比較不可〈前回同率6位 → 今回7位〉</td>
+<td>MAU 1億2,982万〈QuestMobile、2026年6月〉</td>
+<td>1億2,300万〈QuestMobile、2026年9月〉</td>
+<td>発表</td>
+<td>同一調査の6月→9月で約5.3%減［計］〈中国国内アプリのみ、参考比較。海外・Webは含まず〉。順位の並べ方の変更は利用規模の変化を裏づけない</td>
+</tr>
+<tr>
+<td>Microsoft Copilot</td>
+<td>比較不可〈前回9位 → 今回9位〉</td>
+<td>MAU 1億超〈2025年10月〉</td>
+<td>同左〈前回のまま〉</td>
+<td>—</td>
+<td>数値の変化なし。Perplexityの1億超を併記したことで「前後は判断できない」扱いに変わった</td>
+</tr>
+<tr>
+<td>Perplexity</td>
+<td>比較不可〈前回10位 → 今回10位〉</td>
+<td>MAU 4,500万〈Similarweb推計、2025年〉</td>
+<td>1億超〈FT報道、2026年4月〉／4,500万〈前回のまま〉</td>
+<td>指標</td>
+<td>前回の基準日より前に出ていた報道値を今回採用した。推計と報道で定義が違い、利用者の増加を示すものではない</td>
+</tr>
+<tr>
+<td>Character.AI</td>
+<td>比較不可〈前回13位 → 今回12位〉</td>
+<td>MAU 2,000万〈Sacra推計、2024年初〉</td>
+<td>iOSアプリMAU 530万・Web訪問1.95億/月〈2026年2月〉</td>
+<td>指標</td>
+<td>2024年の推計から、2026年2月の同一調査主体データに切り替えた。Kimiとの前後は調査により順序が食い違うため判断できず、順位の数字の違いは変化を裏づけない</td>
+</tr>
+<tr>
+<td>Kimi</td>
+<td>比較不可〈前回12位 → 今回13位〉</td>
+<td>MAU 2,269万〈aicpb、2026年6月〉／2,000万未満〈QuestMobile〉</td>
+<td>MAU 729万〈QuestMobile、2026年6月〉／世界アプリMAU 2,269万〈aicpb、2026年6月〉／iOSアプリMAU 440万・Web訪問3,400万/月〈2026年2月〉</td>
+<td>指標</td>
+<td>主軸をQuestMobile〈他の中国サービスと同じ調査主体、中国国内〉に統一し、aicpbの世界アプリ値は併記に回した。同じ6月でも範囲が違い、実際の減少ではない</td>
+</tr>
+<tr>
+<td>Suno</td>
+<td>比較不可〈前回同率17位 → 今回17位〉</td>
+<td>有料契約200万〈2026-02-27〉</td>
+<td>有料契約200万超〈2026年初〉／累計1億超</td>
+<td>—</td>
+<td>数値は前回と同じ水準〈公式採用ページで再確認〉。同率をやめて並べ方を変えただけで、利用規模の変化を裏づけない</td>
+</tr>
+<tr>
+<td>Midjourney</td>
+<td>比較不可〈前回同率17位 → 今回18位〉</td>
+<td>Discord登録約1,983万〈2026年1月〉</td>
+<td>同左〈前回のまま〉</td>
+<td>—</td>
+<td>数値の変化なし。同率をやめて並べ方を変えただけ</td>
+</tr>
+<tr>
+<td>Gamma</td>
+<td>19位 → 19位</td>
+<td>累計7,000万〈2025-11-10〉</td>
+<td>累計1億超〈2026年5月まで、2026-08-11公表〉</td>
+<td>発表</td>
+<td>公式の累計値の更新。累計のため月間の利用規模の増減ではなく、8月11日の公表は前回の基準日より前だが前回版が拾えていなかった</td>
+</tr>
+</tbody>
+</table></div>
+<p>変化なし〈確認したうえで数値・順位とも前回のまま〉：Grok、Gemini Notebook、Kling AI、GitHub Copilot、Hailuo AI〈以上は参考として2026年2月のSynaptic集計の数値を追記したが、主軸の数値と時点は前回のまま〉。<br>
+未再確認：Cursor〈DAU 100万超・有料36万超は前回版の記載を置いたままで、出典URLも含めて今回再確認できていない〉。<br>
+訂正：Cursorの運営会社〈独立企業 → SpaceX傘下。B参照〉。利用規模の数値の訂正はなし。</p>
+<p><strong>D2の注記</strong>：主因「発表」は新しい公式発表が出たこと、「指標」は使う出典を切り替えたことを示し、どちらも利用者の実際の増減とは別。「比較不可」は順位の数字の違いを変化として扱わない。</p>
+<h2>E．企業・個人の課金状況</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>サービス</th>
+<th>企業の有料〈社数・席数〉</th>
+<th>企業の導入割合〈母集団〉</th>
+<th>個人の有料〈契約数・課金率〉</th>
+<th>有料合計／課金率または有料比率〈定義を明記〉</th>
+<th>更新</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ChatGPT</td>
+<td>有料ビジネスユーザー900万超〈人ベース。社数は未確認〉［公］[S1]、2026-02</td>
+<td>未確認</td>
+<td>消費者向け有料契約5,000万超〈Plus/Pro/Goの合算。プラン別は未確認〉［公］[S1]、2026-02</td>
+<td>有料ビジネスユーザー900万超〈人〉と消費者向け有料5,000万超〈契約〉は単位が違い、合算の条件を確認できないため合計は算出不可。有料比率〈概算〉［計］：同一発表の消費者有料5,000万超÷WAU 9億超〈2026-02〉≒約5〜6%〈二つの公表下限を代表値と置いた参考計算で、実際の比率の上下限や誤差幅ではない〉。参考：分母を12億〈2026-09-29〉にすると約4%〈分子が7か月前の値で、変化の方向は断定できない〉。分子には非アクティブな契約を含み得る</td>
+<td>★</td>
+</tr>
+<tr>
+<td>Gemini</td>
+<td>未確認〈Workspace向け有料席は未公表〉</td>
+<td>未確認</td>
+<td>非公開〈Googleは AI Plus／Pro／Ultra の契約数を公表していない旨を報道で確認[S29]〉</td>
+<td>算出不可〈分子なし〉</td>
+<td></td>
+</tr>
+<tr>
+<td>Meta AI</td>
+<td>該当なし〈法人向けの席契約は未確認〉</td>
+<td>未確認</td>
+<td>未確認〈Museアプリの有料プラン〈月20〜100ドル〉の報道[S38]はあるが、Meta AI本体の契約数は不明〉</td>
+<td>算出不可</td>
+<td></td>
+</tr>
+<tr>
+<td>Doubao</td>
+<td>未確認</td>
+<td>未確認</td>
+<td>未確認〈有料プランの存在は前回版で確認、契約数は未公表〉</td>
+<td>算出不可</td>
+<td>未</td>
+</tr>
+<tr>
+<td>Qwenアプリ</td>
+<td>未確認</td>
+<td>未確認</td>
+<td>未確認</td>
+<td>算出不可</td>
+<td>未</td>
+</tr>
+<tr>
+<td>Claude</td>
+<td>ビジネス顧客30万社超〈API顧客を含む可能性。「有料」の明示は原典未確認〉［報］[S27]、2025-10時点の開示</td>
+<td>未確認</td>
+<td>契約数は未公表。「有料契約は2026年1月1日以降2倍超」〈2026-03、件数は非開示〉［報］[S8-2]</td>
+<td>算出不可〈分子なし〉</td>
+<td></td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td>未確認</td>
+<td>未確認</td>
+<td>該当なし〈個人向け有料プランは確認できず。無料提供〉</td>
+<td>算出不可</td>
+<td>未</td>
+</tr>
+<tr>
+<td>Grok</td>
+<td>未確認</td>
+<td>未確認</td>
+<td>有料契約630万＝X Premium系440万＋SuperGrok系190万［公→報］[S13-3]、2026-03</td>
+<td>SuperGrok系190万÷MAU 1.17億≒約1.6%［計］〈Grokを直接契約した分のみ。分子・分母とも2026年3月〉。参考〈契約数ベース〉：X Premium込み630万÷1.17億≒約5%［計］〈X PremiumにGrokの利用権が含まれる前提。プラン別の利用権の範囲、契約の重複、非アクティブ契約の扱いは未確認で、利用者の比率の上限・下限とは言えない〉。10月12日からX・Grok・Cursorを束ねた「X Subscription」に移行し、来月以降は分子の定義が変わる[S39]</td>
+<td></td>
+</tr>
+<tr>
+<td>Microsoft Copilot</td>
+<td>M365 Copilot有料席3,000万超［公→報］[S16]、2026-07〈FY26 Q4〉。社数は未確認。5万席超の顧客数は前年比7倍〈絶対数は非開示〉</td>
+<td>未確認〈外部推計：M365有料席約4.64億の約6.5%[S16]〉</td>
+<td>未確認〈Copilot Pro／Microsoft 365 Premiumの契約数は未公表〉</td>
+<td>企業3,000万席のみ確認。Copilotアプリ群MAU〈1億超・2025-10〉とは時点・範囲が異なり算出不可</td>
+<td></td>
+</tr>
+<tr>
+<td>Perplexity</td>
+<td>未確認〈「数万社」と自称、席数は非開示[S17]〉</td>
+<td>未確認</td>
+<td>非公開〈有料契約数は未公表[S17]。売上から逆算した外部推計は採用しない〉</td>
+<td>算出不可</td>
+<td>★</td>
+</tr>
+<tr>
+<td>Gemini Notebook</td>
+<td>60万超の組織〈有料か否か不明〉［公→報］[S19]、2026-07</td>
+<td>未確認</td>
+<td>未確認</td>
+<td>算出不可</td>
+<td></td>
+</tr>
+<tr>
+<td>Character.AI</td>
+<td>該当なし</td>
+<td>該当なし</td>
+<td>未確認</td>
+<td>算出不可</td>
+<td>未</td>
+</tr>
+<tr>
+<td>Kimi</td>
+<td>未確認</td>
+<td>未確認</td>
+<td>未確認〈クレジット制の有料プランあり[S41]、契約数は非開示〉</td>
+<td>算出不可</td>
+<td></td>
+</tr>
+<tr>
+<td>Kling AI</td>
+<td>未確認〈四半期売上のみ〉</td>
+<td>未確認</td>
+<td>未確認</td>
+<td>算出不可</td>
+<td>未</td>
+</tr>
+<tr>
+<td>GitHub Copilot</td>
+<td>有料サブスクライバー470万〈企業・個人の合算、前年比約75%増〉［公→報］[S14]、2025-12末</td>
+<td>未確認</td>
+<td>未確認〈合算470万に含まれる〉</td>
+<td>470万〈合算〉。月間利用者が未公表のため算出不可</td>
+<td></td>
+</tr>
+<tr>
+<td>Hailuo AI</td>
+<td>未確認</td>
+<td>未確認</td>
+<td>未確認</td>
+<td>算出不可</td>
+<td>未</td>
+</tr>
+<tr>
+<td>Suno</td>
+<td>未確認</td>
+<td>未確認</td>
+<td>有料契約200万超〈企業・個人の区別なし〉［公］[S23]、2026年初</td>
+<td>200万超〈合算〉。同じ範囲の月間利用者数が未確認のため算出不可〈累計1億超は分母に使えない〉</td>
+<td>★</td>
+</tr>
+<tr>
+<td>Midjourney</td>
+<td>未確認</td>
+<td>未確認</td>
+<td>未確認〈無料プランがないため、利用者はほぼ有料とみられるが契約数は非開示〉</td>
+<td>該当なし〈有料専用〉</td>
+<td>未</td>
+</tr>
+<tr>
+<td>Gamma</td>
+<td>未確認</td>
+<td>未確認</td>
+<td>未確認〈ARR 1億ドル超のみ〉</td>
+<td>算出不可</td>
+<td>未</td>
+</tr>
+<tr>
+<td>Cursor</td>
+<td>企業顧客5万社超〈有料か否か明示なし。Cursorの自称を二次サイト経由で確認〉［報］[S26]</td>
+<td>未確認〈Fortune 500の64%が顧客と自称[S26]〉</td>
+<td>有料サブスクライバー36万超〈2025-03、合算〉［調］[S25]</td>
+<td>36万超〈2025-03〉。DAU 100万超〈2025-12〉と時点が9か月ずれるため算出不可。年間換算売上40億ドル超〈2026-06、報道[S26]〉は契約数の推定には使わない</td>
+<td>★</td>
+</tr>
+</tbody>
+</table></div>
+<p>プラン別の数値が確認できたサービス：</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>サービス</th>
+<th>プラン名</th>
+<th>契約数</th>
+<th>割合〈分母を明記〉</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grok</td>
+<td>X Premium／Premium+</td>
+<td>440万〈2026-03〉</td>
+<td>有料契約630万の約70%</td>
+</tr>
+<tr>
+<td>Grok</td>
+<td>SuperGrok系</td>
+<td>190万〈2026-03〉</td>
+<td>有料契約630万の約30%</td>
+</tr>
+</tbody>
+</table></div>
+<p>プラン別が未確認：ChatGPT〈Plus/Pro/Go/Pro 500の内訳は未公表〉、Gemini、Claude、Microsoft Copilot、GitHub Copilot、Suno、Cursor、ほか。</p>
+<p><strong>Eの注記</strong>：人・社・契約・席は別の単位で、合算は「延べ」。課金率は公表値、有料比率は今回の概算［計］。「★」は分母や周辺情報を更新した行、「未」は再確認できず前回版の記載を置いた行。ChatGPTとGrok以外は、分子〈有料契約数〉か分母〈同じ範囲の利用者数〉のどちらかが欠けるか、時点がそろわないため有料比率を出せない〈GitHub Copilot・Suno・Cursorは分子はある〉。</p>
+<h2>F．日本の利用規模・課金状況</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>順位〈根拠区分〉</th>
+<th>前回順位</th>
+<th>サービス</th>
+<th>日本の利用者数・利用率〈指標・母集団・時点〉</th>
+<th>日本の有料利用〈企業→個人、単位・割合の分母を明記〉</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1位〈B〉</td>
+<td>1位</td>
+<td>ChatGPT</td>
+<td>MAU 2,670万人〈ヴァリューズ、国内約250万人の行動ログパネルからの拡大推計、10代以上、アプリとWebブラウザの合算で重複あり、デスクトップアプリは対象外、2026年5月〉［調］[S31]／36.2%〈ICT総研、過去1年に生成AIを使った人の中で利用した割合、2026年2月〉［調］[S30]</td>
+<td>企業：未確認。個人：未確認</td>
+</tr>
+<tr>
+<td>2位〈B〉</td>
+<td>2位</td>
+<td>Gemini</td>
+<td>MAU 1,190万人〈同上、2026年5月。原典が「技術的制約があり参考値」と注記〉[S31]／25.0%〈ICT総研、2026年2月〉[S30]</td>
+<td>企業：未確認。個人：非公開</td>
+</tr>
+<tr>
+<td>3位〈C〉</td>
+<td>3位</td>
+<td>Microsoft Copilot</td>
+<td>13.3%〈ICT総研、2026年2月〉[S30]〈前回のまま。ヴァリューズの数値は記事に記載なし〉</td>
+<td>企業：未確認。個人：未確認</td>
+</tr>
+<tr>
+<td>4位〈C〉</td>
+<td>4位</td>
+<td>Grok</td>
+<td>未再確認〈前回版：ICT総研の調査項目になく、別の2調査で11.1%・9.5%〉。注：Claude・Perplexityとの前後は判断できない</td>
+<td>未確認</td>
+</tr>
+<tr>
+<td>同率5位〈推定・C〉</td>
+<td>同率5位</td>
+<td>Claude</td>
+<td>MAU 253万人〈ヴァリューズ、2026年5月。アプリとWebの合算で重複あり〉[S31]／4.3%〈ICT総研、2026年2月〉[S30]</td>
+<td>未確認</td>
+</tr>
+<tr>
+<td>同率5位〈推定・C〉</td>
+<td>同率5位</td>
+<td>Perplexity</td>
+<td>4.0%〈ICT総研、2026年2月〉[S30]〈前回のまま〉</td>
+<td>未確認</td>
+</tr>
+<tr>
+<td>7位〈C〉</td>
+<td>7位</td>
+<td>Suno</td>
+<td>未再確認〈前回版：Similarwebの日本からの訪問約330万/月、2026年8月〉</td>
+<td>未確認</td>
+</tr>
+</tbody>
+</table></div>
+<p>日本の情報を確認できなかったサービス：Meta AI、Doubao、Qwenアプリ、DeepSeek、Kimi、Gemini Notebook、Character.AI、Kling AI、Hailuo AI、GitHub Copilot、Midjourney、Gamma、Cursor〈ICT総研・ヴァリューズのいずれにも項目なし。前回版の訪問数の上限値は未再確認〉。</p>
+<p>日本全体の参考値：</p>
+<ul>
+<li>個人の利用経験 58.8%〈総務省 令和8年版情報通信白書、15〜69歳、2026年1〜2月調査、日本の標本1,236人。15〜19歳を今年から追加したため前年の26.7%とは比較不可。20歳以上では52.2%〉［公］[S32]</li>
+<li>直近1か月の利用 60%〈ビデオリサーチ ACR/ex 2026年速報、7地区の12〜69歳、N=12,026、2026年4〜6月。2025年は38%〉［調］[S34]</li>
+<li>過去1年の利用 54.7%〈ICT総研、インターネットユーザー、N=2,024、2026年2月〉［調］[S30]</li>
+<li>企業の活用率 34.5%〈帝国データバンク、有効回答10,312社、2026年3月17〜31日。有料か否かは問うていない〉［調］[S33]。前回版のNRI「有料プラン利用15%」は未再確認</li>
+<li>主要20以外：LINEヤフー「Agent i」MAU 623万人〈ヴァリューズ、2026年5月、同じ条件〉[S31]。日本に限ればClaudeより大きい</li>
+</ul>
+<p><strong>Fの注記</strong>：順位は「主要20の中での順位」。ヴァリューズのMAU〈人数の推計。アプリとWebの合算で重複を含み、重複を除いた人数ではない〉とICT総研の利用率〈過去1年利用者の中での割合〉は母集団も質問も違うため、1位・2位はどちらの指標でも順序が同じことを根拠にB、3位以下は利用率のみでC。ICT総研の割合は「全体の」とも読める記述があり、分母に曖昧さがある。利用率から人数は算出していない〈拡大推計の方法を確認できないため算出不可〉。</p>
+<blockquote>
+<p>この資料は、候補から選んだ主要20サービスの比較で、世界のすべてのサービスを網羅した上位20ではありません。順位はMAUを主軸とした、おおよその利用規模の目安です。〈A〉は比較可能な数値による直接比較、〈B〉は異なる指標からの推定、〈C〉は間接情報からの推定を示します。同率は根拠から同程度と判断したもの、順位保留は推定する手がかりが公開情報になかったものです。「前後は判断できない」と注記した順位は、おおよその位置だけを示します。「比較不可」は、前回または今回の順位がそれに当たり、順位の数字の違いが利用規模の変化を裏づけないことを示します。［計］は、明記した前提と計算式に基づく算出値です。登録数・ダウンロード数・契約数は、実際に使っている人数と同じ意味ではありません。前回からの順位の変動には、実際の利用者の増減のほかに、出典や指標の切り替え、他のサービスの変化によるものが含まれます。</p>
+</blockquote>
+<h2>H．対象期間の主な動き</h2>
+<h3>H-1．対象期間の出来事〈日付順〉</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>日付</th>
+<th>サービス</th>
+<th>区分</th>
+<th>出来事</th>
+<th>出典番号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-09-22</td>
+<td>Claude</td>
+<td>〈モデル〉</td>
+<td>Claude Opus 5.5 を公開</td>
+<td>[S37]</td>
+</tr>
+<tr>
+<td>2026-09-25</td>
+<td>Microsoft Copilot</td>
+<td>〈予告〉</td>
+<td>「新しいCopilot」を発表。Copilot Home／Code、Office in Copilot、Autopilot〈旧Scout〉など。大半はプレビューまたは順次展開で、一般提供日は未確定</td>
+<td>[S35]</td>
+</tr>
+<tr>
+<td>2026-09-28</td>
+<td>Claude</td>
+<td>〈モデル〉</td>
+<td>Claude Sonnet 5.5 を公開</td>
+<td>[S37]</td>
+</tr>
+<tr>
+<td>2026-09-29</td>
+<td>ChatGPT</td>
+<td>〈モデル〉</td>
+<td>DevDay 2026。GPT-6.1 Sol を Plus／Pro／Business／Enterprise／Edu に提供開始。GPT-6 Astra は Pro 500 と Enterprise 向け〈ChatGPT Work・Codex〉。常時稼働エージェント「dots」、ChatGPT Space／Pages／共同編集スライドを発表。同時に月500ドルの新プラン「Pro 500」</td>
+<td>[S3]</td>
+</tr>
+<tr>
+<td>2026-09-29</td>
+<td>ChatGPT</td>
+<td>〈数字〉</td>
+<td>「週あたり12億の利用者」〈WAU〉と公表。前回版の9億超〈2月〉、8月の10億超に続く更新</td>
+<td>[S3]</td>
+</tr>
+<tr>
+<td>2026-10-01</td>
+<td>Suno</td>
+<td>〈モデル〉</td>
+<td>Speech〈beta〉を提供開始。音声とその伴奏を一度に生成するモデル</td>
+<td>[S65]</td>
+</tr>
+<tr>
+<td>2026-10-07〜08</td>
+<td>ChatGPT</td>
+<td>〈モデル〉</td>
+<td>GPT-6 Sol を Plus／Pro／Business／Enterprise に、GPT-6 Luna を Free／Go に展開〈有料は10月7日、Free／Go は10月8日〉。回答内に対話型のチャート・フォームを組み込む「Intelligent UI」も同時</td>
+<td>[S36]</td>
+</tr>
+<tr>
+<td>2026-10-07</td>
+<td>Claude</td>
+<td>〈モデル〉</td>
+<td>Claude Haiku 5.5 を公開〈全プラットフォームで提供開始〉</td>
+<td>[S37]</td>
+</tr>
+<tr>
+<td>2026-10-12</td>
+<td>Meta AI</td>
+<td>〈モデル〉</td>
+<td>Muse Wonder／Muse Wonder Full を公開。Meta Model API と Muse Code で提供</td>
+<td>[S38]</td>
+</tr>
+<tr>
+<td>2026-10-12</td>
+<td>Meta AI</td>
+<td>〈予告〉</td>
+<td>Muse Wonder を消費者向けの Muse アプリに「近く」搭載すると発表〈契約者から順次。基準日時点で一般提供は未確認〉</td>
+<td>[S38]</td>
+</tr>
+<tr>
+<td>2026-10-12〈米国時間。日本時間13日〉</td>
+<td>Grok</td>
+<td>〈料金〉</td>
+<td>X・Grok・Cursor を束ねた「The X Subscription」を発表。Free／Plus 8ドル／Premium 30ドル／Super 100ドル／Ultra 200ドル〈月額〉。SuperGrok の単体販売は新規停止〈二次情報〉。段階的に展開</td>
+<td>[S39]</td>
+</tr>
+<tr>
+<td>2026-10-12〈米国時間〉</td>
+<td>Cursor</td>
+<td>〈料金〉</td>
+<td>Cursor は X Subscription の各段階に含まれる形に移行。クラウドエージェント等は Premium〈30ドル〉以上が必要。既存の Pro／Pro+／Ultra 契約者は当面そのまま。新しい Team プランは1人30ドルから</td>
+<td>[S39]</td>
+</tr>
+<tr>
+<td>2026-10-13〈米国時間。日本時間14日〉</td>
+<td>Gemini</td>
+<td>〈モデル〉</td>
+<td>Gemini 4 Argon を Gemini アプリで提供開始〈Google公式ブログ〉。Google AI Pro／Ultra の契約者向けで、無料が Gemini 3.1 Pro のままである点は報道で確認。Tasks〈離席中も作業を続ける〉、Antigravity〈macOSアプリ〉、40超のアプリ連携も同時</td>
+<td>[S40]</td>
+</tr>
+<tr>
+<td>2026-10-14</td>
+<td>Grok</td>
+<td>〈モデル〉</td>
+<td>Grok Voice 3.0 を公開。APIとGrok Botの音声モードで提供。Grokアプリ本体での提供は未確認</td>
+<td>[S64]</td>
+</tr>
+<tr>
+<td>2026-10-15</td>
+<td>Meta AI</td>
+<td>〈モデル〉</td>
+<td>Muse Spark Open〈オープンウェイトのモデル〉を公開。開発者向けの公開で、Meta AIの利用者数とは別</td>
+<td>[S38-2]</td>
+</tr>
+<tr>
+<td>2026-10-15</td>
+<td>Suno</td>
+<td>〈モデル〉</td>
+<td>共有ワークスペース〈Pro・Premier〉と共有カスタムモデル〈Premier〉を提供開始</td>
+<td>[S65]</td>
+</tr>
+<tr>
+<td>2026-10-17</td>
+<td>DeepSeek</td>
+<td>〈モデル〉</td>
+<td>DeepSeek-V4.1-Flash-1017 を Web・アプリ・APIで提供開始〈公式に「website, app, and API」と記載〉</td>
+<td>[S58]</td>
+</tr>
+<tr>
+<td>2026-10-23</td>
+<td>Kimi</td>
+<td>〈モデル〉</td>
+<td>Kimi K3.1 Pro の提供開始〈公式料金ページの記載を確認。日付は二次情報〉</td>
+<td>[S41]</td>
+</tr>
+</tbody>
+</table></div>
+<p>依頼者からの手がかりの扱い：Gemini 4 Argon〈10月14日〉は該当として採用。Meta の Muse 新モデルは「Muse Wonder」〈10月12日〉と「Muse Spark Open」〈10月15日〉の両方を採用〈v1では後者を確認できず不採用としていたが、Meta AI Researchの公式ページで確認した〉。どちらもモデルの公開で、Meta AI の出来事として扱い、別サービスには数えない。</p>
+<p>特記なし〈確認したうえで該当なし〉：Perplexity。<br>
+未確認〈確認が終わらなかった〉：Doubao、Qwenアプリ、Character.AI、Gemini Notebook、Midjourney、Kling AI、Hailuo AI、Gamma、GitHub Copilot。</p>
+<p><strong>H-1の注記</strong>：日付は出典の表記に従い、米国時間の発表は日本時間で1日ずれる場合がある。噂・観測記事は含めていない。Claude の3件は、Anthropic の公式ニュース一覧の日付で確認した〈本資料の作成者の開発元だが、他社と同じ基準で記載〉。</p>
+<h3>H-2．全体の重要な動き5件</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>順</th>
+<th>日付</th>
+<th>出来事</th>
+<th>勢力図への影響〈1〜2文〉</th>
+<th>出典番号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2026-09-29／10-07〜08</td>
+<td>OpenAI DevDay と、無料プランを含む全プランへの GPT-6 系の展開</td>
+<td>最大の利用者基盤に最新世代のモデルと新しい回答形式が2週間足らずで届いた。無料利用者の期待水準を引き上げ、競合の無料プランとの差が開く方向に働く</td>
+<td>[S3][S36]</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2026-10-13</td>
+<td>Gemini 4 Argon を Gemini アプリで提供、ただし有料限定</td>
+<td>Googleの最新世代が消費者に届いたが、無料は旧世代のまま。10億MAUの基盤に対して、有料転換を狙う設計で、無料利用者のシェアには直接効かない</td>
+<td>[S40]</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2026-10-12</td>
+<td>「The X Subscription」で X・Grok・Cursor を1つの契約に統合、月8ドルから</td>
+<td>月20ドルが標準の市場で、Xの会員基盤を配布経路にして Grok と Cursor を広げる。来月以降、Grok の有料契約数の定義が変わる点にも注意</td>
+<td>[S39]</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2026-09-25</td>
+<td>Microsoft「新しいCopilot」〈Home／Code／Autopilot〉</td>
+<td>大半は予告だが、Windows と Microsoft 365 の配布力で Copilot を個人・仕事の両面の入口に位置づけ直す動き。実際の利用者数への影響は提供後に判断</td>
+<td>[S35]</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2026-09-22〜10-07</td>
+<td>Anthropic が Opus 5.5・Sonnet 5.5・Haiku 5.5 を相次いで公開</td>
+<td>1か月に3段階のモデルを更新し、他社の最新世代投入に並んだ。利用者数への直接の効果は未確認で、公式MAUも非公表のまま</td>
+<td>[S37]</td>
+</tr>
+</tbody>
+</table></div>
+<p>次点：Meta の Muse Wonder〈10月12日〉と Muse Spark Open〈10月15日〉。消費者向け Muse アプリへの搭載が始まれば、Meta の配布力から影響は大きいが、基準日時点ではモデルの公開と予告の段階で、Meta AI の利用者数には表れていない。</p>
+<p><strong>H-2の注記</strong>：選定基準は利用者数・勢力図への影響の大きさで、話題性ではない。5件とも「影響の見込み」であり、利用者数の変化はまだ確認できていない。</p>
+<h2>I．主力モデルと個人向け料金</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>サービス</th>
+<th>現行の主力モデル〈提供開始日〉</th>
+<th>無料プラン〈有無・主なモデル〉</th>
+<th>最安の有料プラン〈名称・月額〉</th>
+<th>最上位の有料プラン〈名称・月額〉</th>
+<th>確認時点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ChatGPT</td>
+<td>GPT-6 Astra〈Pro 500・Enterprise向け、2026-09-29〉。Plus 以下の最上位は GPT-6.1 Sol〈2026-09-29〉[S3][S42]</td>
+<td>あり。GPT-6 Luna ほか〈制限付き〉[S42]</td>
+<td>Go：8ドル〈米国。「一部の市場では現地価格」と公式記事に記載、日本の価格は未確認〉［公］[S61]。Plus 20ドル［公］</td>
+<td>Pro 500：500ドル［公］[S3]。〈旧Pro 200ドルは新規受付停止との二次情報[S43]。100ドルのPro段階あり〉</td>
+<td>2026-10-26</td>
+</tr>
+<tr>
+<td>Gemini</td>
+<td>Gemini 4 Argon〈2026-10-13、AI Pro／Ultra限定〉[S40]。無料は Gemini 3.1 Pro</td>
+<td>あり。Gemini 3.1 Pro[S40]</td>
+<td>Google AI Plus：4.99ドル〈二次情報[S44]。公式ページは金額が表示されず〉</td>
+<td>Google AI Ultra〈20x〉：199.99ドル〈二次情報[S44]。5x は99.99ドル〉</td>
+<td>2026-10-26</td>
+</tr>
+<tr>
+<td>Meta AI</td>
+<td>未確認〈Muse Wonder は API・Muse Code 向け。Meta AI アプリの既定モデルは未確認〉</td>
+<td>あり</td>
+<td>未確認〈Meta AI 本体の有料プランは確認できず。Muse アプリに月20〜100ドルの有料プランとの報道[S38]〉</td>
+<td>未確認</td>
+<td>2026-10-26</td>
+</tr>
+<tr>
+<td>Doubao</td>
+<td>Doubao Seed 2.1 Pro〈二次情報[S45]、日付未確認〉</td>
+<td>あり</td>
+<td>未確認〈有料プランの存在は前回版で確認、金額は未確認〉</td>
+<td>未確認</td>
+<td>2026-10-26</td>
+</tr>
+<tr>
+<td>Qwenアプリ</td>
+<td>Qwen3.8-Max〈二次情報[S45]、2026年8月〉</td>
+<td>あり</td>
+<td>未確認</td>
+<td>未確認</td>
+<td>2026-10-26</td>
+</tr>
+<tr>
+<td>Claude</td>
+<td>Claude Fable 5.1〈公式料金ページで最上位として表示。提供開始日は未確認〉[S46]。Opus 5.5〈2026-09-22〉も提供</td>
+<td>あり。Sonnet・Haiku[S46]</td>
+<td>Pro：20ドル〈年払いは年200ドル。公式ページの「月17ドル」は年額を12で割った丸めの表示〉。税別［公］[S46]</td>
+<td>Max 20x：200ドル〈月払いのみ。5x は100ドル〉［公］[S46-2]</td>
+<td>2026-10-26</td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td>DeepSeek V4-Pro〈2026-08-13、二次情報[S45]〉</td>
+<td>あり。V4系</td>
+<td>該当なし〈個人向け有料プランなし〉</td>
+<td>該当なし</td>
+<td>2026-10-26</td>
+</tr>
+<tr>
+<td>Grok</td>
+<td>Grok 4.7〈2026-09-21、二次情報[S47]〉</td>
+<td>あり〈Free。モデルは未確認〉</td>
+<td>X Subscription Plus：8ドル。税別［公］[S48]〈help.x.com には旧体系のBasic 3ドル等が残り、公式ページ間で不一致〉</td>
+<td>X Subscription Ultra：200ドル。税別［公］[S48]〈旧SuperGrok Heavy 300ドルは新規停止との二次情報[S47]〉</td>
+<td>2026-10-26</td>
+</tr>
+<tr>
+<td>Microsoft Copilot</td>
+<td>未確認〈公式ページにモデル名の記載なし〉</td>
+<td>あり〈Copilot無料版。詳細未確認〉</td>
+<td>Microsoft 365 Personal：9.99ドル〈年払い99.99ドル。個人向けCopilot料金ページに載る最安。Copilotの利用枠の内容は未確認〉。Premium は19.99ドル〈年払い199.99ドル〉。税の扱い不明［公］[S49]〈Copilot Pro は料金ページに記載なし〉</td>
+<td>Microsoft 365 Pro：99.99ドル〈月払いのみ〉［公］[S49]</td>
+<td>2026-10-27再確認〈10月26日と同一か未確認〉</td>
+</tr>
+<tr>
+<td>Perplexity</td>
+<td>未確認〈公式ページを取得できず〉</td>
+<td>あり</td>
+<td>Pro：20ドル〈年払い200ドル〉。二次情報[S50]</td>
+<td>Max：200ドル。二次情報[S50]</td>
+<td>2026-10-26</td>
+</tr>
+<tr>
+<td>Gemini Notebook</td>
+<td>Gemini 4 Argon 系〈公式プラン比較ページ[S5]〉</td>
+<td>あり</td>
+<td>Google AI Plus 経由：4.99ドル〈二次情報[S44]〉</td>
+<td>Google AI Ultra 経由：199.99ドル〈二次情報[S44]〉</td>
+<td>2026-10-26</td>
+</tr>
+<tr>
+<td>Character.AI</td>
+<td>該当なし〈モデル名の公表なし〉</td>
+<td>あり</td>
+<td>c.ai+：9.99ドル〈二次情報[S51]〉</td>
+<td>同左〈有料は1段階〉</td>
+<td>2026-10-26</td>
+</tr>
+<tr>
+<td>Kimi</td>
+<td>Kimi K3.1 Pro〈2026-10-23、日付は二次情報〉[S41]</td>
+<td>あり</td>
+<td>未確認〈クレジット制。公式ページで金額が表示されず〉</td>
+<td>未確認</td>
+<td>2026-10-26</td>
+</tr>
+<tr>
+<td>Kling AI</td>
+<td>Kling VIDEO 3.0〈2026年6月、二次情報[S52]〉</td>
+<td>あり〈1日66クレジット、二次情報〉</td>
+<td>Standard：10ドル〈年払い79.20ドル〉。二次情報[S52]</td>
+<td>Premier：92ドル〈年払い728.64ドル〉。二次情報[S52]</td>
+<td>2026-10-26</td>
+</tr>
+<tr>
+<td>GitHub Copilot</td>
+<td>選択式〈GPT-6.1 Sol、Claude Fable 5.1、Gemini 4 Argon ほか〉[S53]</td>
+<td>あり〈月2,000補完、入門モデル〉</td>
+<td>Pro：10ドル＋従量〈基本10ドル＋5ドル分のクレジット〉。税の扱い不明［公］[S53]</td>
+<td>Max：100ドル＋従量〈含まれる利用枠は200ドル相当〈基本100＋追加割当100〉で、料金とは別。Pro+ は39ドル〉［公］[S53]</td>
+<td>2026-10-27再確認〈10月26日と同一か未確認〉</td>
+</tr>
+<tr>
+<td>Hailuo AI</td>
+<td>未確認〈二次情報にもモデル名の記載なし〉</td>
+<td>あり〈日次の無料クレジット、二次情報〉</td>
+<td>Standard：9.99ドル〈二次情報[S57]〉</td>
+<td>Pro：29.99ドル〈二次情報[S57]〉</td>
+<td>2026-10-26</td>
+</tr>
+<tr>
+<td>Suno</td>
+<td>v6〈2026-09-09、公式リリースノート[S65]〉。10月1日に Speech〈beta〉を追加[S65]</td>
+<td>あり。v6-mini</td>
+<td>Pro：10ドル〈年払いは年96ドル。公式ページの「8ドル」は年払い時の月換算表示で、「年払いで24ドル節約」の記載から月払い10ドルと判断〉。税は決済時に計算［公］[S55]</td>
+<td>Premier：30ドル〈年払いは年288ドル。「24ドル」は年払い時の月換算表示〉［公］[S55]</td>
+<td>2026-10-27再確認〈10月26日と同一か未確認〉</td>
+</tr>
+<tr>
+<td>Midjourney</td>
+<td>V8〈2026-03-17にAlpha、二次情報[S54]〉</td>
+<td>なし</td>
+<td>Basic：10ドル〈二次情報[S54]〉</td>
+<td>Mega：120ドル〈二次情報[S54]〉</td>
+<td>2026-10-26</td>
+</tr>
+<tr>
+<td>Gamma</td>
+<td>該当なし〈モデル名の公表なし〉</td>
+<td>あり〈登録時400クレジット〉</td>
+<td>未確認〈公式ページで金額が表示されず[S56]〉</td>
+<td>未確認</td>
+<td>2026-10-26</td>
+</tr>
+<tr>
+<td>Cursor</td>
+<td>選択式〈Grok系が既定。Premium以上でClaude・GPT・Gemini〉[S48]</td>
+<td>あり〈制限付き〉</td>
+<td>X Subscription Plus：8ドル＋従量〈Grok以外のモデルは従量〉。税別［公］[S48]</td>
+<td>X Subscription Ultra：200ドル＋従量。税別［公］[S48]</td>
+<td>2026-10-26</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Iの注記</strong>：通貨は米ドル。日本向けの公式価格は、今回取得した公式ページのいずれにも表示されず未確認。税の扱いは明記のあるもののみ記載〈Claude・Cursor・Grok：税別。Suno：決済時計算。他は不明〉。最安・最上位の選定は年間支払額で比べた〈月払いプランは月額×12、年払いのみのプランは年額。年払い割引のあるプラン〈Claude Pro、Suno、Microsoft 365 Personal／Premium、Kling〉は月払いの月額×12で比べ、年払い価格は括弧内に示した〉。年払いのみのプランは今回なく、月払いのみは Claude Max と Microsoft 365 Pro。「選択式」は第三者モデルを選べるサービス。「二次情報」の価格は公式ページを取得できなかったか金額が表示されなかったため、来月の再確認が必要。この表は今回新設で、前回版との比較はない。</p>
+<h2>J．機能の対応範囲</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>サービス</th>
+<th>文章・対話</th>
+<th>Web検索・調査</th>
+<th>画像</th>
+<th>動画</th>
+<th>音声</th>
+<th>音楽</th>
+<th>コード・アプリ</th>
+<th>資料・スライド・表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ChatGPT</td>
+<td>○注1</td>
+<td>◎</td>
+<td>◎</td>
+<td>△注2</td>
+<td>○注3[S66]</td>
+<td>？＊</td>
+<td>◎</td>
+<td>◎注4</td>
+</tr>
+<tr>
+<td>Gemini</td>
+<td>◎</td>
+<td>◎</td>
+<td>○注5</td>
+<td>○注6</td>
+<td>○[S67]</td>
+<td>？＊注7</td>
+<td>○</td>
+<td>○注8</td>
+</tr>
+<tr>
+<td>Meta AI</td>
+<td>○[S69]</td>
+<td>△★注9</td>
+<td>○[S69]</td>
+<td>○</td>
+<td>○[S69]注9</td>
+<td>？＊</td>
+<td>？★注9</td>
+<td>？注9</td>
+</tr>
+<tr>
+<td>Doubao</td>
+<td>○[S75]</td>
+<td>○[S75]</td>
+<td>○★[S75]</td>
+<td>○★[S75]</td>
+<td>○★[S75]</td>
+<td>？＊</td>
+<td>○[S75]</td>
+<td>○★注10</td>
+</tr>
+<tr>
+<td>Qwenアプリ</td>
+<td>○[S76]</td>
+<td>？★注10</td>
+<td>○★[S76]</td>
+<td>○★[S76]</td>
+<td>△★注10</td>
+<td>？</td>
+<td>○[S76]</td>
+<td>？注10</td>
+</tr>
+<tr>
+<td>Claude</td>
+<td>◎</td>
+<td>◎</td>
+<td>？＊注21</td>
+<td>？＊注21</td>
+<td>○[S68]</td>
+<td>？＊注21</td>
+<td>◎</td>
+<td>◎</td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td>○[S70]</td>
+<td>○[S70]</td>
+<td>？＊</td>
+<td>？＊</td>
+<td>？</td>
+<td>？＊</td>
+<td>○[S70]</td>
+<td>？＊</td>
+</tr>
+<tr>
+<td>Grok</td>
+<td>○</td>
+<td>◎</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>？＊</td>
+<td>○</td>
+<td>？</td>
+</tr>
+<tr>
+<td>Microsoft Copilot</td>
+<td>○[S77]</td>
+<td>○★注11</td>
+<td>○[S71][S77]</td>
+<td>△注12</td>
+<td>○[S77]</td>
+<td>？注13</td>
+<td>○[S77]</td>
+<td>◎注14</td>
+</tr>
+<tr>
+<td>Perplexity</td>
+<td>○</td>
+<td>◎</td>
+<td>○注15</td>
+<td>△注15</td>
+<td>？</td>
+<td>？＊</td>
+<td>○注16</td>
+<td>◎注15</td>
+</tr>
+<tr>
+<td>Gemini Notebook</td>
+<td>○</td>
+<td>○</td>
+<td>△注17</td>
+<td>△注17</td>
+<td>△★注17</td>
+<td>？＊</td>
+<td>？＊</td>
+<td>○注17</td>
+</tr>
+<tr>
+<td>Character.AI</td>
+<td>○</td>
+<td>？＊</td>
+<td>？</td>
+<td>？</td>
+<td>○[S78]注18</td>
+<td>？＊</td>
+<td>？＊</td>
+<td>？＊</td>
+</tr>
+<tr>
+<td>Kimi</td>
+<td>○[S79]</td>
+<td>○[S79]</td>
+<td>○★[S79]</td>
+<td>？＊</td>
+<td>△★注26</td>
+<td>？＊</td>
+<td>○[S79]</td>
+<td>◎★注26</td>
+</tr>
+<tr>
+<td>Kling AI</td>
+<td>？＊</td>
+<td>？＊</td>
+<td>？注19</td>
+<td>○注19</td>
+<td>？注19</td>
+<td>？＊</td>
+<td>？＊</td>
+<td>？＊</td>
+</tr>
+<tr>
+<td>GitHub Copilot</td>
+<td>△注20</td>
+<td>？</td>
+<td>？＊</td>
+<td>？＊</td>
+<td>？＊</td>
+<td>？＊</td>
+<td>◎</td>
+<td>？＊</td>
+</tr>
+<tr>
+<td>Hailuo AI</td>
+<td>？＊</td>
+<td>？＊</td>
+<td>？</td>
+<td>○注19</td>
+<td>？注19</td>
+<td>？＊</td>
+<td>？＊</td>
+<td>？＊</td>
+</tr>
+<tr>
+<td>Suno</td>
+<td>？＊</td>
+<td>？＊</td>
+<td>？＊</td>
+<td>？＊</td>
+<td>△★注25</td>
+<td>◎[S74]注24</td>
+<td>？＊</td>
+<td>？＊</td>
+</tr>
+<tr>
+<td>Midjourney</td>
+<td>？＊</td>
+<td>？＊</td>
+<td>◎[S72]注22</td>
+<td>△[S73]注22</td>
+<td>？＊</td>
+<td>？＊</td>
+<td>？＊</td>
+<td>？＊</td>
+</tr>
+<tr>
+<td>Gamma</td>
+<td>△注23</td>
+<td>？</td>
+<td>○</td>
+<td>？</td>
+<td>？</td>
+<td>？＊</td>
+<td>？注23</td>
+<td>○注23</td>
+</tr>
+<tr>
+<td>Cursor</td>
+<td>△注20</td>
+<td>？</td>
+<td>？＊</td>
+<td>？＊</td>
+<td>？＊</td>
+<td>？＊</td>
+<td>◎</td>
+<td>？＊</td>
+</tr>
+</tbody>
+</table></div>
+<p>前回から更新したセル〈★〉：16セル。Sunoの音声〈対象期間中の機能追加〉を除く15セルは、前回版で原典を確認せずに置いていた判定を、今回原典で確かめて改めた「前回判定の訂正」で、機能の追加・廃止ではない。</p>
+<ul>
+<li>上げたもの：Doubaoの画像・動画・音声・資料〈？→○〉[S75]、Qwenの画像・動画〈？→○〉[S76]、Kimiの画像〈？→○〉・資料〈？→◎〉[S79]。公式のアプリ説明・ヘルプで対応を確認した</li>
+<li>一部対応に改めたもの：Qwenの音声〈？→△〉、Kimiの音声〈？→△〉、Gemini Notebookの音声〈○→△〉、Sunoの音声〈？→△、10月1日のSpeech〈beta〉提供開始[S65]〉</li>
+<li>下げたもの：Meta AIのWeb検索〈○→△。検索はできるが参照元の表示を確認できず[S69]〉とコード〈○→？。公式ページに記載なし〉、QwenのWeb検索〈○→？。公式ストアページに記載なし〉、Microsoft CopilotのWeb検索〈◎→○。参照元付きの回答は確認[S77]、Deep Researchの出典付きレポートは未確認[S80]〉</li>
+</ul>
+<p>音声の判定の読み方：基本機能「指定した文章を読み上げる音声を生成」は、サービスが文章〈利用者が入力した文章や、自身の応答〉を音声として出力できることを公式資料で確認できた場合に○とした〈ChatGPTのRead aloud[S66]、GeminiのListenと声の選択[S67]、Claudeの音声モード[S68]、Meta AIの音声会話[S69]、Microsoft Copilotの音声応答[S77]、Character.AIのCharacter Voice[S78]〉。要約や物語など別の文章を音声化するもの、音声会話や音声生成の記載のみのものは△とした。読み上げる文章を利用者が自由に指定できる専用機能の有無は、各サービスで個別には確認していない。GPT版は「指定文の読み上げを個別に確認できなければ？」という読み方を取っており、両版の音声の記号は読み方の違いで食い違う。</p>
+<p>変化の有無を確認したサービス〈対象期間の出来事を確認した範囲で、Suno以外は判定条件に関わる機能の追加・削除を検出せず〉：ChatGPT、Gemini、Claude、Grok、Cursor、Meta AI、Microsoft Copilot、DeepSeek、Suno。</p>
+<p>未再確認〈時間内に変化の有無を確認できず、前回の判定を置いている〉：Perplexity、Gemini Notebook〈音声以外〉、Character.AI〈音声以外〉、Kling AI、GitHub Copilot、Hailuo AI、Gamma。Grokは前回の出典〈公式ページ〉の再取得が一部にとどまり、動画・音声・Web検索の記載を今回の取得では確認できなかったため、前回の判定を置いている。</p>
+<p><strong>凡例</strong>：◎＝基本機能と指定した2つの拡張機能をすべて確認／○＝基本機能を確認〈◎の条件は満たさない、または拡張機能が未確認〉／△＝基本機能への対応が一部に限られる／×＝非対応を確認できた／？＝公開情報では判定できない／？＊＝公式の機能一覧・ヘルプに該当機能の記載がなく提供を確認できない〈「記載がないだけでは×にしない」条件により？〉。</p>
+<p><strong>判定条件〈第10章の要約〉</strong>：文章＝自由な指示への文章生成と文脈を引き継ぐ対話〈拡張：ファイル参照／指定箇所の編集専用機能〉。Web検索＝参照元付きの回答〈拡張：多段階の自動調査／出典付きレポート〉。画像＝文章からの画像生成〈拡張：入力画像の変換・編集／範囲指定の部分編集〉。動画＝文章からの動画生成〈拡張：画像からの動画／既存動画の生成的編集・延長〉。音声＝指定文章の読み上げ音声の生成〈拡張：声質・話し方の指定／独自音声の作成〉。音楽＝楽曲・伴奏の生成〈拡張：歌詞と歌声／区間編集・延長〉。コード＝コード生成〈拡張：環境内での実行・プレビュー／複数ファイルにまたがるエージェント〉。資料＝文書・スライド・表計算のいずれかを編集可能な成果物として生成〈拡張：2種以上／3種すべて〉。</p>
+<p><strong>注記</strong>〈番号は前回版と同じ。今回書き換えたものに「訂正」と付記〉</p>
+<ul>
+<li>注1：ChatGPTの指定箇所編集はチャット内に統合され、専用機能としての判定を保留し○</li>
+<li>注2：動画生成は同一アカウントで使える別アプリ「Sora」での提供。ChatGPT本体内は未検出のため△</li>
+<li>注3：音声モードは全プランで提供〈無料は上限あり〉。公式のアプリFAQ[S66]に応答の「Read aloud」の記載</li>
+<li>注4：Excel／PowerPoint／Wordへの公式アドインが全プラン向け</li>
+<li>注5：Geminiの画像編集はプロンプト型で、範囲指定の部分編集UIは未確認</li>
+<li>注6：動画生成〈Veo〉はGoogle AI Pro／Ultra限定、18歳以上</li>
+<li>注7：Geminiアプリ内の音楽生成は未確認</li>
+<li>注8：Canvas・Deep Researchは無料プランでも提供。スライド・表計算の生成は未確認</li>
+<li>注9〈訂正〉：Meta AIは公式のアプリ紹介[S69]〈2025-04-29、2025-09-12更新〉で、文章と音声の会話、画像の生成と編集を確認。Web検索は「Webを検索できる」とあるが参照元の表示は記載がなく△。コードは記載がなく？。文書エディタは「テスト中」のため資料は？。動画は前回の出典のまま</li>
+<li>注10〈訂正〉：Doubaoは公式のApp Store説明[S75]で、対話・Web検索・画像と動画の生成・音声出力・コード・文書とPPTの生成を確認〈資料は文書・PPTの2種で○、表計算は未確認〉。Qwenは公式のGoogle Play説明[S76]〈2026-09-30更新〉で、対話・画像とAI動画の生成・音声会話・コード・ファイル参照を確認。Web検索と資料生成の記載がなく？、音声は会話の記載のみで△。DeepSeekは公式の利用規約[S70]〈2026-03-27更新〉で、文章・表・コードの出力、検索機能、出力内の外部リンクを確認。Kimiは注26。4サービスとも、画像の部分編集など拡張機能の確認は未了</li>
+<li>注11〈訂正〉：Microsoft Copilotは公式の透明性ノート[S77]〈2026-08-18更新〉で、参照元付きの回答、画像生成、音声応答、コードの実行〈計算やグラフ〉、ファイル参照を確認。画像の編集は公式ヘルプ[S71]で確認〈範囲指定は未確認〉。Deep Researchは2025年4月の公式ブログ[S80]で提供開始を確認したが、出典付きレポートの条件は未確認のためWeb検索は○</li>
+<li>注12：動画作成は組織でClipchampが有効化されていることが条件</li>
+<li>注13：Suno連携による音楽生成の現状は未確認</li>
+<li>注14：Word／Excel／PowerPointのファイル作成は対象の有料プランが必要</li>
+<li>注15：Perplexityの画像・動画〈制限付き〉・資料作成は有料プラン限定</li>
+<li>注16：Createで生成したHTMLアプリのプレビューを拡張1として確認</li>
+<li>注17〈訂正〉：Gemini Notebookは取り込んだソースからの生成が前提のため画像・動画は△。音声概要〈Audio Overview〉はソースの要約を音声化するもので、指定した文章の読み上げではないため○→△。スライド・レポートの2種で○</li>
+<li>注18〈訂正〉：Character.AIは公式ブログ[S78]〈2024-03-19〉で、キャラクターの返答を選んだ声で再生するCharacter Voiceと、音声サンプルからの声の作成を確認。現行の提供範囲・プラン条件は未確認のため○</li>
+<li>注19：Kling AI・Hailuo AIは動画生成が本業。画像からの動画・延長・画像生成は未確認</li>
+<li>注20：Cursor・GitHub Copilotの対話はコード編集の文脈に限られるため△</li>
+<li>注21：Claudeの公式ヘルプに画像・動画・音楽の生成機能の記載なし</li>
+<li>注22〈訂正〉：Midjourneyは公式ドキュメントで、画像の生成・添付画像の編集・範囲指定の編集〈Editorのinpainting〉[S72]と、画像からのみの動画生成と延長[S73]を確認</li>
+<li>注23：Gammaはスライド・ドキュメント・Webサイトに対応し表計算は非対応のため資料は○〈2種〉。文章生成は資料内に限られ△</li>
+<li>注24〈訂正〉：Sunoは公式ヘルプ[S74]で、文章からの楽曲生成、自作歌詞と歌声の追加、区間の差し替えと延長を確認</li>
+<li>注25：SunoのSpeech〈beta、2026-10-01〉[S65]は音声と伴奏を一度に生成する機能。文章から音声を生成する点は確認したが、指定した文章をそのまま読み上げるか、声質を指定できるかは未確認のため△〈対象期間中の機能追加〉</li>
+<li>注26〈新規〉：Kimiの画像・音声の生成と、Word・Excel・PPTの編集可能ファイルの出力はKimi Agentの機能[S79]。音声は「音声生成」の記載のみで読み上げの条件は未確認のため△。利用できるプランの条件は未確認</li>
+</ul>
+<blockquote>
+<p>◎・○・△は、共通の判定条件に基づく機能の対応範囲を示します。成果物の品質・精度・使いやすさや、課金価値の評価ではありません。×は非対応を確認できたもの、？は公開情報では判定できなかったものです。有料プラン限定などの条件は別途注記しています。★は前回から判定が変わったものです。</p>
+</blockquote>
+<h2>K．分析本文</h2>
+<h3>1．前回から、勢力図はどう変わったか</h3>
+<p>順位の並びは前回とほぼ同じで、主要20の顔ぶれにも入れ替えがない。変わったのは数値のほうで、中身は三つに分かれる。</p>
+<p>一つめは、公式の下限値が更新されたもの。ChatGPTのWAUは9億超〈2月〉→10億超〈8月〉→12億〈9月29日〉[S1][S2][S3]、GeminiアプリのMAUは9.5億〈7月〉→10億超〈8月11日〉[S4][S5]。同じ公式指標の更新なので伸長を示唆するが、どれも「超」の下限表現で、何割伸びたかは言えない。8月の2件は前回の基準日より前の発表で、前回版が拾えていなかった。対象期間中に出た新しい公式数値はOpenAIの12億だけで、10月7日の公式記事の「毎週ChatGPTを使う12億人超」[S36]からChatGPTのWAUとして扱った。</p>
+<p>二つめは、同じ調査主体の推計が更新されたもの。中国の3サービスはQuestMobileの9月値〈10月20日公表〉[S10-2]に更新した。6月との差は、Doubao 3.823億→4.19億〈約9.6%増〉、Qwen 1.6718億→1.58億〈約5.5%減〉、DeepSeek 1.2982億→1.23億〈約5.3%減〉［計］。同じ調査主体・同じ区分の公表値どうしの参考比較で、9月値がMAUと明記されていないこと、集計方法の同一性を確認できていないことから、確定した増減率ではない。対象期間そのものの増減でもなく、中国国内のアプリに限る。</p>
+<p>三つめは、出典の切り替えで数値が変わって見えるもの。Claudeは前回のSensor Towerのアプリ単独推計〈約5,600万〉から、同社のState of AI 2026の2.45億〈5月、範囲の明示なし〉[S9]に差し替えた。定義が違うとみられ、増加の証拠ではない。Kimiは逆に、aicpbの2,269万からQuestMobileの729万[S10]へ、同じ6月の数値で3分の1になった。調査主体をそろえた結果であって減少ではない。Perplexityの1億超〈FT報道、4月〉[S17-2]、Qwenの全プラットフォーム3億超〈Alibaba公式、2月〉[S59]、Gammaの累計1億超〈公式、5月まで〉[S24]は、前回の基準日より前に出ていたが前回版が拾えていなかった数値で、今回併記した。</p>
+<p>Meta AI〈10億超、2025年5月〉[S6]は、2026年のQ1・Q2決算でも、10月21日公表の7〜9月期決算でも[S60]更新がない。</p>
+<h3>2．対象期間の主な動きは、勢力図にどう影響したか</h3>
+<p>最も大きいのは、OpenAIがDevDay〈9月29日〉でGPT-6系を投入し、10月7〜8日に無料プランまで展開したこと[S3][S36]だ。12億のWAUを持つサービスの無料利用者に最新世代〈GPT-6 Luna〉が届いた。同じ時期にGoogleはGemini 4 ArgonをGeminiアプリに入れたが、AI Pro／Ultra限定で無料は3.1 Proのまま[S40]。無料に最新を配るOpenAIと、有料転換を狙うGoogleの選択の違いが、来月以降の無料利用者の動きにどう出るかが次の確認点になる。</p>
+<p>料金面では、X・Grok・Cursorを一つにした「The X Subscription」[S39]が目立つ。月8ドルからという価格と、Xの会員基盤を配布経路にする点で、Grok〈8位〉とCursor〈20位〉の両方に効き得る。Grokの有料契約630万〈3月〉はX Premiumが7割を占め[S13-3]、新体系では「Grokの有料契約」の定義が変わる。</p>
+<p>AnthropicはOpus 5.5・Sonnet 5.5・Haiku 5.5を1か月で公開し[S37]、DeepSeekもV4.1-Flash-1017をWeb・アプリ・APIに投入した[S58]。主要な対話サービスの大半が対象期間中に最新世代へ更新された。Microsoftの「新しいCopilot」[S35]とMetaのMuse Wonder[S38]・Muse Spark Open[S38-2]は、消費者向けの提供が始まっていないか開発者向けの公開のため、Meta AIの利用者数には反映していない。</p>
+<h3>3．世界の勢力図として、何が分かるか</h3>
+<p>上位3つ〈ChatGPT、Gemini、Meta AI〉がいずれも10億の水準にあり、4位のDoubao〈4.19億、中国国内アプリ〉まで一気に落ちる。4位・5位は中国国内のアプリ市場の数値が主軸で、Qwenには全プラットフォームの3億超という別範囲の公式値もある。6位以下は1億前後からその下に散らばる。同じ調査主体で横に並べられる数値は、Sensor Towerの5月推計〈ChatGPT 11億超、Gemini 6.6億、Claude 2.45億〉[S9]と、SimilarwebのWeb訪問シェア〈ChatGPT 52.7%、Gemini 27.3%、Claude 8.9%、DeepSeek 4.0%、Grok 2.8%、Copilot 2.0%、Perplexity 1.3%〉[S8]。どちらでも上位2つの順序は同じで、ChatGPTのシェアが1年前の76.4%から52.7%に下がりGeminiとClaudeが伸びた構図[S8]は、公式数値とも矛盾しない。ただしこの二つの尺度は中国市場を捕捉せず、中国の3サービスの数値は世界の合算値に載らないまま順位に差し込まれている。</p>
+<h3>4．日本では、どのような違いが確認できるか</h3>
+<p>ヴァリューズの行動ログに基づくMAU推計〈2026年5月〉[S31]が10月9日に公表され、人数の手がかりが初めて取れた。ChatGPT 2,670万人、Gemini 1,190万人〈参考値〉、Claude 253万人で、ICT総研の利用率〈36.2%、25.0%、4.3%〉[S30]と順序が一致する。ただしアプリとWebの合算で重複を含み、重複を除いた人数ではないので、人口に対する割合には使えない。</p>
+<p>世界との違いは二つある。Meta AIと中国の3サービスが日本の調査項目に現れず、世界の上位5〈ChatGPT、Gemini、Meta AI、Doubao、Qwen〉のうち3つが日本では測られていないこと。そして主要20の外にあるLINEヤフー「Agent i」が、日本ではMAU 623万人[S31]とClaudeの2倍超であること。全体の利用率は、総務省の白書で58.8%〈15〜69歳〉[S32]、ビデオリサーチで直近1か月60%[S34]と半数を超えた。企業は帝国データバンクで34.5%が「活用している」[S33]が、有料かは問われていない。</p>
+<h3>5．順位の根拠と、同率・推定・順位保留にした理由</h3>
+<p>〈A〉直接比較に当たる順位はない。〈B〉は1位・4位・5位・8位で、公式値または同一調査主体の推計で隣との大小を判断できるもの。Grokの8位は、公式の1.17億と、同一調査の補助指標〈SimilarwebのWeb訪問シェアでGrok 2.8%＞Copilot 2.0%＞Perplexity 1.3%[S8]、Sensor TowerのiOSアプリMAUでGrok 2,320万＞Perplexity 1,260万[S11]〉がいずれもGrokを上に置くことを根拠にした。公式値の「1億超」と1.17億の大小だけでは決められない。〈C〉はそれ以外。</p>
+<p>同率はなし。前回同率2位としたGeminiとMeta AIは、どちらも公式に「10億超」だが、時点が15か月違い、現在の規模が同程度と示す補助指標もないため、2位・3位に並べて「前後は判断できない」とした。前回同率17位のMidjourneyとSunoも、別種の指標しかなく同程度とする根拠がないため、17位・18位の「前後は判断できない」に改めた。「前後は判断できない」は、ほかにClaude・DeepSeek〈6位・7位〉、Copilot・Perplexity〈9位・10位〉、Character.AI・Kimi〈12位・13位〉。Character.AIとKimiは、SynapticのiOSアプリMAUとWeb訪問〈2月〉[S11]ではCharacter.AIが上、aicpbの世界アプリMAU〈6月〉ではKimi 2,269万＞Character.AI 2,179万[S81]と、同一調査どうしで順序が食い違うため、前回の↑↓を比較不可に改めた。順位保留はなし。</p>
+<p>Claude・DeepSeekの並びは本資料の作成者の開発元に有利な形になるが、材料はSensor TowerとSimilarwebの二つの横断データで[S8][S9]、逆の並びにできる材料もない。</p>
+<h3>6．企業と個人の課金状況から、何が分かるか</h3>
+<p>有料比率を概算できるのは、前回と同じくChatGPTとGrokだけだ。ChatGPTは2月27日の同一発表の消費者向け有料5,000万超とWAU 9億超[S1]から約5〜6%［計］。二つの公表下限を代表値と置いた参考計算で、実際の比率の上下限や誤差幅ではない。分母を12億〈9月〉[S3]にすると約4%だが、分子が7か月前のままで変化の方向は断定できない。Grokは分子・分母とも3月で約1.6%〈Grokを直接契約した分のみ〉［計］[S13-3]。X Premium込みの約5%は契約数ベースの参考値で、利用権の範囲・契約の重複・非アクティブの扱いが未確認。</p>
+<p>有料ビジネスユーザー900万超〈人〉と消費者向け5,000万超〈契約〉は単位が違うため合計していない。GitHub Copilotの有料470万[S14]、Sunoの200万超[S23]、Cursorの36万超[S25]は分子はあるが、対応する月間利用者数や時点がそろわず比率を出せない。Googleは有料プランの契約数を公表しておらず[S29]、Anthropicは「有料契約が年初から2倍超」とだけ述べている[S8-2]。企業側の硬い数字はM365 Copilotの有料席3,000万超[S16]で前回のまま。プラン別の内訳が取れたのはGrokのみ。</p>
+<h3>7．主力モデルと料金の状況から、何が分かるか</h3>
+<p>この表は今回新設で、前回との比較はない。対象期間中に、ChatGPT〈GPT-6 Astra／6.1 Sol〉、Gemini〈Gemini 4 Argon〉、Claude〈5.5系〉、Meta〈Muse Wonder〉、Kimi〈K3.1 Pro〉と、上位の対話サービスの多くが主力モデルを更新した。</p>
+<p>料金の幅が広がった。ChatGPTは月500ドルの「Pro 500」[S3]、Microsoftは月99.99ドルの「Microsoft 365 Pro」[S49]、GitHub Copilotは月100ドルの「Max」[S53]を上に置き、Xは月8ドルのPlusを下に置いた[S39]。個人向けの標準である月20ドル前後は変わらないが、最安と最上位の差は25倍〈Cursor／Grokの8ドル対200ドル〉から60倍超〈ChatGPTのGo 8ドル対Pro 500〉まで開いた。コード系では定額に従量が乗る形が標準になりつつある。価格の確認には穴があり、Google AIプラン、Perplexity、Midjourney、Klingは二次情報に頼った。年払い割引のあるサービスでは表示が月払いか年払いの月換算かを読み違えやすく、v1はSunoの月額を年払い換算〈8・24ドル〉で書いていた〈v2で10・30ドルに訂正〉。日本向けの公式価格はどのページでも確認できなかった。</p>
+<h3>8．機能の対応範囲に、どのような変化と違いがあるか</h3>
+<p>対象期間中の機能の変化として確認できたのは、Sunoの音声〈10月1日にSpeech〈beta〉を提供開始[S65]、？→△〉の1つ。それとは別に、前回版で原典を確認せずに置いていた判定を今回原典で確かめ、15セルを訂正した〈★〉。Doubao・Qwen・Kimiの画像・動画・資料などは公式のアプリ説明で対応を確認して？から○・◎に上げ、Meta AI・Qwenの一部やCopilotのWeb検索〈◎→○〉は根拠が足りず下げた。機能の増減ではなく、判定の根拠をそろえた結果である。音声は「サービスが文章〈自身の応答を含む〉を音声で出力することを公式資料で確認できた場合に○」という読み方を取った。GPT版は「指定文の読み上げを個別に確認できなければ？」という読み方で、両版の音声の記号はそこで食い違う。</p>
+<h3>9．今回の資料の限界と、未確認・未再確認の重要事項</h3>
+<ul>
+<li>Metaの7〜9月期決算〈10月21日〉[S60]にMeta AIの利用者数の記載はなく、AlphabetとMicrosoftの決算は基準日時点で確認できなかった。来月はこれらで上位が動く可能性がある</li>
+<li>Cursorの利用規模〈DAU 100万超、有料36万超〉は前回版の記載を置いたままで、今回は出典URLも含めて再確認できていない</li>
+<li>Bの会社・国・代表者の出典は前回版から引き継いだが、前回版の出典一覧を取得できずURLを再掲できていない</li>
+<li>Claudeの2.45億〈Sensor Tower〉は範囲の定義を確認できていない</li>
+<li>Grokの日本の利用率〈4位〉は前回版の記載のままで再確認できていない</li>
+<li>Hailuo AIの主力モデル、Gamma・Kimiの料金、Google AIプランの公式金額は未確認</li>
+<li>機能の対応範囲は、Grok〈公式ページの再取得が一部にとどまった〉を含め8サービスが未再確認</li>
+</ul>
+<h2>L．出典と計算の対応</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>出典番号</th>
+<th>主張・数値</th>
+<th>指標・地域・範囲・時点</th>
+<th>出典名</th>
+<th>URL</th>
+<th>情報源区分</th>
+<th>裏づけとなる記述の要約</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1</td>
+<td>ChatGPT WAU 9億超、消費者向け有料5,000万超、有料ビジネスユーザー900万超</td>
+<td>WAU・有料契約数、世界、2026-02-27</td>
+<td>OpenAI「Scaling AI for everyone」</td>
+<td><a href="https://openai.com/index/scaling-ai-for-everyone/" rel="noopener">https://openai.com/index/scaling-ai-for-everyone/</a></td>
+<td>［公］</td>
+<td>前回版の主出典。今回は時点を変えず引き継ぎ</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>ChatGPT WAU 10億超</td>
+<td>WAU、世界、2026-08-06発表</td>
+<td>OpenAIの発表を報道で確認〈implicator.ai 2026-08-12 ほか〉。原典URLは今回未取得</td>
+<td><a href="https://www.implicator.ai/google-puts-gemini-at-1-billion-monthly-users-without-naming-paying-subscribers/" rel="noopener">https://www.implicator.ai/google-puts-gemini-at-1-billion-monthly-users-without-naming-paying-subscribers/</a></td>
+<td>［公→報］</td>
+<td>8月上旬にOpenAIが週あたり10億超の利用者を公表したと記述</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>「週あたり12億の利用者」、GPT-6 Astra／6.1 Sol の提供、Pro 500〈500ドル/月〉</td>
+<td>WAU〈「OpenAIサービス全体」の表現〉、2026-09-29</td>
+<td>OpenAI DevDay 2026 recap〈英語版。韓国語版も参照〉</td>
+<td><a href="https://openai.com/index/devday-2026-recap/" rel="noopener">https://openai.com/index/devday-2026-recap/</a> ／ <a href="https://openai.com/ko-KR/index/devday-2026-recap/" rel="noopener">https://openai.com/ko-KR/index/devday-2026-recap/</a></td>
+<td>［公］</td>
+<td>英語版に「our collective 1.2B weekly users」の表現。GPT-6.1 SolはPlus以上に提供中、AstraはPro 500・Enterprise向け。Pro 500は月500ドル</td>
+</tr>
+<tr>
+<td>S4</td>
+<td>Gemini アプリ MAU 10億超</td>
+<td>MAU〈アプリ＋Web、検索・Workspaceは含まず〉、世界、2026-08-11</td>
+<td>SiliconANGLE〈Googleブログ・Pichai氏投稿を引用〉</td>
+<td><a href="https://siliconangle.com/2026/08/11/googles-gemini-ai-app-passes-1-billion-monthly-active-users/" rel="noopener">https://siliconangle.com/2026/08/11/googles-gemini-ai-app-passes-1-billion-monthly-active-users/</a></td>
+<td>［公→報］</td>
+<td>Geminiアプリが月間10億利用者を超えたとGoogleが公表</td>
+</tr>
+<tr>
+<td>S5</td>
+<td>Gemini Notebook の名称、Google AIプランの構成</td>
+<td>2026-10-26確認</td>
+<td>Google One「Google AI Plans」</td>
+<td><a href="https://one.google.com/about/google-ai-plans/" rel="noopener">https://one.google.com/about/google-ai-plans/</a></td>
+<td>［公］</td>
+<td>プラン比較に「Gemini Notebook」の記載。金額は表示されず</td>
+</tr>
+<tr>
+<td>S6</td>
+<td>Meta AI MAU 10億超</td>
+<td>MAU〈組み込み＋単体の合算〉、世界、2025年5月</td>
+<td>Meta 2025年Q1決算コール・LlamaCon</td>
+<td><a href="https://investor.atmeta.com/" rel="noopener">https://investor.atmeta.com/</a></td>
+<td>［公］</td>
+<td>前回版から引き継ぎ。2026年Q2決算資料にMeta AIの数値なし</td>
+</tr>
+<tr>
+<td>S7</td>
+<td>Meta AI 12億〈2026年3月〉、世界のユニーク利用者 ChatGPT 4.94億・Gemini 3.1億・Claude 8,600万〈2026年3〜5月〉、米国アプリMAU前年比</td>
+<td>Similarweb 2026 Generative AI Landscape</td>
+<td>PPC Land 2026-07-22</td>
+<td><a href="https://ppc.land/chatgpt-loses-web-share-to-gemini-and-claude-as-ad-penetration-hits-26/" rel="noopener">https://ppc.land/chatgpt-loses-web-share-to-gemini-and-claude-as-ad-penetration-hits-26/</a></td>
+<td>［調→報］</td>
+<td>Similarwebの年表にMeta AI 12億の記載。原典のMeta発表は未確認</td>
+</tr>
+<tr>
+<td>S8</td>
+<td>Web訪問シェア ChatGPT 52.7%、Gemini 27.3%、Claude 8.9%、DeepSeek 4.0%、Grok 2.8%、Copilot 2.0%、Perplexity 1.3%</td>
+<td>Similarweb 世界の生成AIサイト訪問シェア、2026-05-26計測</td>
+<td>PPC Land 2026-06-11</td>
+<td><a href="https://ppc.land/chatgpt-drops-to-52-7-as-claude-triples-its-ai-traffic-share" rel="noopener">https://ppc.land/chatgpt-drops-to-52-7-as-claude-triples-its-ai-traffic-share</a></td>
+<td>［調→報］</td>
+<td>2025年6月はChatGPT 76.4%。1年でGemini・Claudeが拡大</td>
+</tr>
+<tr>
+<td>S8-2</td>
+<td>claude.ai 訪問9.5億・ユニーク1.11億/月〈2026年8月〉、有料契約が年初から2倍超〈2026年3月〉</td>
+<td>Similarweb／Anthropic発言</td>
+<td>usecarly「Claude Statistics 2026」2026-10-04</td>
+<td><a href="https://www.usecarly.com/blog/claude-statistics/" rel="noopener">https://www.usecarly.com/blog/claude-statistics/</a></td>
+<td>［調→報］</td>
+<td>二次サイト。訪問数はSimilarweb経由</td>
+</tr>
+<tr>
+<td>S9</td>
+<td>MAU ChatGPT 11億超〈46.4%〉、Gemini 6.62億〈27.7%〉、Claude 2.45億〈10.3%〉、他は5%未満</td>
+<td>Sensor Tower State of AI 2026、2026年5月、世界</td>
+<td>TechCrunch 2026-06-16</td>
+<td><a href="https://techcrunch.com/2026/06/16/chatgpts-market-share-slips-below-50-for-first-time/" rel="noopener">https://techcrunch.com/2026/06/16/chatgpts-market-share-slips-below-50-for-first-time/</a></td>
+<td>［調→報］</td>
+<td>ChatGPTのシェアが初めて50%を割ったと報道。アプリ・Webの範囲は記事に明示なし</td>
+</tr>
+<tr>
+<td>S10</td>
+<td>中国AIアプリ MAU Doubao 3.82億、Qwen 1.6718億、DeepSeek 1.2982億、Kimi 729万</td>
+<td>QuestMobile 2026年上半期、中国国内・単体アプリ、2026年6月</td>
+<td>HK01 2026-08-06</td>
+<td><a href="https://www.hk01.com/熱爆話題/60377351/" rel="noopener">https://www.hk01.com/熱爆話題/60377351/</a></td>
+<td>［調→報］</td>
+<td>QuestMobileのAIネイティブアプリ利用者ランキングを転載。Kimiと、D2の「前回の数値」に使用</td>
+</tr>
+<tr>
+<td>S10-2</td>
+<td>Doubao 4.19億、Qwen 1.58億、DeepSeek 1.23億〈9月の活動利用者〉、Doubao DAU 1.81億・Qwen DAU 0.29億〈9月30日〉</td>
+<td>QuestMobile 2026年第3四半期、中国国内・AIネイティブアプリ、2026年9月</td>
+<td>QuestMobile「2026年三季度AI应用市场发展报告」2026-10-20</td>
+<td><a href="https://www.questmobile.com.cn/research/report/2112396781593624578/" rel="noopener">https://www.questmobile.com.cn/research/report/2112396781593624578/</a></td>
+<td>［調］</td>
+<td>原文は「活跃用户规模」でMAUとは明記なし。Kimi・元宝の利用者数はこのページにはない</td>
+</tr>
+<tr>
+<td>S11</td>
+<td>iOSアプリMAU・Web訪問〈2026年2月〉：ChatGPT 2.973億／57.2億、Grok 2,320万／3.14億、DeepSeek 3,860万／2.98億、Claude 540万／2.03億、Character.AI 530万／1.95億、Perplexity 1,260万／1.7億、Doubao 9,960万／1.12億、Kimi 440万／3,400万、Kling 230万、Gamma 2,500万、Midjourney 1,500万</td>
+<td>Sensor Tower〈iOS〉・Similarweb、世界、2026年2月</td>
+<td>Synaptic 2026-02-25</td>
+<td><a href="https://synaptic.com/resources/market-overviews/genai-consumer-apps-feb-2026" rel="noopener">https://synaptic.com/resources/market-overviews/genai-consumer-apps-feb-2026</a></td>
+<td>［調］</td>
+<td>同一集計で複数サービスを並べた表</td>
+</tr>
+<tr>
+<td>S12</td>
+<td>a16z上位100のWeb順位〈Suno 15位、Midjourney 46位〉、Notion AIがARRの約半分</td>
+<td>Similarwebユニーク訪問者順位、2026年1月</td>
+<td>a16z「Top 100 Gen AI Consumer Apps」第6版 2026-03-09</td>
+<td><a href="https://a16z.com/100-gen-ai-apps-6/" rel="noopener">https://a16z.com/100-gen-ai-apps-6/</a></td>
+<td>［調］</td>
+<td>順位のみ。絶対数なし</td>
+</tr>
+<tr>
+<td>S13</td>
+<td>Grok MAU 1.17億</td>
+<td>MAU〈X・Grokアプリ〉、2026年3月</td>
+<td>Pulse 2.0〈SpaceX S-1を引用〉</td>
+<td><a href="https://pulse2.com/spacex-grok-reaches-117-million-users-as-ai-push-accelerates/" rel="noopener">https://pulse2.com/spacex-grok-reaches-117-million-users-as-ai-push-accelerates/</a></td>
+<td>［公→報］</td>
+<td>S-1記載の利用者数を報道</td>
+</tr>
+<tr>
+<td>S13-2</td>
+<td>Character.AI MAU 2,000万</td>
+<td>Sacra推計、2024年初</td>
+<td>SQ Magazine</td>
+<td><a href="https://sqmagazine.co.uk/character-ai-statistics/" rel="noopener">https://sqmagazine.co.uk/character-ai-statistics/</a></td>
+<td>［調］</td>
+<td>前回版から引き継ぎ</td>
+</tr>
+<tr>
+<td>S13-3</td>
+<td>Grok 有料契約630万〈X Premium系440万＋SuperGrok系190万〉</td>
+<td>2026年3月</td>
+<td>Digital Applied〈SpaceX S-1を引用〉</td>
+<td><a href="https://www.digitalapplied.com/blog/spacex-s1-first-audited-x-grok-data-2026" rel="noopener">https://www.digitalapplied.com/blog/spacex-s1-first-audited-x-grok-data-2026</a></td>
+<td>［公→報］</td>
+<td>前回版から引き継ぎ</td>
+</tr>
+<tr>
+<td>S14</td>
+<td>Copilot MAU 1億超〈FY26年次報告で再掲〉、GitHub Copilot 有料470万〈前年比75%増〉</td>
+<td>世界、2026年7月の決算コール</td>
+<td>Storyboard18</td>
+<td><a href="https://www.storyboard18.com/brand-makers/microsoft-ceo-satya-nadella-says-copilot-usage-is-rising-despite-fears-over-geavy-ai-investment-88519.htm" rel="noopener">https://www.storyboard18.com/brand-makers/microsoft-ceo-satya-nadella-says-copilot-usage-is-rising-despite-fears-over-geavy-ai-investment-88519.htm</a></td>
+<td>［公→報］</td>
+<td>Nadella氏の発言を報道</td>
+</tr>
+<tr>
+<td>S15</td>
+<td>Copilot アプリ群 MAU 1億超</td>
+<td>2025年10月</td>
+<td>Microsoft FY26 Q1決算</td>
+<td><a href="https://www.microsoft.com/en-us/investor/earnings/fy-2026-q1/press-release-webcast" rel="noopener">https://www.microsoft.com/en-us/investor/earnings/fy-2026-q1/press-release-webcast</a></td>
+<td>［公］</td>
+<td>前回版から引き継ぎ</td>
+</tr>
+<tr>
+<td>S16</td>
+<td>M365 Copilot 有料席3,000万超、5万席超の顧客は前年比7倍、GitHub Copilot 利用者5,000万〈GitHub 2.25億のうち〉、M365席の約6.5%〈外部推計〉</td>
+<td>FY26 Q4、2026-07-29発表</td>
+<td>Office 365 for IT Pros 2026-07-30</td>
+<td><a href="https://office365itpros.com/2026/07/30/fy26-q4-microsoft-results/" rel="noopener">https://office365itpros.com/2026/07/30/fy26-q4-microsoft-results/</a></td>
+<td>［公→報］</td>
+<td>決算の数値と筆者の浸透率推計</td>
+</tr>
+<tr>
+<td>S17</td>
+<td>Perplexity 有料契約は非公表、企業顧客「数万社」、MAU 4,500万〈コア検索〉</td>
+<td>2026-08-27</td>
+<td>SentiSight.ai</td>
+<td><a href="https://www.sentisight.ai/how-many-paid-subscribers-perplexity/" rel="noopener">https://www.sentisight.ai/how-many-paid-subscribers-perplexity/</a></td>
+<td>［報］</td>
+<td>売上からの逆算推計は本資料では不採用</td>
+</tr>
+<tr>
+<td>S17-2</td>
+<td>Perplexity MAU 1億超〈検索とエージェントのツールの合算〉、企業顧客「数万社」</td>
+<td>世界、2026-04-08報道</td>
+<td>Investing.com〈Financial Timesの報道を紹介〉</td>
+<td><a href="https://www.investing.com/news/stock-market-news/perplexity-revenue-jumps-50-in-pivot-to-ai-agents-ft-93CH-4601924" rel="noopener">https://www.investing.com/news/stock-market-news/perplexity-revenue-jumps-50-in-pivot-to-ai-agents-ft-93CH-4601924</a></td>
+<td>［報］</td>
+<td>FTの原文は未閲覧。製品別の内訳なし</td>
+</tr>
+<tr>
+<td>S18</td>
+<td>Perplexity MAU 4,500万</td>
+<td>Similarweb推計、Web、2025年</td>
+<td>DemandSage</td>
+<td><a href="https://www.demandsage.com/perplexity-ai-statistics/" rel="noopener">https://www.demandsage.com/perplexity-ai-statistics/</a></td>
+<td>［調］</td>
+<td>前回版から引き継ぎ</td>
+</tr>
+<tr>
+<td>S19</td>
+<td>Gemini Notebook 利用者3,000万超、60万超の組織</td>
+<td>2026-07-16</td>
+<td>9to5Google</td>
+<td><a href="https://9to5google.com/2026/07/16/notebooklm-gemini-notebook/" rel="noopener">https://9to5google.com/2026/07/16/notebooklm-gemini-notebook/</a></td>
+<td>［公→報］</td>
+<td>改称発表時の数値</td>
+</tr>
+<tr>
+<td>S20</td>
+<td>Kling AI MAU 1,200万</td>
+<td>2026年</td>
+<td>Pandaily</td>
+<td><a href="https://pandaily.com/kuaishou-s-kling-ai-reaches-12-million-mau-revenue-far-exceeds-expectations" rel="noopener">https://pandaily.com/kuaishou-s-kling-ai-reaches-12-million-mau-revenue-far-exceeds-expectations</a></td>
+<td>［報］</td>
+<td>前回版から引き継ぎ</td>
+</tr>
+<tr>
+<td>S21</td>
+<td>Hailuo AI MAU 約560万</td>
+<td>2025年1〜9月</td>
+<td>ChinaTalk〈MiniMax目論見書を引用〉</td>
+<td><a href="https://www.chinatalk.media/p/zhipu-and-minimax-ipo" rel="noopener">https://www.chinatalk.media/p/zhipu-and-minimax-ipo</a></td>
+<td>［公→報］</td>
+<td>前回版から引き継ぎ</td>
+</tr>
+<tr>
+<td>S22</td>
+<td>Midjourney Discord登録約1,983万</td>
+<td>2026年1月</td>
+<td>DemandSage</td>
+<td><a href="https://www.demandsage.com/midjourney-statistics/" rel="noopener">https://www.demandsage.com/midjourney-statistics/</a></td>
+<td>［調］</td>
+<td>前回版から引き継ぎ</td>
+</tr>
+<tr>
+<td>S23</td>
+<td>Suno 有料契約200万超〈2026年初〉、楽曲を作った人の累計1億超</td>
+<td>世界、2026-10-26閲覧</td>
+<td>Suno公式採用ページ</td>
+<td><a href="https://suno.com/careers" rel="noopener">https://suno.com/careers</a></td>
+<td>［公］</td>
+<td>「2+ million paid subscribers (as of early 2026)」「100+ million people have created music」と記載。前回版のTechCrunch経由の200万〈2026-02-27〉と同じ水準</td>
+</tr>
+<tr>
+<td>S24</td>
+<td>Gamma 累計1億超、作成物6.25億超</td>
+<td>210の国・地域、2026年5月までの全期間、2026-08-11公表</td>
+<td>Gamma「The Creation Index」</td>
+<td><a href="https://gamma.app/insights/creation-index" rel="noopener">https://gamma.app/insights/creation-index</a></td>
+<td>［公］</td>
+<td>「lifetime data」と明記。月間ではない</td>
+</tr>
+<tr>
+<td>S25</td>
+<td>Cursor DAU 100万超、有料36万超〈2025-03〉、企業5万</td>
+<td>2025年12月／2025年3月</td>
+<td>調査サイト集約〈前回版の出典。URLは今回未取得〉</td>
+<td>未取得</td>
+<td>［調］</td>
+<td>前回版から引き継ぎ。今回は数値・出典とも未再確認〈D・D2に明記〉</td>
+</tr>
+<tr>
+<td>S26</td>
+<td>Cursor 年間換算売上40億ドル超〈2026年6月、Forbes〉、企業5万社超・Fortune 500の64%</td>
+<td>2026-10-24更新</td>
+<td>Gradually.ai「Cursor statistics」</td>
+<td><a href="https://gradually.ai/en/cursor-statistics/" rel="noopener">https://gradually.ai/en/cursor-statistics/</a></td>
+<td>［報］</td>
+<td>売上は契約数の推定に使わない</td>
+</tr>
+<tr>
+<td>S27</td>
+<td>Claude ビジネス顧客30万社超</td>
+<td>2025年10月の開示</td>
+<td>Panto「Claude AI statistics」</td>
+<td><a href="https://www.getpanto.ai/blog/claude-ai-statistics" rel="noopener">https://www.getpanto.ai/blog/claude-ai-statistics</a></td>
+<td>［報］</td>
+<td>二次サイト。有料の明示なし</td>
+</tr>
+<tr>
+<td>S29</td>
+<td>Google は AI Plus／Pro／Ultra の契約数を非公表</td>
+<td>2026-08-12</td>
+<td>implicator.ai</td>
+<td><a href="https://www.implicator.ai/google-puts-gemini-at-1-billion-monthly-users-without-naming-paying-subscribers/" rel="noopener">https://www.implicator.ai/google-puts-gemini-at-1-billion-monthly-users-without-naming-paying-subscribers/</a></td>
+<td>［報］</td>
+<td>契約数を公表していないと明記</td>
+</tr>
+<tr>
+<td>S30</td>
+<td>日本の過去1年利用率 ChatGPT 36.2%、Gemini 25.0%、Copilot 13.3%、Claude 4.3%、Perplexity 4.0%、Canva AI 2.2%。生成AI利用率54.7%</td>
+<td>インターネットユーザー、N=2,024、2026年2月、複数回答の明示なし</td>
+<td>ICT総研「2026年2月 生成AIサービス利用動向調査」2026-02-20</td>
+<td><a href="https://ictr.co.jp/report/20260220.html/" rel="noopener">https://ictr.co.jp/report/20260220.html/</a></td>
+<td>［調］</td>
+<td>分母が「利用者」か「全体」かに曖昧さあり</td>
+</tr>
+<tr>
+<td>S31</td>
+<td>日本のMAU ChatGPT 2,670万、Gemini 1,190万〈参考値〉、Claude 253万、Agent i 623万</td>
+<td>国内約250万人のモニターの行動ログからの拡大推計、10代以上、アプリとWebブラウザの合算で重複あり、デスクトップアプリは対象外、2026年5月</td>
+<td>ヴァリューズ「2026年 生成AIユーザー動向調査」2026-10-09〈原典。KAI-YOU 2026-10-09 の記事も参照〉</td>
+<td><a href="https://www.valuesccg.com/news/20261009-12838/" rel="noopener">https://www.valuesccg.com/news/20261009-12838/</a> ／ <a href="https://kai-you.net/article/96796" rel="noopener">https://kai-you.net/article/96796</a></td>
+<td>［調］</td>
+<td>原典に「重複カウントあり」「Geminiデータは技術的に制約があり参考値」と注記。2024年6月比の伸び率も記載</td>
+</tr>
+<tr>
+<td>S32</td>
+<td>日本の個人利用経験58.8%〈15〜69歳〉、20歳以上52.2%</td>
+<td>2026年1〜2月、日本1,236人</td>
+<td>総務省「令和8年版 情報通信白書」2026-07-24</td>
+<td><a href="https://www.soumu.go.jp/johotsusintokei/whitepaper/ja/r08/pdf/01point.pdf" rel="noopener">https://www.soumu.go.jp/johotsusintokei/whitepaper/ja/r08/pdf/01point.pdf</a></td>
+<td>［公］</td>
+<td>15〜19歳を追加したため前年と比較不可</td>
+</tr>
+<tr>
+<td>S33</td>
+<td>企業の生成AI活用率34.5%</td>
+<td>有効回答10,312社、2026-03-17〜31</td>
+<td>帝国データバンク「生成AIに関する企業の動向調査」</td>
+<td><a href="https://www.tdb.co.jp/report/economic/20260514-genai/" rel="noopener">https://www.tdb.co.jp/report/economic/20260514-genai/</a></td>
+<td>［調］</td>
+<td>大企業46.5%、中小28.0%</td>
+</tr>
+<tr>
+<td>S34</td>
+<td>直近1か月の生成AI利用率60%〈2026年速報〉</td>
+<td>7地区12〜69歳、N=12,026、2026年4〜6月</td>
+<td>ビデオリサーチ ACR/ex 2026-09-10</td>
+<td><a href="https://digitalpr.jp/r/142888" rel="noopener">https://digitalpr.jp/r/142888</a></td>
+<td>［調］</td>
+<td>2025年は38%</td>
+</tr>
+<tr>
+<td>S35</td>
+<td>Microsoft「新しいCopilot」発表</td>
+<td>2026-09-25</td>
+<td>Unite.AI</td>
+<td><a href="https://www.unite.ai/?p=473686" rel="noopener">https://www.unite.ai/?p=473686</a></td>
+<td>［報］</td>
+<td>大半はプレビュー</td>
+</tr>
+<tr>
+<td>S36</td>
+<td>GPT-6 SolをPlus以上に〈10/7〉、GPT-6 LunaをFree・Goに〈10/8〉展開。「毎週ChatGPTを使う12億人超」</td>
+<td>2026-10-07</td>
+<td>OpenAI「GPT-6 and Intelligent UI for everyone」</td>
+<td><a href="https://openai.com/index/gpt-6-for-everyone/" rel="noopener">https://openai.com/index/gpt-6-for-everyone/</a></td>
+<td>［公］</td>
+<td>Enterpriseは管理者設定による。Intelligent UIは回答内に図・ボタン・フォーム・チャートを組み込む機能</td>
+</tr>
+<tr>
+<td>S37</td>
+<td>Claude Opus 5.5〈9/22〉、Sonnet 5.5〈9/28〉、Haiku 5.5〈10/7〉の公開</td>
+<td>2026年9〜10月</td>
+<td>Anthropic Newsroom／Haiku 5.5紹介ページ</td>
+<td><a href="https://www.anthropic.com/news" rel="noopener">https://www.anthropic.com/news</a> ／ <a href="https://www.anthropic.com/claude-haiku-5-5" rel="noopener">https://www.anthropic.com/claude-haiku-5-5</a></td>
+<td>［公］</td>
+<td>ニュース一覧の日付で確認</td>
+</tr>
+<tr>
+<td>S38</td>
+<td>Meta Muse Wonder／Wonder Full 公開、Museアプリへの搭載は「近く」、Museアプリの有料プラン月20〜100ドル</td>
+<td>2026-10-12</td>
+<td>Simon Willison／MediaPost〈CNBC経由〉</td>
+<td><a href="https://simonwillison.net/2026/Oct/12/llm-meta-ai/" rel="noopener">https://simonwillison.net/2026/Oct/12/llm-meta-ai/</a> ／ <a href="https://www.mediapost.com/publications/article/418689/meta-launches-ai-model-called-muse-wonder.html" rel="noopener">https://www.mediapost.com/publications/article/418689/meta-launches-ai-model-called-muse-wonder.html</a></td>
+<td>［報］</td>
+<td>Metaの原典は未取得</td>
+</tr>
+<tr>
+<td>S38-2</td>
+<td>Meta Muse Spark Open 公開〈オープンウェイトのモデル〉</td>
+<td>2026-10-15</td>
+<td>Meta AI Research「Muse Spark Open」</td>
+<td><a href="https://research.meta.ai/blog/muse-spark-open" rel="noopener">https://research.meta.ai/blog/muse-spark-open</a></td>
+<td>［公］</td>
+<td>開発者向け。重みの配布とAPI経由の提供。Meta AIの利用者数の記載なし</td>
+</tr>
+<tr>
+<td>S39</td>
+<td>The X Subscription〈Free／Plus 8／Premium 30／Super 100／Ultra 200ドル〉、Cursorの扱い、SpaceXによるCursor買収完了〈2026年8月中旬〉</td>
+<td>2026-10-12発表</td>
+<td>The New Stack 2026-10-13</td>
+<td><a href="https://thenewstack.io/x-subscription-cursor-pricing/?p=22840229" rel="noopener">https://thenewstack.io/x-subscription-cursor-pricing/?p=22840229</a></td>
+<td>［報］</td>
+<td>既存Cursor契約者は当面そのまま。買収額は報道で600億ドル</td>
+</tr>
+<tr>
+<td>S40</td>
+<td>Gemini 4 Argon をGeminiアプリで提供〈AI Pro／Ultra〉、Tasks、40超のアプリ連携、Antigravity。無料は3.1 Proのまま〈報道〉</td>
+<td>2026-10-13〈米国時間〉</td>
+<td>Google公式ブログ「Gemini 4 Argon is now available in the Gemini app」／RTTNews 2026-10-13</td>
+<td><a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/" rel="noopener">https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/</a> ／ <a href="https://www.rttnews.com/3698659/google-begins-gemini-4-argon-rollout-with-access-limited-to-paying-users.aspx" rel="noopener">https://www.rttnews.com/3698659/google-begins-gemini-4-argon-rollout-with-access-limited-to-paying-users.aspx</a></td>
+<td>［公］［報］</td>
+<td>公式ブログは無料プランの扱いに触れていないため、その点は報道で補った</td>
+</tr>
+<tr>
+<td>S41</td>
+<td>Kimi K3.1 Pro 提供開始〈公式ページ〉、日付2026-10-23〈二次情報〉</td>
+<td>2026-10-26確認</td>
+<td>kimi.com 料金ページ／TrendForce</td>
+<td><a href="https://www.kimi.com/pricing" rel="noopener">https://www.kimi.com/pricing</a> ／ <a href="https://insights.trendforce.com/p/kimi-k3-us-china-ai-gap" rel="noopener">https://insights.trendforce.com/p/kimi-k3-us-china-ai-gap</a></td>
+<td>［公］［報］</td>
+<td>金額は表示されず</td>
+</tr>
+<tr>
+<td>S42</td>
+<td>ChatGPT プラン構成・Plus 20ドル・無料のモデル</td>
+<td>2026-10-26確認</td>
+<td>chatgpt.com/pricing／OpenAI Help</td>
+<td><a href="https://chatgpt.com/pricing" rel="noopener">https://chatgpt.com/pricing</a> ／ <a href="https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus" rel="noopener">https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus</a></td>
+<td>［公］</td>
+<td>Goの金額は表示されず</td>
+</tr>
+<tr>
+<td>S43</td>
+<td>ChatGPT Go 5.50ドル、Pro 200ドルの新規停止</td>
+<td>2026-10-03確認</td>
+<td>krater.ai</td>
+<td><a href="https://krater.ai/blog/chatgpt-pricing" rel="noopener">https://krater.ai/blog/chatgpt-pricing</a></td>
+<td>［報］</td>
+<td>二次情報</td>
+</tr>
+<tr>
+<td>S44</td>
+<td>Google AI Plus 4.99ドル、Pro 19.99ドル、Ultra 99.99／199.99ドル</td>
+<td>2026年9月確認</td>
+<td>suprmind.ai</td>
+<td><a href="https://suprmind.ai/hub/gemini/pricing/" rel="noopener">https://suprmind.ai/hub/gemini/pricing/</a></td>
+<td>［報］</td>
+<td>二次情報</td>
+</tr>
+<tr>
+<td>S45</td>
+<td>DeepSeek V4-Pro〈8/13〉、Doubao Seed 2.1 Pro、Qwen3.8-Max</td>
+<td>2026-10-24更新</td>
+<td>geotoolbox.ai</td>
+<td><a href="https://geotoolbox.ai/blog/chinese-ai-models-compared.md" rel="noopener">https://geotoolbox.ai/blog/chinese-ai-models-compared.md</a></td>
+<td>［報］</td>
+<td>二次情報</td>
+</tr>
+<tr>
+<td>S46</td>
+<td>Claude Pro 20ドル〈年払い17ドル〉、Max 100ドルから、税別、無料はSonnet・Haiku、Fable 5.1</td>
+<td>2026-10-26確認</td>
+<td>claude.com/pricing</td>
+<td><a href="https://claude.com/pricing" rel="noopener">https://claude.com/pricing</a></td>
+<td>［公］</td>
+<td>Max 20xの金額は料金ページでは表示されず</td>
+</tr>
+<tr>
+<td>S46-2</td>
+<td>Claude Max 5x 100ドル、Max 20x 200ドル、月払いのみ</td>
+<td>2026-10-26確認</td>
+<td>Claude Help「What is the Max plan?」</td>
+<td><a href="https://support.claude.com/en/articles/11049741-what-is-the-max-plan" rel="noopener">https://support.claude.com/en/articles/11049741-what-is-the-max-plan</a></td>
+<td>［公］</td>
+<td>税の扱いの記載なし</td>
+</tr>
+<tr>
+<td>S57</td>
+<td>Hailuo AI 無料あり、Standard 9.99ドル、Pro 29.99ドル</td>
+<td>2026年10月確認〈二次サイト〉</td>
+<td>krater.ai</td>
+<td><a href="https://krater.ai/pricing/hailuo" rel="noopener">https://krater.ai/pricing/hailuo</a></td>
+<td>［報］</td>
+<td>公式ページは今回未取得。モデル名の記載なし</td>
+</tr>
+<tr>
+<td>S58</td>
+<td>DeepSeek-V4.1-Flash-1017 を Web・アプリ・APIで提供</td>
+<td>2026-10-17</td>
+<td>DeepSeek「DeepSeek-V4.1-Flash-1017」</td>
+<td><a href="https://api-docs.deepseek.com/news/news261017" rel="noopener">https://api-docs.deepseek.com/news/news261017</a></td>
+<td>［公］</td>
+<td>「Now live on our website, app, and API」と記載</td>
+</tr>
+<tr>
+<td>S59</td>
+<td>一般向けQwenアプリの全プラットフォームMAU 3億超</td>
+<td>2026年2月時点、2026-03-19発表</td>
+<td>Alibaba Group「Alibaba Reports Solid Progress in AI + Cloud」</td>
+<td><a href="https://www.alibabagroup.com/en-US/document-1971445322303406080" rel="noopener">https://www.alibabagroup.com/en-US/document-1971445322303406080</a></td>
+<td>［公］</td>
+<td>「surpassed 300 million monthly active users across all platforms as of February」</td>
+</tr>
+<tr>
+<td>S60</td>
+<td>Meta 2026年7〜9月期決算にMeta AIの利用者数の記載なし。Family DAP 36.4億〈9月平均〉</td>
+<td>2026-10-21</td>
+<td>Meta「Meta Reports Third Quarter 2026 Results」</td>
+<td><a href="https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx" rel="noopener">https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx</a></td>
+<td>［公］</td>
+<td>Meta AIの数値は前回のままとする根拠</td>
+</tr>
+<tr>
+<td>S61</td>
+<td>ChatGPT Go 米国で月8ドル</td>
+<td>2026-01-16</td>
+<td>OpenAI「Introducing ChatGPT Go」</td>
+<td><a href="https://openai.com/index/introducing-chatgpt-go/" rel="noopener">https://openai.com/index/introducing-chatgpt-go/</a></td>
+<td>［公］</td>
+<td>「一部の市場では現地価格」。日本の価格の記載なし</td>
+</tr>
+<tr>
+<td>S62</td>
+<td>Le Chat を Vibe に改称</td>
+<td>2026-08-12</td>
+<td>Mistral Help「Le Chat is now Vibe」</td>
+<td><a href="https://help.mistral.ai/en/articles/682992-le-chat-is-now-vibe" rel="noopener">https://help.mistral.ai/en/articles/682992-le-chat-is-now-vibe</a></td>
+<td>［公］</td>
+<td>アカウント・会話は継続。chat.mistral.ai は Vibe に移行</td>
+</tr>
+<tr>
+<td>S64</td>
+<td>Grok Voice 3.0 公開</td>
+<td>2026-10-14</td>
+<td>SpaceXAI〈ページ上の表記はSpaceXSI〉公式</td>
+<td><a href="https://x.ai/news/grok-voice-3" rel="noopener">https://x.ai/news/grok-voice-3</a></td>
+<td>［公］</td>
+<td>Speech to Speech API〈1分0.08ドル〉と Grok Bot の音声モード。Grokアプリでの提供は記載なし</td>
+</tr>
+<tr>
+<td>S65</td>
+<td>Suno v6〈v6・v6-wild・v6-mini〉公開〈9/9〉、Speech〈beta〉提供開始〈10/1〉、共有ワークスペース・共有カスタムモデル〈10/15〉。ほか Albums〈10/5〉、Studio改善〈10/8〉</td>
+<td>2026-09-09〜10-15</td>
+<td>Suno Release Notes</td>
+<td><a href="https://blog.suno.com/release-notes" rel="noopener">https://blog.suno.com/release-notes</a></td>
+<td>［公］</td>
+<td>1サービス3件の枠のため10/1と10/15をH-1に採用。9/9は対象期間外でIの提供開始日に使用</td>
+</tr>
+<tr>
+<td>S66</td>
+<td>ChatGPT 応答の「Read aloud」〈Androidの応答操作に記載〉</td>
+<td>2026-10-27確認</td>
+<td>OpenAI Help「ChatGPT iOS and Android app FAQ」</td>
+<td><a href="https://help.openai.com/en/articles/8142208-chatgpt-ios-and-android-app-faq" rel="noopener">https://help.openai.com/en/articles/8142208-chatgpt-ios-and-android-app-faq</a></td>
+<td>［公］</td>
+<td>利用できる操作は「メッセージにより異なる」と記載。プラン別の条件の記載なし</td>
+</tr>
+<tr>
+<td>S67</td>
+<td>Gemini は音声で応答、応答横の「Listen」、声の選択〈Gemini's Voice〉</td>
+<td>2026-10-27確認</td>
+<td>Google「Talk naturally with Gemini Live」</td>
+<td><a href="https://support.google.com/gemini/answer/15274899" rel="noopener">https://support.google.com/gemini/answer/15274899</a></td>
+<td>［公］</td>
+<td>声の選択は一部の言語で非対応。利用者が指定した文章の読み上げの記載はなし</td>
+</tr>
+<tr>
+<td>S68</td>
+<td>Claude 音声モード：応答を音声で聞ける、既定の声から選択、全プラン・モバイル／デスクトップ／Web〈beta〉</td>
+<td>2026-10-27確認</td>
+<td>Claude Help「Use voice mode」</td>
+<td><a href="https://support.claude.com/en/articles/11101966-use-voice-mode" rel="noopener">https://support.claude.com/en/articles/11101966-use-voice-mode</a></td>
+<td>［公］</td>
+<td>独自音声の作成はなし</td>
+</tr>
+<tr>
+<td>S69</td>
+<td>Meta AI アプリ：文章と音声の会話、画像の生成と編集、Web検索、文書エディタはテスト中</td>
+<td>2025-04-29公開、2025-09-12更新</td>
+<td>Meta「Introducing the Meta AI App」</td>
+<td><a href="https://about.fb.com/news/2025/04/introducing-meta-ai-app-new-way-access-ai-assistant/" rel="noopener">https://about.fb.com/news/2025/04/introducing-meta-ai-app-new-way-access-ai-assistant/</a></td>
+<td>［公］</td>
+<td>参照元の表示・コードの記載なし。音声会話は当初4か国</td>
+</tr>
+<tr>
+<td>S70</td>
+<td>DeepSeek：出力は文章・表・コード、検索機能、出力内の外部リンク</td>
+<td>2026-03-27更新</td>
+<td>DeepSeek Terms of Use</td>
+<td><a href="https://cdn.deepseek.com/policies/en-US/deepseek-terms-of-use.html" rel="noopener">https://cdn.deepseek.com/policies/en-US/deepseek-terms-of-use.html</a></td>
+<td>［公］</td>
+<td>Web・アプリ・APIを含むサービス全体の規約</td>
+</tr>
+<tr>
+<td>S71</td>
+<td>Microsoft Copilot：文章からの画像生成、アップロード画像の変換</td>
+<td>2026-10-27確認</td>
+<td>Microsoft Support「Using image generation in Microsoft Copilot」</td>
+<td><a href="https://support.microsoft.com/en-us/microsoft-copilot/using-image-generation-in-microsoft-copilot" rel="noopener">https://support.microsoft.com/en-us/microsoft-copilot/using-image-generation-in-microsoft-copilot</a></td>
+<td>［公］</td>
+<td>範囲指定の編集の記載なし</td>
+</tr>
+<tr>
+<td>S72</td>
+<td>Midjourney：画像生成、添付画像の編集〈Quick Edit〉、Editorの範囲指定編集〈inpainting〉</td>
+<td>2026-10-27確認</td>
+<td>Midjourney Docs「Edit Model」</td>
+<td><a href="https://docs.midjourney.com/hc/en-us/articles/48495453462797-Edit-Model" rel="noopener">https://docs.midjourney.com/hc/en-us/articles/48495453462797-Edit-Model</a></td>
+<td>［公］</td>
+<td>—</td>
+</tr>
+<tr>
+<td>S73</td>
+<td>Midjourney：動画は画像を最初のフレームにして生成〈文章だけでは不可〉、最大4回の延長</td>
+<td>2026-10-27確認</td>
+<td>Midjourney Docs「Video」</td>
+<td><a href="https://docs.midjourney.com/hc/en-us/articles/37460773864589-Video" rel="noopener">https://docs.midjourney.com/hc/en-us/articles/37460773864589-Video</a></td>
+<td>［公］</td>
+<td>—</td>
+</tr>
+<tr>
+<td>S74</td>
+<td>Suno：文章からの楽曲生成、自作歌詞、Add Vocals、Extend、Replace Section、Song Editor</td>
+<td>2026-10-27確認</td>
+<td>Suno Help「Making music」カテゴリ</td>
+<td><a href="https://help.suno.com/en/categories/550017" rel="noopener">https://help.suno.com/en/categories/550017</a></td>
+<td>［公］</td>
+<td>—</td>
+</tr>
+<tr>
+<td>S75</td>
+<td>Doubao：対話、Web検索、画像と動画の生成〈Seedance〉、人声に近い音声出力、コード、文書とPPTの生成</td>
+<td>2026-10-27確認〈最新版15.5.0〉</td>
+<td>Apple App Store「豆包」〈開発元 北京春田知韵科技〉</td>
+<td><a href="https://apps.apple.com/cn/app/id6459478672" rel="noopener">https://apps.apple.com/cn/app/id6459478672</a></td>
+<td>［公］</td>
+<td>音楽の記載なし</td>
+</tr>
+<tr>
+<td>S76</td>
+<td>Qwen：対話と音声での会話、文章からの画像・AI動画の生成、コード、WordやPDFのファイル参照</td>
+<td>2026-09-30更新</td>
+<td>Google Play「Qwen - Alibaba AI Assistant」〈提供法人 NTH POWER GLOBAL TECH SINGAPORE〉</td>
+<td><a href="https://play.google.com/store/apps/details?id=com.tongyi.intl" rel="noopener">https://play.google.com/store/apps/details?id=com.tongyi.intl</a></td>
+<td>［公］</td>
+<td>Web検索・資料生成の記載なし</td>
+</tr>
+<tr>
+<td>S77</td>
+<td>Microsoft Copilot〈個人向け〉：参照元付きの回答、画像生成、音声応答、コードの実行〈計算・グラフ〉、ファイル参照</td>
+<td>2026-08-18更新</td>
+<td>Microsoft「Microsoft Copilot Transparency Note」</td>
+<td><a href="https://support.microsoft.com/en-us/privacy/microsoft-copilot/transparency-note" rel="noopener">https://support.microsoft.com/en-us/privacy/microsoft-copilot/transparency-note</a></td>
+<td>［公］</td>
+<td>—</td>
+</tr>
+<tr>
+<td>S78</td>
+<td>Character.AI：Character Voice〈返答を選んだ声で再生〉、音声サンプルからの声の作成</td>
+<td>2024-03-19</td>
+<td>Character.AI Blog「Character Voice For Everyone」</td>
+<td><a href="https://blog.character.ai/character-voice-for-everyone/" rel="noopener">https://blog.character.ai/character-voice-for-everyone/</a></td>
+<td>［公］</td>
+<td>現行の提供範囲は未確認</td>
+</tr>
+<tr>
+<td>S79</td>
+<td>Kimi Agent：ファイル参照、閲覧したWebサイトの表示、画像生成、音声生成、コードと端末操作・プレビュー、編集可能なWord・Excel・PPTの出力</td>
+<td>2026-10-27確認</td>
+<td>Kimi Help「Agent Overview」</td>
+<td><a href="https://www.kimi.com/en/help/agent/agent-overview" rel="noopener">https://www.kimi.com/en/help/agent/agent-overview</a></td>
+<td>［公］</td>
+<td>プラン条件の記載なし</td>
+</tr>
+<tr>
+<td>S80</td>
+<td>Microsoft Copilot：Deep Research、Pages、Podcasts、Copilot Searchの出典表示を発表〈順次展開〉</td>
+<td>2025-04-04</td>
+<td>Microsoft「Your AI Companion」</td>
+<td><a href="https://blogs.microsoft.com/blog/2025/04/04/your-ai-companion/" rel="noopener">https://blogs.microsoft.com/blog/2025/04/04/your-ai-companion/</a></td>
+<td>［公］</td>
+<td>Deep Researchの出典付きレポートの記載なし</td>
+</tr>
+<tr>
+<td>S81</td>
+<td>世界アプリMAU〈2026年6月〉：Kimi 2,269万、Character.AI 2,179万</td>
+<td>世界、アプリ、2026年6月</td>
+<td>aicpb「Global AI Apps Ranking」</td>
+<td><a href="https://www.aicpb.com/en/ai-rankings/products/global-ai-rankings/apps" rel="noopener">https://www.aicpb.com/en/ai-rankings/products/global-ai-rankings/apps</a></td>
+<td>［調］</td>
+<td>測定元・補正方法は未確認。前回版のKimi 2,269万と同じ資料</td>
+</tr>
+<tr>
+<td>S47</td>
+<td>Grok 4.7〈9/21〉、SuperGrok／Heavy の新規停止</td>
+<td>2026-10-17更新</td>
+<td>geotoolbox.ai</td>
+<td><a href="https://geotoolbox.ai/blog/grok-pricing" rel="noopener">https://geotoolbox.ai/blog/grok-pricing</a></td>
+<td>［報］</td>
+<td>二次情報</td>
+</tr>
+<tr>
+<td>S48</td>
+<td>X Subscription の各段階の価格、税別、Cursorのモデル選択</td>
+<td>2026-10-26確認</td>
+<td>cursor.com/pricing／help.x.com</td>
+<td><a href="https://cursor.com/pricing" rel="noopener">https://cursor.com/pricing</a> ／ <a href="https://help.x.com/en/using-x/x-premium" rel="noopener">https://help.x.com/en/using-x/x-premium</a></td>
+<td>［公］</td>
+<td>公式ページ間で新旧体系が混在</td>
+</tr>
+<tr>
+<td>S49</td>
+<td>Microsoft 365 Personal 9.99ドル〈年99.99ドル〉、Family 12.99ドル、Premium 19.99ドル〈年199.99ドル〉、Pro 99.99ドル〈月払いのみ〉</td>
+<td>2026-10-27確認〈10月26日時点との同一性は未確認〉</td>
+<td>Microsoft 個人向けCopilot料金ページ</td>
+<td><a href="https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/individuals" rel="noopener">https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/individuals</a> ／ <a href="https://www.microsoft.com/en-us/microsoft-365/premium" rel="noopener">https://www.microsoft.com/en-us/microsoft-365/premium</a></td>
+<td>［公］</td>
+<td>Copilot Proの記載なし。v1はPremiumのページのみ確認していた</td>
+</tr>
+<tr>
+<td>S50</td>
+<td>Perplexity Pro 20ドル、Max 200ドル</td>
+<td>2026-06-25更新</td>
+<td>pricepertoken.com</td>
+<td><a href="https://pricepertoken.com/subscriptions/perplexity" rel="noopener">https://pricepertoken.com/subscriptions/perplexity</a></td>
+<td>［報］</td>
+<td>公式ページは取得できず</td>
+</tr>
+<tr>
+<td>S51</td>
+<td>Character.AI c.ai+ 9.99ドル</td>
+<td>2026年</td>
+<td>costbench.com</td>
+<td><a href="https://costbench.com/software/ai-chatbots/character-ai/" rel="noopener">https://costbench.com/software/ai-chatbots/character-ai/</a></td>
+<td>［報］</td>
+<td>公式ページは取得できず</td>
+</tr>
+<tr>
+<td>S52</td>
+<td>Kling Standard 10ドル、Premier 92ドル、VIDEO 3.0</td>
+<td>2026-06-05</td>
+<td>eesel.ai</td>
+<td><a href="https://eesel.ai/blog/kling-ai-pricing" rel="noopener">https://eesel.ai/blog/kling-ai-pricing</a></td>
+<td>［報］</td>
+<td>公式ページは取得できず</td>
+</tr>
+<tr>
+<td>S53</td>
+<td>GitHub Copilot Free、Pro 10ドル、Pro+ 39ドル、Max 100ドル、モデル一覧</td>
+<td>2026-10-27確認〈10月26日時点との同一性は未確認〉</td>
+<td>GitHub</td>
+<td><a href="https://github.com/features/copilot/plans" rel="noopener">https://github.com/features/copilot/plans</a></td>
+<td>［公］</td>
+<td>月額料金とは別に、各プランに含まれるクレジットの額面を記載〈Pro 15ドル相当、Max 200ドル相当＝基本100＋追加割当100。追加割当は変更され得る〉。v1はMaxを見落とし、v2は額面を料金と取り違えていた</td>
+</tr>
+<tr>
+<td>S54</td>
+<td>Midjourney V8、Basic 10ドル、Mega 120ドル</td>
+<td>2026年</td>
+<td>wavespeed.ai</td>
+<td><a href="https://wavespeed.ai/blog/ja/posts/what-is-midjourney-v8-features-pricing-how-to-use-2026/" rel="noopener">https://wavespeed.ai/blog/ja/posts/what-is-midjourney-v8-features-pricing-how-to-use-2026/</a></td>
+<td>［報］</td>
+<td>公式ページは取得できず</td>
+</tr>
+<tr>
+<td>S55</td>
+<td>Suno Pro 月10ドル〈年96ドル〉、Premier 月30ドル〈年288ドル〉、v6</td>
+<td>2026-10-27確認</td>
+<td>suno.com/pricing</td>
+<td><a href="https://suno.com/pricing" rel="noopener">https://suno.com/pricing</a></td>
+<td>［公］</td>
+<td>ページの表示は「Pro 8ドル／月〈年払いで24ドル節約〉」「Premier 24ドル／月〈年払いで72ドル節約〉」で、切替は「Monthly／Annual save 20%」。8・24は年払い時の月換算と読み、月払いは10・30と判断した［計］。税は決済時計算</td>
+</tr>
+<tr>
+<td>S56</td>
+<td>Gamma 料金ページ〈金額表示なし〉</td>
+<td>2026-10-26確認</td>
+<td>gamma.app/pricing</td>
+<td><a href="https://gamma.app/pricing" rel="noopener">https://gamma.app/pricing</a></td>
+<td>［公］</td>
+<td>3段階の存在のみ</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>［計］の計算</strong></p>
+<ul>
+<li>ChatGPT 有料比率〈概算〉：消費者向け有料契約5,000万超÷WAU 9億超〈どちらもS1、2026-02-27の同一発表〉＝約5〜6%。成立条件：分子は消費者向けの有料契約、分母はChatGPTのWAUで、同じ時点・同じ発表。どちらも「超」の下限値なので、比率も目安。分子に非アクティブ契約を含み得る。二つの公表下限を代表値と置いた参考計算で、実際の比率の上下限や誤差幅ではない。参考：分母をDevDayの12億〈S3、2026-09-29。S36の「毎週ChatGPTを使う12億人超」の表現によりChatGPTのWAUとみなした〉にすると約4%だが、分子が7か月前のままで、変化の方向は断定できない</li>
+<li>中国3サービスの6月→9月の変化率：Doubao〈4.19−3.823〉÷3.823≒＋9.6%、Qwen〈1.58−1.6718〉÷1.6718≒−5.5%、DeepSeek〈1.23−1.2982〉÷1.2982≒−5.3%〈S10・S10-2。同じ調査主体・同じ区分の公表値どうしの参考比較。9月値はMAUと明記がなく、推計方法が両時点で同じかは未確認。v2の9.7／5.4／4.7%は入力の丸めがそろっていなかったため訂正〉</li>
+<li>Grok 有料比率〈概算〉：SuperGrok系190万÷MAU 1.17億＝約1.6%、X Premium込み630万÷1.17億＝約5%〈いずれもS13・S13-3、2026-03〉。前回と同じ計算</li>
+<li>会社・国・代表者の出典：前回版の出典を引き継ぎ〈前回版の公開ページ参照〉。今回新たに確認したのはS5〈Gemini Notebookの名称〉、S39〈Cursorの親会社〉</li>
+</ul>
+<h2>M．自己点検・作業記録</h2>
+<p>点検結果〈未解決の問題〉：</p>
+<ul>
+<li>サービス・モデル・運営会社の混同：なし。Muse Wonder はモデルとして Meta AI の出来事に入れ、別サービスに数えていない。Cursor の親会社は訂正した</li>
+<li>数値の単位・地域・時点・範囲：各セルに付記した。Claude の2.45億〈Sensor Tower〉は範囲の定義が未確認のまま</li>
+<li>親サービス全体の人数の流用：なし。Canva・Notion・Replit は非選定</li>
+<li>各順位の根拠区分と理由：D の注記に記載</li>
+<li>前回の数値を引き継いだ箇所の時点：前回の時点のまま。「前回のまま」と「未再確認」は区別した〈D は Cursor が未再確認、F・J にも未再確認あり〉</li>
+<li>主因：D2 で各行1つを選んだ。数値に変化がない行は「—」</li>
+<li>「前後は判断できない」順位：Gemini・Meta AI、Claude・DeepSeek、Microsoft Copilot・Perplexity、Character.AI・Kimi、Suno・Midjourney〈世界〉、Grok〈日本〉に↑↓→を付けていない。これらの順位の区分は C にそろえた</li>
+<li>最安・最上位：年間支払額で比較〈月払いは月額×12、年払い割引は月払い価格で比べ年払い価格を併記〉</li>
+<li>有料比率：分子・分母の対応で判断。ChatGPTは同一発表の組を本線にし、二つの公表下限を代表値と置いた参考計算であることを明記。分母を更新した参考値は変化の方向を断定しない。人と契約の合算はしない</li>
+<li>同率：なし。前回の同率2位〈Gemini・Meta AI〉と同率17位〈Midjourney・Suno〉は、同程度と判断する根拠がなく情報不足による同率に当たるためやめた</li>
+<li>課金率と有料比率の区別：今回公表の課金率はなし。すべて概算［計］</li>
+<li>算出値の式・前提・出典：L に記載</li>
+<li>対象期間外の出来事：H-1 には入れていない。前回基準日より前の公式数値〈8月のChatGPT・Gemini〉は H ではなく D・D2 で扱った。予告には〈予告〉を付けた</li>
+<li>料金の通貨・税・月額と年額：I の注記に記載。日本向け価格は未確認</li>
+<li>機能判定：共通条件。性能の優劣には置き換えていない。前回版で原典なしに置いていた判定は、今回原典を確認して15セルを訂正〈★〉し、音声の読み方を J に明記した</li>
+<li>出典の裏づけ：二次情報に頼った箇所〈X Subscription、Muse Wonder、Perplexityの1億超、各社の料金の一部〉は L で明示。原典を取得できなかったものは「未取得」と記載</li>
+<li>未確認をゼロ・非公開・非対応に置き換えていない</li>
+</ul>
+<p>作業記録：</p>
+<ul>
+<li>初回〈v1〉：開始 2026-10-26 17:11 JST、提出 17:33 JST、経過約22分〈調査は4つの並列エージェントに分けて実行し、その待ち時間を含む。作業環境の時計で取得〉</li>
+<li>v2の修正：2026-10-27 約16:50〜17:30 JST、約40分〈GPTによる検品への対応と、こちらでの再確認。初回の22分には加算せず別記録とする。基準日は10月26日のまま〉</li>
+<li>v3の修正：2026-10-27 約17:45〜18:25 JST、約40分〈GPTによる2回目の検品への対応。機能表の原典確認を含む。別記録〉</li>
+<li>K の分量は約5,600字〈見出し込み〉で、目安の上限をやや超える</li>
+<li>v2・v3で10月27日に開いたページ〈Microsoft・GitHub・Sunoの料金ページ、各社のヘルプなど〉は、10月26日時点の内容と同一かを厳密には確認できていない</li>
+</ul>
+<p>時間制約で調査しきれなかった項目：</p>
+<ul>
+<li>Hailuo AI の主力モデル、Gamma・Kimi の料金、Google AI プランの公式金額、Microsoft Copilot の主力モデル</li>
+<li>日本：Grok・Suno の再確認、MMD研究所・NRI・日経の2026年調査</li>
+<li>機能の対応範囲：8サービスの再確認〈Grokは公式ページの再取得が一部にとどまった〉と、読み上げる文章を利用者が指定できる専用機能の有無の個別確認</li>
+<li>出来事：Doubao、Qwenアプリ、Character.AI、Gemini Notebook、Midjourney、Kling、Hailuo、Gamma、GitHub Copilot の9サービスは確認が終わっていない</li>
+<li>前回版の出典のうち S25〈Cursor〉のURLと、Bの会社・国・代表者の出典URL。Cursor の利用規模は未再確認のまま</li>
+</ul>
+<p>その他の重要な未解決事項：</p>
+<ul>
+<li>Meta AI の MAU は17か月更新なし。10月21日の7〜9月期決算でも記載がなく、次の更新時期は不明</li>
+<li>Grok の有料契約は X Subscription への移行で来月から定義が変わる。前回・今回の630万と直接比べられなくなる</li>
+</ul>
+<p>固定候補30への追加・削除の提案：</p>
+<ul>
+<li>追加候補として「Agent i」〈LINEヤフー〉を検討してほしい。日本の MAU 623万人〈2026年5月、外部推計〉で、日本に限れば主要20の多くより大きい。世界の勢力図には影響しないが、日本の表の意味が変わる</li>
+</ul>
+<p>来月以降の形式への提案〈本体には反映していない〉：</p>
+<ul>
+<li>I の表に「前回からの変更」列を足すと、料金改定〈今回のPro 500、X Subscription〉を D2 と同じ形で追えるようになる</li>
+<li>H-1 で、前回の基準日より前に起きたが前回版が拾えていなかった出来事〈今回の8月の公式数値〉を、別枠〈「前回の見落とし」〉で載せる場所があると、D2 の「発表」との関係が読みやすい</li>
+<li>F で、主要20の外にある日本固有のサービスを1行だけ参考掲載できる枠があると、日本の読者に対して誠実になる</li>
+</ul>
+<p>v2 で直した箇所〈GPTの検品で指摘されたもの＝「G」、こちらの再確認で見つけたもの＝「C」〉：</p>
+<ol>
+<li>中国3サービスの数値をQuestMobile 9月値に更新〈G・C〉</li>
+<li>Gammaの累計を1億超〈5月まで〉に更新〈G〉</li>
+<li>Muse Spark Open〈10/15〉、DeepSeek V4.1-Flash-1017〈10/17〉、Grok Voice 3.0〈10/14〉、Sunoの2件を H-1 に追加〈G・C〉</li>
+<li>Metaの7〜9月期決算〈10/21公表、Meta AIの記載なし〉を反映。「未公表」の記述を訂正〈G〉</li>
+<li>Sunoの月額を10ドル・30ドル〈年96・288ドル〉に訂正〈G・C〉</li>
+<li>Claude Proの年払いの書き方を「年200ドル」に訂正〈G〉</li>
+<li>Microsoft 365 Pro〈99.99ドル〉と GitHub Copilot Max〈100ドル〉を最上位に、ChatGPT Go 8ドルを公式値に〈G・C〉</li>
+<li>同率17位〈Midjourney・Suno〉をやめ、17位・18位〈前後は判断できない〉に。同率2位の理由を「公式値の水準が同じ」に書き直し〈G〉</li>
+<li>Microsoft Copilot・Perplexityを「前後は判断できない」とし、Perplexityの1億超〈FT報道〉とQwenの3億超〈Alibaba公式〉を併記〈C〉</li>
+<li>Copilotの「アプリ群」の範囲、ヴァリューズの重複・Gemini参考値の注記を追加〈G〉</li>
+<li>ChatGPTの有料比率を同一発表の約5〜6%に戻し、約4%は参考に。Grokの約5%を上限側の参考に〈G〉</li>
+<li>A2・K の「3割増」を下限値の更新に書き換え〈G〉</li>
+<li>K の「上位5のうち4つ」を3つに訂正〈G〉</li>
+<li>Le Chat → Vibe の改称を B・C に反映〈C〉</li>
+<li>J：Sunoの音声を△★に。音声の○と原典未確認の○・◎の限界を明記〈G・C〉</li>
+<li>L：S23・S24・S31 のURLを原典に差し替え、S10-2・S17-2・S38-2・S58〜S65 を追加</li>
+</ol>
+<p>v3 で直した箇所〈GPTの2回目の検品で指摘されたもの＝「G」、こちらの再確認＝「C」〉：</p>
+<ol>
+<li>J：前回版で原典なしに置いていた判定を原典で確認し、15セルを訂正〈★〉。音声の判定の読み方を明記し、GPT版との読み方の違いを記した。S66〜S80 を追加〈G・C〉</li>
+<li>中国3サービスの変化率を、D2の入力値で計算し直して約9.6%増・約5.5%減・約5.3%減に訂正。「実際の増加とみてよい」を「参考比較」に弱めた〈G〉</li>
+<li>Grok 8位の根拠を「1.17億＞1億超」から、同一調査の補助指標〈Similarweb・Sensor Tower〉に改めた〈G〉</li>
+<li>同率2位〈Gemini・Meta AI〉をやめ、2位・3位〈前後は判断できない、比較不可〉に〈G〉</li>
+<li>Character.AI・Kimi の↑↓を比較不可に〈同一調査どうしで順序が食い違う。aicpbの世界アプリMAUを S81 として併記〉〈G〉</li>
+<li>GitHub Copilot Max：「200ドル」は含まれる利用枠の額面で料金ではないと訂正〈G〉</li>
+<li>ChatGPT：人と契約の合算〈5,900万〉をやめ合計は算出不可に。約5〜6%を「二つの公表下限を代表値と置いた参考計算」と明記。約4%の変化方向の記述を削除。Grokの約5%を「上限側」から「契約数ベースの参考値」に〈G〉</li>
+<li>E・K の「それ以外は分子がない」を、分母・時点がそろわないという説明に訂正〈G〉</li>
+<li>D2 の表の途切れ、E・I・J の Suno と Midjourney の順序、H-1 の Suno 10/1 の位置、K-3 の Doubao の旧値、I の確認時点〈10/27再確認〉、Suno v6 の提供開始日〈9/9〉、Cursor の未再確認表示、E の Cursor の情報源区分〈公→報〉を訂正〈G〉</li>
+<li>K を約5,600字〈見出し込み〉に圧縮し、順位の根拠〈B の範囲、前後は判断できない5組〉を D と一致させた〈G・C〉</li>
+</ol>
+<p>自己点検を行ったことをもって、誤りがないことを保証するものではない。</p>
+</article>
+<div class="xlink">もう一方の成果物：<a href="https://yokonarabi-lab.github.io/power-map/2026-10/chatgpt/">GPT-6 Astra 版</a>　／　解説と感想：<a href="https://note.com/sky_yellowlens/n/n7d99577cd12a" rel="noopener">note の記事</a></div>
+<footer class="foot">
+<div class="brand"><span>Sky</span><span class="bar" aria-hidden="true"></span><span>Yellow Lens</span></div>
+<p>検証室：Claude Fable 5.1 vs GPT-6 Astra。同じお題、同じ依頼文で、ふたつの答えを並べて読み解く。記事は <a href="https://note.com/sky_yellowlens" rel="noopener">note</a> に。</p>
+<p>この文書は、AI の成果物をそのまま載せたもの。内容は 2026年10月26日時点の調査で、数値は出典の時点のもの。毎月、同じ条件で更新する。</p>
+</footer>
+</main>
+</body>
+</html>
