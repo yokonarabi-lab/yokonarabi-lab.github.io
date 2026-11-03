@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instagram攻略法 GPT-6 Astra 版｜Sky｜Yellow Lens</title>
+<meta name="description" content="Instagram の1投稿あたりの閲覧数を伸ばす方法を、Instagram の公式情報を軸に調べた GPT-6 Astra の成果物。同じ依頼文で Claude Fable 5.1 にも依頼し、ふたつの答えを並べた検証室の記録。">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:title" content="Instagram攻略法 GPT-6 Astra 版｜Sky｜Yellow Lens">
+<meta property="og:description" content="Instagram の1投稿あたりの閲覧数を伸ばす方法を、Instagram の公式情報を軸に調べた GPT-6 Astra の成果物。同じ依頼文で Claude Fable 5.1 にも依頼し、ふたつの答えを並べた検証室の記録。">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://yokonarabi-lab.github.io/instagram/chatgpt/">
+<meta property="og:image" content="https://yokonarabi-lab.github.io/instagram/assets/cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+
+:root{--ink:#1E1E1E;--sub:#5C5C5C;--yellow:#F4C21B;--orange:#D9704A;--green:#1FA383;--rule:#D9D9D9;--soft:#F6F6F6;--bg:#FFFFFF}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter","Noto Sans JP",system-ui,-apple-system,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;font-size:16px;line-height:1.95;letter-spacing:.03em;font-feature-settings:"kern";-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:#B5B5B5;text-underline-offset:.2em}
+a:hover{text-decoration-color:var(--ink)}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.site-header{padding:26px 0 18px;border-bottom:1px solid var(--rule)}
+.brand{display:inline-flex;align-items:center;gap:.42em;font-family:"Inter",sans-serif;font-weight:500;font-size:17px;letter-spacing:.04em;text-decoration:none;color:var(--ink)}
+.brand .bar{display:inline-block;width:1px;height:1.05em;background:var(--yellow);transform:translateY(-.02em)}
+.site-header .nav{float:right;font-size:13px;color:var(--sub);margin-top:4px}
+.site-header .nav a{color:var(--sub);margin-left:14px}
+.doc-head{padding:44px 0 10px}
+.shelf{font-size:13px;color:var(--sub);letter-spacing:.06em;margin:0 0 14px}
+.model{font-family:"Inter",sans-serif;font-weight:700;font-size:30px;line-height:1.3;margin:0 0 6px;letter-spacing:.01em}
+.model .vs{font-weight:500;font-size:.6em;color:var(--sub);margin:0 .35em}
+.model .u{display:inline-block;border-bottom:.11em solid;padding-bottom:.08em;line-height:1.1}
+.model .u.claude{border-color:var(--orange)}
+.model .u.gpt{border-color:var(--green)}
+.theme{font-size:15px;color:var(--sub);margin:0 0 26px}
+.frame{background:var(--soft);border-left:3px solid var(--yellow);padding:16px 20px;font-size:14.5px;line-height:1.9;color:var(--ink);margin:0 0 40px}
+.frame p{margin:0 0 8px} .frame p:last-child{margin:0}
+.frame .k{color:var(--sub);margin-right:.5em}
+article h1{font-size:24px;line-height:1.55;margin:0 0 28px;letter-spacing:.02em;font-weight:700}
+article h2{font-size:21px;line-height:1.5;margin:56px 0 18px;padding-bottom:10px;border-bottom:2px solid var(--ink);letter-spacing:.03em;font-weight:700}
+article h3{font-size:17.5px;line-height:1.6;margin:36px 0 10px;font-weight:700;letter-spacing:.03em}
+article h3 .rank{font-family:"Inter",sans-serif;font-weight:700;margin-right:.45em}
+article h3 .tid{font-family:"Inter",sans-serif;font-weight:600;color:var(--sub);margin-right:.6em;font-size:.95em}
+article p{margin:0 0 16px}
+article ul,article ol{padding-left:1.4em;margin:0 0 16px}
+article li{margin:0 0 8px}
+article li p{margin:0}
+article hr{border:0;border-top:1px solid var(--rule);margin:44px 0}
+article strong{font-weight:700}
+article blockquote{margin:0 0 16px;padding:0 0 0 16px;border-left:3px solid var(--rule);color:var(--sub)}
+.tbl{overflow-x:auto;margin:0 0 24px}
+table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.75;letter-spacing:.02em}
+th{text-align:left;font-weight:700;font-size:13px;padding:8px 10px;border-bottom:2px solid var(--ink);vertical-align:bottom;white-space:nowrap}
+td{padding:12px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+table.cols4 th:nth-child(1){width:20%} table.cols4 th:nth-child(2){width:36%} table.cols4 th:nth-child(3){width:21%} table.cols4 th:nth-child(4){width:23%}
+table.cols3 th:nth-child(1){width:3.2em} table.cols3 th:nth-child(2){width:52%}
+table.cols4 td:first-child{font-weight:500}
+.src ol{padding-left:1.8em}
+.src li{margin:0 0 14px;font-size:14.5px;line-height:1.8;word-break:break-all}
+.src li a{word-break:break-all}
+.src table{font-size:13.5px}
+.foot{margin:72px 0 0;padding:28px 0 56px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--sub);line-height:1.9}
+.foot a{color:var(--sub)}
+.foot .brand{font-size:15px;margin-bottom:10px;color:var(--ink)}
+.xlink{margin:48px 0 0;padding:18px 20px;background:var(--soft);font-size:14.5px}
+.xlink a{font-weight:700}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .site-header .nav{float:none;display:block;margin-top:8px}
+  .site-header .nav a{margin:0 14px 0 0}
+  .model{font-size:26px}
+  article h1{font-size:21px}
+  article h2{font-size:19px}
+  article h3{font-size:16.5px}
+  table.cards,table.cards tbody,table.cards tr,table.cards td{display:block;width:100%}
+  table.cards thead{display:none}
+  table.cards tr{border-bottom:2px solid var(--ink);padding:10px 0 6px;margin:0 0 10px}
+  table.cards td{border:0;padding:4px 0 8px;min-width:0}
+  table.cards td::before{content:attr(data-label);display:block;font-size:12px;color:var(--sub);letter-spacing:.05em;margin-bottom:2px}
+  table.cards td:first-child{font-weight:700;padding-top:0}
+  table.cards td:first-child::before{display:none}
+}
+@media print{.site-header .nav,.xlink{display:none} body{font-size:11pt}}
+table.tc th:nth-child(4){width:24%}
+table.tc th,table.tc td:nth-child(-n+3){white-space:nowrap}
+table td{overflow-wrap:anywhere}
+table.tj,table.tj tbody{display:block;width:100%}
+table.tj thead{display:none}
+table.tj tr{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:18px;padding:16px 0 14px;border-bottom:1px solid var(--rule)}
+table.tj tr:first-child{border-top:2px solid var(--ink)}
+table.tj td{display:block;border:0;padding:0}
+table.tj td:nth-child(1){font-family:"Inter",sans-serif;font-weight:700;color:var(--sub);flex:0 0 auto}
+table.tj td:nth-child(2){font-weight:700;flex:1 1 calc(100% - 4em)}
+table.tj td:nth-child(3),table.tj td:nth-child(4),table.tj td:nth-child(5){font-size:14px;margin-top:6px}
+table.tj td:nth-child(3){font-weight:700}
+table.tj td:nth-child(3)::before,table.tj td:nth-child(4)::before,table.tj td:nth-child(5)::before{content:attr(data-label);font-weight:400;color:var(--sub);font-size:12.5px;margin-right:.5em}
+table.tj td:nth-child(6){flex:0 0 100%;margin-top:8px}
+.src ul{list-style:none;padding-left:0}
+.src li{margin:0 0 14px;font-size:14.5px;line-height:1.8;word-break:break-all}
+.src li .sid{font-family:"Inter",sans-serif;font-weight:700;margin-right:.5em}
+.lead p{margin:0 0 10px}
+
+table.tc6 th:nth-child(5){width:20%}
+table.tc6 th,table.tc6 td:nth-child(-n+4){white-space:nowrap}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="https://yokonarabi-lab.github.io/instagram/"><span>Sky</span><span class="bar" aria-hidden="true"></span><span>Yellow Lens</span></a>
+<nav class="nav" aria-label="ページ内の移動"><a href="https://yokonarabi-lab.github.io/instagram/">Instagram攻略法</a><a href="https://note.com/sky_yellowlens" rel="noopener">note</a></nav>
+</div></header>
+<main class="wrap">
+
+<div class="doc-head">
+<p class="shelf">検証室｜Instagram攻略法</p>
+<p class="model"><span class="u gpt">GPT-6 Astra</span><span class="vs">版</span></p>
+<p class="theme">Claude Fable 5.1 vs GPT-6 Astra — 同じ依頼文で、Instagram の1投稿あたりの閲覧数を伸ばす方法を調べてもらった成果物</p>
+</div>
+<div class="frame">
+<p><span class="k">依頼日</span>2026年11月2日。「Instagram の公式情報を軸に、日本語と英語の攻略法を調べて、実践チェックリスト（原則10項目）と、29の通説の判定を書く」という同じ依頼文を、Claude Fable 5.1 と GPT-6 Astra に出した。</p>
+<p><span class="k">このページ</span>GPT-6 Astra の成果物（相手の検品を2回受けて直した版）。本文・順位・判定は GPT-6 Astra が書いたまま。</p>
+<p><span class="k">もう一方</span><a href="https://yokonarabi-lab.github.io/instagram/claude/">Claude Fable 5.1 版</a>　<span class="k">解説と感想</span><a href="https://note.com/sky_yellowlens" rel="noopener">note の記事</a></p>
+</div>
+<article>
+<h1>Instagram攻略法｜公開用の成果物</h1>
+<div class="lead">
+<p><strong>調査基準日</strong>　2026年11月2日（日本時間）　<strong>対象</strong>　日本語で発信する個人の公開アカウント。広告を使わず、Instagram内で1投稿が何回見られるかを扱います。</p>
+<p><strong>指標</strong>　「閲覧数（Views）」は、画像投稿なら表示された回数、リールなら再生またはリプレイが始まった回数です。同じ人の繰り返しも含みます。「閲覧者」や「リーチしたアカウント数」は一度以上画面に表示されたアカウントの数です。公開の個人用・プロアカウントは無料でインサイトを確認できます。日本語のリール用ヘルプではViewsを「再生数」とも表記し、指標は段階提供です。（<a href="#s1">S1</a>・<a href="#s2">S2</a>・<a href="#s3">S3</a>）</p>
+<p>第三者の分析や経験則も参照していますが、編集方針により出典詳細は非公開です。そのため、読者が直接検証できる範囲には制約があります。</p>
+</div>
+<h2>結論</h2>
+<p>二つの選択肢や手順を見せるなら、まずカルーセルを試してください。動きそのものが答えなら、リールの最初にその場面を見せます。相手の読者にも役立つ企画なら、共同投稿も有力です。一枚で伝わる写真には、無理にページを足す必要はありません。どの形式でも、自分で作った材料を使い、初めて見る人にも内容が分かるようにします。投稿の本数や最初の1時間の反応だけで成否を決めず、同じ日数がたった各投稿の閲覧数で比べてください。</p>
+<h2>実践チェックリスト</h2>
+<p><strong>実測の効果順位ではなく、調査に基づく推奨順位</strong>です。1投稿の閲覧数を比べた資料、誰にどこで表示されるかを説明する仕組み、日本語の個人にも当てはまる範囲を重視しました。上位でも、題材に合うものから選んでください。手間・料金は順位に含めていません。実践項目は次の9つです。ストーリーズでのお知らせは、共有だけで元投稿の閲覧数が増えた裏づけが弱いため、補足で扱います。</p>
+<div class="tbl"><table class="cards tc6">
+<thead>
+<tr>
+<th>順位</th>
+<th>ID</th>
+<th>比較分類</th>
+<th>対象形式</th>
+<th>項目名</th>
+<th>やること</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="順位">1</td><td data-label="ID">C1</td><td data-label="比較分類">形式</td><td data-label="対象形式">カルーセル</td><td data-label="項目名">比較の並べ方</td><td data-label="やること">二つの選択肢や複数の手順を説明するときは、1枚目に問い、2枚目以降に比べる材料を一つずつ置きます。</td></tr>
+<tr><td data-label="順位">2</td><td data-label="ID">C2</td><td data-label="比較分類">投稿方法</td><td data-label="対象形式">全形式</td><td data-label="項目名">共同投稿</td><td data-label="やること">同じテーマを別の立場から語れる相手と一緒に作り、相手を共同投稿者として招待します。</td></tr>
+<tr><td data-label="順位">3</td><td data-label="ID">C3</td><td data-label="比較分類">内容</td><td data-label="対象形式">全形式</td><td data-label="項目名">自作の材料</td><td data-label="やること">一つの問いに、自分で撮った写真、試した結果、または自分で作った図で答えます。</td></tr>
+<tr><td data-label="順位">4</td><td data-label="ID">C4</td><td data-label="比較分類">内容</td><td data-label="対象形式">リール</td><td data-label="項目名">冒頭の見せ場</td><td data-label="やること">最初の画面に結果や変化を出し、続く場面で「どうしてそうなるか」を見せます。</td></tr>
+<tr><td data-label="順位">5</td><td data-label="ID">C5</td><td data-label="比較分類">内容</td><td data-label="対象形式">全形式</td><td data-label="項目名">送り先のある内容</td><td data-label="やること">「誰が誰に何を伝えるために送るか」を決め、その相手にも単体で通じる比較や具体例を一つ入れます。</td></tr>
+<tr><td data-label="順位">6</td><td data-label="ID">C6</td><td data-label="比較分類">投稿方法</td><td data-label="対象形式">リール</td><td data-label="項目名">元映像の書き出し</td><td data-label="やること">編集元から被写体や細部が見える画質で書き出し、他のアプリ名が重なっていない版を投稿します。</td></tr>
+<tr><td data-label="順位">7</td><td data-label="ID">C7</td><td data-label="比較分類">内容</td><td data-label="対象形式">全形式</td><td data-label="項目名">検索語の明記</td><td data-label="やること">投稿が答える質問を一つ選び、読者が使う具体的な言葉をキャプションの自然な一文に入れます。</td></tr>
+<tr><td data-label="順位">8</td><td data-label="ID">C8</td><td data-label="比較分類">投稿方法</td><td data-label="対象形式">全形式</td><td data-label="項目名">入口の固定</td><td data-label="やること">初めて来た人にまず読んでほしい一本を選び、プロフィール上部に固定します。</td></tr>
+<tr><td data-label="順位">9</td><td data-label="ID">C9</td><td data-label="比較分類">投稿方法</td><td data-label="対象形式">リール</td><td data-label="項目名">新企画の先行公開</td><td data-label="やること">新しい切り口を初めて見る人にも伝わる一本にしてトライアルで出し、手応えがあれば全員に共有します。</td></tr>
+</tbody>
+</table></div>
+<h3>C1　比較の並べ方</h3>
+<ul>
+<li><strong>理由</strong>　形式別の観察では、カルーセルは単独画像より1投稿の平均閲覧数が多い傾向でした。責任者が説明したのは単独画像より多くの人に届くことがあるという点で、この二つの結果を合わせて、比較や手順に使うことを勧めます。</li>
+<li><strong>閲覧数へのつながり</strong>　両方。形式別に測ったのは投稿全体の閲覧数です。並べ方が読み進めや再表示後の閲覧を増やすという部分は提案です。</li>
+<li><strong>根拠の種類</strong>　公式／データ分析</li>
+<li><strong>判断の位置づけ</strong>　推論を含む提案。平均値の傾向を、複数枚にする意味がある題材で使います。</li>
+<li><strong>条件や限界</strong>　一枚で伝わる写真を引き延ばす必要はありません。スライド数を投稿数に換算したり、めくった枚数を閲覧数に足したりしません。</li>
+<li><strong>対応する公式出典</strong>　<a href="#s17">S17</a></li>
+</ul>
+<h3>C2　共同投稿</h3>
+<ul>
+<li><strong>理由</strong>　相手が承認すると、一つの投稿を双方の読者に届けられます。日本語リールの分析でも、同じ投稿者の単独投稿より共同投稿で再生数が多い傾向でした。</li>
+<li><strong>閲覧数へのつながり</strong>　両方。リールには1本の再生数を比べた観察があります。画像・カルーセルは配信先が加わる仕組みからの推論です。</li>
+<li><strong>根拠の種類</strong>　公式／データ分析</li>
+<li><strong>判断の位置づけ</strong>　推論を含む提案。同じ投稿者で比較しても、企画の強さや選んだ相手が違います。</li>
+<li><strong>条件や限界</strong>　両方の読者に見る理由があり、読者層に重ならない部分がある企画向きです。相手の承認と共同制作の手間が必要です。単なるタグ付けは別です。</li>
+<li><strong>対応する公式出典</strong>　<a href="#s19">S19</a>・<a href="#s20">S20</a></li>
+</ul>
+<h3>C3　自作の材料</h3>
+<ul>
+<li><strong>理由</strong>　同じ素材の転載が見つかれば、おすすめで元の作品が優先される場合があります。自分で作った材料なら、初めて見る人にも、その投稿を読む理由を具体的に示せます。</li>
+<li><strong>閲覧数へのつながり</strong>　間接。公式が説明するのは、おすすめに誰の投稿を載せるかです。自作物同士でどの投稿が多く見られるかは別です。</li>
+<li><strong>根拠の種類</strong>　公式</li>
+<li><strong>判断の位置づけ</strong>　推論を含む提案。元投稿の優先は公式の方針で、題材の選び方は実践上の判断です。</li>
+<li><strong>条件や限界</strong>　おすすめ経由の非フォロワー向けです。すでにすべて自作なら、自作に切り替えることによる伸びは見込めません。</li>
+<li><strong>対応する公式出典</strong>　<a href="#s13">S13</a>・<a href="#s14">S14</a></li>
+</ul>
+<h3>C4　冒頭の見せ場</h3>
+<ul>
+<li><strong>理由</strong>　長い前置きがあると、見る人は何の動画か判断する前に通り過ぎます。リールのおすすめでは、早く離れる可能性も、その後にどれだけ見そうかも予測します。</li>
+<li><strong>閲覧数へのつながり</strong>　間接。早い離脱や長い視聴が予測に使われることは確認済みです。冒頭の見せ方を替えた結果、次の人にも表示されるという部分は推論です。</li>
+<li><strong>根拠の種類</strong>　公式／データ分析／個人の経験則</li>
+<li><strong>判断の位置づけ</strong>　推論を含む提案。一組の比較事例を全員の効果量には使いません。</li>
+<li><strong>条件や限界</strong>　途中で答えを隠し続けず、最初に示した約束を本編で回収します。何秒に切ればよいかは題材で変わります。 教育分野の観察では、冒頭の型だけで閲覧数の差を安定して説明できませんでした。</li>
+<li><strong>対応する公式出典</strong>　<a href="#s8">S8</a>・<a href="#s18">S18</a></li>
+</ul>
+<h3>C5　送り先のある内容</h3>
+<ul>
+<li><strong>理由</strong>　例えば「二人で決める前に見比べたい違い」なら、受け取った人にも投稿を開く理由があります。責任者は、未フォローの人に届く局面では送信をやや重視すると説明しています。</li>
+<li><strong>閲覧数へのつながり</strong>　両方。相手が開いて表示・再生すれば元投稿の閲覧になります。送信されそうだという予測が、おすすめの表示にもつながり得ます。</li>
+<li><strong>根拠の種類</strong>　公式</li>
+<li><strong>判断の位置づけ</strong>　推論を含む提案。送信数を人為的に増やしたときの配信量を示す資料ではありません。</li>
+<li><strong>条件や限界</strong>　送信だけでは閲覧を確認できません。特定の相手に送る場面が自然に思い浮かぶ題材向きです。</li>
+<li><strong>対応する公式出典</strong>　<a href="#s16">S16</a>・<a href="#s15">S15</a></li>
+</ul>
+<h3>C6　元映像の書き出し</h3>
+<ul>
+<li><strong>理由</strong>　Instagramは、低解像度のリールや透かしのあるリールの表示を抑える場合があると説明しています。動画を何度も保存し直すより、元映像から出したほうが文字や動きを確認しやすくなります。</li>
+<li><strong>閲覧数へのつながり</strong>　間接。公式の対象は表示されやすさです。きれいな版に替えた場合の1本あたりの閲覧数増加は分かりません。</li>
+<li><strong>根拠の種類</strong>　公式</li>
+<li><strong>判断の位置づけ</strong>　推論を含む提案。見えにくさやおすすめでの不利益を減らす手段として採用しました。</li>
+<li><strong>条件や限界</strong>　すでに鮮明で他アプリの透かしがなければ、さらに解像度を上げる効果は見込んでいません。権利のある元データを使います。</li>
+<li><strong>対応する公式出典</strong>　<a href="#s18">S18</a>・<a href="#s15">S15</a></li>
+</ul>
+<h3>C7　検索語の明記</h3>
+<ul>
+<li><strong>理由</strong>　「これを試しました」だけより、何を試したかが分かる名前を置くと、検索する人の言葉と一致する手がかりになります。Instagramは検索向けの語をキャプションに置くよう案内しています。</li>
+<li><strong>閲覧数へのつながり</strong>　間接。裏づけられるのはアプリ内検索と投稿を結び付ける手がかりです。検索候補に出た後に投稿が開かれ、閲覧が増えるかは未確定です。</li>
+<li><strong>根拠の種類</strong>　公式／データ分析</li>
+<li><strong>判断の位置づけ</strong>　推論を含む提案。検索語の追加だけでInstagramの閲覧数が増えたことを示す比較は得られませんでした。</li>
+<li><strong>条件や限界</strong>　名前や手順を探す人がいる題材向きです。外部検索結果への掲載数やクリック数をInstagramの閲覧数に加えません。</li>
+<li><strong>対応する公式出典</strong>　<a href="#s10">S10</a></li>
+</ul>
+<h3>C8　入口の固定</h3>
+<ul>
+<li><strong>理由</strong>　投稿からプロフィールに来た人は、一覧の一番上から次に見る投稿を選べます。代表作やシリーズの入口を固定すれば、どれを開けばよいかが分かります。</li>
+<li><strong>閲覧数へのつながり</strong>　間接。固定で変わるのはプロフィール内の位置です。そこから選ばれる回数が増えて、固定した一本の閲覧につながると考えます。</li>
+<li><strong>根拠の種類</strong>　公式</li>
+<li><strong>判断の位置づけ</strong>　推論を含む提案。固定によるフィードや発見の順位上昇は採用理由にしていません。</li>
+<li><strong>条件や限界</strong>　プロフィール訪問がある場合に限ります。過去の投稿どうしで読まれる先が移っただけなら、期間全体の閲覧は増えないこともあります。</li>
+<li><strong>対応する公式出典</strong>　<a href="#s22">S22</a></li>
+</ul>
+<h3>C9　新企画の先行公開</h3>
+<ul>
+<li><strong>理由</strong>　まず非フォロワーに新しいリールを届け、同じリールをあとでフォロワーにも公開できます。通常公開より再生が多い例と少ない例があり、毎回トライアルを選ぶ理由にはなりません。</li>
+<li><strong>閲覧数へのつながり</strong>　間接。最初に届く相手を変更できますが、通常の公開より1本の閲覧数が増えるという一貫した結果はありません。</li>
+<li><strong>根拠の種類</strong>　公式／データ分析</li>
+<li><strong>判断の位置づけ</strong>　推論を含む提案。どの新企画を全員に届けるかを変えられる場合に限って採用しました。</li>
+<li><strong>条件や限界</strong>　「トライアル」が表示される公開アカウント向けです。英語ヘルプはプロ200人以上・個人用1,000人以上、日本語版は原則プロ・一部非プロのテストと案内しており、日本での適用は投稿画面で確認します。</li>
+<li><strong>対応する公式出典</strong>　<a href="#s23">S23</a>・<a href="#s24">S24</a></li>
+</ul>
+<h3>補足　ストーリーズで元投稿を知らせる</h3>
+<p>以前もらった質問に答えたときなど、すでにいる読者に知らせる理由があるときに共有します。ストーリーズを見ただけでは元投稿の閲覧には数えません。共有した場合としなかった場合を比べて、元投稿の閲覧数がどれだけ増えるかは確認できませんでした。</p>
+<h3>補足　1投稿の伸びを比べる</h3>
+<ol>
+<li>
+<p>単独画像は1枚で1投稿、カルーセルは何枚あっても全体で1投稿、リールは1本で1投稿として記録します。ストーリーズは1枚ごとに別の投稿です。連続する数枚の閲覧数を足して、元投稿や到達人数と比べません。</p>
+</li>
+<li>
+<p>投稿を開き「インサイトを見る」から確認します。例えば公開24時間後・7日後に同じ題材、形式、規模の近い投稿を複数本比べます。投稿数、観測期間、平均か中央値かをそろえます。期間合計の増減は別に見ます。以前のインプレッション・再生数と現在のViewsは、定義が一致する場合だけつなげます。（<a href="#s1">S1</a>・<a href="#s2">S2</a>・<a href="#s3">S3</a>・<a href="#s4">S4</a>）</p>
+</li>
+<li>
+<p><strong>新しい人に届いたか</strong>を見るときは、延べ閲覧数と、フォロワー外のユニークな閲覧者を分けます。フィードはフォロー中とおすすめが混在し、発見・リールのおすすめは主に非フォロワー、ストーリーズは主に既存読者です。検索結果やプロフィールから開いた場合も別の入口です。内訳が出ないときは経路不明と記録します。（<a href="#s15">S15</a>・<a href="#s8">S8</a>・<a href="#s9">S9</a>・<a href="#s10">S10</a>）</p>
+</li>
+<li>
+<p><strong>どこで離れたか</strong>は、平均視聴時間（秒）、完了率、スキップ率を別に見ます。いいね・保存・コメント・送信は行動の件数です。率なら「送信数÷リーチしたアカウント数」のように分母を書きます。フォロワー増・外部リンクのクリックは別の成果です。（<a href="#s1">S1</a>・<a href="#s3">S3</a>・<a href="#s16">S16</a>）</p>
+</li>
+<li>
+<p><strong>Instagramだけで見られた回数</strong>を取り出します。Facebook同時投稿や宣伝を含む合計しか分からない投稿は、無広告のInstagram単独比較から外します。公開カウンターが見えるだけでは、この区別はできません。（<a href="#s4">S4</a>・<a href="#s5">S5</a>）</p>
+</li>
+</ol>
+<p><strong>検索と有料機能の条件</strong>　ハッシュタグは2025年12月に、投稿・リールのキャプションで最大5個とする段階導入が始まりました。外部検索への掲載は、現在18歳以上で公開のプロアカウント、対象の公開投稿・リールは2020年1月1日以降で、設定で無効にできます。検索結果で見えた数やクリック数はここでのViewsには足しません。（<a href="#s12">S12</a>・<a href="#s11">S11</a>）</p>
+<p>日本では発信者向けのMeta認証（Meta Verified）に加え、同サービスを基盤にしたMeta Oneが案内されています。公式FAQは、既存の認証契約には現時点で変更がなく、切り替えが可能になれば案内するとしています。プランごとの認証・サポート・プロフィール発見などの特典と、Instagramの通常投稿の閲覧増は別です。閲覧数のための有料プランはランキングに採用していません。（<a href="#s26">S26</a>・<a href="#s27">S27</a>・<a href="#s28">S28</a>・<a href="#s29">S29</a>）</p>
+<h2>やらないこと</h2>
+<h3>N1</h3>
+<ul>
+<li><strong>やらないこと</strong>　無関係な検索語を並べて、内容とかけ離れた長いキャプションを付けません。</li>
+<li><strong>理由</strong>　Instagramは投稿と無関係な長文を、質が低くおすすめの対象にしないコンテンツの例に挙げています。内容を理解するために必要な長い説明まで削る必要はありません。</li>
+<li><strong>対象形式・表示場所</strong>　全形式／非フォロワーへのおすすめ</li>
+<li><strong>対応する公式出典</strong>　<a href="#s6">S6</a></li>
+</ul>
+<h3>N2</h3>
+<ul>
+<li><strong>やらないこと</strong>　掲載範囲を人為的に広げるために、グループでコメントを交換しません。</li>
+<li><strong>理由</strong>　組織的なコメントの操作は、おすすめの対象にしない例です。読者からの本当の質問に返事をする行為は分けて扱います。</li>
+<li><strong>対象形式・表示場所</strong>　全形式／発見・リール・フィードなどのおすすめ</li>
+<li><strong>対応する公式出典</strong>　<a href="#s6">S6</a></li>
+</ul>
+<h3>N3</h3>
+<ul>
+<li><strong>やらないこと</strong>　人気があるように見せるために、いいねを買いません。</li>
+<li><strong>理由</strong>　Instagramは、いいねの購入などの活動を繰り返したアカウントを、おすすめしないようにすると説明しています。対象はアカウントの推薦で、個々の投稿の削除とは別です。</li>
+<li><strong>対象形式・表示場所</strong>　全形式／非フォロワー向けのアカウントのおすすめ</li>
+<li><strong>対応する公式出典</strong>　<a href="#s6">S6</a></li>
+</ul>
+<h3>N4</h3>
+<ul>
+<li><strong>やらないこと</strong>　以前出した動画を、そのまま何度もトライアルリールとして再投稿しません。</li>
+<li><strong>理由</strong>　日本語ヘルプは、同じ内容の再共有を検出するとトライアルのリーチを制限する場合があると案内しています。伸びなかった通常投稿を一律に削除する理由にはなりません。</li>
+<li><strong>対象形式・表示場所</strong>　リール／トライアルリールの配信</li>
+<li><strong>対応する公式出典</strong>　<a href="#s23">S23</a></li>
+</ul>
+<p><strong>制限の見分け方</strong>　ガイドライン違反で削除されること、機能が制限されること、未フォローの人へのおすすめ対象から外れること、順位が下がることは別です。個々の読者のミュートなどでその人に表示されなくなる場合もあります。プロアカウントは「アカウントステータス」でおすすめ対象を確認できます。対象と表示されても掲載は保証されません。（<a href="#s6">S6</a>・<a href="#s7">S7</a>・<a href="#s15">S15</a>）</p>
+<h2>通説の判定</h2>
+<p><strong>判定</strong>　「本当」は指定した主張を支持、「半分本当」は対象や場面を限れば支持、「言いすぎ」は方向には根拠があるものの範囲や強さを過大に表現、「嘘」は主張に反する十分な根拠あり、です。「根拠なし」は、調べた範囲で支持・反証を決める直接根拠が足りない場合です。効果がゼロという意味ではありません。</p>
+<p><strong>根拠と扱い</strong>　「公式」「第三者」「公式＋第三者」は説そのものを判断できる根拠、「なし」は判定に足るものを確認できなかった場合です。「やる」「条件つきで試す」「後回し」「やらない」は実際の行動への判断です。推薦の仕組みを理由に勧める行動でも、投稿全体の閲覧増が未確認のことはあります。</p>
+<div class="tbl"><table class="tj">
+<thead>
+<tr>
+<th>ID</th>
+<th>説</th>
+<th>判定</th>
+<th>根拠</th>
+<th>扱い</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="ID">T1</td><td data-label="説">リールは、単独画像やカルーセルより閲覧数が伸びる</td><td data-label="判定">言いすぎ</td><td data-label="根拠">第三者</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">動きが伝わる題材はリールにします。形式別の観察では、リールの平均閲覧数は単独画像を上回る一方、カルーセルを下回る集計があり、新しい人に届きやすいことだけでは選べません。</td></tr>
+<tr><td data-label="ID">T2</td><td data-label="説">カルーセルは、単独画像より閲覧数が伸びる</td><td data-label="判定">半分本当</td><td data-label="根拠">第三者</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">手順や比較にはカルーセルを使います。企業などを含む集計では単独画像より1投稿の平均閲覧数が多い傾向ですが、日本語の個人が同じ題材を分割したときの増加幅は分かりません。</td></tr>
+<tr><td data-label="ID">T3</td><td data-label="説">カルーセルに音楽を付けると伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">雰囲気や意味を伝える音楽があるときに試します。リールタブに載る機会が生まれる場合はありますが、音楽を付けたことによるカルーセル全体の閲覧数の差は確認できませんでした。</td></tr>
+<tr><td data-label="ID">T4</td><td data-label="説">リールに流行の音源を使うと伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">場面に合う流行音源があるときに試します。音源の人気はおすすめの材料になりますが、同程度の動画で流行音源だけを替えたときの閲覧数増加は確認できませんでした。</td></tr>
+<tr><td data-label="ID">T5</td><td data-label="説">リールは短いほど伸びる</td><td data-label="判定">嘘</td><td data-label="根拠">第三者</td><td data-label="扱い">やらない</td><td data-label="理由">短さだけを目指して必要な場面を削るのはやめます。短い群より長い群で1本の閲覧数が多い観察例があり、短いほど伸びる傾向とはいえませんが、同じ動画を短く編集した効果までは分かりません。</td></tr>
+<tr><td data-label="ID">T6</td><td data-label="説">リールは最初の3秒で伸びるかどうかが決まる</td><td data-label="判定">言いすぎ</td><td data-label="根拠">公式</td><td data-label="扱い">やる</td><td data-label="理由">冒頭で見どころを示し、その後で答えまで見せます。リールでは早い離脱のほかに長く見る可能性や再シェアも予測するので、最初の3秒だけでは決まりません。（<a href="#s8">S8</a>・<a href="#s18">S18</a>）</td></tr>
+<tr><td data-label="ID">T7</td><td data-label="説">リールをループする構成にすると伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">ループ編集は、見返す意味がある場面に限ります。実際のリプレイ開始は閲覧数に入りますが、つなぎ目を消す編集が再生や別の人への配信を増やすかは確認できませんでした。</td></tr>
+<tr><td data-label="ID">T8</td><td data-label="説">文字が多い画像投稿は、おすすめに載りにくい</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">おすすめ対策だけを理由に、画像の説明を削ることは勧めません。文字中心のリールを控えめに表示する説明はありますが、単独画像・カルーセルで文字量だけを理由に掲載されにくくなる根拠は確認できませんでした。</td></tr>
+<tr><td data-label="ID">T9</td><td data-label="説">リールのおすすめでは、いいねより視聴時間のほうが重く評価される</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">視聴時間を一律にいいねより優先するのは後回しにします。どちらも順位づけに関わりますが、リールのおすすめで常にどちらが重いかを示す比較は確認できませんでした。</td></tr>
+<tr><td data-label="ID">T10</td><td data-label="説">リールのおすすめでは、いいねよりDMでの送信のほうが重く評価される</td><td data-label="判定">半分本当</td><td data-label="根拠">公式</td><td data-label="扱い">やる</td><td data-label="理由">フォロワー以外に届けたいときは、人に送りたくなる中身を作ります。責任者は未フォロー向けでは送信を、フォロワー向けではいいねをやや重視すると説明しており、リール専用の固定した重みは公表していません。（<a href="#s16">S16</a>）</td></tr>
+<tr><td data-label="ID">T11</td><td data-label="説">リールのおすすめでは、いいねより保存のほうが重く評価される</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">保存をいいねより重いものとして扱うのは後回しにします。閲覧者が過去に保存した動画を参考にすることと、そのリールへの保存がいいねより重いことは別です。</td></tr>
+<tr><td data-label="ID">T12</td><td data-label="説">投稿で「保存して」と呼びかけると伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">保存の呼びかけを加えた投稿で保存数が多かった観察はあります。もともと保存したくなる題材の影響を除き、その一言で元投稿の閲覧数が増えたとは確認できませんでした。</td></tr>
+<tr><td data-label="ID">T13</td><td data-label="説">ハッシュタグは閲覧数を伸ばすのに役立たない</td><td data-label="判定">言いすぎ</td><td data-label="根拠">第三者</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">関連するハッシュタグを付けることは、話題を探す人が使う語があるときに試します。閲覧が少ない集計も、日本語のリールでタグありと再生数に小さな正の関連が出た集計もあり、一律に役立たないとはいえません。</td></tr>
+<tr><td data-label="ID">T14</td><td data-label="説">ハッシュタグは多く付けるほど伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">キャプションのタグは、投稿にもリールにも上限5個が段階導入されています。その範囲で同じくらい関連するタグを増やすほど閲覧数が上がるという裏づけは確認できませんでした。</td></tr>
+<tr><td data-label="ID">T15</td><td data-label="説">キャプションに検索されそうな言葉を入れると伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">読者が検索に使う言葉を、内容に合えばキャプションに入れます。Instagram内の検索候補になる仕組みはありますが、検索語だけで元投稿の閲覧数が増えたことや、外部検索のクリックがどの条件で加算されるかは確認できませんでした。</td></tr>
+<tr><td data-label="ID">T16</td><td data-label="説">毎日投稿すると、1投稿あたりの閲覧数も伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">毎日投稿を目標にするのは後回しにします。同じ投稿者のリールを比べると、投稿が多い週は累計が増えても1本の閲覧数はほぼ変わらず、毎日1本ずつ出す効果は切り分けられていません。</td></tr>
+<tr><td data-label="ID">T17</td><td data-label="説">投稿して最初の30分〜1時間の反応で、その投稿の伸びが決まる</td><td data-label="判定">言いすぎ</td><td data-label="根拠">公式＋第三者</td><td data-label="扱い">やらない</td><td data-label="理由">最初の1時間の反応だけを見て投稿を消さないようにします。初期の反応の速さは一つの材料ですが、数日後も閲覧は続き、おすすめから新しい人に数週間届くこともあります。（<a href="#s15">S15</a>・<a href="#s25">S25</a>）</td></tr>
+<tr><td data-label="ID">T18</td><td data-label="説">日本語圏の個人投稿には、ほかの時間帯より閲覧数が伸びやすい時間帯がある</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">日本時間で全員が狙う時刻を決めるのは後回しにします。日本語のリールを同じ投稿者の中で比べても、昼の基準帯より明確に閲覧数が伸びる時間帯は特定できず、週末の反応が多いこととも区別が必要です。</td></tr>
+<tr><td data-label="ID">T19</td><td data-label="説">ストーリーズを毎日投稿すると、画像投稿やリールも伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">ストーリーズは、届けたいお知らせがあるときに使います。毎日の更新と、特定の元投稿への案内は別で、毎日出すだけで画像投稿・リールの閲覧数が上がるという比較は確認できませんでした。</td></tr>
+<tr><td data-label="ID">T20</td><td data-label="説">自分の投稿についたコメントに返信すると、その投稿が伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">質問への返信は、その投稿をもう一度開く理由になるときに試します。返信のある投稿で反応が多かった分析はありますが、元投稿の閲覧数増加を測った結果ではありません。</td></tr>
+<tr><td data-label="ID">T21</td><td data-label="説">投稿の前後に他人の投稿へいいねやコメントをすると、自分の投稿が伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">投稿の前後に他人の投稿へ反応しに行くことを、閲覧数対策の決まりにはしません。相手との交流や自分の画面のおすすめに関わることはあっても、自分の別の投稿の閲覧数が増えるという直接の裏づけは確認できませんでした。</td></tr>
+<tr><td data-label="ID">T22</td><td data-label="説">他人の投稿を転載するより、自分で作った投稿のほうがおすすめで広がる</td><td data-label="判定">本当</td><td data-label="根拠">公式</td><td data-label="扱い">やる</td><td data-label="理由">おすすめでは、同じ作品の無加工の再アップロードに対して、Instagramが特定できた元の投稿を優先します。主に転載しているアカウントに対する措置は写真・カルーセルにも広がっています。（<a href="#s14">S14</a>・<a href="#s13">S13</a>）</td></tr>
+<tr><td data-label="ID">T23</td><td data-label="説">他のアプリの透かしが入ったリールは伸びにくい</td><td data-label="判定">半分本当</td><td data-label="根拠">公式</td><td data-label="扱い">やる</td><td data-label="理由">他アプリの透かしが付く前の元ファイルを使います。透かし付きのリールは非フォロワーへのおすすめで表示を抑えられる場合があり、その経路では伸びにくくなりますが、すべての経路を合わせた閲覧数の差は確認できません。（<a href="#s15">S15</a>・<a href="#s18">S18</a>）</td></tr>
+<tr><td data-label="ID">T24</td><td data-label="説">ビジネスアカウントは、クリエイターアカウントより伸びにくい</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">閲覧数のためだけに、ビジネスからクリエイターへ切り替えるのは後回しにします。使える音源などに違いはあっても、内容・規模をそろえて種別だけで通常投稿の閲覧数が落ちるという比較は確認できませんでした。</td></tr>
+<tr><td data-label="ID">T25</td><td data-label="説">Meta Verifiedに加入しないと伸びない</td><td data-label="判定">嘘</td><td data-label="根拠">公式</td><td data-label="扱い">やらない</td><td data-label="理由">通常投稿の閲覧数を伸ばすためだけに有料認証に加入する必要はありません。Instagramには、公開アカウントの対象投稿を未加入でもおすすめに載せ、反応に応じて配信を広げる仕組みがあり、加入による追加の効果までは分かりません。（<a href="#s7">S7</a>・<a href="#s14">S14</a>）</td></tr>
+<tr><td data-label="ID">T26</td><td data-label="説">フォロワー数は、投稿の閲覧数に関係ない</td><td data-label="判定">嘘</td><td data-label="根拠">公式＋第三者</td><td data-label="扱い">やる</td><td data-label="理由">フォロワーが少ないときも、初めて見る人にテーマが伝わる1枚目や冒頭を作ります。リールの順位づけには投稿者のフォロワー数も使われ、1投稿の平均閲覧数にも規模別の差がありますが、人数だけで伸びが決まるわけではありません。（<a href="#s15">S15</a>）</td></tr>
+<tr><td data-label="ID">T27</td><td data-label="説">トライアルリールを使うと、通常のリールより伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">新しい題材を非フォロワーに見せたいときに試します。利用後に投稿本数や期間リーチが増えた結果はありますが、全員公開前後の時間をそろえて通常リールより1本の閲覧数が多くなるとは確認できませんでした。</td></tr>
+<tr><td data-label="ID">T28</td><td data-label="説">共同投稿にすると、単独で投稿するより伸びる</td><td data-label="判定">半分本当</td><td data-label="根拠">第三者</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">相手の読者にも届くテーマで共同投稿を試します。日本語リールの観察では同じ投稿者の単独リールより再生数が多い傾向がありますが、相手の規模や題材の違い、広告・他媒体の再生は完全には切り分けられません。</td></tr>
+<tr><td data-label="ID">T29</td><td data-label="説">自分の投稿をストーリーズでシェアすると、元の投稿の閲覧数が伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">すでにいる読者に知らせたい投稿だけをストーリーズで共有します。リーチへの影響を説明する発言はありますが、共有によって元投稿の閲覧数が増えたかは、共有しない場合と比べて確認できませんでした。</td></tr>
+</tbody>
+</table></div>
+<h2>公式出典</h2>
+<p>以下のS番号は非公開メモの台帳と共通です。変更履歴には使った項目の日付を示します。</p>
+<ul>
+<li id="s1"><p><span class="sid">S1</span><a href="https://help.instagram.com/788388387972460/?locale=ja_JP">Instagramインサイトについて</a> ／ <a href="https://help.instagram.com/788388387972460/?locale=en_US">英語版</a>　発表日 不明 ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s2"><p><span class="sid">S2</span><a href="https://help.instagram.com/553860108359435/?locale=ja_JP">Instagram投稿のインサイトを表示する</a> ／ <a href="https://help.instagram.com/553860108359435/?locale=en_US">英語版</a>　発表日 不明 ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s3"><p><span class="sid">S3</span><a href="https://help.instagram.com/202865988324236/?locale=ja_JP">Instagramリール動画のインサイトを表示する</a> ／ <a href="https://help.instagram.com/202865988324236/?locale=en_US">英語版</a>　発表日 不明 ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s4"><p><span class="sid">S4</span><a href="https://developers.facebook.com/docs/instagram-platform/changelog">Instagramプラットフォームの更新履歴</a>　発表日 不明（各項に日付） ／ 更新日 2025-01-21、2025-12-03、2026-04-22の変更項を使用 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s5"><p><span class="sid">S5</span><a href="https://developers.facebook.com/docs/instagram-platform/reference/instagram-media/insights">Instagramメディアのインサイト</a>　発表日 不明 ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s6"><p><span class="sid">S6</span><a href="https://help.instagram.com/313829416281232/?locale=ja_JP">Instagramのおすすめ</a>　発表日 不明 ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s7"><p><span class="sid">S7</span><a href="https://help.instagram.com/653964212890722/?locale=ja_JP">Instagramでのおすすめの対象</a>　発表日 不明 ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s8"><p><span class="sid">S8</span><a href="https://transparency.meta.com/features/explaining-ranking/ig-reels-chaining/">InstagramリールチェーンのAIシステム</a>　発表日 不明 ／ 更新日 2025-11-11 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s9"><p><span class="sid">S9</span><a href="https://transparency.meta.com/features/explaining-ranking/ig-explore/">Instagram発見タブのAIシステム</a>　発表日 不明 ／ 更新日 2026-06-22 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s10"><p><span class="sid">S10</span><a href="https://about.instagram.com/blog/announcements/break-down-how-instagram-search-works">Breaking Down How Instagram Search Works</a>　発表日 2021-08-25 ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s11"><p><span class="sid">S11</span><a href="https://help.instagram.com/147542625391305/?locale=ja_JP">検索エンジンがInstagramで公開された写真や動画をインデックス化する理由</a> ／ <a href="https://help.instagram.com/147542625391305/?locale=en_US">英語版</a>　発表日 不明 ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s12"><p><span class="sid">S12</span><a href="https://www.threads.com/@creators/post/DSalXGPCWM4">New hashtag guidance: Starting today, Instagram will allow up to 5 hashtags in a reel or post</a>　発表日 2025-12-18（米国日付、日本語画面12-19） ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s13"><p><span class="sid">S13</span><a href="https://creators.instagram.com/blog/rewarding-original-creators-on-instagram">Rewarding original creators on Instagram</a>　発表日 2026-04-30 ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s14"><p><span class="sid">S14</span><a href="https://creators.instagram.com/recommendations-and-originality">Helping Creators Find New Audiences</a>　発表日 2024-04-30 ／ 更新日 不明 ／ 確認日 2026-11-03</p>
+</li>
+<li id="s15"><p><span class="sid">S15</span><a href="https://about.instagram.com/blog/announcements/instagram-ranking-explained">Instagram Ranking Explained</a>　発表日 2023-05-31 ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s16"><p><span class="sid">S16</span><a href="https://www.instagram.com/p/DFFyRp-pINJ/">Instagramの順位づけを説明した本人投稿（watch time, likes and sends）</a>　発表日 2025-01-21（公式画面の表示日。時刻・タイムゾーン不明） ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s17"><p><span class="sid">S17</span><a href="https://www.instagram.com/reel/DBOeUmTSmIC/">Carousels often get more reach than single photo posts（本人投稿）</a>　発表日 2024-10-17（公式画面表示） ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s18"><p><span class="sid">S18</span><a href="https://creators.instagram.com/how-to-grow">How to Grow</a>　発表日 不明 ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s19"><p><span class="sid">S19</span><a href="https://about.fb.com/ja/news/2021/10/collab_superbeat_3d_dynamiclyrics/">リールやフィード投稿を他の利用者と共同投稿できる「コラボ」を導入</a>　発表日 2021-10-20 ／ 更新日 2022-06-03（ページ併記） ／ 確認日 2026-11-02</p>
+</li>
+<li id="s20"><p><span class="sid">S20</span><a href="https://about.fb.com/news/2023/08/music-and-collabs-on-instagram/">New Ways to Create With Music and Collaborate With Friends on Instagram</a>　発表日 2023-08-11 ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s22"><p><span class="sid">S22</span><a href="https://about.fb.com/ja/news/2022/06/grid_pinning_on_profile/">Instagram、お気に入りの投稿をプロフィールのトップに固定できる新機能を導入</a>　発表日 2022-06-08 ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s23"><p><span class="sid">S23</span><a href="https://help.instagram.com/1013292530224018/?locale=en_US">Instagramでのトライアルリール動画について／About trial reels on Instagram</a> ／ <a href="https://help.instagram.com/1013292530224018/?locale=ja_JP">日本語版</a>　発表日 不明 ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s24"><p><span class="sid">S24</span><a href="https://about.fb.com/news/2024/12/trial-reels-try-content-non-followers-first-see-what-perfoms-best/">Test Content With Non-Followers Using Trial Reels</a>　発表日 2024-12-10 ／ 更新日 2025-06-26 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s25"><p><span class="sid">S25</span><a href="https://www.instagram.com/reel/C8rgeHpt3_Y/">Keep an eye on your insights for a few days after you post（本人投稿）</a>　発表日 2024-06-26（日本語画面の表示日） ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s26"><p><span class="sid">S26</span><a href="https://about.fb.com/ja/news/2026/09/introducing-meta-one-subscription-service-more-features-ai/">新たなサブスクリプション「Meta One」の提供を開始</a>　発表日 2026-09-16 ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s27"><p><span class="sid">S27</span><a href="https://www.meta.com/ja-jp/meta-one-plans/">Meta Oneサブスクリプションプラン: 価格、機能など</a> ／ <a href="https://www.meta.com/en-gb/meta-one-plans/">英語版</a>　発表日 不明 ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s28"><p><span class="sid">S28</span><a href="https://www.meta.com/ja-jp/meta-verified/">Meta認証: InstagramやFacebookで認証バッジを取得</a>　発表日 不明 ／ 更新日 不明 ／ 確認日 2026-11-02</p>
+</li>
+<li id="s29"><p><span class="sid">S29</span><a href="https://www.meta.com/help/subscriptions/960854640235758/">About Meta One Plans</a>　発表日 不明 ／ 更新日 不明（確認時は約1週間前との表示） ／ 確認日 2026-11-02</p>
+</li>
+</ul>
+</article>
+<div class="xlink">もう一方の成果物：<a href="https://yokonarabi-lab.github.io/instagram/claude/">Claude Fable 5.1 版</a>　／　解説と感想：<a href="https://note.com/sky_yellowlens" rel="noopener">note の記事</a></div>
+<footer class="foot">
+<div class="brand"><span>Sky</span><span class="bar" aria-hidden="true"></span><span>Yellow Lens</span></div>
+<p>検証室：Claude Fable 5.1 vs GPT-6 Astra。同じお題、同じ依頼文で、ふたつの答えを並べて読み解く。記事は <a href="https://note.com/sky_yellowlens" rel="noopener">note</a> に。</p>
+<p>この文書は、AI の成果物をそのまま載せたもの。内容は 2026年11月2日時点の調査で、実際に投稿して確かめたものではない。</p>
+</footer>
+</main>
+</body>
+</html>
