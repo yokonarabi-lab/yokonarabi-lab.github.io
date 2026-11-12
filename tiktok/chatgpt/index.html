@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TikTok攻略法 GPT-6 Astra 版｜Sky｜Yellow Lens</title>
+<meta name="description" content="TikTok の投稿1件あたりの再生数を伸ばす方法を、TikTok の公式情報を軸に調べた GPT-6 Astra の成果物。同じ依頼文で Claude Fable 5.2 にも依頼し、ふたつの答えを並べた検証室の記録。">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:title" content="TikTok攻略法 GPT-6 Astra 版｜Sky｜Yellow Lens">
+<meta property="og:description" content="TikTok の投稿1件あたりの再生数を伸ばす方法を、TikTok の公式情報を軸に調べた GPT-6 Astra の成果物。同じ依頼文で Claude Fable 5.2 にも依頼し、ふたつの答えを並べた検証室の記録。">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://yokonarabi-lab.github.io/tiktok/chatgpt/">
+<meta property="og:image" content="https://yokonarabi-lab.github.io/tiktok/assets/cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+
+:root{--ink:#1E1E1E;--sub:#5C5C5C;--yellow:#F4C21B;--orange:#D9704A;--green:#1FA383;--rule:#D9D9D9;--soft:#F6F6F6;--bg:#FFFFFF}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter","Noto Sans JP",system-ui,-apple-system,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;font-size:16px;line-height:1.95;letter-spacing:.03em;font-feature-settings:"kern";-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:#B5B5B5;text-underline-offset:.2em}
+a:hover{text-decoration-color:var(--ink)}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.site-header{padding:26px 0 18px;border-bottom:1px solid var(--rule)}
+.brand{display:inline-flex;align-items:center;gap:.42em;font-family:"Inter",sans-serif;font-weight:500;font-size:17px;letter-spacing:.04em;text-decoration:none;color:var(--ink)}
+.brand .bar{display:inline-block;width:1px;height:1.05em;background:var(--yellow);transform:translateY(-.02em)}
+.site-header .nav{float:right;font-size:13px;color:var(--sub);margin-top:4px}
+.site-header .nav a{color:var(--sub);margin-left:14px}
+.doc-head{padding:44px 0 10px}
+.shelf{font-size:13px;color:var(--sub);letter-spacing:.06em;margin:0 0 14px}
+.model{font-family:"Inter",sans-serif;font-weight:700;font-size:30px;line-height:1.3;margin:0 0 6px;letter-spacing:.01em}
+.model .vs{font-weight:500;font-size:.6em;color:var(--sub);margin:0 .35em}
+.model .u{display:inline-block;border-bottom:.11em solid;padding-bottom:.08em;line-height:1.1}
+.model .u.claude{border-color:var(--orange)}
+.model .u.gpt{border-color:var(--green)}
+.theme{font-size:15px;color:var(--sub);margin:0 0 26px}
+.frame{background:var(--soft);border-left:3px solid var(--yellow);padding:16px 20px;font-size:14.5px;line-height:1.9;color:var(--ink);margin:0 0 40px}
+.frame p{margin:0 0 8px} .frame p:last-child{margin:0}
+.frame .k{color:var(--sub);margin-right:.5em}
+article h1{font-size:24px;line-height:1.55;margin:0 0 28px;letter-spacing:.02em;font-weight:700}
+article h2{font-size:21px;line-height:1.5;margin:56px 0 18px;padding-bottom:10px;border-bottom:2px solid var(--ink);letter-spacing:.03em;font-weight:700}
+article h3{font-size:17.5px;line-height:1.6;margin:36px 0 10px;font-weight:700;letter-spacing:.03em}
+article h3 .rank{font-family:"Inter",sans-serif;font-weight:700;margin-right:.45em}
+article h3 .tid{font-family:"Inter",sans-serif;font-weight:600;color:var(--sub);margin-right:.6em;font-size:.95em}
+article p{margin:0 0 16px}
+article ul,article ol{padding-left:1.4em;margin:0 0 16px}
+article li{margin:0 0 8px}
+article li p{margin:0}
+article hr{border:0;border-top:1px solid var(--rule);margin:44px 0}
+article strong{font-weight:700}
+article blockquote{margin:0 0 16px;padding:0 0 0 16px;border-left:3px solid var(--rule);color:var(--sub)}
+.tbl{overflow-x:auto;margin:0 0 24px}
+table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.75;letter-spacing:.02em}
+th{text-align:left;font-weight:700;font-size:13px;padding:8px 10px;border-bottom:2px solid var(--ink);vertical-align:bottom;white-space:nowrap}
+td{padding:12px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+table.cols4 th:nth-child(1){width:20%} table.cols4 th:nth-child(2){width:36%} table.cols4 th:nth-child(3){width:21%} table.cols4 th:nth-child(4){width:23%}
+table.cols3 th:nth-child(1){width:3.2em} table.cols3 th:nth-child(2){width:52%}
+table.cols4 td:first-child{font-weight:500}
+.src ol{padding-left:1.8em}
+.src li{margin:0 0 14px;font-size:14.5px;line-height:1.8;word-break:break-all}
+.src li a{word-break:break-all}
+.src table{font-size:13.5px}
+.foot{margin:72px 0 0;padding:28px 0 56px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--sub);line-height:1.9}
+.foot a{color:var(--sub)}
+.foot .brand{font-size:15px;margin-bottom:10px;color:var(--ink)}
+.xlink{margin:48px 0 0;padding:18px 20px;background:var(--soft);font-size:14.5px}
+.xlink a{font-weight:700}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .site-header .nav{float:none;display:block;margin-top:8px}
+  .site-header .nav a{margin:0 14px 0 0}
+  .model{font-size:26px}
+  article h1{font-size:21px}
+  article h2{font-size:19px}
+  article h3{font-size:16.5px}
+  table.cards,table.cards tbody,table.cards tr,table.cards td{display:block;width:100%}
+  table.cards thead{display:none}
+  table.cards tr{border-bottom:2px solid var(--ink);padding:10px 0 6px;margin:0 0 10px}
+  table.cards td{border:0;padding:4px 0 8px;min-width:0}
+  table.cards td::before{content:attr(data-label);display:block;font-size:12px;color:var(--sub);letter-spacing:.05em;margin-bottom:2px}
+  table.cards td:first-child{font-weight:700;padding-top:0}
+  table.cards td:first-child::before{display:none}
+}
+@media print{.site-header .nav,.xlink{display:none} body{font-size:11pt}}
+table.tc th:nth-child(4){width:24%}
+table.tc th,table.tc td:nth-child(-n+3){white-space:nowrap}
+table td{overflow-wrap:anywhere}
+table.tj,table.tj tbody{display:block;width:100%}
+table.tj thead{display:none}
+table.tj tr{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:18px;padding:16px 0 14px;border-bottom:1px solid var(--rule)}
+table.tj tr:first-child{border-top:2px solid var(--ink)}
+table.tj td{display:block;border:0;padding:0}
+table.tj td:nth-child(1){font-family:"Inter",sans-serif;font-weight:700;color:var(--sub);flex:0 0 auto}
+table.tj td:nth-child(2){font-weight:700;flex:1 1 calc(100% - 4em)}
+table.tj td:nth-child(3),table.tj td:nth-child(4),table.tj td:nth-child(5){font-size:14px;margin-top:6px}
+table.tj td:nth-child(3){font-weight:700}
+table.tj td:nth-child(3)::before,table.tj td:nth-child(4)::before,table.tj td:nth-child(5)::before{content:attr(data-label);font-weight:400;color:var(--sub);font-size:12.5px;margin-right:.5em}
+table.tj td:nth-child(6){flex:0 0 100%;margin-top:8px}
+.src ul{list-style:none;padding-left:0}
+.src li{margin:0 0 14px;font-size:14.5px;line-height:1.8;word-break:break-all}
+.src li .sid{font-family:"Inter",sans-serif;font-weight:700;margin-right:.5em}
+.lead p{margin:0 0 10px}
+
+table.tc6 th:nth-child(5){width:20%}
+table.tc6 th,table.tc6 td:nth-child(-n+4){white-space:nowrap}
+table.tc7 th:nth-child(6){width:17%}
+table.tc7 th,table.tc7 td:nth-child(-n+5){white-space:nowrap}
+table.srct{font-size:13.5px}
+table.srct th:nth-child(2){width:30%} table.srct th:nth-child(4){width:19%}
+table.srct td:nth-child(1){font-family:"Inter",sans-serif;font-weight:700;white-space:nowrap}
+table.srct td:nth-child(3){word-break:break-all}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="https://yokonarabi-lab.github.io/tiktok/"><span>Sky</span><span class="bar" aria-hidden="true"></span><span>Yellow Lens</span></a>
+<nav class="nav" aria-label="ページ内の移動"><a href="https://yokonarabi-lab.github.io/tiktok/">TikTok攻略法</a><a href="https://note.com/sky_yellowlens" rel="noopener">note</a></nav>
+</div></header>
+<main class="wrap">
+
+<div class="doc-head">
+<p class="shelf">検証室｜TikTok攻略法</p>
+<p class="model"><span class="u gpt">GPT-6 Astra</span><span class="vs">版</span></p>
+<p class="theme">Claude Fable 5.2 vs GPT-6 Astra — 同じ依頼文で、TikTok の投稿1件あたりの再生数を伸ばす方法を調べてもらった成果物</p>
+</div>
+<div class="frame">
+<p><span class="k">依頼日</span>2026年11月10日。「TikTok の公式情報を軸に、日本語と英語の攻略法を調べて、動画と写真投稿のどちらを優先するかの結論と、実践チェックリスト（原則10項目）と、30の通説の判定を書く」という同じ依頼文を、Claude Fable 5.2 と GPT-6 Astra に出した。</p>
+<p><span class="k">このページ</span>GPT-6 Astra の成果物（相手の検品を2回受けて直した版）。本文・順位・判定は GPT-6 Astra が書いたまま。</p>
+<p><span class="k">もう一方</span><a href="https://yokonarabi-lab.github.io/tiktok/claude/">Claude Fable 5.2 版</a>　<span class="k">解説と感想</span><a href="https://note.com/sky_yellowlens" rel="noopener">note の記事</a></p>
+</div>
+<article>
+<h1>TikTok攻略法｜公開用の成果物</h1>
+<div class="lead">
+<p>調査基準日：2026年11月8日（日本時間）。対象は、日本語圏へ発信する個人の公開アカウントによる、広告を使わない動画・写真投稿です。目的はTikTok内の<strong>投稿1件あたりの通常の再生数</strong>です。日付のない公式ヘルプは11月10日に確認した内容で、基準日の版と同一か確認できない制約があります。</p>
+<p><strong>指標の定義。</strong> 動画は公式案内の「視聴数」「視聴回数」、英語教材のpost views／total video viewsに当たる投稿別の通常の数値を、本稿では「再生数」と呼びます。写真も複数枚をまとめて1投稿とし、1枚を1投稿とは数えません。写真専用の正式な指標名と詳しい計上条件は確認できませんでした。公式日本語の形式名は「写真」、導入時の英語名はPhoto Modeで、取得した作成案内では最大35枚です（<a href="#s4">S4</a>・<a href="#s6">S6</a>・<a href="#s11">S11</a>・<a href="#s14">S14</a>・<a href="#s15">S15</a>）。</p>
+<ul>
+<li>再生数と重複を除いた視聴者数は別です。通常再生の最低視聴秒数、同じ人の再視聴・ループ、自分の視聴、写真のスライド送り、TikTok Lite経由の加算条件は不明です。独自に加算・除外しません。</li>
+<li>合計視聴時間、平均視聴時間、動画の長さに対して見た割合、最後まで見た割合、途中離脱は別の指標です。公式英語教材はAverage watch time等を説明しますが、日本語の全画面名と写真の対応指標は未確認です（<a href="#s14">S14</a>）。いいね・コメント・シェア・保存・フォロワー増・プロフィール訪問・外部クリックも再生数とは別です。</li>
+<li>確認はプロフィールのメニューからTikTok Studioのインサイトへ進み、対象投稿を選びます。公式には公開投稿1件以上という条件と、機能が全利用者に提供されているわけではないという注意があります。動画のデータは有効化後の投稿が対象で、反映が遅れる場合もあります（<a href="#s15">S15</a>・<a href="#s18">S18</a>・<a href="#s35">S35</a>）。</li>
+<li>広告の視聴指標や収益化の有効視聴数は本稿の数値に混ぜません。投稿本数が増えた期間合計や、他媒体の再生も足しません。流入経路は投稿にたどり着いた場所のことです。以下の「おすすめ」「検索」等は比較用の分類で、分析画面の正式ラベルとの一対一対応を保証するものではありません（<a href="#s3">S3</a>・<a href="#s14">S14</a>）。</li>
+</ul>
+<p>第三者の分析や経験則も参照していますが、編集方針により出典詳細は非公開です。そのため、読者が直接検証できる範囲には制約があります。</p>
+</div>
+<h2>結論</h2>
+<p>両方を使い分ける方針を勧めます。確認した再生数の比較集計はいずれも動画寄りですが、写真と動画の計上条件が同じか確認できず、形式間の優劣は判断できないというのが事実判断です。使い分けは内容を伝えやすい形式から選ぶ暫定案で、動き・音・実演が理解の核なら動画、静止した比較や手順を自分の速さで読みたい内容なら写真投稿を選びます。どちらでも同程度に伝わる題材は、観測の方向を手掛かりに動画から試します。同じ題材を必ず二重に出す必要はありません。次の題材に合う一方で、冒頭や1枚目から得られる答えを示してください。同程度の題材と投稿後の経過時間を揃えた自分の記録で一方の優位が繰り返し見えれば、そこへ重点を移します。併用自体の配信上の特典や固定の投稿比率は前提にしません。</p>
+<h2>実践チェックリスト</h2>
+<p>通常再生の比較分析、公式に確認できた仕組み・機能、制作上の妥当性を照合して採用しました。以下は<strong>実測の効果順位ではなく、調査に基づく推奨順位</strong>です。投稿の価値と視聴・読解の継続に関わる変更を先に、説明文や入口の調整を後に置きました。形式を同じ基準で比べていますが、隣接順位の効果差を測れたわけではありません。制作の手間や費用は順位に含めていません。</p>
+<div class="tbl"><table class="cards tc7">
+<thead>
+<tr>
+<th>順位</th>
+<th>ID</th>
+<th>比較分類</th>
+<th>対象形式</th>
+<th>主な経路</th>
+<th>項目名</th>
+<th>やること</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="順位">1</td><td data-label="ID">C1</td><td data-label="比較分類">内容</td><td data-label="対象形式">両方</td><td data-label="主な経路">複数</td><td data-label="項目名">需要への回答</td><td data-label="やること">実際に検索されている疑問を一つ選び、投稿の中で答えまで示します。</td></tr>
+<tr><td data-label="順位">2</td><td data-label="ID">C2</td><td data-label="比較分類">内容</td><td data-label="対象形式">動画</td><td data-label="主な経路">おすすめ</td><td data-label="項目名">冒頭の実物</td><td data-label="やること">挨拶や長い前置きの前に、結果・変化・疑問の対象を映します。</td></tr>
+<tr><td data-label="順位">3</td><td data-label="ID">C3</td><td data-label="比較分類">内容</td><td data-label="対象形式">動画</td><td data-label="主な経路">おすすめ</td><td data-label="項目名">必要尺の確保</td><td data-label="やること">説明の重複や待ち時間を削り、理解に必要な実演や根拠は残します。</td></tr>
+<tr><td data-label="順位">4</td><td data-label="ID">C4</td><td data-label="比較分類">内容</td><td data-label="対象形式">写真</td><td data-label="主な経路">特定不可</td><td data-label="項目名">一枚目の約束</td><td data-label="やること">1枚目に題材と得られる答えを、関連する写真と短い見出しで示します。</td></tr>
+<tr><td data-label="順位">5</td><td data-label="ID">C5</td><td data-label="比較分類">内容</td><td data-label="対象形式">写真</td><td data-label="主な経路">特定不可</td><td data-label="項目名">画像の順序</td><td data-label="やること">問い・比較材料・答えの順に並べ、同じ説明の画像を削ります。</td></tr>
+<tr><td data-label="順位">6</td><td data-label="ID">C6</td><td data-label="比較分類">形式</td><td data-label="対象形式">動画</td><td data-label="主な経路">特定不可</td><td data-label="項目名">音声と字幕</td><td data-label="やること">発話が聞き取れる音量に整え、発話の字幕と要点のテロップを必要な箇所に付けます。</td></tr>
+<tr><td data-label="順位">7</td><td data-label="ID">C7</td><td data-label="比較分類">形式</td><td data-label="対象形式">写真</td><td data-label="主な経路">特定不可</td><td data-label="項目名">文字の整理</td><td data-label="やること">画像上の文章を要点に絞り、実際の表示サイズで写真と文字の両方が読めるようにします。</td></tr>
+<tr><td data-label="順位">8</td><td data-label="ID">C8</td><td data-label="比較分類">投稿方法</td><td data-label="対象形式">両方</td><td data-label="主な経路">検索</td><td data-label="項目名">説明文の具体化</td><td data-label="やること">題材を正確に表す検索語を、説明文の自然な一文に入れます。</td></tr>
+<tr><td data-label="順位">9</td><td data-label="ID">C9</td><td data-label="比較分類">投稿方法</td><td data-label="対象形式">両方</td><td data-label="主な経路">検索</td><td data-label="項目名">関連タグ</td><td data-label="やること">題材に直接関係するハッシュタグを選び、関係の薄いタグを外します。</td></tr>
+<tr><td data-label="順位">10</td><td data-label="ID">C10</td><td data-label="比較分類">投稿方法</td><td data-label="対象形式">動画</td><td data-label="主な経路">複数</td><td data-label="項目名">内容別カバー</td><td data-label="やること">検索やプロフィールで内容が分かる代表場面を動画のカバーに選びます。</td></tr>
+</tbody>
+</table></div>
+<h3>C1 需要への回答</h3>
+<ul>
+<li>理由：検索では検索語と内容の一致、おすすめでは視聴者の関心に合う内容が選ばれる仕組みです（<a href="#s1">S1</a>・<a href="#s3">S3</a>）。検索需要を手掛かりに、探していた答えを投稿そのものに用意することを、語句や見た目の調整より先に勧めます。</li>
+<li>再生数へのつながり：両方：検索からの視聴獲得を直接狙い、内容への関心や視聴を介したおすすめへの広がりも狙います。確認できたのは各経路の仕組みで、検索需要から題材を選ぶことによる経路別の増分は推論です。</li>
+<li>根拠の種類：公式</li>
+<li>判断の位置づけ：推論を含む提案。公式に確認した機能・仕組みと、提案した変更の増分効果は区別します。</li>
+<li>実行例：提案・写真：検索で見つけた「保存方法」の疑問に、条件と手順を写真で答えます。</li>
+<li>条件や限界：経路の内訳は検索・おすすめです。クリエイター向け検索インサイト（Creator Search Insights）が表示される場合は「コンテンツ不足」等を使います。「フォロワーによる検索」は1,000人超が条件です。需要があっても競争や内容で成績は変わり、写真の増分や検索需要をおすすめへ生かす効果も未実測です。</li>
+<li>対応する公式出典：<a href="#s1">S1</a>・<a href="#s3">S3</a>・<a href="#s7">S7</a></li>
+</ul>
+<h3>C2 冒頭の実物</h3>
+<ul>
+<li>理由：公式は冒頭で関心を引き、動画全体で関心を維持することを勧めています。何を見る動画か伝わる実物を先に置く提案です。</li>
+<li>再生数へのつながり：間接：関心や視聴の改善を介して推薦の機会を増やすことを狙います。冒頭編集だけの再生数増加は未実証です。</li>
+<li>根拠の種類：公式</li>
+<li>判断の位置づけ：推論を含む提案。公式に確認した機能・仕組みと、提案した変更の増分効果は区別します。</li>
+<li>実行例：提案：作業手順の動画なら、完成状態を先に見せてから工程に移ります。</li>
+<li>条件や限界：オチを隠す必要がある題材では、結末の全部ではなく見どころを示します。3秒という万能の境界や、編集回数は指定しません。</li>
+<li>対応する公式出典：<a href="#s2">S2</a></li>
+</ul>
+<h3>C3 必要尺の確保</h3>
+<ul>
+<li>理由：公式は冒頭だけでなく全体の視聴を重視しています。第三者の尺別分析も一律の短尺優位を示しておらず、長さを先に決めるより内容を完結させる方針を勧めます。</li>
+<li>再生数へのつながり：間接：見続ける理由を保つことで推薦につながる可能性を狙います。尺別の相関はありますが、同じ動画を切る・延ばす効果とは別です。</li>
+<li>根拠の種類：公式／データ分析</li>
+<li>判断の位置づけ：推論を含む提案。公式に確認した機能・仕組みと、提案した変更の増分効果は区別します。</li>
+<li>実行例：提案：同じ説明を繰り返す場面を削り、操作の失敗原因を示す実演は残します。</li>
+<li>条件や限界：1分以上でも必要なら使いますが、報酬の尺条件を推薦の加点とは扱いません。長尺撮影の手間は増え得ます。観測分析の流入経路は不明で、経路の分類は公式の視聴の仕組みに基づきます。</li>
+<li>対応する公式出典：<a href="#s2">S2</a>・<a href="#s13">S13</a>・<a href="#s14">S14</a></li>
+</ul>
+<h3>C4 一枚目の約束</h3>
+<ul>
+<li>理由：写真は自分のペースで送れる形式です（<a href="#s11">S11</a>）。最初に読む理由を伝えれば続きを見てもらいやすい、という形式からの提案です。</li>
+<li>再生数へのつながり：間接：続きを読む関心や反応を介した再生の増加を狙います。スライド送りが再生数に加算されるとは確認できていません。</li>
+<li>根拠の種類：公式／個人の経験則</li>
+<li>判断の位置づけ：推論を含む提案。公式が裏づけるのは形式・機能です。「個人の経験則」は制作上の一般的な考え方を分類したもので、実運用の体験談や成功実績ではありません。</li>
+<li>実行例：提案：「比べて分かった違い」という見出しと比較対象を1枚目に置き、次の画像で違いを示します。</li>
+<li>条件や限界：動画の冒頭3秒の助言は転用しません。1枚目とカバー編集は同じ機能と決めつけず、どの流入に効くか、増分があるかも未実測です。</li>
+<li>対応する公式出典：直接の公式出典なし</li>
+</ul>
+<h3>C5 画像の順序</h3>
+<ul>
+<li>理由：手動で送れる写真形式では、各画像のつながりを設計できます（<a href="#s11">S11</a>）。枚数を増やすことより、次の画像で何が分かるかを明確にする提案です。</li>
+<li>再生数へのつながり：間接：読解と関心の継続を通じた再生増を狙います。順序や枚数を変えた再生数の効果は未実測です。</li>
+<li>根拠の種類：公式／個人の経験則</li>
+<li>判断の位置づけ：推論を含む提案。公式が裏づけるのは形式・機能です。「個人の経験則」は制作上の一般的な考え方を分類したもので、実運用の体験談や成功実績ではありません。</li>
+<li>実行例：提案：比較投稿を「何を比べるか→同条件の写真→判断のポイント」の順にします。</li>
+<li>条件や限界：内容に必要な枚数にし、固定枚数や最大枚数まで埋めるルールは設けません。送った枚数を追加再生として計算せず、経路も特定しません。</li>
+<li>対応する公式出典：直接の公式出典なし</li>
+</ul>
+<h3>C6 音声と字幕</h3>
+<ul>
+<li>理由：公式は内容に合った音を勧め、字幕の作成機能を提供しています。聞き取りや理解の障害を減らすことから再生への間接効果を期待する提案です。</li>
+<li>再生数へのつながり：間接：理解や視聴継続を通じた効果を狙います。機能の存在や公式の制作助言は、字幕単独の再生数効果の実証ではありません。</li>
+<li>根拠の種類：公式</li>
+<li>判断の位置づけ：推論を含む提案。公式に確認した機能・仕組みと、提案した変更の増分効果は区別します。</li>
+<li>実行例：提案：声を覆うBGMを下げ、発話を正しく字幕にし、重要な数字だけ別のテロップで示します。</li>
+<li>条件や限界：字幕は発話の文字化、テロップは要点の補足として区別します。誤変換を直し、実物や操作を文字で隠さないようにします。流行音源は必須にしません。</li>
+<li>対応する公式出典：<a href="#s6">S6</a>・<a href="#s34">S34</a></li>
+</ul>
+<h3>C7 文字の整理</h3>
+<ul>
+<li>理由：写真に文字を追加できることは公式に確認できます（<a href="#s4">S4</a>）。情報を読める状態に整える価値はありますが、それによる再生増は推論です。</li>
+<li>再生数へのつながり：間接：読みやすさと内容理解を通じた効果を狙います。画像内文字の量や大きさと再生数の比較効果は未実測です。</li>
+<li>根拠の種類：公式／個人の経験則</li>
+<li>判断の位置づけ：推論を含む提案。公式が裏づけるのは形式・機能です。「個人の経験則」は制作上の一般的な考え方を分類したもので、実運用の体験談や成功実績ではありません。</li>
+<li>実行例：提案：細かな長文を短い要点に整理し、比較写真の違いを文字で覆わない配置にします。</li>
+<li>条件や限界：一律の文字数や文字サイズは指定しません。削りすぎて条件が抜ける場合は画像を分けます。C5は論理の順序、本項は各画像内の可読性を扱います。</li>
+<li>対応する公式出典：直接の公式出典なし</li>
+</ul>
+<h3>C8 説明文の具体化</h3>
+<ul>
+<li>理由：検索では投稿と検索語との一致が使われます。内容を変えず語句だけで伸びると断定せず、何の投稿か伝わる説明に整える提案です。</li>
+<li>再生数へのつながり：直接：検索結果から元投稿を見てもらうことを狙います。説明文だけを変更した効果や、おすすめへの効果は確認できません。</li>
+<li>根拠の種類：公式</li>
+<li>判断の位置づけ：推論を含む提案。公式に確認した機能・仕組みと、提案した変更の増分効果は区別します。</li>
+<li>実行例：提案・動画：「やってみた」だけの説明を「〇〇の設定手順と、つまずきやすい箇所」に直します。</li>
+<li>条件や限界：本文にない話題や人気語は足しません。音声・画像内文字の役割とは分けます。写真への説明文追加は可能ですが、形式別の効果量は不明です。</li>
+<li>対応する公式出典：<a href="#s1">S1</a>・<a href="#s3">S3</a>・<a href="#s4">S4</a></li>
+</ul>
+<h3>C9 関連タグ</h3>
+<ul>
+<li>理由：検索の仕組みにはハッシュタグも含まれます。数を増やす競争より、投稿が扱う内容を正確に示す使い方を勧めます。</li>
+<li>再生数へのつながり：直接：関連する検索からの再生を狙います。タグの役割は確認でき、同程度の関連性のタグを増やした効果は未確定です。</li>
+<li>根拠の種類：公式</li>
+<li>判断の位置づけ：推論を含む提案。公式に確認した機能・仕組みと、提案した変更の増分効果は区別します。</li>
+<li>実行例：提案・写真：保存手順の投稿なら対象物と手順を表すタグにし、無関係な話題のタグを除きます。</li>
+<li>条件や限界：現行の個数上限と説明文の文字数上限は、それぞれ公式確認が不十分です。入力画面の制限に従い、特定の個数を万能の最適値にしません。</li>
+<li>対応する公式出典：<a href="#s3">S3</a>・<a href="#s4">S4</a></li>
+</ul>
+<h3>C10 内容別カバー</h3>
+<ul>
+<li>理由：公式は動画のカバーを検索やプロフィール等のプレビューとして説明しています。そこで選びやすくする提案で、動画の冒頭編集とは別です。</li>
+<li>再生数へのつながり：直接：一覧から元動画を選んでもらう再生を狙います。表示先は確認でき、カバー変更による再生増は未実証です。</li>
+<li>根拠の種類：公式</li>
+<li>判断の位置づけ：推論を含む提案。公式に確認した機能・仕組みと、提案した変更の増分効果は区別します。</li>
+<li>実行例：提案：完成状態が映るフレームを選び、似た動画と内容を区別できるカバーにします。</li>
+<li>条件や限界：経路の内訳は検索・プロフィールです。おすすめでの自動再生開始を変える効果は確認できません。写真の1枚目と同じ仕様とは扱いません。</li>
+<li>対応する公式出典：<a href="#s9">S9</a></li>
+</ul>
+<h3>補足：効果の確かめ方</h3>
+<p>自分の似た題材を、形式・尺または枚数・アカウントの規模・広告の有無を揃えて比較します。投稿後の経過時間を合わせ、初期と後日を別に記録してください。期間合計ではなく1件ごとの再生を並べ、平均だけでなく中央値（順に並べたときの真ん中）も見ると、一部の大当たりに左右された差を見分けやすくなります。少数投稿で原因を断定しません。</p>
+<p>表示される場合だけ、平均視聴時間・離脱箇所・視聴者数・流入元も確認します。再生が増えた理由を考える補助指標で、どれかの値を普遍的な合格ラインにはしません。動画で見られる指標を写真でも見られると仮定せず、スライド数で再生数を割って独自の補正もしません。検索などから後で伸びる可能性を残し、初動だけで削除を決めないでください（<a href="#s2">S2</a>・<a href="#s14">S14</a>・<a href="#s15">S15</a>）。</p>
+<h3>補足：再生数が落ちたとき</h3>
+<p>「シャドウバン」は、ここでは利用者がいう「本人から見えにくい配信制限」を指します。公式の一つの診断名として使いません。まず同じ経過時間の投稿を比べ、公開範囲や集計の遅れを確認します。次に対象投稿の「その他のインサイト」または「インサイト」で、おすすめ対象外の通知・理由を確認し、誤りだと思う場合は通知内の「異議申し立て」を使います（<a href="#s15">S15</a>・<a href="#s16">S16</a>）。</p>
+<p>さらに、メッセージの「システム通知」→「アカウント更新情報」と、TikTok Studioの「他のツール」→「アカウントの確認」を確認します。審査中、削除、おすすめ対象外、機能の制限は別の状態です。アカウントにチェックマークがあっても、投稿ごとのおすすめ資格まで保証するとは限りません。年齢・地域による表示範囲も別の条件です。確認できない解除手段は勧めません（<a href="#s3">S3</a>・<a href="#s16">S16</a>・<a href="#s17">S17</a>）。</p>
+<h3>補足：写真投稿との使い分け</h3>
+<p>動画は操作の動き、音の違い、変化の過程を見せる題材に使い、C2・C3・C6を中心に整えます。写真は静止した比較、要点、参照したい手順に使い、C4・C5・C7を中心に整えます。これは形式の機能に基づく役割分担で、写真が多く再生されるという実証ではありません（<a href="#s4">S4</a>・<a href="#s11">S11</a>）。</p>
+<p>どちらでも同程度に伝わり、自分の記録でも優位な形式がまだ分からない題材は、動画寄りの観測を手掛かりに動画から試します。これは試す順番の暫定案で、形式間の優劣を確定したものではありません。</p>
+<p>同じ題材の二重投稿は必須にせず、題材ごとに主となる一方を選びます。動作の実演と静止画の比較など、別の情報価値を出せる場合に限って両方を作る案はありますが、併用自体の優遇は確認していません。写真にも動画と同じ完了率・ループ戦略が効くとはせず、読者の同条件の記録で一方が繰り返し上回るなら、その形式へ重点を移します。写真か動画かの事実判定はT30のとおりです。</p>
+<h3>補足：他媒体への応用</h3>
+<p>冒頭で得られる答えを示すこと、説明の重複を削ること、画像を読みやすく並べることは他媒体でも試せます。一方、検索インサイトやおすすめ対象資格はTikTokの仕様です。YouTube等での効果は今回未検証です。</p>
+<h2>やらないこと</h2>
+<h3>N1</h3>
+<ul>
+<li>やらないこと：他者の作品に新たな創作を加えず、そのまま転載・再利用しておすすめへの掲載を狙いません。</li>
+<li>理由：公式のおすすめ対象外の基準に該当します。透かしだけを消しても非オリジナルという問題は解消しません。</li>
+<li>対象形式・表示場所：両方／おすすめの対象資格</li>
+<li>対応する公式出典：<a href="#s10">S10</a></li>
+</ul>
+<h3>N2</h3>
+<ul>
+<li>やらないこと：再生・いいね等を購入したり、反応の交換や偽の報酬で反応を集めたりしません。</li>
+<li>理由：偽の反応や欺く誘導は規則の対象で、偽の数値の除去や表示・アカウントの制限につながり得ます。自然な質問とは別です。</li>
+<li>対象形式・表示場所：両方／おすすめ・検索・アカウントへの措置</li>
+<li>対応する公式出典：<a href="#s10">S10</a></li>
+</ul>
+<h3>N3</h3>
+<ul>
+<li>やらないこと：表示が必要な現実的なAI生成・大幅改変の画像や動画で、必要なラベルを省きません。</li>
+<li>理由：未表示の内容は規則により削除・制限・ラベル付与の対象になり得ます。ラベルを付ければ禁止内容まで許可されるわけではありません。</li>
+<li>対象形式・表示場所：両方／投稿の公開継続・表示の制限</li>
+<li>対応する公式出典：<a href="#s8">S8</a>・<a href="#s10">S10</a></li>
+</ul>
+<h3>N4</h3>
+<ul>
+<li>やらないこと：適用中の制限や永久停止を回避するため、別アカウントに同じ違反投稿を移しません。</li>
+<li>理由：制限回避の行動はアカウントの制限・永久停止につながる場合があります。誤判定だと考える場合は通知から異議申し立てを使います。</li>
+<li>対象形式・表示場所：両方／アカウントと投稿機能</li>
+<li>対応する公式出典：<a href="#s10">S10</a>・<a href="#s16">S16</a></li>
+</ul>
+<h2>通説の判定</h2>
+<p>判定は「本当＝中心的主張を支持」「半分本当＝確認できた条件の範囲で支持」「言いすぎ＝方向は支持されるが程度等が過大」「嘘＝十分な反証あり」「根拠なし＝調査したが判断に足る証拠を確認できない」です。「根拠なし」は効果ゼロや未調査を意味しません。</p>
+<p>根拠は「公式／第三者／公式＋第三者／なし」。関連する仕組みしか説明していない公式資料は、増加効果の直接証拠に数えません。扱いは「やる／条件つきで試す／後回し／やらない」で、説の真偽とは別に行動へ付けます。根拠が不足していても、妥当な仕組みから限定的に試す提案はあります。</p>
+<div class="tbl"><table class="tj">
+<thead>
+<tr>
+<th>ID</th>
+<th>説</th>
+<th>判定</th>
+<th>根拠</th>
+<th>扱い</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="ID">T1</td><td data-label="説">動画は短いほど再生数が伸びる</td><td data-label="判定">嘘</td><td data-label="根拠">第三者</td><td data-label="扱い">やらない</td><td data-label="理由">尺を短くするほど再生が増えるという一方向の関係は、長めの動画群が上回る複数の観測結果と合いません。ただし、同じ企画を長くすれば伸びるという意味でもありません。</td></tr>
+<tr><td data-label="ID">T2</td><td data-label="説">1分以上の動画は、それより短い動画より再生数が伸びる</td><td data-label="判定">半分本当</td><td data-label="根拠">第三者</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">同じ発信者の動画群を比べた分析では1分以上が上回る傾向がありますが、短い方が上回る発信者もいます。観測した動画群に限った結果で、1分を越すために引き延ばす効果や境界での急な優遇は確認できません。</td></tr>
+<tr><td data-label="ID">T3</td><td data-label="説">動画は最初の3秒で伸びるかどうかが決まる</td><td data-label="判定">言いすぎ</td><td data-label="根拠">公式</td><td data-label="扱い">やる</td><td data-label="理由">行動は、冒頭で内容と見る理由を示すことです。公式は冒頭で関心を引き動画全体でも維持することを勧めているため採用しますが、3秒だけで成否が決まるとはいえません（<a href="#s2">S2</a>）。</td></tr>
+<tr><td data-label="ID">T4</td><td data-label="説">動画をループする構成にすると伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">自然なループ構成と通常の終わり方を比べた再生数効果は、確認できる根拠が不足しています。繰り返し再生の計上条件も不明で、新しい視聴者への推薦拡大とは分けます。</td></tr>
+<tr><td data-label="ID">T5</td><td data-label="説">動画に字幕・テロップを付けると伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やる</td><td data-label="理由">発話の字幕・要点テロップ・写真内文字それぞれの有無だけで再生数を比べた根拠は不足しています。理解と視聴・読解の継続を助ける推論として、必要な箇所に付けることを勧めます。（写真は未確認）</td></tr>
+<tr><td data-label="ID">T6</td><td data-label="説">顔出しをしないと伸びない</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">顔出しへ切り替えることは後回しにします。顔出しの必須性を判定できる直接資料が不足し、一般的なおすすめの仕組みだけでも必須・不要の効果は確定できません。（写真は未確認）</td></tr>
+<tr><td data-label="ID">T7</td><td data-label="説">流行の音源を使うと伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">流行音を勧める公式教材はあります（<a href="#s34">S34</a>）が、同程度の内容で音源だけを変えた再生数の裏づけは不足しています。内容に合う場合に限って試し、流行企画への関心と音源自体の効果を分けます。（写真は未確認）</td></tr>
+<tr><td data-label="ID">T8</td><td data-label="説">「#おすすめ」「#fyp」を付けると、おすすめに載りやすくなる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">2020年の公式説明は#FYP等を他のタグと同様とし、付けても推薦機会が必ず高まるわけではないとしています（<a href="#s2">S2</a>）。指定タグの追加効果を判定するには不足するため、内容に合うタグを優先します。（写真は未確認）</td></tr>
+<tr><td data-label="ID">T9</td><td data-label="説">ハッシュタグは多く付けるほど伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">同じ関連性のタグを増やすほど伸びるという効果は、比較条件を満たす根拠が不足しています。タグの有無や個数群の相関はありますが、関連性の差が残り、個数上限と説明文の文字数上限も別々に未確定です。（写真は未確認）</td></tr>
+<tr><td data-label="ID">T10</td><td data-label="説">投稿の説明文に検索されそうな言葉を入れると伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やる</td><td data-label="理由">説明文への検索語の追加だけで元投稿の再生数が増えるという直接検証は不足しています。検索との一致を使う仕組み（<a href="#s3">S3</a>）から、内容に合う語句を自然に足すことを勧めますが、効果を実証した判定ではありません。（写真は未確認）</td></tr>
+<tr><td data-label="ID">T11</td><td data-label="説">動画のカバー画像を工夫すると伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やる</td><td data-label="理由">カバー変更だけで再生数が増える直接検証は不足しています。動画のカバーは検索・プロフィール等に表示されるため、内容が分かる代表場面を選ぶことを勧めますが、再生増は推論です（<a href="#s9">S9</a>）。（写真は未確認）</td></tr>
+<tr><td data-label="ID">T12</td><td data-label="説">おすすめでは、いいねより視聴時間のほうが重く評価される</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">視聴時間をいいねより必ず上位と決め打ちすることは勧めません。公式は反応群全体を重視しますが、両者の比較や、合計・平均・視聴割合のどれを重みづけするかまでは確認できません（<a href="#s3">S3</a>）。</td></tr>
+<tr><td data-label="ID">T13</td><td data-label="説">おすすめでは、最後まで見られた割合が最も重く評価される</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">完了率だけを最優先にすることは勧めません。全編視聴を参照する説明（<a href="#s3">S3</a>）はありますが、他の全要素より最も重いという比較は確認できません。</td></tr>
+<tr><td data-label="ID">T14</td><td data-label="説">おすすめでは、いいねよりシェアのほうが重く評価される</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">シェアをいいねより常に優先して集めることは勧めません。公式は両方を反応として挙げますが、重みの大小や換算比は確認できません（<a href="#s3">S3</a>）。</td></tr>
+<tr><td data-label="ID">T15</td><td data-label="説">動画でコメントを呼びかけると伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">自然な質問を加えるだけで元投稿の再生数が増える効果は、根拠が不足しています。内容に関係する問いに限って試し、コメント増の分析を再生増の証明にせず、反応の交換はしません。（写真は未確認）</td></tr>
+<tr><td data-label="ID">T16</td><td data-label="説">毎日投稿すると、動画1本あたりの再生数も伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">2020年の公式説明は投稿量が推薦方法に影響しないとしています（<a href="#s2">S2</a>）が、頻度と1件あたり再生数の観測は直接の配信優遇と同じ問いではありません。「毎日」という配置の効果を分離できる根拠は不足し、合計再生の増加と分けて毎日のノルマは後回しにします。（写真は未確認）</td></tr>
+<tr><td data-label="ID">T17</td><td data-label="説">日本語圏向けの個人投稿には、ほかの時間帯より再生数が伸びやすい時間帯がある</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">日本語圏向けの複数の個人アカウントに共通する、日本時間での優位な時間帯は確認できません。海外を含む集計、反応率、視聴者の活動時間は、その条件での投稿時刻の再生数効果とは別です。（写真は未確認）</td></tr>
+<tr><td data-label="ID">T18</td><td data-label="説">投稿して最初の30分〜1時間の反応で、その動画の伸びが決まる</td><td data-label="判定">言いすぎ</td><td data-label="根拠">公式＋第三者</td><td data-label="扱い">やらない</td><td data-label="理由">最初の30分〜1時間だけで見切ることは勧めません。初期成績との関連はありますが、その後も再生が増える観測と、数日を見渡す公式の説明があり、固定時間で成否が決まるとはいえません（<a href="#s2">S2</a>）。（写真は未確認）</td></tr>
+<tr><td data-label="ID">T19</td><td data-label="説">新しい動画は最初に必ず200〜300人へ配信され、その反応で次の配信が決まる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">200〜300人を固定の配信枠・合格線と見なすことは勧めません。固定人数を保証する根拠は確認できず、数百回で止まった観測から人数や内部の配信段階は逆算できません。（写真は未確認）</td></tr>
+<tr><td data-label="ID">T20</td><td data-label="説">フォロワー数は、動画の再生数に関係ない</td><td data-label="判定">嘘</td><td data-label="根拠">公式</td><td data-label="扱い">やらない</td><td data-label="理由">既存フォロワーとの関係を再生数には無関係として切り捨てることは勧めません。フォロワー数が直接の推薦要素でなくても、既存フォロワーが多いと視聴を得やすいという公式の説明があります（<a href="#s1">S1</a>）。（写真は未確認）</td></tr>
+<tr><td data-label="ID">T21</td><td data-label="説">発信するジャンルを一つに絞ると伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">同程度の内容で一つのジャンルに絞る場合と複数扱う場合を比べた根拠が不足しています。見せたい相手や題材が整理できる場合に試す提案で、一つに絞らないと配信されないとはいえません。（写真は未確認）</td></tr>
+<tr><td data-label="ID">T22</td><td data-label="説">投稿前に同じジャンルの動画を見たり、いいねしたりすると、自分の投稿が伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">投稿前の視聴やいいねで自分の投稿が伸びるという裏づけは不足しています。自分に表示されるおすすめを変える仕組み（<a href="#s3">S3</a>）を、他人への配信を増やす効果とは読み替えません。（写真は未確認）</td></tr>
+<tr><td data-label="ID">T23</td><td data-label="説">自分の投稿についたコメントに返信すると、その投稿が伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">通常のコメント返信が元投稿の再生数を増やす直接根拠は不足しています。内容に関する質問への返答は試せますが、別の返信動画や他媒体の反応増の分析とは分けます。（写真は未確認）</td></tr>
+<tr><td data-label="ID">T24</td><td data-label="説">伸びなかった動画を削除して同じ動画を投稿し直すと伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">同じ内容を削除して投稿し直す優位は、条件の揃った根拠が不足しています。元投稿への流入を止める不利益があるため、同じ動画ファイルや同じ写真・枚数・順序のやり直しを攻略として勧めません。（写真は未確認）</td></tr>
+<tr><td data-label="ID">T25</td><td data-label="説">他のアプリの透かしが入った動画は伸びにくい</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">自作の元データから不要な他アプリの透かしがない版を用意する場合に限って試します。透かしだけの再生数効果は動画・写真とも根拠が不足し、創作を加えない再利用等の対象外基準（<a href="#s10">S10</a>）とは別なので、転載の透かしを消す施策は勧めません。</td></tr>
+<tr><td data-label="ID">T26</td><td data-label="説">ビジネスアカウントは、個人アカウントより伸びにくい</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">再生数だけを目的とする種別変更は後回しにします。種別間の観測差には内容や規模の違いが残り、音源・機能の条件差を除いた配信上の不利は確認できません。（写真は未確認）</td></tr>
+<tr><td data-label="ID">T27</td><td data-label="説">TikTokアプリ内で編集すると、外部アプリで編集するより伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">編集場所だけを理由にTikTokアプリ内へ移すことは後回しにします。同じ内容・画質・透かし等で編集場所だけを変えた配信上の優遇は確認できません。</td></tr>
+<tr><td data-label="ID">T28</td><td data-label="説">AI生成コンテンツのラベルを付けると伸びにくくなる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">再生数のために必要なAIラベルを外すことは勧めません。規則に従う動画への設定自体は配信に影響しないと公式は説明します（<a href="#s8">S8</a>）が、同じ内容のラベルに対する視聴者の反応を介した再生数の変化は未確認です。（写真は未確認）</td></tr>
+<tr><td data-label="ID">T29</td><td data-label="説">動画の再生数が急に落ちたら、シャドウバンされている</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">再生数の急落だけでシャドウバンと判断することは勧めません。急落から制限を識別できる根拠は不足し、公式の通知・状態とインサイトを別々に確認する必要があります（<a href="#s15">S15</a>・<a href="#s16">S16</a>・<a href="#s17">S17</a>）。</td></tr>
+<tr><td data-label="ID">T30</td><td data-label="説">写真投稿は、動画投稿より閲覧数が伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">写真へ全面的に切り替えることは後回しにします。確認した再生数の比較集計はいずれも動画寄りで、同じ発信者・同じ月で調整した分析もありますが、写真と動画の計上条件の同等性が確認できないため、優劣の判定は保留します。</td></tr>
+</tbody>
+</table></div>
+<section class="src"><h2>公式出典</h2>
+<p>確認日はすべて2026年11月10日です。日付不明のヘルプは基準日当日の版を再現できていません。S番号は非公開メモと共通で、公開用で参照していない番号は欠番になります。</p>
+<ul>
+<li id="s1"><p><span class="sid">S1</span><a href="https://newsroom.tiktok.com/how-tiktok-recommends-videos-for-you?lang=en" rel="noopener">How TikTok recommends videos #ForYou｜TikTok Newsroom</a>。発表2020年6月18日、更新日不明。確認日2026年11月10日。</p>
+</li>
+<li id="s2"><p><span class="sid">S2</span><a href="https://newsroom.tiktok.com/5-tips-for-tiktok-creators?lang=en" rel="noopener">5 tips for TikTok creators｜TikTok Newsroom</a>。発表2020年7月30日、更新日不明。確認日2026年11月10日。</p>
+</li>
+<li id="s3"><p><span class="sid">S3</span><a href="https://www.tiktok.com/support/faq_detail?id=7655285288050104852&amp;category=web_account" rel="noopener">TikTokがコンテンツをおすすめする方法｜TikTokヘルプセンター</a>。発表日・更新日不明。確認日2026年11月10日。</p>
+</li>
+<li id="s4"><p><span class="sid">S4</span><a href="https://www.tiktok.com/support/faq_detail?id=7581826684085606968&amp;category=web_account" rel="noopener">投稿を作成する｜TikTokヘルプセンター</a>。発表日・更新日不明。確認日2026年11月10日。</p>
+</li>
+<li id="s6"><p><span class="sid">S6</span><a href="https://www.tiktok.com/support/faq_detail?id=7581820705491229240&amp;category=web_posts" rel="noopener">TikTok Studio｜TikTokヘルプセンター</a>。発表日・更新日不明。確認日2026年11月10日。</p>
+</li>
+<li id="s7"><p><span class="sid">S7</span><a href="https://www.tiktok.com/support/faq_detail?id=7581820708318239243&amp;category=web_posts" rel="noopener">クリエイター向け検索インサイト｜TikTokヘルプセンター</a>。発表日・更新日不明。確認日2026年11月10日。</p>
+</li>
+<li id="s8"><p><span class="sid">S8</span><a href="https://www.tiktok.com/support/faq_detail?id=7636670084747893268&amp;category=web_posts" rel="noopener">AI生成コンテンツについて｜TikTokヘルプセンター</a>。発表日・更新日不明。確認日2026年11月10日。</p>
+</li>
+<li id="s9"><p><span class="sid">S9</span><a href="https://www.tiktok.com/support/faq_detail?id=7636670084584479253&amp;category=web_posts" rel="noopener">編集、投稿、削除｜TikTokヘルプセンター</a>。発表日・更新日不明。確認日2026年11月10日。</p>
+</li>
+<li id="s10"><p><span class="sid">S10</span><a href="https://www.tiktok.com/safety/en/policies-and-engagement/integrity-authenticity" rel="noopener">Integrity and Authenticity｜TikTok Community Guidelines</a>。公開2026年8月25日、施行2026年9月24日、別の更新日不明。確認日2026年11月10日。</p>
+</li>
+<li id="s11"><p><span class="sid">S11</span><a href="https://newsroom.tiktok.com/editing-tools?lang=en" rel="noopener">Inspiring creativity with our new editing tools｜TikTok Newsroom</a>。発表2022年10月6日、更新日不明。確認日2026年11月10日。</p>
+</li>
+<li id="s13"><p><span class="sid">S13</span><a href="https://newsroom.tiktok.com/introducing-the-new-creator-rewards-program?lang=en" rel="noopener">Introducing the New Creator Rewards Program｜TikTok Newsroom</a>。発表2024年3月18日、更新日不明。確認日2026年11月10日。</p>
+</li>
+<li id="s14"><p><span class="sid">S14</span><a href="https://www.tiktok.com/creator-academy/en/article/tool-analytics-intro" rel="noopener">Introducing TikTok analytics｜TikTok Creator Academy</a>。初出不明、最終更新2026年10月14日。確認日2026年11月10日。</p>
+</li>
+<li id="s15"><p><span class="sid">S15</span><a href="https://www.tiktok.com/support/faq_detail?id=7581827173913467448" rel="noopener">投稿の視聴回数が伸びない場合｜TikTokヘルプセンター</a>。発表日・更新日不明。確認日2026年11月10日。</p>
+</li>
+<li id="s16"><p><span class="sid">S16</span><a href="https://www.tiktok.com/support/faq_detail?id=7543604781940791864&amp;category=web_account" rel="noopener">コンテンツ違反と永久停止｜TikTokヘルプセンター</a>。発表日・更新日不明。確認日2026年11月10日。</p>
+</li>
+<li id="s17"><p><span class="sid">S17</span><a href="https://www.tiktok.com/support/faq_detail?id=7543604781319756294&amp;category=web_privacy_user_safety" rel="noopener">アカウントのステータス｜TikTokヘルプセンター</a>。発表日・更新日不明。確認日2026年11月10日。</p>
+</li>
+<li id="s18"><p><span class="sid">S18</span><a href="https://www.tiktok.com/support/faq_detail?id=7639468340976785941&amp;category=web_posts" rel="noopener">TikTokインサイトの使い方｜TikTokヘルプセンター</a>。発表日・更新日不明。確認日2026年11月10日。</p>
+</li>
+<li id="s34"><p><span class="sid">S34</span><a href="https://www.tiktok.com/creator-academy/en/article/the-importance-of-sound" rel="noopener">The importance of sound｜TikTok Creator Academy</a>。初出不明、更新2026年8月19日。確認日2026年11月10日。</p>
+</li>
+<li id="s35"><p><span class="sid">S35</span><a href="https://www.tiktok.com/support/faq_detail?id=7598614283081030165" rel="noopener">TikTokのアカウントタイプ｜TikTokヘルプセンター</a>。発表日・更新日不明。確認日2026年11月10日。</p>
+</li>
+</ul></section>
+
+</article>
+<div class="xlink">もう一方の成果物：<a href="https://yokonarabi-lab.github.io/tiktok/claude/">Claude Fable 5.2 版</a>　／　解説と感想：<a href="https://note.com/sky_yellowlens" rel="noopener">note の記事</a></div>
+<footer class="foot">
+<div class="brand"><span>Sky</span><span class="bar" aria-hidden="true"></span><span>Yellow Lens</span></div>
+<p>検証室：Claude Fable 5.2 vs GPT-6 Astra。同じお題、同じ依頼文で、ふたつの答えを並べて読み解く。記事は <a href="https://note.com/sky_yellowlens" rel="noopener">note</a> に。</p>
+<p>この文書は、AI の成果物をそのまま載せたもの。内容は 2026年11月10日時点の調査で（情報の締切は 2026年11月8日）、実際に投稿して確かめたものではない。</p>
+</footer>
+</main>
+</body>
+</html>
