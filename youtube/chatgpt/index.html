@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YouTube攻略法 GPT-6.2 Astra 版｜Sky｜Yellow Lens</title>
+<meta name="description" content="YouTube の投稿1件あたりの視聴回数を伸ばす方法を、YouTube の公式情報を軸に調べた GPT-6.2 Astra の成果物。同じ依頼文で Claude Fable 5.2 にも依頼し、ふたつの答えを並べた検証室の記録。">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:title" content="YouTube攻略法 GPT-6.2 Astra 版｜Sky｜Yellow Lens">
+<meta property="og:description" content="YouTube の投稿1件あたりの視聴回数を伸ばす方法を、YouTube の公式情報を軸に調べた GPT-6.2 Astra の成果物。同じ依頼文で Claude Fable 5.2 にも依頼し、ふたつの答えを並べた検証室の記録。">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://yokonarabi-lab.github.io/youtube/chatgpt/">
+<meta property="og:image" content="https://yokonarabi-lab.github.io/youtube/assets/cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+
+:root{--ink:#1E1E1E;--sub:#5C5C5C;--yellow:#F4C21B;--orange:#D9704A;--green:#1FA383;--rule:#D9D9D9;--soft:#F6F6F6;--bg:#FFFFFF}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter","Noto Sans JP",system-ui,-apple-system,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;font-size:16px;line-height:1.95;letter-spacing:.03em;font-feature-settings:"kern";-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:#B5B5B5;text-underline-offset:.2em}
+a:hover{text-decoration-color:var(--ink)}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.site-header{padding:26px 0 18px;border-bottom:1px solid var(--rule)}
+.brand{display:inline-flex;align-items:center;gap:.42em;font-family:"Inter",sans-serif;font-weight:500;font-size:17px;letter-spacing:.04em;text-decoration:none;color:var(--ink)}
+.brand .bar{display:inline-block;width:1px;height:1.05em;background:var(--yellow);transform:translateY(-.02em)}
+.site-header .nav{float:right;font-size:13px;color:var(--sub);margin-top:4px}
+.site-header .nav a{color:var(--sub);margin-left:14px}
+.doc-head{padding:44px 0 10px}
+.shelf{font-size:13px;color:var(--sub);letter-spacing:.06em;margin:0 0 14px}
+.model{font-family:"Inter",sans-serif;font-weight:700;font-size:30px;line-height:1.3;margin:0 0 6px;letter-spacing:.01em}
+.model .vs{font-weight:500;font-size:.6em;color:var(--sub);margin:0 .35em}
+.model .u{display:inline-block;border-bottom:.11em solid;padding-bottom:.08em;line-height:1.1}
+.model .u.claude{border-color:var(--orange)}
+.model .u.gpt{border-color:var(--green)}
+.theme{font-size:15px;color:var(--sub);margin:0 0 26px}
+.frame{background:var(--soft);border-left:3px solid var(--yellow);padding:16px 20px;font-size:14.5px;line-height:1.9;color:var(--ink);margin:0 0 40px}
+.frame p{margin:0 0 8px} .frame p:last-child{margin:0}
+.frame .k{color:var(--sub);margin-right:.5em}
+article h1{font-size:24px;line-height:1.55;margin:0 0 28px;letter-spacing:.02em;font-weight:700}
+article h2{font-size:21px;line-height:1.5;margin:56px 0 18px;padding-bottom:10px;border-bottom:2px solid var(--ink);letter-spacing:.03em;font-weight:700}
+article h3{font-size:17.5px;line-height:1.6;margin:36px 0 10px;font-weight:700;letter-spacing:.03em}
+article h3 .rank{font-family:"Inter",sans-serif;font-weight:700;margin-right:.45em}
+article h3 .tid{font-family:"Inter",sans-serif;font-weight:600;color:var(--sub);margin-right:.6em;font-size:.95em}
+article p{margin:0 0 16px}
+article ul,article ol{padding-left:1.4em;margin:0 0 16px}
+article li{margin:0 0 8px}
+article li p{margin:0}
+article hr{border:0;border-top:1px solid var(--rule);margin:44px 0}
+article strong{font-weight:700}
+article blockquote{margin:0 0 16px;padding:0 0 0 16px;border-left:3px solid var(--rule);color:var(--sub)}
+.tbl{overflow-x:auto;margin:0 0 24px}
+table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.75;letter-spacing:.02em}
+th{text-align:left;font-weight:700;font-size:13px;padding:8px 10px;border-bottom:2px solid var(--ink);vertical-align:bottom;white-space:nowrap}
+td{padding:12px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+table.cols4 th:nth-child(1){width:20%} table.cols4 th:nth-child(2){width:36%} table.cols4 th:nth-child(3){width:21%} table.cols4 th:nth-child(4){width:23%}
+table.cols3 th:nth-child(1){width:3.2em} table.cols3 th:nth-child(2){width:52%}
+table.cols4 td:first-child{font-weight:500}
+.src ol{padding-left:1.8em}
+.src li{margin:0 0 14px;font-size:14.5px;line-height:1.8;word-break:break-all}
+.src li a{word-break:break-all}
+.src table{font-size:13.5px}
+.foot{margin:72px 0 0;padding:28px 0 56px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--sub);line-height:1.9}
+.foot a{color:var(--sub)}
+.foot .brand{font-size:15px;margin-bottom:10px;color:var(--ink)}
+.xlink{margin:48px 0 0;padding:18px 20px;background:var(--soft);font-size:14.5px}
+.xlink a{font-weight:700}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .site-header .nav{float:none;display:block;margin-top:8px}
+  .site-header .nav a{margin:0 14px 0 0}
+  .model{font-size:26px}
+  article h1{font-size:21px}
+  article h2{font-size:19px}
+  article h3{font-size:16.5px}
+  table.cards,table.cards tbody,table.cards tr,table.cards td{display:block;width:100%}
+  table.cards thead{display:none}
+  table.cards tr{border-bottom:2px solid var(--ink);padding:10px 0 6px;margin:0 0 10px}
+  table.cards td{border:0;padding:4px 0 8px;min-width:0}
+  table.cards td::before{content:attr(data-label);display:block;font-size:12px;color:var(--sub);letter-spacing:.05em;margin-bottom:2px}
+  table.cards td:first-child{font-weight:700;padding-top:0}
+  table.cards td:first-child::before{display:none}
+}
+@media print{.site-header .nav,.xlink{display:none} body{font-size:11pt}}
+table.tc th:nth-child(4){width:24%}
+table.tc th,table.tc td:nth-child(-n+3){white-space:nowrap}
+table td{overflow-wrap:anywhere}
+table.tj,table.tj tbody{display:block;width:100%}
+table.tj thead{display:none}
+table.tj tr{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:18px;padding:16px 0 14px;border-bottom:1px solid var(--rule)}
+table.tj tr:first-child{border-top:2px solid var(--ink)}
+table.tj td{display:block;border:0;padding:0}
+table.tj td:nth-child(1){font-family:"Inter",sans-serif;font-weight:700;color:var(--sub);flex:0 0 auto}
+table.tj td:nth-child(2){font-weight:700;flex:1 1 calc(100% - 4em)}
+table.tj td:nth-child(3),table.tj td:nth-child(4),table.tj td:nth-child(5){font-size:14px;margin-top:6px}
+table.tj td:nth-child(3){font-weight:700}
+table.tj td:nth-child(3)::before,table.tj td:nth-child(4)::before,table.tj td:nth-child(5)::before{content:attr(data-label);font-weight:400;color:var(--sub);font-size:12.5px;margin-right:.5em}
+table.tj td:nth-child(6){flex:0 0 100%;margin-top:8px}
+.src ul{list-style:none;padding-left:0}
+.src li{margin:0 0 14px;font-size:14.5px;line-height:1.8;word-break:break-all}
+.src li .sid{font-family:"Inter",sans-serif;font-weight:700;margin-right:.5em}
+.lead p{margin:0 0 10px}
+
+table td{overflow-wrap:anywhere}
+table.tj,table.tj tbody{display:block;width:100%}
+table.tj thead{display:none}
+table.tj tr{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:18px;padding:16px 0 14px;border-bottom:1px solid var(--rule)}
+table.tj tr:first-child{border-top:2px solid var(--ink)}
+table.tj td{display:block;border:0;padding:0}
+table.tj td:nth-child(1){font-family:"Inter",sans-serif;font-weight:700;color:var(--sub);flex:0 0 auto}
+table.tj td:nth-child(2){font-weight:700;flex:1 1 calc(100% - 4em)}
+table.tj td:nth-child(3),table.tj td:nth-child(4),table.tj td:nth-child(5){font-size:14px;margin-top:6px}
+table.tj td:nth-child(3){font-weight:700}
+table.tj td:nth-child(3)::before,table.tj td:nth-child(4)::before,table.tj td:nth-child(5)::before{content:attr(data-label);font-weight:400;color:var(--sub);font-size:12.5px;margin-right:.5em}
+table.tj td:nth-child(6){flex:0 0 100%;margin-top:8px}
+.lead p{margin:0 0 10px}
+table.tc7 th:nth-child(6){width:17%}
+table.tc7 th,table.tc7 td:nth-child(-n+4){white-space:nowrap}
+table.tc7 td:nth-child(5){min-width:6.5em}
+table.tn,table.tn tbody,table.tn tr,table.tn td{display:block;width:100%}
+table.tn thead{display:none}
+table.tn tr{padding:16px 0 12px;border-bottom:1px solid var(--rule)}
+table.tn tr:first-child{border-top:2px solid var(--ink)}
+table.tn td{border:0;padding:0;margin:0 0 6px}
+table.tn td.empty{display:none}
+table.tn td:nth-child(1){font-family:"Inter",sans-serif;font-weight:700;color:var(--sub);margin:0 0 2px}
+table.tn td:nth-child(2){font-weight:700;margin:0 0 8px}
+table.tn td:nth-child(n+3){font-size:14px}
+table.tn td:nth-child(n+3)::before{content:attr(data-label);color:var(--sub);font-size:12.5px;margin-right:.6em}
+table.srcx td:nth-child(1){color:var(--ink)}
+table.srcx td:nth-child(2){margin:0 0 4px}
+table.srcx td a{word-break:break-all}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="https://yokonarabi-lab.github.io/youtube/"><span>Sky</span><span class="bar" aria-hidden="true"></span><span>Yellow Lens</span></a>
+<nav class="nav" aria-label="ページ内の移動"><a href="https://yokonarabi-lab.github.io/youtube/">YouTube攻略法</a><a href="https://note.com/sky_yellowlens" rel="noopener">note</a></nav>
+</div></header>
+<main class="wrap">
+
+<div class="doc-head">
+<p class="shelf">検証室｜YouTube攻略法</p>
+<p class="model"><span class="u gpt">GPT-6.2 Astra</span><span class="vs">版</span></p>
+<p class="theme">Claude Fable 5.2 vs GPT-6.2 Astra — 同じ依頼文で、YouTube の投稿1件あたりの視聴回数を伸ばす方法を調べてもらった成果物</p>
+</div>
+<div class="frame">
+<p><span class="k">依頼日</span>2026年11月21日。「YouTube の公式情報を軸に、日本語と英語の攻略法を調べて、Shorts と通常動画のどちらを優先するかの結論と、実践チェックリスト（原則10項目）と、30の通説の判定を書く」という同じ依頼文を、Claude Fable 5.2 と GPT-6.2 Astra に出した。</p>
+<p><span class="k">このページ</span>GPT-6.2 Astra の成果物（相手の検品を2回受けて直した版）。本文・順位・判定は GPT-6.2 Astra が書いたまま。</p>
+<p><span class="k">追記</span>6工程が終わったあと、「1位と2位は、なぜ分けたのか」と聞いた。その答えの一段落を、GPT-6.2 Astra がランキング表の前に足した（2026年11月23日）。順位・項目・判定は、変えていない。</p>
+<p><span class="k">もう一方</span><a href="https://yokonarabi-lab.github.io/youtube/claude/">Claude Fable 5.2 版</a>　<span class="k">解説と感想</span><a href="https://note.com/sky_yellowlens" rel="noopener">note の記事</a></p>
+</div>
+<article>
+<h1>YouTube攻略法｜公開用の成果物</h1>
+<div class="lead">
+<p>調査基準日：2026年11月21日（日本時間）</p>
+<p>基準日は2026年11月21日（日本時間）です。日本語圏に発信する個人の公開チャンネルを対象に、広告を除いた<strong>投稿1本の視聴回数</strong>を伸ばす方法を調べました。主指標は投稿に表示される公開の視聴回数です。広告経由も入り得るため、自分の成績はパソコン版アナリティクスの［オーガニック トラフィックと有料のトラフィック］で自然流入を抽出します。第三者の公開回数から広告分を分離できない場合があります。（<a href="#o5">O5</a>・<a href="#o29">O29</a>）</p>
+<p><strong>形式。</strong> Shortsは公式の「ショート動画」、通常動画はStudioの「動画」に当たる公開の長尺動画（VOD）を指します。通常動画に一律の最低尺はありません。標準チャンネルでは2024年10月15日以降にアップロードされた、正方形か縦長で3分以内の動画がShortsです。1分超～3分の拡張は公式アーティストチャンネル等では2025年12月8日以降が対象です。横長の短い動画も通常動画として扱えます。（<a href="#o1">O1</a>・<a href="#o5">O5</a>）</p>
+<p><strong>視聴者が来た経路。</strong> 本資料の「ホーム」と「登録チャンネル」は、Studioではどちらも［ブラウジング機能］に含まれます。「Shortsフィード」は、公式ヘルプのレポート説明で［ショート フィード］、トラフィック ソースの一覧で［ショート動画］と表記されます。「検索」は［YouTube 検索］、「チャンネルページ」は［チャンネル ページ］です。「外部」は外部サイトやアプリからの流入です。Studioの流入元［関連動画］と、投稿者がShortsに自分で付ける［関連動画］リンクは別々に扱います。（<a href="#o5">O5</a>・<a href="#o19">O19</a>）</p>
+<p><strong>何を1回と数えるか。</strong> 次の変更をまたぐ動画は、公開後日数が同じでもカウンターの条件が違います。</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>適用日</th>
+<th>対象</th>
+<th>公開の視聴回数に入るもの</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="適用日">2025年3月31日</td><td data-label="対象">Shorts</td><td data-label="公開の視聴回数に入るもの">再生開始とリプレイ開始を最低視聴時間なしで計上します。従来の継続視聴に対応する指標は「エンゲージ ビュー」として残りました。（<a href="#o2">O2</a>）</td></tr>
+<tr><td data-label="適用日">2026年8月24日</td><td data-label="対象">Shorts・通常動画を含む全形式</td><td data-label="公開の視聴回数に入るもの">最初のフレームが再生された時点で計上します。通常動画もホームなどの自動再生・マウスを乗せて始まる再生を含みます。サムネイルが静止したまま見えただけの表示は別です。公式は、この計測変更による推薦方式の変更はないと説明しています。（<a href="#o3">O3</a>・<a href="#o4">O4</a>）</td></tr>
+<tr><td data-label="適用日">2026年11月16日</td><td data-label="対象">テレビで見る両形式を含む全形式</td><td data-label="公開の視聴回数に入るもの">同じテレビ画面を一緒に見た人数の推計が、公開回数と総再生時間に入ります。エンゲージ ビューには共視聴者を加算しません。（<a href="#o4">O4</a>・<a href="#o5">O5</a>・<a href="#o29">O29</a>）</td></tr>
+</tbody>
+</table></div>
+<p><strong>指標の読み方。</strong> 旧来の見方を続けるときは、YouTube アナリティクスの［詳細モード］でエンゲージ ビューを確認します。クリック・タップして見始めた再生や、自動再生から最初の数秒を越えて見た再生が対象です。Shortsの継続視聴ではループを除きます。通常動画で同じ人が手動・自動で何度も再生した場合の個々の有効判定や、正確な秒数は未確認です。（<a href="#o2">O2</a>・<a href="#o3">O3</a>・<a href="#o4">O4</a>・<a href="#o5">O5</a>・<a href="#o29">O29</a>）</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>指標</th>
+<th>分母・読み方</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="指標">平均視聴時間／平均視聴率</td><td data-label="分母・読み方">継続視聴に対応する総再生時間をエンゲージ ビューで割った平均時間と、それが動画尺に占める割合です。公開再生開始のすべてを分母にしません。（<a href="#o3">O3</a>・<a href="#o5">O5</a>）</td></tr>
+<tr><td data-label="指標">視聴者維持率／視聴を継続</td><td data-label="分母・読み方">維持率は、視聴を始めた集団を基準に各時点の再生がどれだけ残ったかを見る曲線です。同じ場面の見直しも形に影響します。Shortsの［視聴を継続］は、見続けた場合とスワイプした場合を合わせた機会のうち、前者が占める割合です。（<a href="#o5">O5</a>・<a href="#o13">O13</a>）</td></tr>
+<tr><td data-label="指標">インプレッションのクリック率／総再生時間</td><td data-label="分母・読み方">前者はYouTubeが対象と認めたサムネイル表示のうち、その表示から視聴された割合です。外部からの再生などは分母・分子の外です。後者は視聴時間の合計で、11月16日以降は該当するテレビ共視聴の推計も入ります。（<a href="#o4">O4</a>・<a href="#o5">O5</a>・<a href="#o12">O12</a>）</td></tr>
+</tbody>
+</table></div>
+<p>第三者の分析や経験則も参照していますが、編集方針により出典詳細は非公開です。そのため、読者が直接検証できる範囲には制約があります。</p>
+</div>
+<h2>結論</h2>
+<p>役割を分けて両方を使います。最優先は、撮る前に「誰が、何を見届けたいか」を一文にし、その答えが映る場面を決めることです。同じ題材が好きな人でも、短い動画で発見したい人と、通常動画で過程まで見たい人がいて、いつも両方を見るとは限りません。たとえば録音なら、マイクの位置で声が変わる瞬間はShorts一本で伝わります。自分でも同じ音を出したい人には、位置や部屋の条件を順に試す通常動画が役立ちます。片方で問いに答え切れる企画はその形式で出します。自分の投稿で題材と公開後の日数をそろえても、一方が自然流入の視聴回数とエンゲージ ビューの両方で繰り返し上回るなら、その題材では上回った形式を優先します。</p>
+<h2>実践チェックリスト</h2>
+<p>順位は、その形式で一本の自然視聴が増える見込みから付けました。多くの人が視聴を選ぶ前後に効く制作上の判断を上位に置き、特定の経路や視聴者だけに効くものを後ろに置いています。効果量の比較実験による順位ではありません。「直接」は見た人がその投稿を再生する経路、「間接」は視聴後の反応や新たな表示機会を介する経路です。実行例は制作案です。</p>
+<p>1位は、撮る前に「誰に、何を見せるか」を決めることです。見どころが決まっても、Shortsをどの場面から始めれば、それがひと目で伝わるかは別に考えます。そこで、撮影前の企画を1位、Shortsの最初の画面を選ぶ工夫を2位に分けました。3位は、通常動画のタイトルとサムネイルで同じ見どころを伝える工夫です。</p>
+<div class="tbl"><table class="cards tc7">
+<thead>
+<tr>
+<th>順位</th>
+<th>ID</th>
+<th>比較分類</th>
+<th>対象形式</th>
+<th>主な経路</th>
+<th>項目名</th>
+<th>やること</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="順位">1</td><td data-label="ID">C1</td><td data-label="比較分類">内容</td><td data-label="対象形式">両方</td><td data-label="主な経路">複数</td><td data-label="項目名">見る理由を決める</td><td data-label="やること">撮る前に「誰が、何を見届けたいか」を一文にし、その答えが映る場面を企画の中心に置きます。</td></tr>
+<tr><td data-label="順位">2</td><td data-label="ID">C2</td><td data-label="比較分類">内容</td><td data-label="対象形式">Shorts</td><td data-label="主な経路">Shortsフィード</td><td data-label="項目名">一場面で始める</td><td data-label="やること">最初の画面から題材が分かる場面を出し、見た人が待っている変化や答えまでをその一本に入れます。</td></tr>
+<tr><td data-label="順位">3</td><td data-label="ID">C3</td><td data-label="比較分類">投稿方法</td><td data-label="対象形式">通常動画</td><td data-label="主な経路">複数</td><td data-label="項目名">表紙で中身を伝える</td><td data-label="やること">タイトルに見どころを一つ書き、サムネイルにはその中身を示す場面を選びます。</td></tr>
+<tr><td data-label="順位">4</td><td data-label="ID">C4</td><td data-label="比較分類">投稿方法</td><td data-label="対象形式">両方</td><td data-label="主な経路">検索</td><td data-label="項目名">検索の問いに答える</td><td data-label="やること">検索する人が実際に使う日本語をタイトルに自然に入れ、その問いを動画内で解決します。</td></tr>
+<tr><td data-label="順位">5</td><td data-label="ID">C5</td><td data-label="比較分類">内容</td><td data-label="対象形式">両方</td><td data-label="主な経路">複数</td><td data-label="項目名">見せ場を早める</td><td data-label="やること">見どころに着くまでの重複した説明を削り、必要な背景はその場面の直前に入れます。</td></tr>
+<tr><td data-label="順位">6</td><td data-label="ID">C6</td><td data-label="比較分類">内容</td><td data-label="対象形式">両方</td><td data-label="主な経路">複数</td><td data-label="項目名">次の問いを作品に</td><td data-label="やること">反応のあった一本を見終えた人が次に知りたいことを、独立して楽しめる続編にします。</td></tr>
+<tr><td data-label="順位">7</td><td data-label="ID">C7</td><td data-label="比較分類">投稿方法</td><td data-label="対象形式">通常動画</td><td data-label="主な経路">複数</td><td data-label="項目名">表紙を差し替える</td><td data-label="やること">内容に見合う反応が得られていない既存動画で、訴える点が異なるタイトルやサムネイルを試します。</td></tr>
+<tr><td data-label="順位">8</td><td data-label="ID">C8</td><td data-label="比較分類">投稿方法</td><td data-label="対象形式">Shorts</td><td data-label="主な経路">その他：ショートの関連動画リンク</td><td data-label="項目名">続きへのリンク</td><td data-label="やること">Shorts一本で問いに答えたうえで、もっと知りたい人が次に見る自分の動画を［関連動画］に設定します。</td></tr>
+<tr><td data-label="順位">9</td><td data-label="ID">C9</td><td data-label="比較分類">投稿方法</td><td data-label="対象形式">通常動画</td><td data-label="主な経路">その他：終了画面</td><td data-label="項目名">終了画面でつなぐ</td><td data-label="やること">本編が終わる場面に、視聴者の次の疑問に答える動画の終了画面を置きます。</td></tr>
+<tr><td data-label="順位">10</td><td data-label="ID">C10</td><td data-label="比較分類">内容</td><td data-label="対象形式">Shorts</td><td data-label="主な経路">その他：サウンドページ</td><td data-label="項目名">合う音源を選ぶ</td><td data-label="やること">音が見どころになるShortsでは、作品の場面に合う、利用可能な音源を選びます。</td></tr>
+</tbody>
+</table></div>
+<p><strong>C1　見る理由を決める</strong></p>
+<p>同じ題材でも、初めて見る人が抱く疑問を入口にすると、自分に関係のある動画だと伝わります。題材への関心と、表示された人が見るかどうかは、どちらの形式でも届く範囲に関わります。</p>
+<p>実行例：「録音の話」を「同じ声でも、マイクとの距離でどれだけ違って聞こえるか」に絞り、聞き比べを撮ります。　条件と限界：ホーム・関連動画・Shortsフィード。検索語を題材探しに使う場合は、視聴者から届いた疑問やStudioのトレンドも手がかりです。需要が大きい題材ほど競合も増え得ます。</p>
+<p>視聴回数へのつながり：間接　根拠の種類：公式　判断：推論を含む。<a href="#o6">O6</a>・<a href="#o7">O7</a>・<a href="#o9">O9</a>・<a href="#o26">O26</a></p>
+<p><strong>C2　一場面で始める</strong></p>
+<p>フィードでは次の動画へすぐ移れます。YouTubeは、視聴を選んだ割合と、その後どれだけ見たかを推薦に使うと説明しています。</p>
+<p>実行例：修理の動画なら、最初に椅子がぐらつく様子を見せ、最後に同じ角度で直った状態を見せます。　条件と限界：視聴を続けてもらうための提案です。公開カウンターは再生開始時から動きます。全作品に効く秒数や、先に結末を見せる決まりはありません。</p>
+<p>視聴回数へのつながり：間接　根拠の種類：公式　判断：推論を含む。<a href="#o2">O2</a>・<a href="#o5">O5</a>・<a href="#o6">O6</a>・<a href="#o9">O9</a></p>
+<p><strong>C3　表紙で中身を伝える</strong></p>
+<p>ホームや関連動画では、視聴者は他の候補と並べて選びます。見たくなる理由が伝わり、再生後も期待に応えられる組み合わせを作ります。</p>
+<p>実行例：「同じ部屋で録音を比べる」という題に、マイクを置いた二つの位置が一目で分かる写真を合わせます。　条件と限界：ホーム・関連動画。表示場所と人が変わるとクリック率も変わります。クリック率だけで表紙の出来を決めません。</p>
+<p>視聴回数へのつながり：両方　根拠の種類：公式　判断：推論を含む。<a href="#o7">O7</a>・<a href="#o8">O8</a>・<a href="#o9">O9</a>・<a href="#o12">O12</a></p>
+<p><strong>C4　検索の問いに答える</strong></p>
+<p>検索はタイトルや内容と検索語の一致を評価します。その言葉で来た人が視聴を続けたかなども関わります。</p>
+<p>実行例：引き出しの外し方を実演する回なら、「レール付き引き出しの外し方」と書き、実物のレバーを映します。　条件と限界：解決したい問いや固有名がある動画に向きます。検索される言葉を並べても、無関係な内容を上位に出す効果は確認できません。</p>
+<p>視聴回数へのつながり：両方　根拠の種類：公式　判断：仕組みは直接・制作例は推論。<a href="#o6">O6</a>・<a href="#o8">O8</a>・<a href="#o11">O11</a></p>
+<p><strong>C5　見せ場を早める</strong></p>
+<p>同じ説明が続くところで人が離れている場合、そこを直す理由があります。後半でよく見られる場面は前に動かす候補ですが、山は分かりにくくて見直された跡のこともあります。</p>
+<p>実行例：実演の前に道具をすべて紹介していた回なら、最初の道具を手にしたところから始め、残りは使うときに紹介します。　条件と限界：ホーム・関連動画・Shortsフィード。緊張がほどけるまでの間や、手順の前提まで切ると伝わりません。通常動画は同程度の尺、Shortsは視聴を継続した層の平均も参照します。</p>
+<p>視聴回数へのつながり：間接　根拠の種類：公式　判断：推論を含む。<a href="#o5">O5</a>・<a href="#o6">O6</a>・<a href="#o7">O7</a>・<a href="#o9">O9</a>・<a href="#o13">O13</a></p>
+<p><strong>C6　次の問いを作品に</strong></p>
+<p>見慣れた形式や関連する題材は、視聴者が戻ってくる理由になります。前に楽しんだ人に同じチャンネルの作品が再び候補に上がることがあります。</p>
+<p>実行例：靴の選び方の次は「買った靴のひもを、歩くとほどけにくく結ぶ方法」を一本で見せます。　条件と限界：ホーム・関連動画。初見でも内容が分かる題名にします。『第2回』だけでは見たいことが伝わらず、シリーズにしただけで全員に届く保証もありません。</p>
+<p>視聴回数へのつながり：両方　根拠の種類：公式　判断：推論を含む。<a href="#o8">O8</a>・<a href="#o10">O10</a>・<a href="#o17">O17</a></p>
+<p><strong>C7　表紙を差し替える</strong></p>
+<p>変更後の反応によって、再生が増える場合も減る場合もあります。利用できる動画ではStudioのA/Bテストで候補を同時に出し、総再生時間を基準に比べられます。</p>
+<p>実行例：作り方を示す動画で、「作り方」と書いた表紙と、仕上がりの違いを見せる表紙を比べます。　条件と限界：ホーム・関連動画。パソコンのStudioで上級者向け機能が必要です。Shorts、非公開・子ども向け・年齢制限付き動画などは対象外。表示が少なければ優劣がつかないことがあります。</p>
+<p>視聴回数へのつながり：両方　根拠の種類：公式　判断：公式が変更後の増減を直接説明。<a href="#o8">O8</a>・<a href="#o10">O10</a>・<a href="#o12">O12</a>・<a href="#o20">O20</a></p>
+<p><strong>C8　続きへのリンク</strong></p>
+<p>ショートプレーヤーからリンク先へ進めます。視聴者が実際に再生すれば、増えるのはリンク先の投稿の視聴です。</p>
+<p>実行例：短い聞き比べから、録音設定を順に説明する自分の動画へつなぎます。　条件と限界：上級者向け機能が必要です。選べるのは同じチャンネルの公開または限定公開の対象動画です。リンク元のShortsやリンク先のおすすめ順位が上がる効果は未確認です。</p>
+<p>視聴回数へのつながり：直接　根拠の種類：公式　判断：機能は直接・選ぶ題材は推論。<a href="#o19">O19</a>・<a href="#o24">O24</a></p>
+<p><strong>C9　終了画面でつなぐ</strong></p>
+<p>見終えた人が自分で次の一本を選べます。終了画面要素のクリック率を確認でき、リンク先の投稿に届いた視聴の経路を切り分けられます。</p>
+<p>実行例：木材の切り方を見せたら、最後に「切った面を滑らかにする」動画を選べるようにします。　条件と限界：25秒以上の対象動画で、設定できるのは末尾5～20秒です。子ども向けなど表示されない場合があります。短い余韻を壊すなら、要素の位置と表示時間を調整します。</p>
+<p>視聴回数へのつながり：直接　根拠の種類：公式　判断：機能は直接・作品の組み合わせは推論。<a href="#o5">O5</a>・<a href="#o27">O27</a></p>
+<p><strong>C10　合う音源を選ぶ</strong></p>
+<p>同じ音に関心のある人がサウンドページをたどることがあります。公式は、オーディオ ライブラリの人気音源を使うと、その音源のページに載る可能性が高まると説明しています。</p>
+<p>実行例：打楽器のリズムを見せる動画なら、叩き方の変化を聴き取れる音源を選びます。　条件と限界：音が題材と結びつく場合に限ります。利用可能な長さは曲ごとに異なります。流行曲に替えるだけでフィードの配信量が増えるとは確認できません。</p>
+<p>視聴回数へのつながり：間接　根拠の種類：公式　判断：掲載機会は直接・再生増は推論。<a href="#o1">O1</a>・<a href="#o6">O6</a></p>
+<p><strong>効果の見方。</strong> 公開後24時間で初速、7日・28日でその後を見ます。同じ形式・近い題材・同じ経過日数・同じ計測方式の投稿同士で、自然視聴回数を比べます。Shortsはエンゲージ ビューと［視聴を継続］、通常動画は経路別の表示とクリック率を添え、両方とも平均時間・総再生時間を確認します。公開回数だけが増えたときは、より長く見られたとは判断しません。（<a href="#o2">O2</a>～<a href="#o5">O5</a>・<a href="#o12">O12</a>・<a href="#o28">O28</a>）</p>
+<p><strong>再生が落ちたら。</strong> まず公開状態・ブロック・集計の遅れと観測期間を確認します。次にホーム・検索・Shortsフィードなどのどこで減ったかを見ます。通常動画で表示は同程度なのに選ばれないなら表紙、Shortsでスワイプが増えたら最初の場面を見直します。選ばれても見続けられないなら、維持率が落ちる場面の直前を再生します。表示自体が減った場合は題材の需要と競合も候補です。（<a href="#o1">O1</a>・<a href="#o5">O5</a>～<a href="#o8">O8</a>・<a href="#o12">O12</a>・<a href="#o13">O13</a>・<a href="#o29">O29</a>）</p>
+<p><strong>形式と媒体の使い分け。</strong> 一場面で完結する発見はShortsに、途中の理由も見せる必要がある話は通常動画にします。視聴者の期待と中身を合わせる工夫は他媒体でも試せます。再生開始、共視聴、サウンドページ、関連動画リンクの仕様や数値は各媒体で確認します。</p>
+<h2>やらないこと</h2>
+<div class="tbl"><table class="tn">
+<thead>
+<tr>
+<th>ID</th>
+<th>やらないこと</th>
+<th>理由</th>
+<th>対象形式・表示場所</th>
+<th>公式出典</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="ID">N1</td><td data-label="やらないこと">視聴回数や反応を買ったり、自動再生を人為的に繰り返して水増ししたりしません。</td><td data-label="理由">実際の関心によらない操作は違反です。無効な再生の調整、コンテンツの削除やチャンネルへの措置があり得ます。</td><td data-label="対象形式・表示場所">両方・すべての表示場所</td><td data-label="公式出典"><a href="#o18">O18</a>・<a href="#o29">O29</a></td></tr>
+<tr><td data-label="ID">N2</td><td data-label="やらないこと">タイトルやサムネイルで、本編に存在しない内容を約束しません。</td><td data-label="理由">中身と違う見せ方でクリックを集めても、平均視聴時間が短いと、おすすめに出る可能性は低くなります。視聴者を欺く悪質なものは規約違反として削除の対象にもなります。</td><td data-label="対象形式・表示場所">両方・ホーム、検索、関連動画など</td><td data-label="公式出典"><a href="#o8">O8</a>・<a href="#o12">O12</a>・<a href="#o18">O18</a></td></tr>
+<tr><td data-label="ID">N3</td><td data-label="やらないこと">他人の素材をそのまま転載したり、ほぼ同じ内容を自動で大量投稿したりしません。</td><td data-label="理由">無断複製や、ほぼ同じ内容の自動量産は、スパムとして削除などの対象になる場合があります。さらに、2026年10月1日の公式告知によると、他人の動画をほぼそのまま集めて再投稿することが中心のチャンネルは、Shortsフィードでの表示が減る見込みです。</td><td data-label="対象形式・表示場所">両方・規約は動画とチャンネル全体、表示減の告知はShortsフィード</td><td data-label="公式出典"><a href="#o18">O18</a>・<a href="#o30">O30</a></td></tr>
+<tr><td data-label="ID">N4</td><td data-label="やらないこと">1分を超えるShortsは、有効なContent IDの申し立てが残った状態で公開用に使いません。</td><td data-label="理由">この条件では全世界で再生がブロックされ、おすすめにも出ません。申し立てが解決すれば視聴可能になり、このブロック自体でチャンネルに罰則は付きません。</td><td data-label="対象形式・表示場所">Shorts・すべての公開面</td><td data-label="公式出典"><a href="#o1">O1</a></td></tr>
+<tr><td data-label="ID">N5</td><td data-label="やらないこと">開示対象のAI生成・大幅な改変を、意図的に繰り返し未申告にしません。</td><td data-label="理由">実在の人がしていないことをしたように見せる映像、現実らしく生成した場面、動画の中心となるAI生成音楽などが対象です。故意の不開示を繰り返すと手動ラベルや削除などにつながる場合があります。</td><td data-label="対象形式・表示場所">両方・動画プレーヤーや説明欄</td><td data-label="公式出典"><a href="#o16">O16</a></td></tr>
+</tbody>
+</table></div>
+<h2>通説の判定</h2>
+<p>判定は、文言どおり支持される「本当」、条件や一部に限る「半分本当」、程度や決定性が強すぎる「言いすぎ」、中心の主張に反証がある「嘘」、探索しても直接の根拠が足りない「根拠なし」です。「—」は未調査・確認不足です。根拠欄は「公式」「第三者」「公式＋第三者」「なし」のいずれかです。扱いは理由の最初に示した行動への判断で、「やる」「条件つきで試す」「後回し」「やらない」の順に示します。</p>
+<div class="tbl"><table class="tj">
+<thead>
+<tr>
+<th>ID</th>
+<th>説</th>
+<th>判定</th>
+<th>根拠</th>
+<th>扱い</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="ID">T1</td><td data-label="説">毎日投稿すると、動画1本あたりの再生数も伸びる</td><td data-label="判定">嘘</td><td data-label="根拠">公式</td><td data-label="扱い">後回し</td><td data-label="理由">毎日投稿を成長の条件にする優先度は低いです。Shortsに最低頻度はなく、動画全般でも投稿間隔と各投稿の再生の伸びに相関は見られなかったと公式は説明しています。（<a href="#o6">O6</a>・<a href="#o8">O8</a>）</td></tr>
+<tr><td data-label="ID">T2</td><td data-label="説">再生数が伸びやすい投稿の曜日・時間帯がある</td><td data-label="判定">半分本当</td><td data-label="根拠">公式＋第三者</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">投稿時刻は、自分の視聴者が多い時間帯を日本時間で試します。初速には利点があり得ますが、少数のチャンネルのShortsを追った日本語の集計でも一律の最適時刻は決められず、通常動画も含めた長期の効果は未確認です。（<a href="#o8">O8</a>）</td></tr>
+<tr><td data-label="ID">T3</td><td data-label="説">投稿直後の伸びが悪い動画は、その後おすすめされない</td><td data-label="判定">嘘</td><td data-label="根拠">公式</td><td data-label="扱い">やらない</td><td data-label="理由">初速だけで不調な動画を取り下げるのは避けます。過去作も、題材への関心や視聴者の選び方が変われば後からおすすめで見られることがあります。（<a href="#o8">O8</a>）</td></tr>
+<tr><td data-label="ID">T4</td><td data-label="説">登録者が少ないチャンネルの動画は、おすすめされにくい</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">登録者数だけを増やす施策は後回しにします。頻繁に訪れる人にはそのチャンネルの動画がおすすめされやすくなりますが、登録人数の少なさ自体を理由に表示を減らすという説明は確認できません。</td></tr>
+<tr><td data-label="ID">T5</td><td data-label="説">新しいチャンネルには、おすすめされやすい優遇期間がある</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">新規優遇を当てにした開設時期の調整は勧めません。初投稿が人に表示される仕組みは、開設後の一定期間にだけ加点されることを示しません。</td></tr>
+<tr><td data-label="ID">T6</td><td data-label="説">伸びなかったチャンネルは、作り直したほうが伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">伸びをリセットする目的でチャンネルを作り直すのは避けます。題材や視聴者を変えた例から、作り直したこと自体の増分は判定できません。</td></tr>
+<tr><td data-label="ID">T7</td><td data-label="説">伸びなかった動画を削除して上げ直すと伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">伸びなかったという理由だけで、同じ動画を削除して上げ直すのは避けます。元動画は検索から消え、再投稿には別のURLが付きますが、その一本の自然視聴が増える効果は未確認です。</td></tr>
+<tr><td data-label="ID">T8</td><td data-label="説">限定公開や非公開で上げてから公開に切り替えると、伸びにくくなる</td><td data-label="判定">嘘</td><td data-label="根拠">公式</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">公開前に確認したいときは限定公開、日時を決めて出したいときは予約公開を使えます。限定公開から公開に変えること自体の不利益は公式が否定していますが、非公開から手動で切り替えた場合の配信量は未確認です。（<a href="#o8">O8</a>・<a href="#o10">O10</a>）</td></tr>
+<tr><td data-label="ID">T9</td><td data-label="説">チャンネルのテーマを一つに絞ると伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">テーマを一つに絞るなら、まず同じ人が次も見たくなる題材で短いシリーズを試します。似た題材や見慣れた形式を続けるチャンネルには再訪が多い傾向がありますが、テーマを一つに減らすだけで各投稿の自然視聴が増えるかは分かっていません。</td></tr>
+<tr><td data-label="ID">T10</td><td data-label="説">タイトルに検索されそうな言葉を入れると、検索で上に出やすくなる</td><td data-label="判定">半分本当</td><td data-label="根拠">公式</td><td data-label="扱い">やる</td><td data-label="理由">検索される言葉は、動画が実際にその問いに答える場合にタイトルに入れます。検索語とタイトル・内容の一致は順位を決める要素の一つで、無関係な人気語に同じ効果は期待できません。（<a href="#o6">O6</a>・<a href="#o11">O11</a>）</td></tr>
+<tr><td data-label="ID">T11</td><td data-label="説">タグを設定すると、検索やおすすめで有利になる</td><td data-label="判定">半分本当</td><td data-label="根拠">公式</td><td data-label="扱い">後回し</td><td data-label="理由">タグは固有名の綴りをよく間違えられるときに補います。タグは検索との一致に使われますが、通常の発見への影響は小さく、おすすめでの一律の優遇は確認できません。（<a href="#o8">O8</a>・<a href="#o11">O11</a>・<a href="#o14">O14</a>）</td></tr>
+<tr><td data-label="ID">T12</td><td data-label="説">公開後にタイトルやサムネイルを変えると、伸びなくなる</td><td data-label="判定">嘘</td><td data-label="根拠">公式</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">タイトルやサムネイルの変更は、見せ方に改善の余地がある動画で試します。公式が説明する増減の理由は、変更後に視聴者がどう反応したかです。（<a href="#o8">O8</a>・<a href="#o10">O10</a>・<a href="#o20">O20</a>）</td></tr>
+<tr><td data-label="ID">T13</td><td data-label="説">サムネイルのクリック率が高い動画ほど、おすすめされる</td><td data-label="判定">言いすぎ</td><td data-label="根拠">公式</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">クリック率を上げる工夫は、同じ表示場所で見られた後の反応と合わせて試します。少数の常連に出たときはクリック率が高くても、より広くおすすめされるとは限りません。（<a href="#o10">O10</a>・<a href="#o12">O12</a>）</td></tr>
+<tr><td data-label="ID">T14</td><td data-label="説">平均視聴時間が長い動画ほど、おすすめされる</td><td data-label="判定">言いすぎ</td><td data-label="根拠">公式</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">平均視聴時間を手がかりに編集を変えるのは、尺と流入経路が近い作品を比べ、離脱する場面に心当たりがあるときです。平均視聴時間はおすすめの手がかりの一つで、平均視聴率や満足度も関わります。（<a href="#o7">O7</a>・<a href="#o8">O8</a>・<a href="#o10">O10</a>）</td></tr>
+<tr><td data-label="ID">T15</td><td data-label="説">視聴者維持率が高い動画ほど、おすすめされる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やる</td><td data-label="理由">維持率が大きく下がる箇所は実際に再生して、説明の重複や分かりにくさを確かめます。時点別の曲線そのものを順位に使うという直接の説明は確認できず、公式が挙げる平均視聴率とは分けて読みます。</td></tr>
+<tr><td data-label="ID">T16</td><td data-label="説">通常動画は8分以上にしたほうが伸びる</td><td data-label="判定">嘘</td><td data-label="根拠">公式</td><td data-label="扱い">やらない</td><td data-label="理由">8分に届かせるために動画を引き延ばすのは避けます。公式は一律の最適尺を否定しており、8分は収益化対象動画で途中広告を使える長さの条件です。（<a href="#o10">O10</a>・<a href="#o21">O21</a>）</td></tr>
+<tr><td data-label="ID">T17</td><td data-label="説">冒頭の数秒で離脱されると、おすすめされにくくなる</td><td data-label="判定">半分本当</td><td data-label="根拠">公式</td><td data-label="扱い">やる</td><td data-label="理由">冒頭の離脱が多い部分は、期待した内容がすぐ伝わるように直します。Shorts：視聴の選択と継続を参照します／通常動画：選択後の平均時間などを参照しますが、両形式とも特定秒数での一律減点は未確認です（推論を含む）。（<a href="#o6">O6</a>・<a href="#o7">O7</a>・<a href="#o9">O9</a>・<a href="#o13">O13</a>）</td></tr>
+<tr><td data-label="ID">T18</td><td data-label="説">高評価やコメントが多い動画ほど、おすすめされる</td><td data-label="判定">半分本当</td><td data-label="根拠">公式</td><td data-label="扱い">後回し</td><td data-label="理由">反応の件数を増やす施策の優先度は低いです。高評価は満足を推定する材料ですが、コメント件数自体や、反応を人為的に増やしたときの追加露出は確認できません。（<a href="#o6">O6</a>・<a href="#o7">O7</a>・<a href="#o8">O8</a>）</td></tr>
+<tr><td data-label="ID">T19</td><td data-label="説">自分の動画についたコメントに返信すると、その動画が伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">コメントには質問に答えたり、お礼を伝えたりする目的で返信します。会話や再訪のきっかけにはなりますが、返信自体がその一本の自然視聴や順位を上げる効果は未確認です。</td></tr>
+<tr><td data-label="ID">T20</td><td data-label="説">顔出しをしないと伸びない</td><td data-label="判定">嘘</td><td data-label="根拠">公式</td><td data-label="扱い">やらない</td><td data-label="理由">再生数のためだけに、顔出しを制作の必須条件にする必要はありません。作者が顔を出さず、キャラクターの動きで物語を見せる作品には、長編アニメのシリーズでも、短い3DアニメのShortsでも、多くの人に見られた例があります。（<a href="#o33">O33</a>・<a href="#o34">O34</a>）</td></tr>
+<tr><td data-label="ID">T21</td><td data-label="説">AI生成の開示ラベルが付くと、伸びにくくなる</td><td data-label="判定">嘘</td><td data-label="根拠">公式</td><td data-label="扱い">やる</td><td data-label="理由">対象となるAIの利用は開示します。開示自体はリーチ制限を生まず、ラベルは自己申告のほか、YouTubeの生成ツール、対応する来歴情報、内部検出や手動審査で付く場合があります。（<a href="#o16">O16</a>）</td></tr>
+<tr><td data-label="ID">T22</td><td data-label="説">Shortsは短いほど伸びる</td><td data-label="判定">半分本当</td><td data-label="根拠">公式＋第三者</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">Shortsは、見どころを保ったまま余分な場面を省けるときに短くします。公式は一律の最適尺を示しておらず、英語チャンネルの集計でも短い方の公開視聴回数の中央値が高い区間と逆転する区間があり、短く編集すれば自然視聴が増えるとはいえません。（<a href="#o10">O10</a>）</td></tr>
+<tr><td data-label="ID">T23</td><td data-label="説">Shortsは、繰り返し再生されると伸びる</td><td data-label="判定">半分本当</td><td data-label="根拠">公式</td><td data-label="扱い">後回し</td><td data-label="理由">ループを狙う編集より、もう一度見たくなる場面を残します。Shortsのリプレイは公開回数に加わりますが、平均視聴率が100％を超えても、新しい人への配信拡大を保証するという根拠はありません。（<a href="#o2">O2</a>・<a href="#o5">O5</a>・<a href="#o6">O6</a>・<a href="#o29">O29</a>）</td></tr>
+<tr><td data-label="ID">T24</td><td data-label="説">Shortsはハッシュタグを多く付けるほど伸びる</td><td data-label="判定">嘘</td><td data-label="根拠">公式</td><td data-label="扱い">やらない</td><td data-label="理由">件数を増やすためだけにハッシュタグを足すのは避けます。60個を超えるとすべてのハッシュタグが無効になり、多すぎると検索結果などから動画が削除される場合もあります。（<a href="#o15">O15</a>）</td></tr>
+<tr><td data-label="ID">T25</td><td data-label="説">「#Shorts」を付けないと、Shortsとして配信されない</td><td data-label="判定">嘘</td><td data-label="根拠">公式</td><td data-label="扱い">やらない</td><td data-label="理由">分類のためだけに「#Shorts」を必須にする必要はありません。分類はアップロード時期、長さ、縦横比などで決まり、ハッシュタグを付けることは条件に含まれていません。（<a href="#o1">O1</a>）</td></tr>
+<tr><td data-label="ID">T26</td><td data-label="説">流行中の音源を使うと、Shortsが伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">流行中の音源は、作品の場面に合うときに試します。オーディオ ライブラリの人気音源を使うと、その音源のページに載る可能性は高まりますが、投稿全体で広告を除いた視聴回数が増えるかは確認できていません。</td></tr>
+<tr><td data-label="ID">T27</td><td data-label="説">Shortsを投稿すると、同じチャンネルの通常動画がおすすめされにくくなる</td><td data-label="判定">嘘</td><td data-label="根拠">公式</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">Shortsの併用は、単独でも楽しめる短い題材があるときに試します。Shortsの投稿自体が通常動画の推薦を損なうことを公式は否定しており、個々の視聴者には形式の好みがあります。（<a href="#o6">O6</a>・<a href="#o10">O10</a>）</td></tr>
+<tr><td data-label="ID">T28</td><td data-label="説">Shortsで増えた登録者は、通常動画を見ない</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">Shortsで登録した人を一律に通常動画の対象から外すのは避けます。視聴者全体では形式をまたぐ視聴は一般的でない一方、両方を見る人もいて、Shortsをきっかけに登録した人に限った移行率は確認できません。</td></tr>
+<tr><td data-label="ID">T29</td><td data-label="説">外部のSNSから視聴者を呼び込むと、YouTube内のおすすめも増える</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">外部SNSでは、その題材を見たい人に向けて動画を紹介します。外部リンクから直接見られる機会は増やせますが、共有した動画そのものがYouTube内でも追加でおすすめされる効果は未確認です。</td></tr>
+<tr><td data-label="ID">T30</td><td data-label="説">Shortsは、通常動画より再生数が伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">公開回数の差だけでShortsに一本化するのは避けます。公開30日後をそろえた日本語の集計では小規模チャンネルでShortsが上回りましたが、再生の数え方が形式間で統一される前の公開回数で、広告を除いた現在の一本あたりの優劣は判断できません。</td></tr>
+</tbody>
+</table></div>
+<p><strong>追加で調べた説</strong></p>
+<div class="tbl"><table class="tj">
+<thead>
+<tr>
+<th>ID</th>
+<th>説</th>
+<th>判定</th>
+<th>根拠</th>
+<th>扱い</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="ID">T31</td><td data-label="説">収益化していない動画は、おすすめで不利になる</td><td data-label="判定">嘘</td><td data-label="根拠">公式</td><td data-label="扱い">やらない</td><td data-label="理由">推薦を受けるために収益化を急ぐ必要はありません。公式は収益化状態自体を検索・推薦の優遇条件にしておらず、内容の影響で広告と推薦の両方に制約が出る場合はあります。（<a href="#o8">O8</a>・<a href="#o10">O10</a>）</td></tr>
+</tbody>
+</table></div>
+<section class="src"><h2>公式出典</h2>
+<p>関係欄には、判定に使った資料と、指標・操作・背景を確かめた資料の両方を載せています。通説の理由末尾には、判定の直接の根拠にした公式資料だけを示します。T26のサウンドページの仕組みはC10、T7の削除時の挙動は<a href="#o31">O31</a>で確認できます。</p>
+<div class="tbl"><table class="tn srcx">
+<thead>
+<tr>
+<th>番号</th>
+<th>発信元・資料名／URL</th>
+<th>公表日または更新日</th>
+<th>確認日</th>
+<th>関係する項目</th>
+</tr>
+</thead>
+<tbody>
+<tr id="o1"><td data-label="番号">O1</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/15424877?hl=ja" rel="noopener">3 分間の YouTube ショートについて</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">C10・N4・T25・T26・T30（定義にも使用）</td></tr>
+<tr id="o2"><td data-label="番号">O2</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/10059070?hl=en" rel="noopener">Get started creating YouTube Shorts</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">C2・T23・T25・T30（定義にも使用）</td></tr>
+<tr id="o3"><td data-label="番号">O3</td><td data-label="発信元・資料名／URL">YouTube公式ブログ　<a href="https://blog.youtube/inside-youtube/engaged-views-youtube-explained/" rel="noopener">What are 'Engaged' Views on YouTube?</a></td><td data-label="公表日または更新日">2026-08-19</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">T23・T30（定義にも使用）</td></tr>
+<tr id="o4"><td data-label="番号">O4</td><td data-label="発信元・資料名／URL">Google for Developers　<a href="https://developers.google.com/youtube/reporting/revision_history" rel="noopener">YouTube Analytics and Reporting APIs — Revision History</a></td><td data-label="公表日または更新日">2026-11-16（使用項目）</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">T23・T30（定義にも使用）</td></tr>
+<tr id="o5"><td data-label="番号">O5</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/12220281?co=GENIE.Platform%3DDesktop&amp;hl=ja" rel="noopener">YouTube コンテンツのパフォーマンスを把握する</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">C2・C5・C9・T4・T15・T17・T23・T28・T29・T30（定義にも使用）</td></tr>
+<tr id="o6"><td data-label="番号">O6</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/11914225?co=YOUTUBE._YTVideoType%3Dshorts&amp;hl=ja" rel="noopener">検索と見つけやすさのヒント（ショート動画）</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">C1・C2・C4・C5・C10・T1・T3・T4・T5・T10・T17・T18・T22・T23・T24・T26・T27</td></tr>
+<tr id="o7"><td data-label="番号">O7</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/11914225?co=YOUTUBE._YTVideoType%3Dvideo&amp;hl=ja" rel="noopener">検索と見つけやすさのヒント（動画）</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">C1・C3・C5・T13・T14・T15・T16・T17・T18・T20</td></tr>
+<tr id="o8"><td data-label="番号">O8</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/141805?hl=ja" rel="noopener">YouTube のパフォーマンスに関するよくある質問とトラブルシューティング</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">C3・C4・C6・C7・N2・T1・T2・T3・T4・T5・T6・T7・T8・T9・T10・T11・T12・T14・T15・T18・T29・T31</td></tr>
+<tr id="o9"><td data-label="番号">O9</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/16559650?hl=en" rel="noopener">Understand your content performance for YouTube’s recommendation system</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">C1・C2・C3・C5・T17</td></tr>
+<tr id="o10"><td data-label="番号">O10</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/16559651?hl=en" rel="noopener">Good to know about recommendations for YouTube’s recommendation system</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">C6・C7・T2・T3・T4・T5・T6・T8・T9・T12・T13・T14・T16・T20・T22・T27・T28・T31</td></tr>
+<tr id="o11"><td data-label="番号">O11</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/16090438?hl=ja-JP" rel="noopener">YouTube 検索の仕組み</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">C4・T10・T11</td></tr>
+<tr id="o12"><td data-label="番号">O12</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/7628154?hl=ja" rel="noopener">インプレッションとクリック率に関するよくある質問</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">C3・C7・N2・T13</td></tr>
+<tr id="o13"><td data-label="番号">O13</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/9314415?hl=ja" rel="noopener">視聴者維持率を左右する重要なシーンを測定する</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">C5・T15・T17</td></tr>
+<tr id="o14"><td data-label="番号">O14</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/146402?hl=ja" rel="noopener">YouTube 動画にタグを追加する</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">T11</td></tr>
+<tr id="o15"><td data-label="番号">O15</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/6390658?hl=ja" rel="noopener">ハッシュタグを使用してプレイリストや動画を探す</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">T24・T25</td></tr>
+<tr id="o16"><td data-label="番号">O16</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/14328491?hl=ja" rel="noopener">生成 AI コンテンツの使用に関する開示</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">N5・T21</td></tr>
+<tr id="o17"><td data-label="番号">O17</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/10246996?hl=ja" rel="noopener">新規視聴者、ライトな視聴者、コアな視聴者について</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">C6・T4・T6・T9・T19</td></tr>
+<tr id="o18"><td data-label="番号">O18</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/2801973?hl=ja" rel="noopener">スパムに関するポリシー</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">N1・N2・N3・T7・T18・T21</td></tr>
+<tr id="o19"><td data-label="番号">O19</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/14075157?hl=ja" rel="noopener">YouTube ショート動画に関連動画を追加する</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">C8・T28</td></tr>
+<tr id="o20"><td data-label="番号">O20</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/16391400?hl=ja" rel="noopener">タイトルとサムネイルの A/B テスト</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">C7・T12</td></tr>
+<tr id="o21"><td data-label="番号">O21</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/6175006?hl=ja" rel="noopener">長い動画のミッドロール挿入点を管理する</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">T16</td></tr>
+<tr id="o22"><td data-label="番号">O22</td><td data-label="発信元・資料名／URL">YouTube公式ブログ　<a href="https://blog.youtube/culture-and-trends/youtube-culture-trends-report-virtual-creators/" rel="noopener">The rise of virtual creators: a new frontier on YouTube</a></td><td data-label="公表日または更新日">2025-04-17</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">T20</td></tr>
+<tr id="o23"><td data-label="番号">O23</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/1270709?hl=ja" rel="noopener">動画の公開時刻を予約する</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">T8</td></tr>
+<tr id="o24"><td data-label="番号">O24</td><td data-label="発信元・資料名／URL">YouTube公式ブログ　<a href="https://blog.youtube/creator-and-artist-stories/youtube-related-videos-traffic-guide/" rel="noopener">How to convert YouTube Shorts views into long-form channel growth</a></td><td data-label="公表日または更新日">2026-07-14</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">C8・T27・T28</td></tr>
+<tr id="o25"><td data-label="番号">O25</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/3523594?co=GENIE.Platform%3DDesktop&amp;hl=ja" rel="noopener">コメント通知設定を変更する</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">T19</td></tr>
+<tr id="o26"><td data-label="番号">O26</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/11962757?hl=ja" rel="noopener">YouTube でトレンドを探す</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">C1</td></tr>
+<tr id="o27"><td data-label="番号">O27</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/6388789?co=GENIE.Platform%3DDesktop&amp;hl=ja" rel="noopener">動画に終了画面を追加する</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">C9</td></tr>
+<tr id="o28"><td data-label="番号">O28</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/16766491?hl=en-GB" rel="noopener">Tips for Advanced Mode on Analytics</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">T30</td></tr>
+<tr id="o29"><td data-label="番号">O29</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/2991785?hl=ja" rel="noopener">エンゲージメント指標のカウント方法</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">N1・T23</td></tr>
+<tr id="o30"><td data-label="番号">O30</td><td data-label="発信元・資料名／URL">TeamYouTube　<a href="https://support.google.com/youtube/thread/470890423/prioritizing-original-content-on-shorts?hl=en" rel="noopener">Prioritizing original content on Shorts</a></td><td data-label="公表日または更新日">2026-10-01</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">N3</td></tr>
+<tr id="o31"><td data-label="番号">O31</td><td data-label="発信元・資料名／URL">YouTube ヘルプ　<a href="https://support.google.com/youtube/answer/55770?hl=ja" rel="noopener">動画の置き換えまたは削除</a></td><td data-label="公表日または更新日">不明</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">T7（操作の結果）</td></tr>
+<tr id="o32"><td data-label="番号">O32</td><td data-label="発信元・資料名／URL">YouTube公式ブログ　<a href="https://blog.youtube/culture-and-trends/whats-all-the-noise-about-silent-vlogs/" rel="noopener">What’s all the noise about silent vlogs?</a></td><td data-label="公表日または更新日">2021-07-26</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">T20</td></tr>
+<tr id="o33"><td data-label="番号">O33</td><td data-label="発信元・資料名／URL">YouTube公式ブログ　<a href="https://blog.youtube/creator-and-artist-stories/11-tips-from-youtubes-fastest-growing-creator/" rel="noopener">11 tips from one of YouTube’s fastest growing creators</a></td><td data-label="公表日または更新日">2021-12-14</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">T20</td></tr>
+<tr id="o34"><td data-label="番号">O34</td><td data-label="発信元・資料名／URL">YouTube公式ブログ　<a href="https://blog.youtube/culture-and-trends/indie-animation/" rel="noopener">Set in Motion: The New Wave of Indie Animation</a></td><td data-label="公表日または更新日">2024-10-28</td><td data-label="確認日">2026-11-21</td><td data-label="関係する項目">T20</td></tr>
+</tbody>
+</table></div></section>
+<h2>作業時間・調査上の限界</h2>
+<ul>
+<li>11月16日の共視聴反映から基準日まで5日です。変更後に公開された動画の7日・28日成績はまだ揃いません。今ある旧集計を、新定義での観測済み成績として扱えません。</li>
+<li>T2の時刻に関する独立した観察は少数のチャンネルのShortsに限られます。T22の尺別集計は英語チャンネルが対象で、公開後の日数がそろっていません。T30の日本語の集計では公開後の日数が同じでも、形式によって当時の計測条件が同じとは限りません。</li>
+<li>T20では、長編アニメとShortsの事例から顔出しが必須かを判断しました。公式が紹介したサイレントVlogからも顔を映さない作り方は分かりますが、記事に個々の尺や視聴回数は記載されていません。（<a href="#o32">O32</a>）公式の世界集計にはライブ配信も含まれ、顔出しの有無で平均視聴回数がどう変わるかは分かりません。</li>
+<li>担当者の対談2本は、公式動画の概要・章題までを確認しました。音声・公式字幕を確認できなかった発言は報道経由にとどまり、通説を確定する根拠には使っていません。登録経路別の移行率と、SNSで共有した投稿自体への追加のおすすめ表示も未確認です。</li>
+<li>公開回数は実人数と一致せず、第三者の公開集計では広告を除外できない場合があります。推薦指標の重み、通常動画の反復再生の正確な有効条件、非公開から手動で公開したこと単独の効果も確認できていません。</li>
+</ul>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>工程</th>
+<th>状態</th>
+<th>作業時間</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="工程">1. 初回作成</td><td data-label="状態">完了</td><td data-label="作業時間">15分14秒</td></tr>
+<tr><td data-label="工程">2. 初回修正</td><td data-label="状態">省略</td><td data-label="作業時間">—</td></tr>
+<tr><td data-label="工程">3. 検品</td><td data-label="状態">完了</td><td data-label="作業時間">7分35秒</td></tr>
+<tr><td data-label="工程">4. 検品後の修正</td><td data-label="状態">完了</td><td data-label="作業時間">7分17秒</td></tr>
+<tr><td data-label="工程">5. 再検品</td><td data-label="状態">完了</td><td data-label="作業時間">5分13秒</td></tr>
+<tr><td data-label="工程">6. 再検品後の修正</td><td data-label="状態">完了</td><td data-label="作業時間">4分57秒</td></tr>
+</tbody>
+</table></div>
+<p>計測できた工程の累計は40分16秒です。初稿への個別の修正依頼を挟まず検品に進んだため、工程2は省略しました。工程1は13:56:40～14:11:54、工程3は14:51:18～14:58:53、工程4は15:22:10～15:29:27、工程5は16:15:14～16:20:27、工程6は16:55:07～17:00:04の実経過です（いずれも2026年11月21日、日本時間）。資料取得の応答待ちは他の確認作業と重なるため個別に差し引いていません。ファイルの受け渡しは計測外です。</p>
+</article>
+<div class="xlink">もう一方の成果物：<a href="https://yokonarabi-lab.github.io/youtube/claude/">Claude Fable 5.2 版</a>　／　解説と感想：<a href="https://note.com/sky_yellowlens" rel="noopener">note の記事</a></div>
+<footer class="foot">
+<div class="brand"><span>Sky</span><span class="bar" aria-hidden="true"></span><span>Yellow Lens</span></div>
+<p>検証室：Claude Fable 5.2 vs GPT-6.2 Astra。同じお題、同じ依頼文で、ふたつの答えを並べて読み解く。記事は <a href="https://note.com/sky_yellowlens" rel="noopener">note</a> に。</p>
+<p>この文書は、AI の成果物をそのまま載せたもの。内容は 2026年11月21日時点の調査で、実際に投稿して確かめたものではない。</p>
+</footer>
+</main>
+</body>
+</html>
