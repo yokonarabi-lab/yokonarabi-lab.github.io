@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>note攻略法 GPT-6.2 Astra 版｜Sky｜Yellow Lens</title>
+<meta name="description" content="note の記事1本あたりのページビューを伸ばす方法を、note の公式情報を軸に調べた GPT-6.2 Astra の成果物。同じ依頼文で Claude Fable 5.2 にも依頼し、ふたつの答えを並べた検証室の記録。">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:title" content="note攻略法 GPT-6.2 Astra 版｜Sky｜Yellow Lens">
+<meta property="og:description" content="note の記事1本あたりのページビューを伸ばす方法を、note の公式情報を軸に調べた GPT-6.2 Astra の成果物。同じ依頼文で Claude Fable 5.2 にも依頼し、ふたつの答えを並べた検証室の記録。">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://yokonarabi-lab.github.io/note/chatgpt/">
+<meta property="og:image" content="https://yokonarabi-lab.github.io/note/assets/cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+
+:root{--ink:#1E1E1E;--sub:#5C5C5C;--yellow:#F4C21B;--orange:#D9704A;--green:#1FA383;--rule:#D9D9D9;--soft:#F6F6F6;--bg:#FFFFFF}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter","Noto Sans JP",system-ui,-apple-system,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;font-size:16px;line-height:1.95;letter-spacing:.03em;font-feature-settings:"kern";-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:#B5B5B5;text-underline-offset:.2em}
+a:hover{text-decoration-color:var(--ink)}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.site-header{padding:26px 0 18px;border-bottom:1px solid var(--rule)}
+.brand{display:inline-flex;align-items:center;gap:.42em;font-family:"Inter",sans-serif;font-weight:500;font-size:17px;letter-spacing:.04em;text-decoration:none;color:var(--ink)}
+.brand .bar{display:inline-block;width:1px;height:1.05em;background:var(--yellow);transform:translateY(-.02em)}
+.site-header .nav{float:right;font-size:13px;color:var(--sub);margin-top:4px}
+.site-header .nav a{color:var(--sub);margin-left:14px}
+.doc-head{padding:44px 0 10px}
+.shelf{font-size:13px;color:var(--sub);letter-spacing:.06em;margin:0 0 14px}
+.model{font-family:"Inter",sans-serif;font-weight:700;font-size:30px;line-height:1.3;margin:0 0 6px;letter-spacing:.01em}
+.model .vs{font-weight:500;font-size:.6em;color:var(--sub);margin:0 .35em}
+.model .u{display:inline-block;border-bottom:.11em solid;padding-bottom:.08em;line-height:1.1}
+.model .u.claude{border-color:var(--orange)}
+.model .u.gpt{border-color:var(--green)}
+.theme{font-size:15px;color:var(--sub);margin:0 0 26px}
+.frame{background:var(--soft);border-left:3px solid var(--yellow);padding:16px 20px;font-size:14.5px;line-height:1.9;color:var(--ink);margin:0 0 40px}
+.frame p{margin:0 0 8px} .frame p:last-child{margin:0}
+.frame .k{color:var(--sub);margin-right:.5em}
+article h1{font-size:24px;line-height:1.55;margin:0 0 28px;letter-spacing:.02em;font-weight:700}
+article h2{font-size:21px;line-height:1.5;margin:56px 0 18px;padding-bottom:10px;border-bottom:2px solid var(--ink);letter-spacing:.03em;font-weight:700}
+article h3{font-size:17.5px;line-height:1.6;margin:36px 0 10px;font-weight:700;letter-spacing:.03em}
+article h3 .rank{font-family:"Inter",sans-serif;font-weight:700;margin-right:.45em}
+article h3 .tid{font-family:"Inter",sans-serif;font-weight:600;color:var(--sub);margin-right:.6em;font-size:.95em}
+article p{margin:0 0 16px}
+article ul,article ol{padding-left:1.4em;margin:0 0 16px}
+article li{margin:0 0 8px}
+article li p{margin:0}
+article hr{border:0;border-top:1px solid var(--rule);margin:44px 0}
+article strong{font-weight:700}
+article blockquote{margin:0 0 16px;padding:0 0 0 16px;border-left:3px solid var(--rule);color:var(--sub)}
+.tbl{overflow-x:auto;margin:0 0 24px}
+table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.75;letter-spacing:.02em}
+th{text-align:left;font-weight:700;font-size:13px;padding:8px 10px;border-bottom:2px solid var(--ink);vertical-align:bottom;white-space:nowrap}
+td{padding:12px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+table.cols4 th:nth-child(1){width:20%} table.cols4 th:nth-child(2){width:36%} table.cols4 th:nth-child(3){width:21%} table.cols4 th:nth-child(4){width:23%}
+table.cols3 th:nth-child(1){width:3.2em} table.cols3 th:nth-child(2){width:52%}
+table.cols4 td:first-child{font-weight:500}
+.src ol{padding-left:1.8em}
+.src li{margin:0 0 14px;font-size:14.5px;line-height:1.8;word-break:break-all}
+.src li a{word-break:break-all}
+.src table{font-size:13.5px}
+.foot{margin:72px 0 0;padding:28px 0 56px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--sub);line-height:1.9}
+.foot a{color:var(--sub)}
+.foot .brand{font-size:15px;margin-bottom:10px;color:var(--ink)}
+.xlink{margin:48px 0 0;padding:18px 20px;background:var(--soft);font-size:14.5px}
+.xlink a{font-weight:700}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .site-header .nav{float:none;display:block;margin-top:8px}
+  .site-header .nav a{margin:0 14px 0 0}
+  .model{font-size:26px}
+  article h1{font-size:21px}
+  article h2{font-size:19px}
+  article h3{font-size:16.5px}
+  table.cards,table.cards tbody,table.cards tr,table.cards td{display:block;width:100%}
+  table.cards thead{display:none}
+  table.cards tr{border-bottom:2px solid var(--ink);padding:10px 0 6px;margin:0 0 10px}
+  table.cards td{border:0;padding:4px 0 8px;min-width:0}
+  table.cards td::before{content:attr(data-label);display:block;font-size:12px;color:var(--sub);letter-spacing:.05em;margin-bottom:2px}
+  table.cards td:first-child{font-weight:700;padding-top:0}
+  table.cards td:first-child::before{display:none}
+}
+@media print{.site-header .nav,.xlink{display:none} body{font-size:11pt}}
+table.tc th:nth-child(4){width:24%}
+table.tc th,table.tc td:nth-child(-n+3){white-space:nowrap}
+table td{overflow-wrap:anywhere}
+table.tj,table.tj tbody{display:block;width:100%}
+table.tj thead{display:none}
+table.tj tr{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:18px;padding:16px 0 14px;border-bottom:1px solid var(--rule)}
+table.tj tr:first-child{border-top:2px solid var(--ink)}
+table.tj td{display:block;border:0;padding:0}
+table.tj td:nth-child(1){font-family:"Inter",sans-serif;font-weight:700;color:var(--sub);flex:0 0 auto}
+table.tj td:nth-child(2){font-weight:700;flex:1 1 calc(100% - 4em)}
+table.tj td:nth-child(3),table.tj td:nth-child(4),table.tj td:nth-child(5){font-size:14px;margin-top:6px}
+table.tj td:nth-child(3){font-weight:700}
+table.tj td:nth-child(3)::before,table.tj td:nth-child(4)::before,table.tj td:nth-child(5)::before{content:attr(data-label);font-weight:400;color:var(--sub);font-size:12.5px;margin-right:.5em}
+table.tj td:nth-child(6){flex:0 0 100%;margin-top:8px}
+.src ul{list-style:none;padding-left:0}
+.src li{margin:0 0 14px;font-size:14.5px;line-height:1.8;word-break:break-all}
+.src li .sid{font-family:"Inter",sans-serif;font-weight:700;margin-right:.5em}
+.lead p{margin:0 0 10px}
+
+table td{overflow-wrap:anywhere}
+table.tj,table.tj tbody{display:block;width:100%}
+table.tj thead{display:none}
+table.tj tr{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:18px;padding:16px 0 14px;border-bottom:1px solid var(--rule)}
+table.tj tr:first-child{border-top:2px solid var(--ink)}
+table.tj td{display:block;border:0;padding:0}
+table.tj td:nth-child(1){font-family:"Inter",sans-serif;font-weight:700;color:var(--sub);flex:0 0 auto}
+table.tj td:nth-child(2){font-weight:700;flex:1 1 calc(100% - 4em)}
+table.tj td:nth-child(3),table.tj td:nth-child(4),table.tj td:nth-child(5){font-size:14px;margin-top:6px}
+table.tj td:nth-child(3){font-weight:700}
+table.tj td:nth-child(3)::before,table.tj td:nth-child(4)::before,table.tj td:nth-child(5)::before{content:attr(data-label);font-weight:400;color:var(--sub);font-size:12.5px;margin-right:.5em}
+table.tj td:nth-child(6){flex:0 0 100%;margin-top:8px}
+.lead p{margin:0 0 10px}
+table.tc7 th:nth-child(6){width:17%}
+table.tc7 th,table.tc7 td:nth-child(-n+4){white-space:nowrap}
+table.tc7 td:nth-child(5){min-width:6.5em}
+table.tc6 th,table.tc6 td:nth-child(-n+3){white-space:nowrap}
+table.tc6 td:nth-child(4){min-width:7.5em}
+table.tc6 td:nth-child(5){min-width:6.5em}
+table.tn,table.tn tbody,table.tn tr,table.tn td{display:block;width:100%}
+table.tn thead{display:none}
+table.tn tr{padding:16px 0 12px;border-bottom:1px solid var(--rule)}
+table.tn tr:first-child{border-top:2px solid var(--ink)}
+table.tn td{border:0;padding:0;margin:0 0 6px}
+table.tn td.empty{display:none}
+table.tn td:nth-child(1){font-family:"Inter",sans-serif;font-weight:700;color:var(--sub);margin:0 0 2px}
+table.tn td:nth-child(2){font-weight:700;margin:0 0 8px}
+table.tn td:nth-child(n+3){font-size:14px}
+table.tn td:nth-child(n+3)::before{content:attr(data-label);color:var(--sub);font-size:12.5px;margin-right:.6em}
+table.srcx td:nth-child(1){color:var(--ink)}
+table.srcx td:nth-child(2){margin:0 0 4px}
+table.srcx td a{word-break:break-all}
+table.tt th,table.tt td{white-space:nowrap}
+table.tt td[data-label^="差し引いた"]{white-space:normal;min-width:15em}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="https://yokonarabi-lab.github.io/note/"><span>Sky</span><span class="bar" aria-hidden="true"></span><span>Yellow Lens</span></a>
+<nav class="nav" aria-label="ページ内の移動"><a href="https://yokonarabi-lab.github.io/note/">note攻略法</a><a href="https://note.com/sky_yellowlens" rel="noopener">note</a></nav>
+</div></header>
+<main class="wrap">
+
+<div class="doc-head">
+<p class="shelf">検証室｜note攻略法</p>
+<p class="model"><span class="u gpt">GPT-6.2 Astra</span><span class="vs">版</span></p>
+<p class="theme">Claude Fable 5.2 vs GPT-6.2 Astra — 同じ依頼文で、note の記事1本あたりのページビューを伸ばす方法を調べてもらった成果物</p>
+</div>
+<div class="frame">
+<p><span class="k">依頼日</span>2026年11月27日。「note の公式情報を軸に、ネット上の攻略法を調べて、note の中・検索・SNS のどこから読んでもらうかの結論と、実践チェックリスト（原則10項目）と、30の通説の判定を書く」という同じ依頼文を、Claude Fable 5.2 と GPT-6.2 Astra に出した。</p>
+<p><span class="k">このページ</span>GPT-6.2 Astra の成果物（相手の検品を2回受けて直した版）。本文・順位・判定は GPT-6.2 Astra が書いたまま。</p>
+<p><span class="k">もう一方</span><a href="https://yokonarabi-lab.github.io/note/claude/">Claude Fable 5.2 版</a>　<span class="k">解説と感想</span><a href="https://note.com/sky_yellowlens" rel="noopener">note の記事</a></p>
+</div>
+<article>
+<h1>note攻略法｜公開用の成果物</h1>
+<div class="lead">
+<p>調査基準日　2026年11月27日（日本時間）</p>
+<p>日本語で、個人が無料で全文公開するテキスト記事を対象にします。目標は、有料の追加表示を使わずに、記事1本あたりの<strong>ページビュー</strong>を伸ばすことです。</p>
+<p><strong>無料の個人アカウントでも記事ごとのページビューを確認できます。</strong> ブラウザでは右上のプロフィールアイコンから「ダッシュボード」、アプリでは右下の「マイページ」から「アクセス状況」を開きます。期間を選び、「記事」タブで対象記事の行を見ます。上部グラフの合計と区別してください。［<a href="#o1">O1</a>・<a href="#o3">O3</a>・<a href="#o8">O8</a>・<a href="#o9">O9</a>］</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>アクセス状況の表示</th>
+<th>何を数えるか</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="アクセス状況の表示">ページビュー</td><td data-label="何を数えるか">記事ページが開かれた回数です。本人の閲覧も含みます。「記事」タブにも同名の指標があり、全体の定義から、記事ごとの値にも本人の閲覧が含まれると読めます。マガジンやクリエイターページ自体を開いた分は入りません。人数や読了数とは異なります。</td></tr>
+<tr><td data-label="アクセス状況の表示">インプレッション</td><td data-label="何を数えるか">note内のタイムライン、検索結果、タグの一覧、記事下の関連記事などに表示された回数です。本人の閲覧も含みます。SNSや外部検索の結果画面での表示は入りません。</td></tr>
+<tr><td data-label="アクセス状況の表示">スキ・コメント</td><td data-label="何を数えるか">選んだ期間に新しく付いた数です。スキにはログインしていない人の分、コメントには本人の投稿分も入ります。記事上に見える現在の合計とは異なる場合があります。</td></tr>
+<tr><td data-label="アクセス状況の表示">読了率</td><td data-label="何を数えるか">無料個人の「記事」タブには表示されません。法人向けの別画面では本文全体が表示されたことを読了とし、記事別の日ごとの分母はその日のPVです。内容を理解したか、何秒読んだかまでは分かりません。</td></tr>
+</tbody>
+</table></div>
+<p>同じ人が続けて開いた場合に、再読み込みや一定時間内の再訪を何回にまとめるかは<strong>公式には確認できず</strong>、本人の分も推定で差し引きません。世間でいう「ビュー」には旧指標が混ざります。2026年9月8日にブラウザ版が刷新され、iOS・Androidも10月19日配信の10.20.0から新画面になりました。10.19.0以前のアプリの「全体ビュー」（旧ブラウザの「ビュー」）は、開かれた回数と一部の一覧表示を合わせた数字です。新しいインプレッションの計測範囲は広く、現行2指標を足しても旧値には戻りません。過去の記事も新指標で確認できますが、インプレッションの履歴は2021年5月1日以降です。［<a href="#o1">O1</a>〜<a href="#o4">O4</a>・<a href="#o6">O6</a>〜<a href="#o10">O10</a>］</p>
+<p><strong>流入元</strong>は、選んだ期間の全記事について、ページビューを基に参照元を集計したものです。よく出る名称は「note.com」「Google」「search.yahoo.co.jp」「X」「Facebook」「Instagram」です。「note.com」には内部の経路がまとめられ、記事ごと・おすすめ枠ごとの内訳は無料画面で確認できません。「no referrer」は参照情報がないアクセス、「other」は件数順で11番目以降の合計です。独自ドメインを使う場合だけ、2026年10月13日以前に初めて訪れた一部の読者の外部流入が「流入元不明」と表示されます。10月14日以降のアクセスは本来の流入元に分類されます。流入元の合計とページビューの合計は集計方法の違いで一致しないことがあります。［<a href="#o2">O2</a>・<a href="#o3">O3</a>・<a href="#o5">O5</a>］</p>
+<p>以下では、フォローした人の投稿が並ぶ場所を「タイムライン」、自動で薦められるホームや記事下などを「おすすめ」、人が選ぶ枠を「編集部の紹介」と呼びます。「ハッシュタグ」と「note内検索」も含めて、いずれもnoteの中の経路です。検索エンジンと外部SNSはそれぞれ別に扱います。</p>
+<p>第三者の分析や経験則も参照していますが、編集方針により出典詳細は非公開です。そのため、読者が直接検証できる範囲には制約があります。</p>
+</div>
+<h2>結論</h2>
+<p>最優先は、記事の内容が伝わる見出し画像を付けることです。記事を届ける経路は、noteの中・外部検索・外部SNSを「役割を分けて併用」します。noteは画像の有無によるページビューの差を示し、画像の設定を勧めています。実体験を読んでほしい記事や連載の続編は、まずnote内のおすすめやマガジンを意識します。後から何度も調べられる疑問には検索する人の言葉で答え、開催中の催しの記録なら、その話題を追う人がいるSNSで要点とリンクを知らせます。同じ個人記事・同じ期間で三つの施策の効果を直接比べた資料は確認できず、note内の一部の施策で確かめられたのは表示までです。SNSにその話題を届けたい相手がいなければ、note内と検索の二つに絞ります。</p>
+<h2>実践チェックリスト</h2>
+<p>順位は、記事1本あたりのページビューに期待できる効果についてのChatGPTの判断です。施策同士を直接比べた研究は確認できませんでした。開かれた回数を扱う根拠を重く見たうえで、その行動が届く読者の広さと、特定の読者・既刊記事などの前提がどれだけ必要かを考慮しました。</p>
+<div class="tbl"><table class="cards tc6">
+<thead>
+<tr>
+<th>順位</th>
+<th>ID</th>
+<th>比較分類</th>
+<th>主な経路</th>
+<th>項目名</th>
+<th>やること</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="順位">1</td><td data-label="ID">C1</td><td data-label="比較分類">見せ方</td><td data-label="主な経路">特定不可</td><td data-label="項目名">見出し画像</td><td data-label="やること">記事の内容が伝わる見出し画像を付ける。</td></tr>
+<tr><td data-label="順位">2</td><td data-label="ID">C2</td><td data-label="比較分類">見せ方</td><td data-label="主な経路">複数</td><td data-label="項目名">具体的なタイトル</td><td data-label="やること">何について書き、読むと何が分かるかを、タイトルだけで伝える。</td></tr>
+<tr><td data-label="順位">3</td><td data-label="ID">C3</td><td data-label="比較分類">内容</td><td data-label="主な経路">おすすめ</td><td data-label="項目名">自分の一次情報</td><td data-label="やること">自分が試した手順、観察した場面、判断した理由のいずれかを本文の中心に置く。</td></tr>
+<tr><td data-label="順位">4</td><td data-label="ID">C4</td><td data-label="比較分類">投稿方法</td><td data-label="主な経路">外部SNS</td><td data-label="項目名">要点付きで告知</td><td data-label="やること">その話題に関心のある人がいるSNSで、読めることを一言添えて記事のリンクを共有する。</td></tr>
+<tr><td data-label="順位">5</td><td data-label="ID">C5</td><td data-label="比較分類">内容</td><td data-label="主な経路">検索エンジン</td><td data-label="項目名">検索の疑問に答える</td><td data-label="やること">読者が後からも調べそうな問いを一つ選び、具体的な答えと必要な条件を書く。</td></tr>
+<tr><td data-label="順位">6</td><td data-label="ID">C6</td><td data-label="比較分類">投稿方法</td><td data-label="主な経路">その他：記事本文のリンク</td><td data-label="項目名">関連記事をつなぐ</td><td data-label="やること">新しい記事の話題と直接つながる過去記事に、読む理由を添えてリンクする。</td></tr>
+<tr><td data-label="順位">7</td><td data-label="ID">C7</td><td data-label="比較分類">投稿方法</td><td data-label="主な経路">ハッシュタグ</td><td data-label="項目名">関連タグを選ぶ</td><td data-label="やること">題材・分野・記事の形式から、実際の内容を表すハッシュタグを選ぶ。</td></tr>
+<tr><td data-label="順位">8</td><td data-label="ID">C8</td><td data-label="比較分類">投稿方法</td><td data-label="主な経路">複数</td><td data-label="項目名">連載をまとめる</td><td data-label="やること">同じテーマの既刊記事を自分の無料マガジンにまとめ、続編もそこに追加する。</td></tr>
+<tr><td data-label="順位">9</td><td data-label="ID">C9</td><td data-label="比較分類">アカウント</td><td data-label="主な経路">クリエイターページ・マガジン</td><td data-label="項目名">人気順を使える設定</td><td data-label="やること">公開記事が16本以上なら、訪問者がクリエイターページで人気順も選べる設定にする。</td></tr>
+<tr><td data-label="順位">10</td><td data-label="ID">C10</td><td data-label="比較分類">アカウント</td><td data-label="主な経路">クリエイターページ・マガジン</td><td data-label="項目名">入口の記事を固定</td><td data-label="やること">初めて来た人に読んでほしい記事を、クリエイターページの先頭に固定する。</td></tr>
+</tbody>
+</table></div>
+<p>以下の実行例は、各施策を使う場面の提案です。「直接」は記事を開く行動やページビュー自体を扱う場合、「間接」は表示・通知などを経る場合、「両方」は双方を扱う場合です。因果関係や効果量が確定しているかは個別に記しました。</p>
+<p><strong>C1　見出し画像</strong></p>
+<p>公式は、画像のある記事とない記事ではページビューやスキに数十％の差が見られたとして、見出し画像の設定を勧めています。公式がページビューに直接触れて勧めているので、最初に選びました。</p>
+<p>実行例　道具の手入れを紹介する記事なら、手を添えた作業中の写真を使います。</p>
+<p>条件と限界　集計時期・対象・数え方は公表されておらず、旧「ビュー」と現行指標のどちらで集計したかは分かりません。題材、書き手、告知量をそろえた実験でもありません。本文画像からの自動サムネイルはnote内の一部表示に限られ、共有時の見出し画像の代わりにはなりません。</p>
+<p>タイミングは「公開するとき」。ページビューへのつながりは「直接」、根拠の種類は「公式／データ分析」。画像を付ける推奨は直接。順位は判断。 ［<a href="#o11">O11</a>・<a href="#o12">O12</a>・<a href="#o13">O13</a>・<a href="#o44">O44</a>］</p>
+<p><strong>C2　具体的なタイトル</strong></p>
+<p>検索結果では、内容を想像できる題の方がクリックされやすいと編集部が説明しています。noteの記事一覧でも、読者が題だけを見て選ぶ場面があります。</p>
+<p>実行例　「初めて分かったこと」を「朝市に初出店して分かった、値札を置く場所」にします。</p>
+<p>条件と限界　外部検索の結果とnote内の一覧が対象です。書き手が実際に答えられる約束に絞ります。記号や数字そのものの増分は分かりません。</p>
+<p>タイミングは「公開するとき」。ページビューへのつながりは「直接」、根拠の種類は「公式」。タイトルの分かりやすさは公式の推奨。言葉の選択は記事ごとの判断。 ［<a href="#o12">O12</a>・<a href="#o14">O14</a>・<a href="#o44">O44</a>］</p>
+<p><strong>C3　自分の一次情報</strong></p>
+<p>noteの開発担当者は、書き手の体験と独自の視点を、自動で薦める記事の表示で重視すると説明しています。誰にどんな発見がある記事かを本文の中で示せます。</p>
+<p>実行例　修理の記録なら、説明書にある手順に加え、自分が迷った箇所と解決した方法を残します。</p>
+<p>条件と限界　紹介対象は推薦システムの適用面です。カテゴリ全体の閲覧増加は、体験談を足した個々の記事の効果量には使えません。</p>
+<p>タイミングは「書く前」。ページビューへのつながりは「間接」、根拠の種類は「公式」。表示の優先方針は直接。個々の記事のページビュー増加は推論。 ［<a href="#o16">O16</a>・<a href="#o45">O45</a>］</p>
+<p><strong>C4　要点付きで告知</strong></p>
+<p>noteは、要約や書き手のコメントを添えてシェアし、興味を持った読者がリンクを開けるようにする方法を勧めています。公開直後から、noteをフォローしていない人にも入口を渡せます。</p>
+<p>実行例　展示を見た日に「入口にあった小さな絵が、出口で違って見えた理由を書きました」と添えて共有します。</p>
+<p>条件と限界　SNSを使っており、記事に合う読者がいる場合に向きます。外部から開かれた後でnote内のおすすめも増えるかは確認できません。</p>
+<p>タイミングは「公開したあと」。ページビューへのつながりは「直接」、根拠の種類は「公式」。外部で読んでもらうための公式の推奨。効果量の実測はありません。 ［<a href="#o11">O11</a>・<a href="#o44">O44</a>］</p>
+<p><strong>C5　検索の疑問に答える</strong></p>
+<p>編集部は、読者が検索する言葉を想像し、内容に合う語を本文にも入れるよう案内しています。note全体では、公開から時間がたった記事にも検索から人が来ています。</p>
+<p>実行例　「雨の日でも古い写真を取り込めるか」という疑問に、試した照明と映り込みの違いで答えます。</p>
+<p>条件と限界　C2は同じ記事の題を整える作業、こちらは何を調べて本文で答えるかを決める作業です。検索需要が乏しい題や一日限りの案内では優先度が下がります。</p>
+<p>タイミングは「書く前」。ページビューへのつながりは「両方」、根拠の種類は「公式／データ分析」。検索で見つかるための推奨は直接。問いの選び方と個別記事の増加は推論。 ［<a href="#o14">O14</a>・<a href="#o15">O15</a>・<a href="#o17">O17</a>］</p>
+<p><strong>C6　関連記事をつなぐ</strong></p>
+<p>編集部は、関連記事へのリンクをまとめ、過去記事を長く読める入口を作る方法を紹介しています。どの記事へ進むかを読者が自分で選べます。</p>
+<p>実行例　材料の選び方を説明した後に「実際の組み立て順と失敗した箇所はこちら」と制作記録を添えます。</p>
+<p>条件と限界　伸ばしたい対象はリンク先の記事です。関連する既刊記事がある場合に実行でき、クリック数の増分は無料画面で直接は測れません。</p>
+<p>タイミングは「公開するとき」。ページビューへのつながりは「直接」、根拠の種類は「公式」。まとめ記事での案内は直接。通常の記事末に応用する部分は推論。 ［<a href="#o18">O18</a>・<a href="#o10">O10</a>］</p>
+<p><strong>C7　関連タグを選ぶ</strong></p>
+<p>公式は、内容に沿ったタグを付けるとnote内で記事を知ってもらう機会が増えると説明しています。投稿が多い語でも、記事との関係を読者が想像できるものを選びます。</p>
+<p>実行例　地域の商店街を歩いた記録なら、訪れた地域名と「街歩き」を候補にします。</p>
+<p>条件と限界　作者が付けたタグの記事一覧と、本文をもとに集めるキーワードページは別です。上限まで埋める効果や、人気タグの優位は確認できません。</p>
+<p>タイミングは「公開するとき」。ページビューへのつながりは「間接」、根拠の種類は「公式」。記事が目に触れる機会については直接。そこから開かれる回数は推論。 ［<a href="#o11">O11</a>・<a href="#o19">O19</a>・<a href="#o20">O20</a>・<a href="#o21">O21</a>］</p>
+<p><strong>C8　連載をまとめる</strong></p>
+<p>フォロー中のマガジンに記事が加わると、フォロワーのタイムラインにも表示されます。収録した記事の下には、どのマガジンに入っているかが表示され、読者が連載を見つける入口になります。</p>
+<p>実行例　道具選び、準備、当日の記録を「初出店の記録」という無料マガジンにまとめます。</p>
+<p>条件と限界　主な場所はタイムラインとマガジンです。前者にはフォロワー、後者には続けて読みたい記事が必要です。マガジンの一覧に複数の記事を載せる画面は2021年にも公式が紹介しています。</p>
+<p>タイミングは「続けて行う」。ページビューへのつながりは「間接」、根拠の種類は「公式」。二つの表示は直接。別の記事が開かれる増分は推論。 ［<a href="#o22">O22</a>・<a href="#o53">O53</a>・<a href="#o54">O54</a>・<a href="#o59">O59</a>］</p>
+<p><strong>C9　人気順を使える設定</strong></p>
+<p>公式の導入前テストでは、人気順を選べるクリエイターページで記事のクリック率が上がりました。初めて訪ねた人に、蓄積した記事から読む一本を選んでもらう手段です。</p>
+<p>実行例　過去の記事がたまってきたら、プロフィール設定の人気記事表示を確認し、非表示なら有効にします。</p>
+<p>条件と限界　16本未満は対象外です。初期表示は新着順で、切り替えるのは読者です。発表時の対象はスマートフォンのブラウザで、効果量や一本ごとの増減は非公表です。既に有効なら操作は不要です。</p>
+<p>タイミングは「続けて行う」。ページビューへのつながりは「直接」、根拠の種類は「公式／データ分析」。そのページ内でのクリック率への効果は直接。特定の記事の総ページビュー増加は推論。 ［<a href="#o55">O55</a>・<a href="#o56">O56</a>］</p>
+<p><strong>C10　入口の記事を固定</strong></p>
+<p>自分のページに来た人には、固定した記事が先頭に表示されます。記事が増えても、最初に読んでほしい一本を見つけてもらえます。</p>
+<p>実行例　連載がひと区切りしたら、初めての人が内容をつかめる第1回を固定します。</p>
+<p>条件と限界　固定できるのは1本です。効果が届くのはそのページの訪問者で、固定した記事以外への閲覧増加は別の問いです。</p>
+<p>タイミングは「公開したあと」。ページビューへのつながりは「間接」、根拠の種類は「公式」。先頭に表示されることは直接。そこからの開封は推論。 ［<a href="#o26">O26</a>・<a href="#o50">O50</a>］</p>
+<p><strong>次の1本でやること</strong></p>
+<ol>
+<li><strong>C3｜書く前</strong>　自分が見た場面や試した手順を一つ選び、本文の軸にします。</li>
+<li><strong>C2｜公開するとき</strong>　題だけを読んで、何について書いたか分かるかを確かめます。</li>
+<li><strong>C1｜公開するとき</strong>　記事の内容が伝わる見出し画像を設定します。</li>
+<li><strong>C7｜公開するとき</strong>　題材と関係するハッシュタグを選びます。</li>
+<li><strong>C4｜公開したあと</strong>　その話題の読者がいるSNSで、要点とリンクを共有します。</li>
+</ol>
+<p><strong>効果の確かめ方</strong></p>
+<p>無料の「アクセス状況」で「カスタム」を選び、公開日を含む最初の7日間と28日間をそれぞれ集計します。例えば11月1日公開なら、11月1〜7日分を8日の朝の確定後に、11月1〜28日分を29日の朝の確定後に見ます。7日・28日は観測の目安です。同じ記事の7日累計と28日累計の差は、8日目以降に開かれた回数です。施策を比べるなら、題材・公開時刻・告知条件が近い別の記事も、同じ経過日数で比べます。［<a href="#o1">O1</a>・<a href="#o3">O3</a>・<a href="#o8">O8</a>］</p>
+<p>「記事」タブの対象行でページビューを記録し、インプレッションとスキを別欄に置きます。冒頭の定義に沿い、自分で開いた分も含む数値として扱います。公開の確認で何度も開いた日には、その事情を控えます。総ページビューには外部から開いた分があり、インプレッションには外部での表示がありません。<strong>この二つの割り算では、note内の一覧で選ばれた割合は出せません。</strong> ［<a href="#o1">O1</a>・<a href="#o3">O3</a>〜<a href="#o5">O5</a>］</p>
+<p><strong>ページビューが落ちたときの確認順</strong></p>
+<ol>
+<li>「記事」行の数字か、期間、公開後の日数、集計日時、アプリの版は同じかを見ます。当日分は概ね2時間ごとに更新され、インプレッションはさらに遅れることがあります。［<a href="#o1">O1</a>・<a href="#o3">O3</a>・<a href="#o6">O6</a>〜<a href="#o8">O8</a>］</li>
+<li>同じ記事でインプレッションも減ったかを見ます。両方が減った場合は内部で見つかる機会も減った可能性があります。おすすめ・検索・タグのどこが減ったかは無料画面で特定できません。［<a href="#o1">O1</a>・<a href="#o5">O5</a>］</li>
+<li>全記事の「記事の流入元」で、外部検索やSNSの増減を見ます。この変化を、その一本の原因とは決められません。告知の有無や話題の季節性と突き合わせます。［<a href="#o2">O2</a>・<a href="#o5">O5</a>］</li>
+<li>内部表示が保たれているなら、一覧で意味が通るタイトルか、内容を伝える画像かを見直します。どの一覧のクリック率が下がったか、読了率が下がったかは無料の個人画面では分かりません。［<a href="#o1">O1</a>・<a href="#o3">O3</a>・<a href="#o9">O9</a>・<a href="#o12">O12</a>］</li>
+</ol>
+<p><strong>経路の使い分け</strong></p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>こんな記事なら</th>
+<th>最初に届ける場所と行動</th>
+<th>確かめられた範囲</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="こんな記事なら">実際に試したこと、待っている人がいる連載の続き</td><td data-label="最初に届ける場所と行動">note内。自分が観察したことを本文に入れるか、フォローされている無料マガジンに続編を追加します。</td><td data-label="確かめられた範囲">推薦で重視する内容、追加記事のタイムラインへの表示。開かれる回数の増分は未確認です。［<a href="#o16">O16</a>・<a href="#o22">O22</a>］</td></tr>
+<tr><td data-label="こんな記事なら">後から検索される手順、用語、選び方</td><td data-label="最初に届ける場所と行動">外部検索。読者が検索に使う言葉で問いを定め、その問いに答えて、題から答えの範囲が伝わるようにします。</td><td data-label="確かめられた範囲">検索の表示に関する公式の推奨、結果からのクリックを促す題の説明があります。公開から1年以上経った記事の公式集計は、個人・無料だけの値ではありません。［<a href="#o14">O14</a>・<a href="#o15">O15</a>・<a href="#o17">O17</a>］</td></tr>
+<tr><td data-label="こんな記事なら">締切のある案内、同時代の話題を扱う記録</td><td data-label="最初に届ける場所と行動">外部SNS。その話題を追う読者のいる場所で、要点と記事リンクを知らせます。</td><td data-label="確かめられた範囲">SNSから直接開いてもらう公式の推奨があります。届け先がなければ他の経路を先に使います。［<a href="#o11">O11</a>・<a href="#o44">O44</a>］</td></tr>
+</tbody>
+</table></div>
+<p>公式が2024年に投稿された記事を追跡した調査では、公開から1年以上たった記事への流入の64％が検索エンジン、16％がnote内、3％がSNSでした。これから出す無料記事の初週に、その割合が当てはまるとは言えません。人が長く検索する題なら、公開直後の数字だけで結論を出さない理由になります。［<a href="#o17">O17</a>］</p>
+<p><strong>他媒体で応用できること</strong>　「一覧で見えた」「記事を開いた」「反応した」を別々に測ること、リンク先で何が読めるかを告知に書くこと、同じ公開後日数で比べることは応用できます。noteのタグ上限、マガジンのタイムライン表示、無料ダッシュボードの本人閲覧・流入元のまとめ方は、各媒体で個別に確かめてください。</p>
+<h2>やらないこと</h2>
+<div class="tbl"><table class="tn">
+<thead>
+<tr>
+<th>ID</th>
+<th>やらないこと</th>
+<th>理由</th>
+<th>区分</th>
+<th>影響が出る場所</th>
+<th>対応する公式出典番号</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="ID">N1</td><td data-label="やらないこと">公開直後のスキがゼロという理由だけで、無料記事を非公開にしません。</td><td data-label="理由">非公開にすると、その記事を読みに来た人がページへアクセスできなくなります。直後のスキがゼロであることは、その後のページビューを判断する材料として足りません。</td><td data-label="区分">不利益</td><td data-label="影響が出る場所">記事ページ・既に配ったリンク</td><td data-label="対応する公式出典番号"><a href="#o30">O30</a></td></tr>
+<tr><td data-label="ID">N2</td><td data-label="やらないこと">伸び直しを狙って元記事を削除し、同一原稿を新規投稿しません。</td><td data-label="理由">無料の元記事を開けなくなり、過去の数値も記事一覧と集計から外れます。後から検証するときにも影響します。</td><td data-label="区分">不利益</td><td data-label="影響が出る場所">元記事・外部リンク・アクセス状況</td><td data-label="対応する公式出典番号"><a href="#o3">O3</a>・<a href="#o5">O5</a>・<a href="#o30">O30</a></td></tr>
+<tr><td data-label="ID">N3</td><td data-label="やらないこと">訪問を誘うために短時間で大量のスキやフォローをしません。</td><td data-label="理由">大量のスキは一時ロック、短時間のフォロー操作も制限の対象になることがあります。フォロー中の数とフォロワー数の差が大きい場合にも制限があり得ます。</td><td data-label="区分">不利益</td><td data-label="影響が出る場所">アカウントのスキ・フォロー操作</td><td data-label="対応する公式出典番号"><a href="#o34">O34</a>・<a href="#o35">O35</a></td></tr>
+<tr><td data-label="ID">N4</td><td data-label="やらないこと">他人の写真や文章を、権利を侵害する形で転載しません。</td><td data-label="理由">権利侵害は規約の禁止対象です。運営の判断で記事の削除、検索結果からの除外、利用停止などがあり得ます。</td><td data-label="区分">規約違反／不利益</td><td data-label="影響が出る場所">記事・検索・アカウント全体</td><td data-label="対応する公式出典番号"><a href="#o36">O36</a>・<a href="#o37">O37</a></td></tr>
+<tr><td data-label="ID">N5</td><td data-label="やらないこと">記事のリンクを無差別に繰り返し送り、スパムとして宣伝しません。</td><td data-label="理由">運営がスパムと判断した投稿・行為は、削除や検索結果からの除外、利用停止などの対象になり得ます。</td><td data-label="区分">規約違反／不利益</td><td data-label="影響が出る場所">投稿・検索・アカウント全体</td><td data-label="対応する公式出典番号"><a href="#o36">O36</a></td></tr>
+</tbody>
+</table></div>
+<h2>通説の判定</h2>
+<p><strong>判定</strong>　「本当」は説どおり、「半分本当」は特定の条件・場面で成立、「言いすぎ」は程度を弱めると成立、「嘘」は中心の主張に反する根拠がある場合です。「根拠なし」は調べても判定に足る資料が得られなかったという意味です。</p>
+<p><strong>根拠と扱い</strong>　判定を直接支える資料を「公式」「第三者」「公式＋第三者」「なし」で示します。「根拠なし」で根拠が「なし」以外なら資料の対立です。扱いは冒頭の行動について「やる」「条件つきで試す」「後回し」「やらない」から選びます。「—」は未調査・確認不足です。「関連仕様・案内」の出典は、根拠不足の行で併記した機能や不利益の説明にだけ対応します。</p>
+<div class="tbl"><table class="tj">
+<thead>
+<tr>
+<th>ID</th>
+<th>説</th>
+<th>判定</th>
+<th>根拠</th>
+<th>扱い</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="ID">T1</td><td data-label="説">毎日投稿すると、1本1本の記事も読まれやすくなる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">【行動】毎日投稿する。投稿数が増えれば合計は動きますが、同じ日数で見た1本あたりのページビューが増える根拠が足りないと判断しました。毎日の投稿が必須だという説明も、連続が途切れたときの不利益も確認できません。 ［関連仕様・案内 <a href="#o43">O43</a>］</td></tr>
+<tr><td data-label="ID">T2</td><td data-label="説">読まれやすい投稿の曜日・時間帯がある</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">【行動】読まれやすい曜日・時間帯に投稿する。日本時間で、誰にでも当てはまる曜日・時刻の根拠が足りないと判断しました。読者が待つ時間を想定できるときだけ公開を合わせ、比較する各記事を公開初日同士、28日間同士で見比べます。</td></tr>
+<tr><td data-label="ID">T3</td><td data-label="説">公開直後にスキが付かない記事は、その後読まれない</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">【行動】公開直後にスキが一つも付かなかったことだけを理由に、その記事を非公開にする。直後のスキがゼロかどうかで、その後の閲覧が決まる根拠が足りないと判断しました。最初にスキが付けば長く読まれるとも言えず、非公開にすれば無料記事の読者はアクセスできなくなります。 ［関連仕様・案内 <a href="#o30">O30</a>］</td></tr>
+<tr><td data-label="ID">T4</td><td data-label="説">フォロワーが少ないアカウントの記事は、おすすめに載りにくい</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">【行動】フォロワー集めを記事の改善より先にする。フォロワー数だけを変えたときのおすすめ掲載差は根拠が足りないと判断しました。既にフォローしている人がタイムラインで見つけることと、自動で優先されることは別です。</td></tr>
+<tr><td data-label="ID">T5</td><td data-label="説">始めたばかりのアカウントは、おすすめに載りやすい</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">【行動】新規アカウントの優遇を期待して作り直す。初投稿を集めたタグページはありますが、新規であること自体の自動優遇は根拠が足りないと判断しました。退会して作り直すと記事やフォローの情報を復元できません。 ［関連仕様・案内 <a href="#o42">O42</a>・<a href="#o51">O51</a>］</td></tr>
+<tr><td data-label="ID">T6</td><td data-label="説">ほかの人の記事にスキを付けて回ると、自分の記事も読まれる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">【行動】ほかの人の記事にスキを付けて回る。相手の訪問とおすすめからの流入を切り分けて、記事別のページビューが増えたと示す根拠が足りないと判断しました。短時間に大量のスキを付けると操作が一時的に制限されることがあるため、その使い方は避けます。 ［関連仕様・案内 <a href="#o34">O34</a>］</td></tr>
+<tr><td data-label="ID">T7</td><td data-label="説">フォローして回ると、自分の記事も読まれる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">【行動】フォローして回る。フォローが返ってきても、相手の訪問やおすすめによって記事のページビューが増えたとする根拠が足りないと判断しました。短時間に大量のフォローをすると操作が制限されることがあるため、その使い方は避けます。 ［関連仕様・案内 <a href="#o35">O35</a>］</td></tr>
+<tr><td data-label="ID">T8</td><td data-label="説">スキが多い記事ほど、おすすめに載りやすい</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">【行動】おすすめに載ることを狙い、記事末で、読んでよかったらスキを付けてほしいと読者に一度伝える。スキの件数・割合を先に測り、その後の自動おすすめ掲載率を同条件で比べた個人記事の根拠が足りないと判断しました。末尾で一度呼びかけてスキが付いても、無料画面ではおすすめ枠だけの掲載変化を確かめられません。</td></tr>
+<tr><td data-label="ID">T9</td><td data-label="説">自分の記事についたコメントに返信すると、その記事が伸びる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">【行動】自分の記事についたコメントに返信する。返信による再訪や表示上の優遇が記事のページビューを押し上げる根拠が足りないと判断しました。2025年9月8日午前10時以降に公開した記事には個別返信の通知があり、質問に答える場面で使えます。 ［関連仕様・案内 <a href="#o33">O33</a>］</td></tr>
+<tr><td data-label="ID">T10</td><td data-label="説">最後まで読まれる記事ほど、おすすめに載りやすい</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">【行動】最後まで読まれるように、構成と長さを見直す。先に観測した読了と、その後のおすすめ掲載を比べた根拠が足りないと判断しました。手順について質問が届いたら順序を直し、その疑問に答えられたかを確かめます。無料の個人画面では読了率を確認できず、滞在時間でも代用できません。 ［関連仕様・案内 <a href="#o9">O9</a>・<a href="#o10">O10</a>］</td></tr>
+<tr><td data-label="ID">T11</td><td data-label="説">タイトルに数字や【】を入れると読まれる</td><td data-label="判定">半分本当</td><td data-label="根拠">公式</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">【行動】タイトルに数字や【】を入れる。公式は、具体的な数字で記事の内容を伝える例を挙げる一方、囲み記号などで無理に目立たせる使い方は逆効果としています。数字が題の意味を伝えるときだけ使い、【】そのものや記事全体のページビューへの効果は見積もれません。（公式の推奨。効果の実測値は示されていない） ［<a href="#o12">O12</a>・<a href="#o44">O44</a>］</td></tr>
+<tr><td data-label="ID">T12</td><td data-label="説">タイトルに検索されそうな言葉を入れると、検索で上に出やすくなる</td><td data-label="判定">半分本当</td><td data-label="根拠">公式</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">【行動】タイトルに検索されそうな言葉を入れる。noteは読者が検索に使う語を自然にタイトルへ入れるよう勧め、内容が分かる題は検索結果で選ばれやすいと説明しています。外部のGoogle検索では、Googleもタイトルなどに関連語を置くことを掲載順位と表示のために勧めています。note内検索で上位に出る効果は公式には確認できず、語を詰め込む必要はありません。（公式の推奨。効果の実測値は示されていない） ［<a href="#o12">O12</a>・<a href="#o14">O14</a>・<a href="#o15">O15</a>・<a href="#o19">O19</a>］</td></tr>
+<tr><td data-label="ID">T13</td><td data-label="説">見出し画像を付けると、読まれやすくなる</td><td data-label="判定">本当</td><td data-label="根拠">公式</td><td data-label="扱い">やる</td><td data-label="理由">【行動】見出し画像を付ける。公式は画像がある記事の方が読まれやすいとして、設定を勧めています。公表されたページビューの差は画像のある記事とない記事を比べたもので、集計時期・数え方は不明です。題材や告知量の違いもあり、画像を付けたときの増加率は分かりません。（相関のみ） ［<a href="#o11">O11</a>・<a href="#o12">O12</a>・<a href="#o13">O13</a>・<a href="#o44">O44</a>］</td></tr>
+<tr><td data-label="ID">T14</td><td data-label="説">文字数が多い記事ほど読まれる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">【行動】文字数を増やす。文字数を増やすほど記事のページビューが一貫して増える根拠が足りないと判断しました。開いてから読み進めたか、スキを付けたかは別の結果です。</td></tr>
+<tr><td data-label="ID">T15</td><td data-label="説">noteの記事は、個人のブログより検索で上に出やすい</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">【行動】検索で見つけてもらいたい記事の掲載先に、新しく始める独自ドメインの個人ブログと比べてnoteを選ぶ。同じ検索語・時期・記事条件で、新しい独自ドメインとnoteの掲載順位を比較した根拠が足りないと判断しました。法人向けのSEO案内や個別の上位例だけでは、どちらが先に表示されるかは決められません。 ［関連仕様・案内 <a href="#o40">O40</a>］</td></tr>
+<tr><td data-label="ID">T16</td><td data-label="説">ハッシュタグは多く付けるほど読まれる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">【行動】ハッシュタグの数を増やす。関連するタグの利用は公式の推奨ですが、多く付けるほど開かれる根拠が足りないと判断しました。1記事10個は上限で、公式ガイドが挙げる約5個も最適数の実測ではありません。 ［関連仕様・案内 <a href="#o11">O11</a>・<a href="#o21">O21</a>］</td></tr>
+<tr><td data-label="ID">T17</td><td data-label="説">投稿数の多い人気のハッシュタグを付けると読まれる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">【行動】投稿数の多い人気のハッシュタグを付ける。少数投稿のタグより読者が多いか、競合記事で埋もれるかを切り分けたページビューの根拠が足りないと判断しました。適合度が同じ候補なら初週のページビューを見比べられますが、タグページの「人気」「急上昇」「新着」の基準は非公開で、キーワードページには「急上昇」もありません。 ［関連仕様・案内 <a href="#o19">O19</a>・<a href="#o20">O20</a>］</td></tr>
+<tr><td data-label="ID">T18</td><td data-label="説">公式のお題やコンテストに参加すると読まれる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">【行動】公式のお題やコンテストに参加する。応募者の出会いの可能性は公式も紹介していますが、選外を含めて参加するだけでページビューが増える根拠が足りないと判断しました。受賞・選出後に紹介される機会は別なので、もともと書きたい題に合う場合に参加します。 ［関連仕様・案内 <a href="#o27">O27</a>・<a href="#o52">O52</a>］</td></tr>
+<tr><td data-label="ID">T19</td><td data-label="説">伸びなかった記事は、削除して投稿し直すと読まれる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">【行動】伸びなかった記事を削除して同じ内容で投稿し直す。同一原稿の再投稿で同じ日数後のページビューが増える根拠が足りないと判断しました。元記事を削除すると元のリンクから無料記事にアクセスできず、集計からも外れます。内容を改めた新作は別です。 ［関連仕様・案内 <a href="#o3">O3</a>・<a href="#o30">O30</a>］</td></tr>
+<tr><td data-label="ID">T20</td><td data-label="説">公開した記事を書き直すと、新着やタイムラインにもう一度表示される</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">【行動】同じURLの本文を編集し、新着やタイムラインへの再表示を狙う。軽微な修正・大幅な改稿とも、検索・タグの「新着」または「フォロー中」のタイムラインで元の位置から新たに載り直す根拠が足りないと判断しました。公開日は変わらず、本文改善や外部検索での変化は別の効果です。 ［関連仕様・案内 <a href="#o19">O19</a>・<a href="#o28">O28</a>・<a href="#o29">O29</a>・<a href="#o46">O46</a>］</td></tr>
+<tr><td data-label="ID">T21</td><td data-label="説">マガジンにまとめると、ほかの記事も読まれやすくなる</td><td data-label="判定">半分本当</td><td data-label="根拠">公式</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">【行動】自分の関連記事をマガジンにまとめる。追加した記事はマガジンのフォロワーのタイムラインに表示され、収録された記事の下にもマガジンが案内されます。同じマガジンの記事タイトルを記事下に表示する仕様は2020年の告知で、現在のすべての画面に当てはまるかは確認できません。連載の入口として使えますが、そこから別の記事まで開いた人の増分は分かりません。（表示まで。開かれる回数は未確認） ［<a href="#o22">O22</a>・<a href="#o23">O23</a>・<a href="#o54">O54</a>・<a href="#o59">O59</a>］</td></tr>
+<tr><td data-label="ID">T22</td><td data-label="説">共同運営マガジンに参加すると読まれる</td><td data-label="判定">半分本当</td><td data-label="根拠">公式</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">【行動】共同運営マガジンに参加する。参加して自分の記事を追加すると、そのマガジンをフォローしている参加者以外の人にもタイムラインに表示されます。参加者の読み合いで開かれる増分と、相互スキの取り決め自体の一律禁止は公式には確認できず、反応の交換を参加条件にしません。（表示まで。開かれる回数は未確認） ［<a href="#o22">O22</a>・<a href="#o24">O24</a>・<a href="#o36">O36</a>・<a href="#o49">O49</a>］</td></tr>
+<tr><td data-label="ID">T23</td><td data-label="説">つぶやきを投稿すると、記事も読まれやすくなる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">【行動】つぶやきを投稿して記事へ誘導する。つぶやきから別の記事のページビューが増えたかは、終了前も含めて根拠が足りないと判断しました。つぶやき形式は2025年8月25日に終了し、一部アプリの例外も10月8日に終了したため、現在この方法は使えません。短文を通常の記事として投稿することや、毎日投稿するT1は別です。 ［関連仕様・案内 <a href="#o31">O31</a>・<a href="#o58">O58</a>］</td></tr>
+<tr><td data-label="ID">T24</td><td data-label="説">自己紹介の記事を書いて固定すると、ほかの記事も読まれやすくなる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">【行動】自己紹介の記事を書いてクリエイターページに固定する。自己紹介はほかの記事への関心を促し得ますが、固定で先頭に出るのは自己紹介そのもので、他記事の表示やページビューが増える根拠が足りないと判断しました。初訪問者向けの案内がある場合に試し、他記事の同じ日数のページビューを見ます。 ［関連仕様・案内 <a href="#o25">O25</a>・<a href="#o26">O26</a>・<a href="#o50">O50</a>］</td></tr>
+<tr><td data-label="ID">T25</td><td data-label="説">テーマを一つに絞ると読まれる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">【行動】書くテーマを一つに絞る。個々の記事が読者の関心に合う仕組みはありますが、アカウントのテーマを一つにすると1本のページビューが増える根拠が足りないと判断しました。書き手が複数のテーマを扱うこと自体への不利益も確認できません。</td></tr>
+<tr><td data-label="ID">T26</td><td data-label="説">有料記事にすると、読まれにくくなる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">【行動】ページビューを伸ばしたい記事を有料にする。有料記事も購入前に記事ページを開けばページビューに入り、noteの検索には有料記事だけに絞る機能があります。価格表示を見て開くのをやめた人まで区別し、無料と有料を同条件で比較した根拠が足りないと判断しました。記事を開く回数を増やす施策として、有料化は後回しにします。 ［関連仕様・案内 <a href="#o1">O1</a>・<a href="#o41">O41</a>・<a href="#o51">O51</a>］</td></tr>
+<tr><td data-label="ID">T27</td><td data-label="説">noteプレミアムに入ると、おすすめに載りやすくなる</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">やらない</td><td data-label="理由">【行動】noteプレミアムに加入しておすすめ掲載を増やす。個人向けは月額500円（税込）で予約投稿などを利用できますが、公式の機能表で「関心のある読者に追加表示」の対象は法人向けのnote proだけです。通常のおすすめで個人の有料会員が優先されるという根拠が足りないため、それを目的に月額料金を払うことは勧めません。 ［関連仕様・案内 <a href="#o9">O9</a>・<a href="#o32">O32</a>・<a href="#o47">O47</a>・<a href="#o48">O48</a>・<a href="#o57">O57</a>］</td></tr>
+<tr><td data-label="ID">T28</td><td data-label="説">AIで書いた記事は、おすすめに載りにくい</td><td data-label="判定">半分本当</td><td data-label="根拠">公式</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">【行動】生成AIで記事本文の下書きを作り、書き手が内容を確認して公開する。開発担当者は、AIの出力をそのまま貼ったような記事は表示の優先度が下がると説明しています。本人が事実を確かめ、自分の記録を加えた下書きまで一律に不利という説明や、通常記事すべてに共通するAI使用申告・ラベルは確認できません。使うときは出典と自分の記録に照らして手直しします。 ［<a href="#o16">O16</a>・<a href="#o38">O38</a>・<a href="#o39">O39</a>・<a href="#o45">O45</a>］</td></tr>
+<tr><td data-label="ID">T29</td><td data-label="説">XなどのSNSで告知すると、noteの中でのおすすめも増える</td><td data-label="判定">根拠なし</td><td data-label="根拠">なし</td><td data-label="扱い">後回し</td><td data-label="理由">【行動】外部SNSで告知してnote内のおすすめ掲載を増やす。SNSのリンクから読者が直接開く入口は作れますが、その訪問が内部のおすすめ表示を増やす根拠が足りないと判断しました。外部の読者に届ける目的はC4で扱います。 ［関連仕様・案内 <a href="#o11">O11</a>・<a href="#o44">O44</a>］</td></tr>
+<tr><td data-label="ID">T30</td><td data-label="説">noteの記事は、検索やSNSより、noteの中で読まれることが多い</td><td data-label="判定">半分本当</td><td data-label="根拠">第三者</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">【行動】記事を届ける施策ではnoteの中での表示を優先する。開設まもない個人の無料記事では、参照元の不明分を外部検索か外部SNSのどちらに寄せても、note内がそれぞれを上回りました。長く運用した個人には検索が上回る記録もありますが、無料記事だけの集計か確認できず、判定から外しました。少数の記事にページビューが集中すると割合は変わるため、note内を先に使うのは、読者がフォローしているマガジンに連載の続きを載せる場合などに限ります。（1アカウントの記録）</td></tr>
+</tbody>
+</table></div>
+<p><strong>追加で確かめた説</strong></p>
+<div class="tbl"><table class="tj">
+<thead>
+<tr>
+<th>ID</th>
+<th>説</th>
+<th>判定</th>
+<th>根拠</th>
+<th>扱い</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="ID">T31</td><td data-label="説">クリエイターページで人気順を選べるようにすると、訪問者に記事が選ばれやすくなる</td><td data-label="判定">半分本当</td><td data-label="根拠">公式</td><td data-label="扱い">条件つきで試す</td><td data-label="理由">【行動】公開記事が16本以上ある場合、クリエイターページの人気記事表示を有効にする。公式は、このページで人気順を選べるようにした導入前テストで記事のクリック率が上がったと報告しています。最初は新着順で、人気順を選ぶのは読者です。上昇幅や全記事のページビューへの効果は公表されていません。［<a href="#o55">O55</a>・<a href="#o56">O56</a>］</td></tr>
+</tbody>
+</table></div>
+<section class="src"><h2>公式出典</h2>
+<p>「関係する項目」は、本文でその資料を参照した箇所です。「関連仕様・案内」は、機能の存在や利用条件を確かめた資料です。</p>
+<div class="tbl"><table class="tn srcx">
+<thead>
+<tr>
+<th>出典</th>
+<th>発信元</th>
+<th>資料名・URL</th>
+<th>公表・更新日</th>
+<th>確認日</th>
+<th>関係する項目</th>
+</tr>
+</thead>
+<tbody>
+<tr id="o1"><td data-label="出典"><a href="#o1">O1</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/360010324194" rel="noopener">ダッシュボードの「アクセス状況」について</a></td><td data-label="公表・更新日">2026-10-19</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">冒頭定義、効果確認、T26</td></tr>
+<tr id="o2"><td data-label="出典"><a href="#o2">O2</a></td><td data-label="発信元">note公式</td><td data-label="資料名・URL"><a href="https://note.com/info/n/n39880d8a9c57" rel="noopener">ダッシュボードがリニューアル！記事の読まれ方がもっとくわしくわかります</a></td><td data-label="公表・更新日">2026-09-08</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">冒頭定義、効果確認</td></tr>
+<tr id="o3"><td data-label="出典"><a href="#o3">O3</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/61982766676121" rel="noopener">ダッシュボードで記事・メンバーシップ・マガジンごとの数値をみる</a></td><td data-label="公表・更新日">2026-09-10</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">冒頭定義、効果確認、N2、T19</td></tr>
+<tr id="o4"><td data-label="出典"><a href="#o4">O4</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/61983349486873" rel="noopener">ダッシュボードに関するよくある質問</a></td><td data-label="公表・更新日">2026-09-10</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">冒頭定義、効果確認</td></tr>
+<tr id="o5"><td data-label="出典"><a href="#o5">O5</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/61983634535449" rel="noopener">ダッシュボードで記事の流入元をみる</a></td><td data-label="公表・更新日">2026-11-05</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">冒頭定義、効果確認、N2</td></tr>
+<tr id="o6"><td data-label="出典"><a href="#o6">O6</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/4410126791065" rel="noopener">iOS版noteアプリ バージョン履歴</a></td><td data-label="公表・更新日">2026-10-19（対象版）</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">冒頭定義、効果確認</td></tr>
+<tr id="o7"><td data-label="出典"><a href="#o7">O7</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/4410114778393" rel="noopener">Android版noteアプリ バージョン履歴</a></td><td data-label="公表・更新日">2026-10-19（対象版）</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">冒頭定義、効果確認</td></tr>
+<tr id="o8"><td data-label="出典"><a href="#o8">O8</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/61982979089305" rel="noopener">ダッシュボードで各指標とグラフをみる</a></td><td data-label="公表・更新日">2026-09-08</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">冒頭定義、効果確認</td></tr>
+<tr id="o9"><td data-label="出典"><a href="#o9">O9</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/360000621702" rel="noopener">noteとnote proの機能一覧（2026/11/25更新）</a></td><td data-label="公表・更新日">2026-11-25</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">冒頭定義、効果確認、T10、T27</td></tr>
+<tr id="o10"><td data-label="出典"><a href="#o10">O10</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/40855099018777" rel="noopener">アナリティクス(β)：記事を分析する</a></td><td data-label="公表・更新日">2026-11-05</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">冒頭定義、C6、T10</td></tr>
+<tr id="o11"><td data-label="出典"><a href="#o11">O11</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/360015040773" rel="noopener">より多くのひとに書いた記事を読んでもらうために</a></td><td data-label="公表・更新日">2026-09-17</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C1、C4、C7、経路の使い分け、T13、T16、T29</td></tr>
+<tr id="o12"><td data-label="出典"><a href="#o12">O12</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/360012426353" rel="noopener">タイトルと見出し画像のコツ</a></td><td data-label="公表・更新日">2026-09-17</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C1、C2、効果確認、T11、T12、T13</td></tr>
+<tr id="o13"><td data-label="出典"><a href="#o13">O13</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/51597285945881" rel="noopener">「note内でのサムネイル自動表示」機能について</a></td><td data-label="公表・更新日">2025-11-05</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C1、T13</td></tr>
+<tr id="o14"><td data-label="出典"><a href="#o14">O14</a></td><td data-label="発信元">note編集部</td><td data-label="資料名・URL"><a href="https://note.com/notemag/n/n6e10b3230fa9" rel="noopener">ウェブ検索で自分のnoteを見つけてもらいやすくするコツ</a></td><td data-label="公表・更新日">2023-12-27</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C2、C5、経路の使い分け、T12</td></tr>
+<tr id="o15"><td data-label="出典"><a href="#o15">O15</a></td><td data-label="発信元">Google 検索セントラル</td><td data-label="資料名・URL"><a href="https://developers.google.com/search/docs/essentials?hl=ja" rel="noopener">Google 検索の基本事項（旧ウェブマスター向けガイドライン）</a></td><td data-label="公表・更新日">2025-12-18</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C5、経路の使い分け、T12</td></tr>
+<tr id="o16"><td data-label="出典"><a href="#o16">O16</a></td><td data-label="発信元">note株式会社</td><td data-label="資料名・URL"><a href="https://note.jp/n/nf016d2c0bc2f" rel="noopener">書けば、届くべきひとに届く。noteがLLMでレコメンドをつくり直した舞台裏</a></td><td data-label="公表・更新日">2026-02-13</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C3、経路の使い分け、T28</td></tr>
+<tr id="o17"><td data-label="出典"><a href="#o17">O17</a></td><td data-label="発信元">note株式会社</td><td data-label="資料名・URL"><a href="https://note.jp/n/n7917dc1cdfe9" rel="noopener">約1700万件のnote記事を追跡 ── 1年後も読まれ続ける記事の特徴を初公開 ──</a></td><td data-label="公表・更新日">2026-03-10</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C5、経路の使い分け</td></tr>
+<tr id="o18"><td data-label="出典"><a href="#o18">O18</a></td><td data-label="発信元">note編集部</td><td data-label="資料名・URL"><a href="https://note.com/notemag/n/n5c443b20eeb2" rel="noopener">過去記事を長く読まれる記事に育てよう</a></td><td data-label="公表・更新日">2021-02-19</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C6</td></tr>
+<tr id="o19"><td data-label="出典"><a href="#o19">O19</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/4403256523289" rel="noopener">note内で検索をした際に表示される人気・急上昇・新着の判定基準はなんですか？</a></td><td data-label="公表・更新日">2026-09-17</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C7、T12、T17、T20</td></tr>
+<tr id="o20"><td data-label="出典"><a href="#o20">O20</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/62344323192857" rel="noopener">検索したときに表示されるページについて</a></td><td data-label="公表・更新日">2026-09-18</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C7、T17</td></tr>
+<tr id="o21"><td data-label="出典"><a href="#o21">O21</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/40810212577945" rel="noopener">ハッシュタグに使用できる文字</a></td><td data-label="公表・更新日">2025-09-09</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C7、T16</td></tr>
+<tr id="o22"><td data-label="出典"><a href="#o22">O22</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/360012426213" rel="noopener">他の人の記事をマガジンにまとめる</a></td><td data-label="公表・更新日">2023-02-25</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C8、経路の使い分け、T21、T22</td></tr>
+<tr id="o23"><td data-label="出典"><a href="#o23">O23</a></td><td data-label="発信元">note公式</td><td data-label="資料名・URL"><a href="https://note.com/info/n/n583082cf236a" rel="noopener">記事を読み終わった後に表示されるマガジンの表示が新しくなりました。</a></td><td data-label="公表・更新日">2020-02-27</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T21</td></tr>
+<tr id="o24"><td data-label="出典"><a href="#o24">O24</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/360000261722" rel="noopener">共同運営マガジンのフォローをする/外す方法</a></td><td data-label="公表・更新日">2025-04-21</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T22</td></tr>
+<tr id="o25"><td data-label="出典"><a href="#o25">O25</a></td><td data-label="発信元">note編集部</td><td data-label="資料名・URL"><a href="https://note.com/notemag/n/n2c65107d4eb1" rel="noopener">まずは自己紹介記事を書いてみよう</a></td><td data-label="公表・更新日">2021-02-04</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T24</td></tr>
+<tr id="o26"><td data-label="出典"><a href="#o26">O26</a></td><td data-label="発信元">note公式</td><td data-label="資料名・URL"><a href="https://note.com/info/n/n37f10f29a3f3" rel="noopener">読者にファンになってもらえるような、魅力的な「#自己紹介」記事を書いてみませんか？</a></td><td data-label="公表・更新日">2020-07-13</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C10、T24</td></tr>
+<tr id="o27"><td data-label="出典"><a href="#o27">O27</a></td><td data-label="発信元">note編集部</td><td data-label="資料名・URL"><a href="https://note.com/notemag/n/n940e01af2608" rel="noopener">創作のテーマに出会おう。noteのコンテスト・お題とは？</a></td><td data-label="公表・更新日">2020-11-27</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T18</td></tr>
+<tr id="o28"><td data-label="出典"><a href="#o28">O28</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/4406419356953" rel="noopener">記事の公開日を変更したい/記事を再公開しても公開日が更新されない</a></td><td data-label="公表・更新日">2025-02-20</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T20</td></tr>
+<tr id="o29"><td data-label="出典"><a href="#o29">O29</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/41639954222105" rel="noopener">記事のタイトルや本文を編集 (変更) する</a></td><td data-label="公表・更新日">2025-11-20</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T20</td></tr>
+<tr id="o30"><td data-label="出典"><a href="#o30">O30</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/48460614265753" rel="noopener">Q. 記事を非公開にした後再度公開した場合、URLは変わりますか？</a></td><td data-label="公表・更新日">2025-07-01</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">N1、N2、T3、T19</td></tr>
+<tr id="o31"><td data-label="出典"><a href="#o31">O31</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/47494104738073-投稿形式の統合スケジュールについて" rel="noopener">投稿形式の統合スケジュールについて</a></td><td data-label="公表・更新日">2025-10-08</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T23</td></tr>
+<tr id="o32"><td data-label="出典"><a href="#o32">O32</a></td><td data-label="発信元">note（サービス公式ページ）</td><td data-label="資料名・URL"><a href="https://premium.lp-note.com/" rel="noopener">noteプレミアム</a></td><td data-label="公表・更新日">不明</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T27</td></tr>
+<tr id="o33"><td data-label="出典"><a href="#o33">O33</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/50355212224537" rel="noopener">記事のコメント欄の仕様について</a></td><td data-label="公表・更新日">2025-12-25</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T9</td></tr>
+<tr id="o34"><td data-label="出典"><a href="#o34">O34</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/360010309494" rel="noopener">スキができない</a></td><td data-label="公表・更新日">2022-11-22</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">N3、T6</td></tr>
+<tr id="o35"><td data-label="出典"><a href="#o35">O35</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/16858564068633" rel="noopener">クリエイターをフォローできない</a></td><td data-label="公表・更新日">2025-09-22</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">N3、T7</td></tr>
+<tr id="o36"><td data-label="出典"><a href="#o36">O36</a></td><td data-label="発信元">note株式会社（利用規約）</td><td data-label="資料名・URL"><a href="https://terms.help-note.com/hc/ja/articles/44943817565465" rel="noopener">note ご利用規約</a></td><td data-label="公表・更新日">2026-11-25</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">N4、N5、T22</td></tr>
+<tr id="o37"><td data-label="出典"><a href="#o37">O37</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/4409925863193" rel="noopener">コミュニティガイドライン</a></td><td data-label="公表・更新日">2023-11-22</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">N4</td></tr>
+<tr id="o38"><td data-label="出典"><a href="#o38">O38</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/360008882914" rel="noopener">新規記事を投稿から公開するまでの手順</a></td><td data-label="公表・更新日">2026-07-03</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T28</td></tr>
+<tr id="o39"><td data-label="出典"><a href="#o39">O39</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/17719684152345" rel="noopener">「創作大賞」についてのよくある質問</a></td><td data-label="公表・更新日">2026-06-12</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T28</td></tr>
+<tr id="o40"><td data-label="出典"><a href="#o40">O40</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/900006881223" rel="noopener">SEOに関するよくあるご質問</a></td><td data-label="公表・更新日">2026-02-09</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T15</td></tr>
+<tr id="o41"><td data-label="出典"><a href="#o41">O41</a></td><td data-label="発信元">note公式</td><td data-label="資料名・URL"><a href="https://note.com/info/n/n06808e5e8cff" rel="noopener">記事購入でポイントがもらえる「#noteポイント祭」スタート！</a></td><td data-label="公表・更新日">2024-01-05</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T26</td></tr>
+<tr id="o42"><td data-label="出典"><a href="#o42">O42</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/360011270034" rel="noopener">noteを退会したい</a></td><td data-label="公表・更新日">2026-07-02</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T5</td></tr>
+<tr id="o43"><td data-label="出典"><a href="#o43">O43</a></td><td data-label="発信元">note公式</td><td data-label="資料名・URL"><a href="https://note.com/info/n/n812cc719191f" rel="noopener">「来年はもっと発信したい！」という方におすすめしたい、投稿を続ける7つのコツ</a></td><td data-label="公表・更新日">2024-12-30</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T1</td></tr>
+<tr id="o44"><td data-label="出典"><a href="#o44">O44</a></td><td data-label="発信元">note編集部</td><td data-label="資料名・URL"><a href="https://note.com/notemag/n/n6791ad15bb80" rel="noopener">自分のnoteをもっと読んでもらうには？ 集客のアイデアまとめ</a></td><td data-label="公表・更新日">2023-10-26</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C1、C2、C4、経路の使い分け、T11、T13、T29</td></tr>
+<tr id="o45"><td data-label="出典"><a href="#o45">O45</a></td><td data-label="発信元">公表当時のnoteのCXO（本人の発信）</td><td data-label="資料名・URL"><a href="https://note.com/fladdict/n/n5b78bb223b35" rel="noopener">noteの推しアルゴリズムについて</a></td><td data-label="公表・更新日">2026-01-21</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C3、T28</td></tr>
+<tr id="o46"><td data-label="出典"><a href="#o46">O46</a></td><td data-label="発信元">note公式</td><td data-label="資料名・URL"><a href="https://note.com/info/n/nbc97acca77a0" rel="noopener">タイムラインで表示される記事を「すべて / フォロー中」で選べるようになりました</a></td><td data-label="公表・更新日">2021-04-22</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T20</td></tr>
+<tr id="o47"><td data-label="出典"><a href="#o47">O47</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/64171195654297" rel="noopener">関心のある読者へ記事を届ける仕組みとダッシュボードでの表示について</a></td><td data-label="公表・更新日">2026-11-11</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T27</td></tr>
+<tr id="o48"><td data-label="出典"><a href="#o48">O48</a></td><td data-label="発信元">note公式</td><td data-label="資料名・URL"><a href="https://note.com/info/n/nbe72e115ae09" rel="noopener">もっと投稿しやすく！もっと販売しやすく！予約投稿や継続課金マガジンの申込みができるサービス、「noteプレミアム」月額500円（税込）をリリースしました</a></td><td data-label="公表・更新日">2016-03-01</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T27（開始時の告知）</td></tr>
+<tr id="o49"><td data-label="出典"><a href="#o49">O49</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/360011359513" rel="noopener">共同運営マガジンとは</a></td><td data-label="公表・更新日">2026-09-28</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T22</td></tr>
+<tr id="o50"><td data-label="出典"><a href="#o50">O50</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/29244493506841" rel="noopener">クリエイターページに記事を固定表示する</a></td><td data-label="公表・更新日">2025-09-19</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C10、T24</td></tr>
+<tr id="o51"><td data-label="出典"><a href="#o51">O51</a></td><td data-label="発信元">note（サービス公式ページ）</td><td data-label="資料名・URL"><a href="https://note.com/hashtag/NOTE%E5%88%9D%E6%8A%95%E7%A8%BF" rel="noopener">「#NOTE初投稿」の人気タグ記事一覧</a></td><td data-label="公表・更新日">不明</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T5、T26</td></tr>
+<tr id="o52"><td data-label="出典"><a href="#o52">O52</a></td><td data-label="発信元">note編集部</td><td data-label="資料名・URL"><a href="https://note.com/notemag/n/n6c61efd95771" rel="noopener">記事のテーマをさがそう</a></td><td data-label="公表・更新日">2021-03-04</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T18</td></tr>
+<tr id="o53"><td data-label="出典"><a href="#o53">O53</a></td><td data-label="発信元">note公式</td><td data-label="資料名・URL"><a href="https://note.com/info/n/nbffc97a403d7" rel="noopener">マガジンに追加した記事がより読まれるように、画面のUIデザインを一新しました！</a></td><td data-label="公表・更新日">2021-12-14</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C8</td></tr>
+<tr id="o54"><td data-label="出典"><a href="#o54">O54</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/360000383501" rel="noopener">マガジンとは</a></td><td data-label="公表・更新日">2025-10-14</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C8、T21</td></tr>
+<tr id="o55"><td data-label="出典"><a href="#o55">O55</a></td><td data-label="発信元">note公式</td><td data-label="資料名・URL"><a href="https://note.com/info/n/ne6647d048316" rel="noopener">クリエイターページの記事が「人気順」で並べ替えできるようになりました！</a></td><td data-label="公表・更新日">2024-11-15</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C9、T31</td></tr>
+<tr id="o56"><td data-label="出典"><a href="#o56">O56</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/39652170063001" rel="noopener">クリエイターページで人気な記事を表示する</a></td><td data-label="公表・更新日">2025-07-24</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C9、T31</td></tr>
+<tr id="o57"><td data-label="出典"><a href="#o57">O57</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/360000613901-note-proを解約したい" rel="noopener">note proを解約したい</a>（「noteプレミアムの機能をnote pro解約後も継続してご利用される場合」の節）</td><td data-label="公表・更新日">2026-07-15</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T27</td></tr>
+<tr id="o58"><td data-label="出典"><a href="#o58">O58</a></td><td data-label="発信元">note公式</td><td data-label="資料名・URL"><a href="https://note.com/info/n/n22851c18aaff" rel="noopener">つぶやき投稿機能は、今日で終了します。</a></td><td data-label="公表・更新日">2025-08-25</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">T23</td></tr>
+<tr id="o59"><td data-label="出典"><a href="#o59">O59</a></td><td data-label="発信元">noteヘルプセンター</td><td data-label="資料名・URL"><a href="https://www.help-note.com/hc/ja/articles/42368527249433-記事の下部に表示される-ピックアップされています-とはなんですか" rel="noopener">記事の下部に表示される「ピックアップされています」とはなんですか？</a></td><td data-label="公表・更新日">2025-01-15</td><td data-label="確認日">2026-11-27</td><td data-label="関係する項目">C8、T21</td></tr>
+</tbody>
+</table></div></section>
+<h2>作業時間・調査上の限界</h2>
+<div class="tbl"><table class="tt">
+<thead>
+<tr>
+<th>工程</th>
+<th>内容</th>
+<th>状態</th>
+<th>開始（日本時間）</th>
+<th>終了（日本時間）</th>
+<th>実経過</th>
+<th>差し引いた待ち時間（内訳）</th>
+<th>時間</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="工程">1</td><td data-label="内容">初回作成</td><td data-label="状態">完了</td><td data-label="開始（日本時間）">07:56:22</td><td data-label="終了（日本時間）">08:23:16</td><td data-label="実経過">26分54秒</td><td data-label="差し引いた待ち時間（内訳）">0分53秒（公開資料の取得）</td><td data-label="時間">26分01秒</td></tr>
+<tr><td data-label="工程">2</td><td data-label="内容">初回修正</td><td data-label="状態">省略</td><td data-label="開始（日本時間）">—</td><td data-label="終了（日本時間）">—</td><td data-label="実経過">—</td><td data-label="差し引いた待ち時間（内訳）">—</td><td data-label="時間">—</td></tr>
+<tr><td data-label="工程">3</td><td data-label="内容">検品</td><td data-label="状態">完了</td><td data-label="開始（日本時間）">09:44:25</td><td data-label="終了（日本時間）">10:03:20</td><td data-label="実経過">18分55秒</td><td data-label="差し引いた待ち時間（内訳）">0分30秒（公開資料の取得）</td><td data-label="時間">18分25秒</td></tr>
+<tr><td data-label="工程">4</td><td data-label="内容">検品後の修正</td><td data-label="状態">完了</td><td data-label="開始（日本時間）">11:50:34</td><td data-label="終了（日本時間）">11:57:53</td><td data-label="実経過">7分19秒</td><td data-label="差し引いた待ち時間（内訳）">0分02秒（公開資料の取得）</td><td data-label="時間">7分17秒</td></tr>
+<tr><td data-label="工程">5</td><td data-label="内容">再検品</td><td data-label="状態">完了</td><td data-label="開始（日本時間）">10:51:19</td><td data-label="終了（日本時間）">11:23:41</td><td data-label="実経過">32分22秒</td><td data-label="差し引いた待ち時間（内訳）">19分55秒（公開タグ一覧の応答19分41秒と、その他の資料取得14秒）</td><td data-label="時間">12分27秒</td></tr>
+<tr><td data-label="工程">6</td><td data-label="内容">再検品後の修正</td><td data-label="状態">完了</td><td data-label="開始（日本時間）">13:48:31</td><td data-label="終了（日本時間）">13:50:05</td><td data-label="実経過">1分34秒</td><td data-label="差し引いた待ち時間（内訳）">0分02秒（公式の料金資料の取得）</td><td data-label="時間">1分32秒</td></tr>
+</tbody>
+</table></div>
+<p>計測した作業時間の累計は <strong>65分42秒</strong> です。各工程の日付は2026年11月27日（日本時間）。「時間」は開始から終了までの実経過から、時計の記録で区別できた待ち時間を差し引いた値です。同時に取得した資料の待ちは一度だけ数え、ほかの作業と区別できない待ちは実経過に含めました。工程3・5はClaude版の検品・再検品、工程4・6はChatGPT版の修正です。</p>
+<ul>
+<li>固定30説はすべて公開資料を探索しました。特にT8・T10の反応または読了とその後のおすすめ掲載率、T15の同一検索語での新規ブログとの順位比較、T20の同じ記事を編集した後の二つの表示面は、必要な条件を満たす裏づけを得られませんでした。</li>
+<li>T30の判定は開設まもない個人の無料記事の記録に限ります。本人による閲覧や有料表示による流入を切り分けられず、記事の年齢や運用期間をそろえた多数の個人の比較も、経路別施策の効果の直接比較も確認できませんでした。</li>
+<li>同じ人の短時間の繰り返し閲覧の数え方と、通常の自動おすすめの具体的な重みは未確認です。現行と旧「ビュー」の違いには公式説明がありますが、差の大きさについての表現には幅があります。</li>
+</ul>
+</article>
+<div class="xlink">もう一方の成果物：<a href="https://yokonarabi-lab.github.io/note/claude/">Claude Fable 5.2 版</a>　／　解説と感想：<a href="https://note.com/sky_yellowlens" rel="noopener">note の記事</a></div>
+<footer class="foot">
+<div class="brand"><span>Sky</span><span class="bar" aria-hidden="true"></span><span>Yellow Lens</span></div>
+<p>検証室：Claude Fable 5.2 vs GPT-6.2 Astra。同じお題、同じ依頼文で、ふたつの答えを並べて読み解く。記事は <a href="https://note.com/sky_yellowlens" rel="noopener">note</a> に。</p>
+<p>この文書は、AI の成果物をそのまま載せたもの。内容は 2026年11月27日時点の調査で、実際に投稿して確かめたものではない。</p>
+</footer>
+</main>
+</body>
+</html>
